@@ -1,62 +1,11 @@
 import SwiftUI
 
-// MARK: - Palette
+// Палитра
 private let pageBG      = Color(uiColor: .systemGroupedBackground)
-private let borderColor = Color.black.opacity(0.25)
+private let borderColor = Color.black.opacity(0.15)
 private let supportBG   = Color(uiColor: .systemGray5)
 
-// MARK: - Today in History
-private struct HistoryTodayCard: View {
-    let person: Person
-    let imageName: String    // имя картинки в Assets (1:1)
-
-    private let side: CGFloat = 126
-
-    var body: some View {
-        HStack(spacing: 14) {
-            Image(imageName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: side, height: side)
-                .clipped()
-                .clipShape(RoundedRectangle(cornerRadius: 18))
-                .overlay(RoundedRectangle(cornerRadius: 18).stroke(borderColor, lineWidth: 1))
-
-            VStack(alignment: .leading, spacing: 6) {
-                // Заголовок карточки
-                Text("Сегодня в истории")
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-
-                // Имя персоналии
-                Text(person.name)
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
-                    .lineLimit(1)
-                    .truncationMode(.tail)
-
-                // Короткое пояснение
-                Text(person.subtitle)
-                    .font(.system(size: 16, weight: .regular, design: .rounded))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .truncationMode(.tail)
-            }
-            .frame(height: side, alignment: .topLeading)
-
-            Spacer(minLength: 0)
-        }
-        .padding(14)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 22))
-        .overlay(RoundedRectangle(cornerRadius: 22).stroke(borderColor, lineWidth: 1))
-        .contentShape(RoundedRectangle(cornerRadius: 22))
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Сегодня в истории. \(person.name). \(person.subtitle)")
-    }
-}
-
-// MARK: - Reusable tile
+// Универсальная плитка-кнопка
 private struct OutlineTileButton: View {
     let title: String
     var body: some View {
@@ -65,27 +14,88 @@ private struct OutlineTileButton: View {
             .foregroundStyle(.black)
             .multilineTextAlignment(.center)
             .lineLimit(2)
-            .lineSpacing(2)
-            .minimumScaleFactor(0.8)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, minHeight: 100)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(borderColor, lineWidth: 1))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(borderColor, lineWidth: 1)
+            )
             .contentShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 
-// MARK: - Screen
+// Карточка «Сегодня в истории»
+private struct HistoryTodayCard: View {
+    let person: Person
+
+    // размеры карточки
+    private let cardHeight: CGFloat = 148
+    private let imageSide: CGFloat = 96
+    private let corner: CGFloat = 22
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(person.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: imageSide, height: imageSide)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Сегодня в истории")
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .layoutPriority(1)
+
+                Text(person.name)
+                    .font(.system(size: 24, weight: .bold))   // << bold
+                    .lineLimit(1)
+                    .allowsTightening(false)
+                    .layoutPriority(2)                         // << не даём сжимать
+
+                Text(person.subtitle)
+                    .font(.system(size: 15, weight: .regular))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .layoutPriority(1)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: cardHeight, alignment: .leading)
+        .padding(14)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: corner))
+        .overlay(
+            RoundedRectangle(cornerRadius: corner)
+                .stroke(Color.black.opacity(0.15), lineWidth: 1)
+        )
+        .contentShape(RoundedRectangle(cornerRadius: corner))
+    }
+}
+
 struct HomeScreen: View {
     private let columns = [GridItem(.flexible(), spacing: 14),
                            GridItem(.flexible(), spacing: 14)]
 
-    private let featured = Person(
-        name: "Месроп Маштоц",
-        subtitle: "создатель армянского алфавита",
-        section: .science
-    )
+    // «Сегодняшний» — как заглушка берём первого из моков
+    private var featured: Person {
+        mockPeople.first ?? Person(name: "Месроп Маштоц",
+                                   subtitle: "Создатель армянского алфавита",
+                                   section: .science,
+                                   imageName: "mesrop")
+    }
+
+    // Фильтрация людей по разделу
+    private func people(for section: ArmenianSection) -> [Person] {
+        section == .all ? mockPeople : mockPeople.filter { $0.section == section }
+    }
+
+    // Порядок разделов с «Все личности» в начале
+    private var sections: [ArmenianSection] {
+        ArmenianSection.allCases
+    }
 
     var body: some View {
         ScrollView {
@@ -94,23 +104,19 @@ struct HomeScreen: View {
                 // Поддержать проект (сверху)
                 NavigationLink { SupportScreen() } label: {
                     Text("Поддержать проект")
-                        .font(.system(size: 18, weight: .thin, design: .rounded))
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
                         .foregroundStyle(.black)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
                         .background(supportBG)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .contentShape(RoundedRectangle(cornerRadius: 20))
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal)
-                .padding(.top, 8)
 
-                // Сегодня в истории
-                NavigationLink {
-                    PersonDetailView(person: featured)
-                } label: {
-                    HistoryTodayCard(person: featured, imageName: "mesrop")
+                // Сегодня в истории — крупнее
+                NavigationLink { PersonDetailView(person: featured) } label: {
+                    HistoryTodayCard(person: featured)
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal)
@@ -122,27 +128,29 @@ struct HomeScreen: View {
                 .buttonStyle(.plain)
                 .padding(.horizontal)
 
-                // Плитка разделов 2xN
+                // Плитка разделов (включая «Все личности»)
                 LazyVGrid(columns: columns, spacing: 14) {
-                    ForEach(ArmenianSection.allCases) { section in
-                        NavigationLink { CategoryListView(section: section) } label: {
-                            OutlineTileButton(title: section.title)
+                    ForEach(sections) { section in
+                        NavigationLink {
+                            CategoryListView(section: section,
+                                             people: people(for: section))
+                        } label: {
+                            OutlineTileButton(title: section.rawValue)
                         }
                         .buttonStyle(.plain)
                     }
                 }
                 .padding(.horizontal)
 
-                // Контакты (внизу)
+                // Контакты (снизу)
                 NavigationLink { ContactsScreen() } label: {
                     Text("Контакты")
-                        .font(.system(size: 18, weight: .thin, design: .rounded))
+                        .font(.system(size: 18, weight: .semibold, design: .rounded))
                         .foregroundStyle(.black)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
                         .background(supportBG)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .contentShape(RoundedRectangle(cornerRadius: 20))
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal)
@@ -150,48 +158,14 @@ struct HomeScreen: View {
 
                 Spacer(minLength: 12)
             }
-            .padding(.bottom, 24)
+            .padding(.vertical, 8)
         }
         .background(pageBG.ignoresSafeArea())
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-// MARK: - Stubs
-struct MapScreen: View {
-    var body: some View {
-        VStack(spacing: 12) {
-            Text("Карта храмов и святынь")
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text("Здесь появится интерактивная карта с точками и кластерами.")
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-            Spacer()
-        }
-        .padding(.top, 24)
-    }
-}
-
-struct SupportScreen: View {
-    var body: some View {
-        VStack(spacing: 12) {
-            Text("Поддержать проект").font(.title2).bold()
-            Text("Здесь появятся варианты пожертвований.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-    }
-}
-
-struct ContactsScreen: View {
-    var body: some View {
-        VStack(spacing: 12) {
-            Text("Контакты").font(.title2).bold()
-            Text("Здесь будут контактные данные проекта.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-    }
-}
+// Заглушки
+struct MapScreen: View { var body: some View { Text("Здесь будет карта").padding() } }
+struct SupportScreen: View { var body: some View { Text("Экран доната (заглушка)").padding() } }
+struct ContactsScreen: View { var body: some View { Text("Контакты проекта (заглушка)").padding() } }

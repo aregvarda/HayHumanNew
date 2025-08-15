@@ -16,7 +16,16 @@ enum ArmenianSection: String, CaseIterable, Identifiable, Hashable {
 
 struct Person: Identifiable, Hashable {
     let id = UUID()
-    let name: String
-    let subtitle: String
+    let name: String                // полное имя (например: "Месроп Маштоц")
+    let subtitle: String            // короткое описание
     let section: ArmenianSection
+    let imageName: String           // имя ассета (квадрат 1:1)
+
+    // Большой титл на карточке
+    var overlayTitle: String {
+        // Возьми последний токен как «фамилию», или сделай капсом всё имя
+        let tokens = name.split(separator: " ")
+        let last = tokens.last.map(String.init) ?? name
+        return last.uppercased()
+    }
 }
