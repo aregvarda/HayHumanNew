@@ -1,13 +1,13 @@
-
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
+        NavigationStack { // теперь NavigationLink будет работать
             HomeScreen()
         }
     }
 }
 
-#Preview { ContentView() }
+#Preview {
+    ContentView()
+}
