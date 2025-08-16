@@ -145,6 +145,7 @@ private struct PersonPhotoTile: View {
                     Image(person.imageName)
                         .resizable()
                         .scaledToFill()
+                        .grayscale(1.0)
                 } else {
                     // Фолбэк: чёрный квадрат, если изображения нет
                     Rectangle()
@@ -160,10 +161,14 @@ private struct PersonPhotoTile: View {
                     .fill(hasImage ? Color.black.opacity(0.18) : Color.clear)
             )
 
-            // Заголовок внизу
+            // Заголовок внизу (авто‑уменьшение, если не влезает)
             Text(person.overlayTitle)
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)   // сжимать до 50% от размера
+                .allowsTightening(true)
+                .padding(.horizontal, 10)
                 .shadow(radius: 6)
                 .padding(.bottom, 14)
         }

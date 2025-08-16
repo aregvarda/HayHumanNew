@@ -31,8 +31,8 @@ private struct HistoryTodayCard: View {
     let person: Person
 
     // размеры карточки
-    private let cardHeight: CGFloat = 148
-    private let imageSide: CGFloat = 96
+    private let cardHeight: CGFloat = 152
+    private let imageSide: CGFloat = 108
     private let corner: CGFloat = 22
 
     var body: some View {
@@ -41,20 +41,23 @@ private struct HistoryTodayCard: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: imageSide, height: imageSide)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .clipShape(RoundedRectangle(cornerRadius: 14))
 
             VStack(alignment: .leading, spacing: 6) {
                 Text("Сегодня в истории")
-                    .font(.system(size: 14, weight: .regular))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .layoutPriority(1)
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.primary.opacity(0.85))
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(.ultraThinMaterial)
+                    .clipShape(Capsule())
+                    .shadow(radius: 2)
 
                 Text(person.name)
-                    .font(.system(size: 24, weight: .bold))   // << bold
-                    .lineLimit(1)
-                    .allowsTightening(false)
-                    .layoutPriority(2)                         // << не даём сжимать
+                    .font(.system(size: 26, weight: .semibold, design: .rounded))
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.92)
+                    .layoutPriority(2)
 
                 Text(person.subtitle)
                     .font(.system(size: 15, weight: .regular))
@@ -69,8 +72,9 @@ private struct HistoryTodayCard: View {
         .clipShape(RoundedRectangle(cornerRadius: corner))
         .overlay(
             RoundedRectangle(cornerRadius: corner)
-                .stroke(Color.black.opacity(0.15), lineWidth: 1)
+                .stroke(Color.black.opacity(0.12), lineWidth: 1.5)
         )
+        .shadow(color: .black.opacity(0.06), radius: 10, x: 0, y: 6)
         .contentShape(RoundedRectangle(cornerRadius: corner))
     }
 }
