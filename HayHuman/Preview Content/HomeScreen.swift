@@ -79,18 +79,23 @@ struct HomeScreen: View {
     private let columns = [GridItem(.flexible(), spacing: 14),
                            GridItem(.flexible(), spacing: 14)]
 
-    // «Сегодняшний» — как заглушка берём первого из моков
+    // «Сегодняшний» — берём первого из локальных JSON, иначе заглушка
     private var featured: Person {
-        mockPeople.first ?? Person(name: "Месроп Маштоц",
-                                   subtitle: "Создатель армянского алфавита",
-                                   section: .science,
-                                   imageName: "mesrop")
+        LocalPeopleStore.loadAll().first
+        ?? Person(
+            name: "Месроп Маштоц",
+            subtitle: "Создатель армянского алфавита",
+            section: .science,
+            imageName: "mesrop",
+            birthCity: "Ахтала",
+            birthCountry: "Армения",
+            birthLat: 41.1500,
+            birthLon: 44.8333,
+            bio: "Создатель армянского алфавита, живший в V веке.",
+            birthYear: 360
+        )
     }
 
-    // Фильтрация людей по разделу
-    private func people(for section: ArmenianSection) -> [Person] {
-        section == .all ? mockPeople : mockPeople.filter { $0.section == section }
-    }
 
     // Порядок разделов с «Все личности» в начале
     private var sections: [ArmenianSection] {
@@ -101,11 +106,15 @@ struct HomeScreen: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
 
-                // Поддержать проект (сверху)
-                NavigationLink { SupportScreen() } label: {
+                // Поддержать проект (сверху) — открываем ссылку сразу
+                Button {
+                    if let url = URL(string: "https://www.donationalerts.com/r/hayhuman") {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
                     Text("Поддержать проект")
                         .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.black)
+                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
                         .background(supportBG)
@@ -132,10 +141,9 @@ struct HomeScreen: View {
                 LazyVGrid(columns: columns, spacing: 14) {
                     ForEach(sections) { section in
                         NavigationLink {
-                            CategoryListView(section: section,
-                                             people: people(for: section))
+                            CategoryListView(section: section)
                         } label: {
-                            OutlineTileButton(title: section.rawValue)
+                            OutlineTileButton(title: section.title)
                         }
                         .buttonStyle(.plain)
                     }
@@ -167,5 +175,4 @@ struct HomeScreen: View {
 
 // Заглушки
 struct MapScreen: View { var body: some View { Text("Здесь будет карта").padding() } }
-struct SupportScreen: View { var body: some View { Text("Экран доната (заглушка)").padding() } }
 struct ContactsScreen: View { var body: some View { Text("Контакты проекта (заглушка)").padding() } }
