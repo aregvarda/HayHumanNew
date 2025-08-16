@@ -1,3 +1,34 @@
+// ArmenianSection localization extension
+extension ArmenianSection {
+    /// Key for Localizable.strings
+    var localizationKey: String {
+        switch self {
+        case .all:      return "all_people"
+        case .culture:  return "culture"
+        case .military: return "military"
+        case .politics: return "politics"
+        case .religion: return "religion"
+        case .sport:    return "sport"
+        case .business: return "business"
+        case .science:  return "science"
+        }
+    }
+    
+    /// Localized plain String (force-resolves from the bundle)
+    var localizedString: String {
+        NSLocalizedString(self.localizationKey,
+                          tableName: "Localizable",
+                          bundle: .main,
+                          value: "",
+                          comment: "")
+    }
+    
+    /// Localized title from String Catalog / Localizable.strings
+    var localizedTitle: LocalizedStringKey {
+        LocalizedStringKey(self.localizationKey)
+    }
+}
+
 import SwiftUI
 
 // Палитра
@@ -7,15 +38,20 @@ private let supportBG   = Color(uiColor: .systemGray5)
 
 // Универсальная плитка-кнопка
 private struct OutlineTileButton: View {
-    let title: String
+    /// Localization key from String Catalog (Localizable)
+    let titleKey: LocalizedStringKey
     var body: some View {
-        Text(title)
+        // Resolve from Localizable.xcstrings at runtime
+        Text(titleKey)
             .font(.system(size: 18, weight: .bold, design: .rounded))
             .foregroundStyle(.black)
+            .padding(.horizontal, 16)
             .multilineTextAlignment(.center)
+            .lineSpacing(2)
             .lineLimit(2)
+            .allowsTightening(false)
             .fixedSize(horizontal: false, vertical: true)
-            .frame(maxWidth: .infinity, minHeight: 100)
+            .frame(maxWidth: .infinity, minHeight: 124)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
@@ -44,7 +80,7 @@ private struct HistoryTodayCard: View {
                 .clipShape(RoundedRectangle(cornerRadius: 14))
 
             VStack(alignment: .leading, spacing: 6) {
-                Text("Сегодня в истории")
+                Text(LocalizedStringKey("history_today"))
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                     .foregroundStyle(.primary.opacity(0.85))
                     .padding(.horizontal, 10)
@@ -82,6 +118,9 @@ private struct HistoryTodayCard: View {
 struct HomeScreen: View {
     private let columns = [GridItem(.flexible(), spacing: 14),
                            GridItem(.flexible(), spacing: 14)]
+    
+    @EnvironmentObject private var lang: LanguageManager
+    @State private var showLanguageSheet = false
 
     // «Сегодняшний» — берём первого из локальных JSON, иначе заглушка
     private var featured: Person {
@@ -116,7 +155,7 @@ struct HomeScreen: View {
                         UIApplication.shared.open(url)
                     }
                 } label: {
-                    Text("Поддержать проект")
+                    Text(LocalizedStringKey("support_project"))
                         .font(.system(size: 18, weight: .semibold, design: .rounded))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
@@ -136,7 +175,7 @@ struct HomeScreen: View {
 
                 // Карта
                 NavigationLink { MapScreen() } label: {
-                    OutlineTileButton(title: "Карта храмов и святынь")
+                    OutlineTileButton(titleKey: LocalizedStringKey("map"))
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal)
@@ -147,26 +186,50 @@ struct HomeScreen: View {
                         NavigationLink {
                             CategoryListView(section: section)
                         } label: {
-                            OutlineTileButton(title: section.title)
+                            OutlineTileButton(titleKey: LocalizedStringKey(section.localizationKey))
                         }
                         .buttonStyle(.plain)
                     }
                 }
                 .padding(.horizontal)
 
-                // Контакты (снизу)
-                NavigationLink { ContactsScreen() } label: {
-                    Text("Контакты")
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.black)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(supportBG)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                // Язык (слева квадрат) + Контакты (справа длинная)
+                HStack(spacing: 14) {
+                    Button {
+                        showLanguageSheet = true
+                    } label: {
+                        // Компактная квадратная кнопка языка
+                        Text(LocalizedStringKey("language"))
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundStyle(.black)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.8)
+                            .frame(width: 120, height: 56) // квадратная по сути
+                            .background(supportBG)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                    .buttonStyle(.plain)
+                    
+                    NavigationLink { ContactsScreen() } label: {
+                        Text(LocalizedStringKey("contacts"))
+                            .font(.system(size: 18, weight: .semibold, design: .rounded))
+                            .foregroundStyle(.black)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(supportBG)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
                 .padding(.horizontal)
                 .padding(.top, 4)
+                // Диалог выбора языка
+                .confirmationDialog("", isPresented: $showLanguageSheet, actions: {
+                    Button("Русский") { lang.current = .ru }
+                    Button("English") { lang.current = .en }
+                    Button("Հայերեն") { lang.current = .hy }
+                })
 
                 Spacer(minLength: 12)
             }
@@ -174,9 +237,10 @@ struct HomeScreen: View {
         }
         .background(pageBG.ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
+        .environment(\.locale, lang.current.locale)
     }
 }
 
 // Заглушки
-struct MapScreen: View { var body: some View { Text("Здесь будет карта").padding() } }
-struct ContactsScreen: View { var body: some View { Text("Контакты проекта (заглушка)").padding() } }
+struct MapScreen: View { var body: some View { Text(LocalizedStringKey("map")).padding() } }
+struct ContactsScreen: View { var body: some View { Text(LocalizedStringKey("contacts")).padding() } }

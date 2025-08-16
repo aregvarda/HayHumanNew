@@ -64,16 +64,16 @@ struct CategoryListView: View {
         }
     }
 
-    private var searchPlaceholder: String {
+    private var searchPlaceholder: LocalizedStringKey {
         switch section {
-        case .all:      return "Поиск по всем личностям"
-        case .culture:  return "Поиск по культуре"
-        case .military: return "Поиск по военному делу"
-        case .politics: return "Поиск по политике"
-        case .religion: return "Поиск по религии"
-        case .sport:    return "Поиск по спорту"
-        case .business: return "Поиск по бизнесу"
-        case .science:  return "Поиск по науке и образованию"
+        case .all:      return "search_all"
+        case .culture:  return "search_culture"
+        case .military: return "search_military"
+        case .politics: return "search_politics"
+        case .religion: return "search_religion"
+        case .sport:    return "search_sport"
+        case .business: return "search_business"
+        case .science:  return "search_science"
         }
     }
 
@@ -165,7 +165,8 @@ private struct PersonPhotoTile: View {
             Text(person.overlayTitle)
                 .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
-                .lineLimit(1)
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
                 .minimumScaleFactor(0.5)   // сжимать до 50% от размера
                 .allowsTightening(true)
                 .padding(.horizontal, 10)

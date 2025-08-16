@@ -34,12 +34,12 @@ struct PersonDetailView: View {
                         }
                         .frame(height: mapHeight)
                         .overlay(alignment: .top) {
-                            // лёгкий градиент, чтобы надпись читалась
+                            // лёгкий светлый градиент, чтобы надпись читалась, но не затемнял карту
                             LinearGradient(
-                                colors: [.black.opacity(0.15), .clear],
+                                colors: [.white.opacity(0.4), .clear],
                                 startPoint: .top, endPoint: .center
                             )
-                            .frame(height: 64)
+                            .frame(height: 48)
                         }
                         .overlay(alignment: .bottom) {
                             // градиент снизу — под фото
@@ -131,7 +131,7 @@ struct PersonDetailView: View {
                             .foregroundStyle(.primary)
                             .lineSpacing(2.5)
                     } else {
-                        Text("Биография пока в подготовке.")
+                        Text(NSLocalizedString("bio_placeholder", comment: ""))
                             .font(.system(size: 17))
                             .foregroundStyle(.secondary)
                     }
@@ -155,6 +155,7 @@ struct PersonDetailView: View {
                         ])
                     } label: {
                         Image(systemName: "map")
+                            .accessibilityLabel(Text(NSLocalizedString("open_in_maps", comment: "")))
                     }
                 }
             }

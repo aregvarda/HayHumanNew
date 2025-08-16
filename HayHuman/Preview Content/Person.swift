@@ -1,18 +1,20 @@
 import Foundation
+import SwiftUI
 
-// Разделы (локализованные названия остаются как раньше)
+// Разделы (ключи для локализации)
 enum ArmenianSection: String, CaseIterable, Identifiable, Hashable {
-    case all = "Все личности"
-    case culture = "Культура"
-    case military = "Военное дело"
-    case politics = "Политика"
-    case religion = "Религия"
-    case sport = "Спорт"
-    case business = "Бизнес"
-    case science = "Наука\nи образование"
+    case all      = "all_people"
+    case culture  = "culture"
+    case military = "military"
+    case politics = "politics"
+    case religion = "religion"
+    case sport    = "sport"
+    case business = "business"
+    case science  = "science"
 
     var id: Self { self }
-    var title: String { rawValue }
+    /// Localized title for UI
+    var title: LocalizedStringKey { LocalizedStringKey(rawValue) }
 }
 
 // Позволяем декодировать секцию как из англ. слага ("culture"), так и из русского названия
@@ -22,7 +24,7 @@ extension ArmenianSection: Decodable {
         let raw = try container.decode(String.self).trimmingCharacters(in: .whitespacesAndNewlines)
         let v = raw.lowercased()
         switch v {
-        case "all", "все личности": self = .all
+        case "all", "all_people", "все личности": self = .all
         case "culture", "культура": self = .culture
         case "military", "военное дело": self = .military
         case "politics", "политика": self = .politics
