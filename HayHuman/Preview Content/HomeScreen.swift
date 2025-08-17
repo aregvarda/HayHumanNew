@@ -241,6 +241,13 @@ struct HomeScreen: View {
     }
 }
 
-// Заглушки
-struct MapScreen: View { var body: some View { Text(LocalizedStringKey("map")).padding() } }
+import MapKit
+
+struct MapScreen: View {
+    var body: some View {
+        ChurchMapView()
+            .navigationTitle(LocalizedStringKey("map"))
+            .navigationBarTitleDisplayMode(.inline)
+    }
+}
 struct ContactsScreen: View { var body: some View { Text(LocalizedStringKey("contacts")).padding() } }
