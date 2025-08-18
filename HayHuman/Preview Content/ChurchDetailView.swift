@@ -5,30 +5,66 @@
 //  Created by Арег Варданян on 17.08.2025.
 //
 
-
-//
-//  ChurchDetailView.swift
-//  HayHuman
-//
-//  Created by Арег Варданян on 17.08.2025.
-//
-
 import SwiftUI
 import MapKit
+import UIKit
 
 /// Детальный экран профиля церкви.
 /// Ожидает модель `Church` из `ChurchMapView`.
 struct ChurchDetailView: View {
     let church: Church
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
 
-    private var statusText: String {
-        church.isActive ? NSLocalizedString("Действующая", comment: "Active church") :
-                          NSLocalizedString("Утраченная", comment: "Lost/destroyed church")
+    private var statusText: LocalizedStringKey {
+        church.isActive ? LocalizedStringKey("active_church") : LocalizedStringKey("lost_church")
     }
 
     private var statusColor: Color {
         church.isActive ? .purple : .black
+    }
+
+    /// Ссылка на поддержку проекта (как на HomeScreen)
+    private let donateURL = URL(string: "https://www.donationalerts.com/r/hayhuman")
+
+    // MARK: - Derived data from JSON
+    private var composedAddress: String? {
+        var parts: [String] = []
+        if let city = church.city, !city.isEmpty { parts.append(city) }
+        if let addr = church.address, !addr.isEmpty { parts.append(addr) }
+        return parts.isEmpty ? nil : parts.joined(separator: ", ")
+    }
+    
+    @ViewBuilder
+    private var photoSection: some View {
+        if let name = church.photoName, !name.isEmpty {
+            Image(name)
+                .resizable()
+                .scaledToFill()
+                .frame(height: 180)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
+                )
+                .clipped()
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color(uiColor: .secondarySystemBackground))
+                VStack(spacing: 8) {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 44)
+                        .foregroundStyle(.secondary)
+                    Text("Фото появится позже")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .frame(height: 180)
+        }
     }
 
     var body: some View {
@@ -61,22 +97,8 @@ struct ChurchDetailView: View {
                         .stroke(Color.secondary.opacity(0.1), lineWidth: 1)
                 )
 
-                // Фото (плейсхолдер под одну картинку)
-                ZStack {
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color(uiColor: .secondarySystemBackground))
-                    VStack(spacing: 8) {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 44, height: 44)
-                            .foregroundStyle(.secondary)
-                        Text("Фото появится позже")
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .frame(height: 180)
+                // Фото из JSON (или плейсхолдер)
+                photoSection
 
                 // Название
                 Text(church.name)
@@ -89,12 +111,19 @@ struct ChurchDetailView: View {
                     Text(statusText).font(.callout).foregroundStyle(.secondary)
                 }
 
-                // Адрес (плейсхолдер)
+                // Адрес из JSON
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Адрес").font(.subheadline).foregroundStyle(.secondary)
-                    Text("Адрес появится позже")
-                        .font(.body)
-                        .foregroundStyle(.primary)
+                    if let address = composedAddress {
+                        Text(address)
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    } else {
+                        Text("Адрес появится позже")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                    }
                 }
 
                 // Координаты (читаемые подписи)
@@ -108,37 +137,64 @@ struct ChurchDetailView: View {
                     }
                 }
 
-                // Описание (плейсхолдер)
+                // Описание из JSON
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Описание").font(.subheadline).foregroundStyle(.secondary)
-                    Text("Текст описания будет добавлен позже.")
-                        .font(.body)
-                        .foregroundStyle(.primary)
-                        .fixedSize(horizontal: false, vertical: true)
+                    if let desc = church.descriptionText, !desc.isEmpty {
+                        Text(desc)
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    } else {
+                        Text("Текст описания будет добавлен позже.")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                    }
                 }
 
                 // Кнопки действий
                 VStack(spacing: 12) {
-                    // Открыть в Картах
                     Button {
+                        guard let url = donateURL else { return }
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "heart.fill")
+                            Text("Поддержать проект")
+                        }
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 14))
+                    .tint(.purple)
+                    .accessibilityLabel("Поддержать проект в Donationalerts")
+
+                    Button {
+                        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+                        let options: [String : Any] = [
+                            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: church.coordinate),
+                            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: span)
+                        ]
                         let placemark = MKPlacemark(coordinate: church.coordinate)
                         let item = MKMapItem(placemark: placemark)
                         item.name = church.name
-                        item.openInMaps()
+                        item.openInMaps(launchOptions: options)
                     } label: {
-                        Label("Открыть в «Картах»", systemImage: "map")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-
-                    // Закрыть
-                    Button(role: .cancel) {
-                        dismiss()
-                    } label: {
-                        Text("Закрыть")
-                            .frame(maxWidth: .infinity)
+                        HStack(spacing: 8) {
+                            Image(systemName: "map")
+                            Text("Посмотреть на карте")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
                     }
                     .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 14))
+                    .tint(.secondary)
+                    .accessibilityLabel("Открыть это место в «Картах»")
                 }
                 .padding(.top, 8)
             }
@@ -155,7 +211,11 @@ struct ChurchDetailView: View {
         church: Church(
             name: "Сурб Аствацацин",
             coordinate: CLLocationCoordinate2D(latitude: 40.18, longitude: 44.51),
-            isActive: true
+            isActive: true,
+            city: "Эчмиадзин",
+            address: "Армавирская область, Армения",
+            descriptionText: "Предварительное описание для превью.",
+            photoName: "zoravor_astsavatsin"
         )
     )
 }

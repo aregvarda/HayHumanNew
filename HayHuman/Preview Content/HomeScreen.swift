@@ -155,13 +155,23 @@ struct HomeScreen: View {
                         UIApplication.shared.open(url)
                     }
                 } label: {
-                    Text(LocalizedStringKey("support_project"))
-                        .font(.system(size: 18, weight: .semibold, design: .rounded))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(supportBG)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                    HStack(spacing: 8) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
+                        Text(LocalizedStringKey("support_project"))
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 14)
+                    .background(
+                        LinearGradient(
+                            colors: [Color.purple.opacity(0.8), Color.purple],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal)

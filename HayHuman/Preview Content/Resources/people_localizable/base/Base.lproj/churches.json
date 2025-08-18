@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Etchmiadzin Cathedral",
+    "lat": 40.1667,
+    "lon": 44.2946,
+    "isActive": true,
+    "address": "Etchmiadzin, Armavir Province, Armenia",
+    "description": "Etchmiadzin Cathedral is the spiritual center of the Armenian Apostolic Church, founded by Gregory the Illuminator at the beginning of the 4th century. It is one of the oldest Christian churches in the world and is included in the UNESCO World Heritage List.",
+    "photoName": "echmiadzin"
+  },
+  {
+    "name": "Surb Zoravor Astvatsatsin",
+    "lat": 40.1836,
+    "lon": 44.5094,
+    "isActive": true,
+    "address": "Yerevan, Armenia",
+    "description": "Surb Zoravor Astvatsatsin was founded in the 9th century, destroyed by the earthquake of 1679 and rebuilt in 1693–1694. It is one of the oldest surviving churches in Yerevan and a symbol of spiritual revival.",
+    "photoName": "zoravor_astvatsatsin"
+  },
+  {
+    "name": "Geghard Monastery",
+    "lat": 40.1419,
+    "lon": 44.8267,
+    "isActive": true,
+    "address": "Kotayk Province, Armenia",
+    "description": "Geghard Monastery, founded in the 4th century, is partly carved out of rock. It became famous for housing the spear that wounded Christ on the Cross. It is a UNESCO World Heritage Site.",
+    "photoName": "geghard"
+  },
+  {
+    "name": "Tatev Monastery",
+    "lat": 39.3833,
+    "lon": 46.2500,
+    "isActive": true,
+    "address": "Tatev, Syunik Province, Armenia",
+    "description": "Tatev Monastery was founded in the 9th century and served as an important educational and spiritual center, housing one of the oldest universities of the Middle Ages in Armenia.",
+    "photoName": "tatev"
+  },
+  {
+    "name": "Khor Virap Monastery",
+    "lat": 39.8783,
+    "lon": 44.5761,
+    "isActive": true,
+    "address": "Ararat Province, Armenia",
+    "description": "Khor Virap is one of the most visited pilgrimage sites in Armenia. It is where Gregory the Illuminator was imprisoned for 13 years before converting King Tiridates III to Christianity in 301.",
+    "photoName": "khor_virap"
+  },
+  {
+    "name": "Noravank Monastery",
+    "lat": 39.6847,
+    "lon": 45.2322,
+    "isActive": true,
+    "address": "Vayots Dzor Province, Armenia",
+    "description": "Noravank, founded in the 12th century, is renowned for its dramatic setting in a narrow gorge and its unique two-story Surb Astvatsatsin church built by Momik the architect.",
+    "photoName": "noravank"
+  },
+  {
+    "name": "Sanahin Monastery",
+    "lat": 41.0875,
+    "lon": 44.6519,
+    "isActive": true,
+    "address": "Alaverdi, Lori Province, Armenia",
+    "description": "Sanahin Monastery, founded in the 10th century, was a major center of learning and culture. Today it is partially preserved and included in the UNESCO World Heritage List together with Haghpat.",
+    "photoName": "sanahin"
+  },
+  {
+    "name": "Haghpat Monastery",
+    "lat": 41.0950,
+    "lon": 44.7100,
+    "isActive": true,
+    "address": "Lori Province, Armenia",
+    "description": "Haghpat Monastery, dating back to the 10th century, is one of the most outstanding examples of medieval Armenian architecture. It was a major religious, cultural, and educational center.",
+    "photoName": "haghpat"
+  },
+  {
+    "name": "Amberd Church (Surb Astvatsatsin)",
+    "lat": 40.3783,
+    "lon": 44.2267,
+    "isActive": true,
+    "address": "Near Byurakan, Aragatsotn Province, Armenia",
+    "description": "The church of Surb Astvatsatsin at Amberd fortress was built in the 11th century by the Pahlavuni princes. It is partly in ruins but remains an important historical monument.",
+    "photoName": "amberd_astvatsatsin"
+  },
+  {
+    "name": "Zvartnots Cathedral",
+    "lat": 40.1478,
+    "lon": 44.3958,
+    "isActive": false,
+    "address": "Etchmiadzin, Armavir Province, Armenia",
+    "description": "Zvartnots Cathedral, built in the 7th century under Catholicos Nerses III, was one of the most magnificent churches of early medieval Armenia. Destroyed by an earthquake in the 10th century, its ruins are a UNESCO World Heritage Site.",
+    "photoName": "zvartnots"
+  }
+]

@@ -5,10 +5,14 @@
 //  Created by Арег Варданян on 17.08.2025.
 //
 
+import Foundation
+
 
 
 import SwiftUI
 import MapKit
+
+private func L(_ key: String) -> LocalizedStringKey { LocalizedStringKey(key) }
 
 struct Church: Identifiable, Equatable, Hashable {
     let id = UUID()
@@ -47,11 +51,11 @@ struct ChurchMapView: View {
     private enum ChurchFilter: String, CaseIterable, Identifiable {
         case all, active, inactive
         var id: Self { self }
-        var title: String {
+        var title: LocalizedStringKey {
             switch self {
-            case .all: return "Все"
-            case .active: return "Действующие"
-            case .inactive: return "Утраченные"
+            case .all: return L("filter_all")
+            case .active: return L("filter_active")
+            case .inactive: return L("filter_inactive")
             }
         }
     }
@@ -110,7 +114,9 @@ struct ChurchMapView: View {
         let church: Church
         let openProfile: () -> Void
 
-        private var statusText: String { church.isActive ? "Действующая" : "Утраченная" }
+        private var statusKey: LocalizedStringKey {
+            church.isActive ? L("active_church") : L("lost_church")
+        }
         private var statusColor: Color { church.isActive ? .purple : .black }
 
         var body: some View {
@@ -165,7 +171,7 @@ struct ChurchMapView: View {
                         Circle()
                             .fill(statusColor)
                             .frame(width: 8, height: 8)
-                        Text(statusText)
+                        Text(statusKey)
                             .font(.caption.weight(.medium))
                             .foregroundColor(church.isActive ? .primary : .secondary)
                     }
@@ -212,7 +218,7 @@ struct ChurchMapView: View {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(.secondary)
-                TextField("Поиск по церквям", text: $text)
+                TextField("", text: $text, prompt: Text(L("search_churches")))
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                 if !text.isEmpty {
@@ -255,7 +261,7 @@ struct ChurchMapView: View {
     }
 
     // Helper model to decode JSON (lat/lon) and map to `Church`
-    private struct DecChurch: Codable {
+    private struct DecChurch: Decodable {
         let name: String
         let lat: Double
         let lon: Double
@@ -264,41 +270,75 @@ struct ChurchMapView: View {
         let address: String?
         let descriptionText: String?
         let photoName: String?
+
+        enum CodingKeys: String, CodingKey {
+            case name, lat, lon, isActive, city, address
+            case descriptionText
+            case description
+            case photoName
+            case photo
+            case image
+        }
+
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            name = try c.decode(String.self, forKey: .name)
+            lat = try c.decode(Double.self, forKey: .lat)
+            lon = try c.decode(Double.self, forKey: .lon)
+            isActive = try c.decode(Bool.self, forKey: .isActive)
+            city = try c.decodeIfPresent(String.self, forKey: .city)
+            address = try c.decodeIfPresent(String.self, forKey: .address)
+            descriptionText = try c.decodeIfPresent(String.self, forKey: .descriptionText)
+                ?? c.decodeIfPresent(String.self, forKey: .description)
+            photoName = try c.decodeIfPresent(String.self, forKey: .photoName)
+                ?? c.decodeIfPresent(String.self, forKey: .photo)
+                ?? c.decodeIfPresent(String.self, forKey: .image)
+        }
     }
 
     private func loadChurches() {
-        // Try to load from bundled JSON first
-        if let url = Bundle.main.url(forResource: "churches", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoded = try JSONDecoder().decode([DecChurch].self, from: data)
-                self.churches = decoded.map { item in
-                    Church(
-                        name: item.name,
-                        coordinate: CLLocationCoordinate2D(latitude: item.lat, longitude: item.lon),
-                        isActive: item.isActive,
-                        city: item.city,
-                        address: item.address,
-                        descriptionText: item.descriptionText,
-                        photoName: item.photoName
-                    )
-                }
-                // Fit region to data (basic)
-                if let first = self.churches.first {
-                    self.region.center = first.coordinate
-                }
-                return
-            } catch {
-                print("[ChurchMap] Failed to decode churches.json: \(error)")
+        do {
+            let filename = "churches"
+            let lang = LocalPeopleStore.currentLangCode()
+            var url: URL?
+
+            // Пытаемся взять локализованный JSON
+            url = Bundle.main.url(forResource: filename, withExtension: "json", subdirectory: nil, localization: lang)
+
+            // Если не нашли, fallback на Base
+            if url == nil {
+                url = Bundle.main.url(forResource: filename, withExtension: "json")
             }
-        } else {
-            print("[ChurchMap] churches.json not found in bundle")
+
+            guard let url else {
+                print("[ChurchMap] File not found: \(filename).json (lang=\(lang))")
+                self.churches = []
+                return
+            }
+
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode([DecChurch].self, from: data)
+
+            self.churches = decoded.map { item in
+                Church(
+                    name: item.name,
+                    coordinate: CLLocationCoordinate2D(latitude: item.lat, longitude: item.lon),
+                    isActive: item.isActive,
+                    city: item.city,
+                    address: item.address,
+                    descriptionText: item.descriptionText,
+                    photoName: item.photoName
+                )
+            }
+
+            if let first = self.churches.first { self.region.center = first.coordinate }
+
+            let lproj = url.path.components(separatedBy: "/").first { $0.hasSuffix(".lproj") } ?? "<base>"
+            print("[ChurchMap] Loaded \(churches.count) from \(lproj)/\(filename).json")
+        } catch {
+            print("[ChurchMap] Failed to load churches: \(error)")
+            self.churches = []
         }
-        // Fallback to a tiny mock if JSON is missing
-        self.churches = [
-            Church(name: "Действующая церковь", coordinate: CLLocationCoordinate2D(latitude: 40.18, longitude: 44.51), isActive: true, city: nil),
-            Church(name: "Разрушенная церковь", coordinate: CLLocationCoordinate2D(latitude: 40.16, longitude: 44.49), isActive: false, city: nil)
-        ]
     }
 
     // Split heavy layout into smaller subtrees to help the type-checker
@@ -327,7 +367,7 @@ struct ChurchMapView: View {
         VStack(spacing: 10) {
             // Search
             SearchBar(text: $searchText)
-                .accessibilityLabel("Поиск по церквям")
+                .accessibilityLabel(L("search_churches"))
 
             // Suggestions under the search field
             if !searchResults.isEmpty {
@@ -395,7 +435,7 @@ struct ChurchMapView: View {
             }
 
             // Filter chips
-            Picker("Фильтр", selection: $filter) {
+            Picker("", selection: $filter) {
                 ForEach(ChurchFilter.allCases) { f in
                     Text(f.title).tag(f)
                 }
@@ -438,7 +478,7 @@ struct ChurchMapView: View {
             .onAppear { loadChurches() }
             // Let the map go under the home indicator, but keep the top area clean
             .ignoresSafeArea(.container, edges: [.bottom])
-            .navigationTitle("Карта церквей и святынь")
+            .navigationTitle(L("map_churches_and_shrines"))
             .navigationBarTitleDisplayMode(.inline)
             // Hide the default nav bar material/underline to avoid white/gray bands under the Dynamic Island
             .toolbarBackground(.hidden, for: .navigationBar)
@@ -448,4 +488,11 @@ struct ChurchMapView: View {
 
 extension Church {
     static func == (lhs: Church, rhs: Church) -> Bool { lhs.id == rhs.id }
+}
+
+private extension Array where Element: Hashable {
+    func uniqued() -> [Element] {
+        var seen = Set<Element>()
+        return self.filter { seen.insert($0).inserted }
+    }
 }

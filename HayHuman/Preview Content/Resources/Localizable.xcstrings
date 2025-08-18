@@ -4,186 +4,25 @@
     "" : {
 
     },
-    "\"search_business\"" : {
-      "extractionState" : "manual",
+    "active_church" : {
+      "comment" : "Active church",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "\"Search business"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"Որոնել բիզնեսում\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"Поиск по бизнесу\""
-          }
-        }
-      }
-    },
-    "\"search_culture\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search culture\""
+            "value" : "Active"
           }
         },
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "\"Որոնել մշակույթում\""
+            "value" : "Գործող եկեղեցի"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "\"Поиск по культуре\""
-          }
-        }
-      }
-    },
-    "\"search_military\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search military\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Որոնել զինվորական գործում\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Поиск по военному делу\""
-          }
-        }
-      }
-    },
-    "\"search_politics\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search politics\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Որոնել քաղաքականությունում\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Поиск по политике\""
-          }
-        }
-      }
-    },
-    "\"search_religion\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search religion\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Որոնել կրոնում\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Поиск по религии\""
-          }
-        }
-      }
-    },
-    "\"search_science\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search science and education\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Որոնել գիտության և կրթության մեջ\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Поиск по науке и образованию\""
-          }
-        }
-      }
-    },
-    "\"search_sport\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Search sport\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Որոնել սպորտում\""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : " \"Поиск по спорту\""
-          }
-        }
-      }
-    },
-    "\"support_project\"" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Support the project\""
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Աջակցել նախագծին"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"Поддержать проект\""
+            "value" : "Действующая"
           }
         }
       }
@@ -299,6 +138,72 @@
         }
       }
     },
+    "filter_active" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Գործող"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Действующие"
+          }
+        }
+      }
+    },
+    "filter_all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Բոլորը"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "filter_inactive" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lost"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կորցրած"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Утраченные"
+          }
+        }
+      }
+    },
     "history_today" : {
       "comment" : "Today in history tag",
       "localizations" : {
@@ -347,6 +252,29 @@
         }
       }
     },
+    "lost_church" : {
+      "comment" : "Lost/destroyed church",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lost"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կորցրած եկեղեցի"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Утрачено"
+          }
+        }
+      }
+    },
     "map" : {
       "comment" : "Map of churches and shrines",
       "localizations" : {
@@ -359,7 +287,29 @@
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Տաճարների և սրբավայրերի քարտեզ"
+            "value" : "Եկեղեցիների և սրբավայրերի քարտեզ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карта церквей и святынь"
+          }
+        }
+      }
+    },
+    "map_churches_and_shrines" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map of churches and shrines"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցիների և սրբավայրերի քարտեզ"
           }
         },
         "ru" : {
@@ -394,7 +344,20 @@
       }
     },
     "open_in_maps" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in Maps"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Բացել քարտեզներում"
+          }
+        }
+      }
     },
     "politics" : {
       "extractionState" : "manual",
@@ -528,6 +491,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск по бизнесу"
+          }
+        }
+      }
+    },
+    "search_churches" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search churches"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցիների որոնում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск по церквям"
           }
         }
       }
@@ -711,62 +696,349 @@
       }
     },
     "Адрес" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հասցե"
+          }
+        }
+      }
     },
     "Адрес появится позже" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address will appear later"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հասցեն կհայտնվի ավելի ուշ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Адрес появится позже"
+          }
+        }
+      }
     },
     "Действующая" : {
-      "comment" : "Active church"
-    },
-    "Закрыть" : {
-
+      "comment" : "Active church",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Գործող"
+          }
+        }
+      }
     },
     "Карта церквей и святынь" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map of churches and shrines"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցիների և սրբավայրերի քարտեզ"
+          }
+        }
+      }
     },
     "Координаты" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coordinates"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կոորդինատներ"
+          }
+        }
+      }
     },
     "Описание" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Նկարագրություն"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
     },
-    "Открыть в «Картах»" : {
-
+    "Открыть это место в «Картах»" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open this place in Maps"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Բացել այս վայրը «Քարտեզներում»"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть это место в «Картах»"
+          }
+        }
+      }
+    },
+    "Поддержать проект" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support the project"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Աջակցել նախագծին"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержать проект"
+          }
+        }
+      }
+    },
+    "Поддержать проект в Donationalerts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support the project on Donationalerts"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Աջակցել նախագծին Donationalerts-ում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержать проект в Donationalerts"
+          }
+        }
+      }
     },
     "Поиск по церквям" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search by churches"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցիների որոնում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск по церквям"
+          }
+        }
+      }
+    },
+    "Посмотреть на карте" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View on map"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Դիտել քարտեզի վրա"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Посмотреть на карте"
+          }
+        }
+      }
     },
     "Профиль церкви" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Church profile"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցու պրոֆիլ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль церкви"
+          }
+        }
+      }
     },
     "Русский" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Russian"
+            "value" : "Русский"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Русский"
           }
         }
       }
     },
     "Текст описания будет добавлен позже." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description text will be added later."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Նկարագրության տեքստը կհավելվի ավելի ուշ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст описания будет добавлен позже"
+          }
+        }
+      }
     },
     "Утраченная" : {
-      "comment" : "Lost/destroyed church"
+      "comment" : "Lost/destroyed church",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lost"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կորցրած"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Утраченная церковь"
+          }
+        }
+      }
     },
     "Фильтр" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ֆիլտր"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтр"
+          }
+        }
+      }
     },
     "Фото появится позже" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo will appear later"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Լուսանկարը կհայտնվի ավելի ուշ"
+          }
+        }
+      }
     },
     "Հայերեն" : {
 

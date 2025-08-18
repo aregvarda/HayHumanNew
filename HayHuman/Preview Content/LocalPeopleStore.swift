@@ -23,15 +23,71 @@ enum PeopleFile {
 }
 
 enum LocalPeopleStore {
+    /// Current 2-letter language code (from app settings or system fallback)
+    static func currentLangCode() -> String {
+        // 1) explicit app setting
+        if let saved = UserDefaults.standard.string(forKey: "appLanguage"), !saved.isEmpty {
+            if saved.hasPrefix("en") { return "en" }
+            if saved.hasPrefix("ru") { return "ru" }
+            if saved.hasPrefix("hy") { return "hy" }
+        }
+        // 2) system languages
+        for id in Locale.preferredLanguages {
+            if id.hasPrefix("en") { return "en" }
+            if id.hasPrefix("ru") { return "ru" }
+            if id.hasPrefix("hy") { return "hy" }
+        }
+        // 3) base fallback
+        return "Base"
+    }
+
     /// Загрузить одну секцию из бандла
     static func load(section: ArmenianSection) -> [Person] {
         if section == .all { return loadAll() }
 
         let name = PeopleFile.filename(for: section)
-        guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
+        let lang = currentLangCode()
+        var data: Data?
+        var usedLocalization: String = "<none>"
+
+        // Try localized files in priority order: selected, then en/ru/hy
+        let candidates: [String] = {
+            var arr: [String] = []
+            arr.append(lang)
+            if !arr.contains("en") { arr.append("en") }
+            if !arr.contains("ru") { arr.append("ru") }
+            if !arr.contains("hy") { arr.append("hy") }
+            return arr
+        }()
+
+        for code in candidates where code != "Base" {
+            if let url = Bundle.main.url(forResource: name,
+                                         withExtension: "json",
+                                         subdirectory: nil,
+                                         localization: code),
+               let d = try? Data(contentsOf: url) {
+                data = d
+                usedLocalization = "\(code).lproj"
+                print("[People] Loaded \(name).json from \(usedLocalization)")
+                break
+            } else {
+                print("[People] Miss \(name).json for lang=\(code)")
+            }
+        }
+
+        // Final fallback — unlocalized (Base)
+        if data == nil {
+            if let url = Bundle.main.url(forResource: name, withExtension: "json"),
+               let d = try? Data(contentsOf: url) {
+                data = d
+                usedLocalization = "Base (unlocalized)"
+                print("[People] Loaded \(name).json from \(usedLocalization)")
+            }
+        }
+
+        guard let data = data,
               let decoded = try? JSONDecoder().decode([Person].self, from: data) else {
-            print("⚠️ Не удалось загрузить \(name).json")
+            print("⚠️ [People] Failed to load \(name).json (lang=\(lang))")
             return []
         }
         return decoded

@@ -18,6 +18,8 @@ struct HayHumanApp: App {
                 .environment(\.locale, lang.current.locale)
                 // Делаем менеджер доступным во всём дереве вью
                 .environmentObject(lang)
+                // Форсируем пересоздание корневого экрана при смене языка
+                .id(lang.current.rawValue)
         }
     }
 }

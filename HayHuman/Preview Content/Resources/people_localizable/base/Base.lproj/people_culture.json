@@ -1,0 +1,38 @@
+[
+{
+  "name": "Komitas",
+  "subtitle": "Composer, ethnomusicologist",
+  "section": "culture",
+  "imageName": "komitas",
+  "birthCity": "Kütahya",
+  "birthCountry": "Ottoman Empire",
+  "birthLat": 39.424,
+  "birthLon": 29.983,
+  "bio": "Komitas (Soghomon Soghomonyan) — the founder of the Armenian national school of music...",
+  "birthYear": 1869
+},
+{
+  "name": "Khachatur Abovyan",
+  "subtitle": "Writer, educator",
+  "section": "culture",
+  "imageName": "abovian",
+  "birthCity": "Kanaker",
+  "birthCountry": "Russian Empire",
+  "birthLat": 40.206,
+  "birthLon": 44.532,
+  "bio": "Author of the first novel in modern Armenian literary language...",
+  "birthYear": 1809
+},
+{
+  "name": "Martiros Saryan",
+  "subtitle": "Painter",
+  "section": "culture",
+  "imageName": "saryan",
+  "birthCity": "Nakhichevan-on-Don",
+  "birthCountry": "Russian Empire",
+  "birthLat": 47.218,
+  "birthLon": 39.702,
+  "bio": "One of the founders of the Armenian school of painting in the 20th century...",
+  "birthYear": 1880
+}
+]

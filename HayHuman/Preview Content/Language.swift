@@ -1,4 +1,9 @@
+
 import SwiftUI
+
+extension Notification.Name {
+    static let appLanguageChanged = Notification.Name("appLanguageChanged")
+}
 
 /// Supported app languages.
 enum AppLanguage: String, CaseIterable, Identifiable {
@@ -29,12 +34,19 @@ final class LanguageManager: ObservableObject {
     @AppStorage("appLanguage") private var stored = AppLanguage.ru.rawValue
 
     @Published var current: AppLanguage = .ru {
-        didSet { stored = current.rawValue }
+        didSet {
+            stored = current.rawValue
+            UserDefaults.standard.set(current.rawValue, forKey: "appLanguage")
+            NotificationCenter.default.post(name: .appLanguageChanged, object: current.rawValue)
+        }
     }
 
     init() {
         current = AppLanguage(rawValue: stored) ?? .ru
     }
+
+    /// Two-letter code for current language ("ru" / "en" / "hy")
+    var currentCode: String { current.rawValue }
 
     /// Optional helper to cycle RU → EN → HY → RU
     func cycle() {
