@@ -1,0 +1,9 @@
+//
+//  InfoPlist.strings
+//  HayHuman
+//
+//  Created by Арег Варданян on 18.08.2025.
+//
+
+"NSLocationWhenInUseUsageDescription" = "We use your location to show the nearest churches.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Your location is used to find churches near you.";

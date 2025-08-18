@@ -1,0 +1,9 @@
+//
+//  InfoPlist.strings
+//  HayHuman
+//
+//  Created by Арег Варданян on 18.08.2025.
+//
+
+"NSLocationWhenInUseUsageDescription" = "Мы используем вашу геолокацию, чтобы показать ближайшие церкви.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Геолокация используется для нахождения храмов рядом с вами.";

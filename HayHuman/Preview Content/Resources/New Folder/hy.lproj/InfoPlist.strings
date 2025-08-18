@@ -1,0 +1,9 @@
+//
+//  InfoPlist.strings
+//  HayHuman
+//
+//  Created by Арег Варданян on 18.08.2025.
+//
+
+"NSLocationWhenInUseUsageDescription" = "Մենք օգտագործում ենք ձեր տեղադրությունը՝ մոտակա եկեղեցիները ցույց տալու համար։";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Ձեր տեղադրությունը օգտագործվում է ձեր շրջակայքում եկեղեցիներ գտնելու համար։";

@@ -88,5 +88,32 @@
     "address": "Etchmiadzin, Armavir Province, Armenia",
     "description": "Zvartnots Cathedral, built in the 7th century under Catholicos Nerses III, was one of the most magnificent churches of early medieval Armenia. Destroyed by an earthquake in the 10th century, its ruins are a UNESCO World Heritage Site.",
     "photoName": "zvartnots"
+  },
+  {
+    "name": "Armenian Cathedral of Moscow (Surb Harutyun)",
+    "lat": 55.7882,
+    "lon": 37.6213,
+    "isActive": true,
+    "address": "Moscow, Russia",
+    "description": "Armenian Cathedral of Moscow — Surb Harutyun, consecrated in 2013, is the largest Armenian church in Russia and the spiritual center of the community.",
+    "photoName": "moscow_surharutyun"
+  },
+  {
+    "name": "St. Vartan Armenian Cathedral (New York)",
+    "lat": 40.7481,
+    "lon": -73.9769,
+    "isActive": true,
+    "address": "New York, USA",
+    "description": "St. Vartan Cathedral is the main Armenian church in New York, consecrated in 1968. It serves as the center of the Armenian Apostolic Church in the USA.",
+    "photoName": "ny_stvartan"
+  },
+  {
+    "name": "St. Gregory the Illuminator Church (Glendale)",
+    "lat": 34.1526,
+    "lon": -118.2468,
+    "isActive": true,
+    "address": "Glendale, California, USA",
+    "description": "St. Gregory the Illuminator Church in Glendale is one of the largest Armenian churches in California and the spiritual center of the local community.",
+    "photoName": "glendale_stgregory"
   }
 ]

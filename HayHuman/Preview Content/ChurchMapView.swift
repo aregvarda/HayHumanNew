@@ -11,6 +11,47 @@ import Foundation
 
 import SwiftUI
 import MapKit
+import CoreLocation
+
+// MARK: - Location Manager (nearest church support)
+final class HHLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var lastLocation: CLLocation?
+    @Published var status: CLAuthorizationStatus = .notDetermined
+
+    private let manager = CLLocationManager()
+
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    }
+
+    func request() {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.startUpdatingLocation()
+        case .restricted, .denied:
+            break
+        @unknown default:
+            break
+        }
+    }
+
+    // MARK: CLLocationManagerDelegate
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        status = manager.authorizationStatus
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            manager.startUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let loc = locations.last else { return }
+        lastLocation = loc
+    }
+}
 
 private func L(_ key: String) -> LocalizedStringKey { LocalizedStringKey(key) }
 
@@ -68,6 +109,21 @@ struct ChurchMapView: View {
     @State private var selectedChurch: Church? = nil
     @State private var navTarget: Church? = nil
     @State private var searchText: String = ""
+    @StateObject private var locationManager = HHLocationManager()
+    @State private var didAutoCenter = false
+    @State private var allowAutoLock = false
+
+    @SceneStorage("HHMap.didFreshInit") private var didFreshInit: Bool = false
+
+    // Persist map region & user intent across pushes so we return where user left off
+    @SceneStorage("HHMap.centerLat") private var storedCenterLat: Double = 0
+    @SceneStorage("HHMap.centerLon") private var storedCenterLon: Double = 0
+    @SceneStorage("HHMap.spanLat") private var storedSpanLat: Double = 0
+    @SceneStorage("HHMap.spanLon") private var storedSpanLon: Double = 0
+    @SceneStorage("HHMap.userLocked") private var userLockedRegion: Bool = false
+
+    // City-scale span for first auto-centering (show whole city around user)
+    private let citySpan = MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
 
     private var searchResults: [Church] {
         let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
@@ -77,6 +133,17 @@ struct ChurchMapView: View {
             return hay.contains(q)
         }
         return Array(results.prefix(6))
+    }
+
+    // Center map to church location WITHOUT selecting it (no sheet)
+    private func center(on church: Church) {
+        let target = MKCoordinateRegion(
+            center: church.coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        )
+        withAnimation(.easeInOut) {
+            region = target
+        }
     }
 
     private func focus(on church: Church) {
@@ -89,6 +156,68 @@ struct ChurchMapView: View {
             region = target
             selectedChurch = church
         }
+    }
+
+    private func nearestChurch(to coordinate: CLLocationCoordinate2D) -> Church? {
+        guard !churches.isEmpty else { return nil }
+        let target = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        var best: (Church, CLLocationDistance)? = nil
+        for ch in churches {
+            let d = target.distance(from: CLLocation(latitude: ch.coordinate.latitude,
+                                                    longitude: ch.coordinate.longitude))
+            if let current = best {
+                if d < current.1 { best = (ch, d) }
+            } else {
+                best = (ch, d)
+            }
+        }
+        return best?.0
+    }
+
+    // MARK: - Zoom helpers (big steps)
+    private func zoom(by factor: Double) {
+        withAnimation(.easeInOut) {
+            let lat = max(min(region.span.latitudeDelta * factor, 80), 0.0003)
+            let lon = max(min(region.span.longitudeDelta * factor, 80), 0.0003)
+            region = MKCoordinateRegion(center: region.center,
+                                        span: MKCoordinateSpan(latitudeDelta: lat,
+                                                               longitudeDelta: lon))
+        }
+    }
+
+    private func zoomInBig() {
+        // 4x closer per tap
+        zoom(by: 0.25)
+    }
+
+    private func zoomOutBig() {
+        // 4x farther per tap
+        zoom(by: 4.0)
+    }
+
+    // MARK: - Region persistence helpers
+    private func restoreRegionIfAvailable() -> Bool {
+        // If we have a previously saved region, restore it and tell caller we did
+        guard storedSpanLat > 0, storedSpanLon > 0 else { return false }
+        let restored = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: storedCenterLat, longitude: storedCenterLon),
+            span: MKCoordinateSpan(latitudeDelta: storedSpanLat, longitudeDelta: storedSpanLon)
+        )
+        region = restored
+        return true
+    }
+
+    private func saveCurrentRegion() {
+        storedCenterLat = region.center.latitude
+        storedCenterLon = region.center.longitude
+        storedSpanLat = region.span.latitudeDelta
+        storedSpanLon = region.span.longitudeDelta
+    }
+
+    private func saveAndLockRegion() {
+        guard allowAutoLock else { return }
+        saveCurrentRegion()
+        userLockedRegion = true
     }
 
     init() {
@@ -331,7 +460,7 @@ struct ChurchMapView: View {
                 )
             }
 
-            if let first = self.churches.first { self.region.center = first.coordinate }
+            // (removed auto-centering to first church)
 
             let lproj = url.path.components(separatedBy: "/").first { $0.hasSuffix(".lproj") } ?? "<base>"
             print("[ChurchMap] Loaded \(churches.count) from \(lproj)/\(filename).json")
@@ -354,7 +483,7 @@ struct ChurchMapView: View {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(church.isActive ? .purple : .black)
-                        .frame(width: 42, height: 42)
+                        .frame(width: 32, height: 32)
                         .scaleEffect(selectedChurch == church ? 1.15 : 1.0)
                         .animation(.spring(response: 0.25, dampingFraction: 0.7), value: selectedChurch == church)
                 }
@@ -463,9 +592,35 @@ struct ChurchMapView: View {
                     topOverlay
                 }
             }
+            .overlay(alignment: .bottomTrailing) {
+                VStack(spacing: 10) {
+                    Button(action: zoomInBig) {
+                        Image(systemName: "plus.magnifyingglass")
+                            .font(.system(size: 20, weight: .semibold))
+                            .padding(14)
+                            .background(.regularMaterial)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button(action: zoomOutBig) {
+                        Image(systemName: "minus.magnifyingglass")
+                            .font(.system(size: 20, weight: .semibold))
+                            .padding(14)
+                            .background(.regularMaterial)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.trailing, 14)
+                .padding(.bottom, 48)
+                .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
+            }
             .sheet(item: $selectedChurch) { church in
                 PreviewCard(church: church) {
-                    // open profile
+                    // Lock current region so coming back restores this viewpoint
+                    saveCurrentRegion()
+                    userLockedRegion = true
                     selectedChurch = nil
                     navTarget = church
                 }
@@ -475,13 +630,62 @@ struct ChurchMapView: View {
             .navigationDestination(item: $navTarget) { church in
                 ChurchDetailView(church: church)
             }
-            .onAppear { loadChurches() }
+            .onAppear {
+                // Fresh entry from Home only once per session
+                if !didFreshInit {
+                    userLockedRegion = false
+                    didAutoCenter = false
+                    allowAutoLock = false
+                    storedSpanLat = 0
+                    storedSpanLon = 0
+                }
+                loadChurches()
+                locationManager.request()
+
+                // Try to restore where the user left the map last time
+                if restoreRegionIfAvailable() {
+                    // If we restored a region, don't auto-center away from it
+                    didAutoCenter = true
+                } else if !userLockedRegion, let loc = locationManager.lastLocation {
+                    // First run and no stored region — center around the NEAREST CHURCH to the user's location at city scale
+                    let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
+                    withAnimation(.easeInOut) {
+                        region = MKCoordinateRegion(
+                            center: targetCoord,
+                            span: citySpan
+                        )
+                    }
+                    didAutoCenter = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    allowAutoLock = true
+                }
+                didFreshInit = true
+            }
+            .onChange(of: locationManager.lastLocation) { newLocation in
+                guard let loc = newLocation else { return }
+                // Center once to the nearest church to the user's location (city-scale)
+                if !didAutoCenter && !userLockedRegion && selectedChurch == nil {
+                    let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
+                    withAnimation(.easeInOut) {
+                        region = MKCoordinateRegion(
+                            center: targetCoord,
+                            span: citySpan
+                        )
+                    }
+                    didAutoCenter = true
+                }
+            }
             // Let the map go under the home indicator, but keep the top area clean
             .ignoresSafeArea(.container, edges: [.bottom])
             .navigationTitle(L("map_churches_and_shrines"))
             .navigationBarTitleDisplayMode(.inline)
             // Hide the default nav bar material/underline to avoid white/gray bands under the Dynamic Island
             .toolbarBackground(.hidden, for: .navigationBar)
+            .onChange(of: region.center.latitude) { _, _ in saveAndLockRegion() }
+            .onChange(of: region.center.longitude) { _, _ in saveAndLockRegion() }
+            .onChange(of: region.span.latitudeDelta) { _, _ in saveAndLockRegion() }
+            .onChange(of: region.span.longitudeDelta) { _, _ in saveAndLockRegion() }
     }
 }
 
