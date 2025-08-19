@@ -90,13 +90,13 @@
     "photoName": "zvartnots"
   },
   {
-    "name": "Armenian Cathedral of Moscow (Surb Harutyun)",
-    "lat": 55.7882,
-    "lon": 37.6213,
-    "isActive": true,
-    "address": "Moscow, Russia",
-    "description": "Armenian Cathedral of Moscow — Surb Harutyun, consecrated in 2013, is the largest Armenian church in Russia and the spiritual center of the community.",
-    "photoName": "moscow_surharutyun"
+      "name": "Cathedral of the Holy Resurrection (Surb Harutyun)",
+      "lat": 55.7882,
+      "lon": 37.6213,
+      "isActive": true,
+      "address": "Moscow, Russia",
+      "description": "The Cathedral of the Holy Resurrection (Surb Harutyun), consecrated in 2013, is the main church of the Armenian Apostolic Church in Russia and the spiritual center of the community.",
+      "photoName": "moscow_surharutyun"
   },
   {
     "name": "St. Vartan Armenian Cathedral (New York)",

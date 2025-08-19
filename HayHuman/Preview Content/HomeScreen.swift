@@ -495,7 +495,117 @@ struct MapScreen: View {
             .navigationBarTitleDisplayMode(.inline)
     }
 }
-struct ContactsScreen: View { var body: some View { Text(LocalizedStringKey("contacts")).padding() } }
+struct ContactsScreen: View {
+    @Environment(\.openURL) private var openURL
+
+    private let corner: CGFloat = 20
+    private let cardStroke = Color.black.opacity(0.12)
+    private let primaryGradient = LinearGradient(colors: [Color.purple.opacity(0.9), Color.purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                // Intro card
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Здравствуйте!\nМеня зовут Варданян Арег, я сын священника и учительницы.")
+                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен.")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("По вопросам сотрудничества, а также для замечаний и пожеланий вы можете связаться со мной по указанным контактам.")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(16)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: corner))
+                .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
+                .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+                .padding(.horizontal)
+
+                // Buttons
+                VStack(spacing: 12) {
+                    Button {
+                        if let url = URL(string: "https://t.me/aregvarda") { openURL(url) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "paperplane.fill")
+                            Text("Написать в Telegram")
+                                .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        }
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color(uiColor: .systemGray6))
+                        .clipShape(RoundedRectangle(cornerRadius: corner))
+                        .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        if let url = URL(string: "mailto:aregvarda@yandex.ru") { openURL(url) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "envelope.fill")
+                            Text("Написать на почту")
+                                .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        }
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color(uiColor: .systemGray6))
+                        .clipShape(RoundedRectangle(cornerRadius: corner))
+                        .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        if let url = URL(string: "https://www.donationalerts.com/r/hayhuman") { openURL(url) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "heart.fill")
+                            Text(LocalizedStringKey("support_project"))
+                                .font(.system(size: 18, weight: .bold, design: .rounded))
+                        }
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(primaryGradient)
+                        .clipShape(RoundedRectangle(cornerRadius: corner))
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal)
+
+                // Photo at bottom
+                VStack(spacing: 8) {
+                    Image("areg")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity)
+                        .clipShape(RoundedRectangle(cornerRadius: corner))
+                        .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
+                        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+                    Text("Арег Варданян")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.top, 24)
+                .padding(.horizontal)
+
+                Spacer(minLength: 24)
+            }
+            .padding(.top, 12)
+            .padding(.bottom, 72)
+        }
+        .background(pageBG.ignoresSafeArea())
+        .navigationTitle(LocalizedStringKey("contacts"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
 struct EventsScreen: View { var body: some View { StoriesView() } }
 
 

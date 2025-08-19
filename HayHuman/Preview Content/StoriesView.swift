@@ -126,22 +126,18 @@ struct StoriesView: View {
                 .padding(.top, 6)
 
                 // Карточки событий
-                GeometryReader { proxy in
-                    let contentWidth = max(proxy.size.width, 0)
-                    LazyVStack(spacing: 14) {
-                        ForEach(sortedStories) { story in
-                            NavigationLink {
-                                StoryDetailView(story: story, allStories: sortedStories)
-                            } label: {
-                                StoryCard(story: story)
-                                    .frame(width: contentWidth)
-                            }
-                            .buttonStyle(.plain)
+                LazyVStack(spacing: 14) {
+                    ForEach(sortedStories) { story in
+                        NavigationLink {
+                            StoryDetailView(story: story, allStories: sortedStories)
+                        } label: {
+                            StoryCard(story: story)
+                                .frame(maxWidth: .infinity)
                         }
+                        .buttonStyle(.plain)
                     }
-                    .padding(.bottom, 20)
                 }
-                .frame(maxWidth: .infinity)
+                .padding(.bottom, 20)
             }
             .padding(.horizontal, 16)
         }

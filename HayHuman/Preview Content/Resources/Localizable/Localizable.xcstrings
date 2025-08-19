@@ -88,15 +88,21 @@
     },
     "churches_section" : {
       "localizations" : {
-        "hy" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Churches section"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Եկեղեցիների բաժին"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Раздел церквей"
           }
         }
@@ -898,6 +904,22 @@
         }
       }
     },
+    "Арег Варданян" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Areg Vardanyan"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Վարդանյան Արեգ "
+          }
+        }
+      }
+    },
     "Действующая" : {
       "comment" : "Active church",
       "extractionState" : "stale",
@@ -940,6 +962,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закрыть"
+          }
+        }
+      }
+    },
+    "Здравствуйте!\nМеня зовут Варданян Арег, я сын священника и учительницы." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello! \nMy name is Areg Vardanyan, \nI am the son of a priest and a teacher."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Բարեւ ձեզ։ \nԻմ անունը Վարդանյան Արեգ է, ես քահանայի և ուսուցչուհու որդին եմ։"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Здравствуйте!\nМеня зовут Варданян Арег, я сын священника и учительницы."
           }
         }
       }
@@ -989,6 +1033,50 @@
         }
       }
     },
+    "Написать в Telegram" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write on Telegram"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Գրել Telegram-ում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Написать в Telegram"
+          }
+        }
+      }
+    },
+    "Написать на почту" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write an email"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Գրել էլ․ փոստով"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Написать на почту"
+          }
+        }
+      }
+    },
     "Описание" : {
       "localizations" : {
         "en" : {
@@ -1029,6 +1117,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Открыть это место в «Картах»"
+          }
+        }
+      }
+    },
+    "По вопросам сотрудничества, а также для замечаний и пожеланий вы можете связаться со мной по указанным контактам." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For cooperation, as well as for comments and suggestions, you can contact me using the details provided."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Համագործակցության, ինչպես նաև առաջարկությունների և դիտողությունների համար կարող եք կապ հաստատել ինձ հետ նշված կոնտակտներով։"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По вопросам сотрудничества, а также для замечаний и пожеланий вы можете связаться со мной по указанным контактам."
           }
         }
       }
@@ -1313,6 +1423,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фото появится позже"
+          }
+        }
+      }
+    },
+    "Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This application was created by me with the blessing of the Russian and Novo-Nakhichevan Diocese of the Armenian Apostolic Church. \nIts foundation is the desire to preserve what is especially important to me: faith, culture, and memory.\n\nIf it has proven useful to you, then the effort was not in vain."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Այս հավելվածը ստեղծվել է իմ կողմից՝ Հայ Առաքելական Եկեղեցու Ռուսաստանի և Նոր Նախիջևանի թեմի օրհնությամբ։ Դրա հիմքում այն ցանկությունն է՝ պահպանել այն, ինչը ինձ համար հատկապես կարևոր է՝ հավատքը, մշակույթը և հիշողությունը։\n\nԵթե այն օգտակար է եղել ձեզ համար, ուրեմն ջանքը զուր չի եղել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
           }
         }
       }
