@@ -1,40 +1,38 @@
-
-
 [
   {
-    "name": "Калуст Гюльбенкян",
-    "subtitle": "Предприниматель и филантроп",
+    "name": "Calouste Gulbenkian",
+    "subtitle": "Entrepreneur and philanthropist",
     "section": "Бизнес",
     "imageName": "gulbenkian",
-    "birthCity": "Константинополь",
-    "birthCountry": "Османская империя",
+    "birthCity": "Constantinople",
+    "birthCountry": "Ottoman Empire",
     "birthLat": 41.0082,
     "birthLon": 28.9784,
     "birthYear": 1869,
-    "bio": "Калуст Саркис Гюльбенкян — армяно-британский предприниматель, известный как 'мистер пять процентов'. Крупный благотворитель и коллекционер искусства."
+    "bio": "Calouste Sarkis Gulbenkian — an Armenian-British entrepreneur, known as 'Mr. Five Percent'. A major philanthropist and art collector."
   },
   {
-    "name": "Александр Манташев",
-    "subtitle": "Нефтепромышленник и меценат",
+    "name": "Alexander Mantashev",
+    "subtitle": "Oil industrialist and benefactor",
     "section": "Бизнес",
     "imageName": "mantashev",
-    "birthCity": "Тифлис",
-    "birthCountry": "Российская империя",
+    "birthCity": "Tiflis",
+    "birthCountry": "Russian Empire",
     "birthLat": 41.7151,
     "birthLon": 44.8271,
     "birthYear": 1842,
-    "bio": "Александр (Алексан) Манташев — один из крупнейших нефтепромышленников начала XX века и выдающийся меценат армянской общины."
+    "bio": "Alexander (Aleksan) Mantashev — one of the largest oil industrialists of the early 20th century and an outstanding benefactor of the Armenian community."
   },
   {
-    "name": "Кирк Керкорян",
-    "subtitle": "Предприниматель, инвестор",
+    "name": "Kirk Kerkorian",
+    "subtitle": "Entrepreneur, investor",
     "section": "Бизнес",
     "imageName": "kerkorian",
-    "birthCity": "Фресно",
-    "birthCountry": "США",
+    "birthCity": "Fresno",
+    "birthCountry": "USA",
     "birthLat": 36.7378,
     "birthLon": -119.7871,
     "birthYear": 1917,
-    "bio": "Кирк Керкорян — американский предприниматель армянского происхождения, один из создателей современного Лас‑Вегаса, благотворитель."
+    "bio": "Kirk Kerkorian — an American entrepreneur of Armenian descent, one of the creators of modern Las Vegas, and a philanthropist."
   }
 ]

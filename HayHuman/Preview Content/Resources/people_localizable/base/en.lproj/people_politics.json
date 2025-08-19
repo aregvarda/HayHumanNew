@@ -1,40 +1,38 @@
-
-
 [
   {
-    "name": "Арам Манукян",
-    "subtitle": "Один из основателей Первой Республики Армения",
-    "section": "Политика",
+    "name": "Aram Manukyan",
+    "subtitle": "One of the founders of the First Republic of Armenia",
+    "section": "Politics",
     "imageName": "aram_manukyan",
-    "birthCity": "Зейва",
-    "birthCountry": "Российская империя",
+    "birthCity": "Zeyva",
+    "birthCountry": "Russian Empire",
     "birthLat": 40.75,
     "birthLon": 44.87,
-    "bio": "Арам Манукян — армянский государственный деятель, один из основателей Первой Республики Армения.",
+    "bio": "Aram Manukyan was an Armenian statesman, one of the founders of the First Republic of Armenia.",
     "birthYear": 1879
   },
   {
-    "name": "Ованес Каджазнуни",
-    "subtitle": "Первый премьер-министр Армении",
-    "section": "Политика",
+    "name": "Hovhannes Katchaznouni",
+    "subtitle": "First Prime Minister of Armenia",
+    "section": "Politics",
     "imageName": "katchaznouni",
-    "birthCity": "Ахалкалаки",
-    "birthCountry": "Российская империя",
+    "birthCity": "Akhaltsikhe",
+    "birthCountry": "Russian Empire",
     "birthLat": 41.405,
     "birthLon": 43.486,
-    "bio": "Ованес Каджазнуни — первый премьер-министр Первой Республики Армения.",
+    "bio": "Hovhannes Katchaznouni was the first Prime Minister of the First Republic of Armenia.",
     "birthYear": 1868
   },
   {
-    "name": "Левон Тер-Петросян",
-    "subtitle": "Первый президент республики Армения",
-    "section": "Политика",
+    "name": "Levon Ter-Petrosyan",
+    "subtitle": "First President of the Republic of Armenia",
+    "section": "Politics",
     "imageName": "ter_petrosyan",
-    "birthCity": "Алеппо",
-    "birthCountry": "Сирия",
+    "birthCity": "Aleppo",
+    "birthCountry": "Syria",
     "birthLat": 36.2,
     "birthLon": 37.16,
-    "bio": "Левон Тер-Петросян — первый президент независимой Республики Армения (1991–1998).",
+    "bio": "Levon Ter-Petrosyan was the first President of the independent Republic of Armenia (1991–1998).",
     "birthYear": 1945
   }
 ]

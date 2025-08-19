@@ -2,7 +2,7 @@
   {
     "name": "Гарегин Нжде",
     "subtitle": "Военный и политический деятель",
-    "section": "Военное дело",
+    "section": "Military",
     "imageName": "nzhdeh",
     "birthCity": "Нахичевань",
     "birthCountry": "Российская империя",
@@ -14,7 +14,7 @@
   {
     "name": "Канаян Дро",
     "subtitle": "Военный лидер",
-    "section": "Военное дело",
+    "section": "Military",
     "imageName": "dro",
     "birthCity": "Игдыр",
     "birthCountry": "Османская империя",
@@ -26,7 +26,7 @@
   {
     "name": "Мелконян Монте",
     "subtitle": "Командир, национальный герой Армении",
-    "section": "Военное дело",
+    "section": "Military",
     "imageName": "melkonian",
     "birthCity": "Висалия",
     "birthCountry": "США",

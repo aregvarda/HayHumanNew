@@ -4,7 +4,7 @@
   {
     "name": "Григор Нарекаци",
     "subtitle": "Армянский поэт, богослов и святой",
-    "section": "Религия",
+    "section": "Religion",
     "imageName": "narekatsi",
     "birthCity": "Нарек",
     "birthCountry": "Армения",
@@ -16,7 +16,7 @@
   {
     "name": "Месроп Маштоц",
     "subtitle": "Создатель армянского алфавита, святой",
-    "section": "Религия",
+    "section": "Religion",
     "imageName": "mashtots",
     "birthCity": "Аштишат",
     "birthCountry": "Армения",
@@ -28,7 +28,7 @@
   {
     "name": "Саак Партев",
     "subtitle": "Католикос всех армян",
-    "section": "Религия",
+    "section": "Religion",
     "imageName": "sahak_partev",
     "birthCity": "Ервандашат",
     "birthCountry": "Армения",

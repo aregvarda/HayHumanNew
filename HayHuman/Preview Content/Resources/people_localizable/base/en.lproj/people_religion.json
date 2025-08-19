@@ -1,40 +1,38 @@
-
-
 [
   {
-    "name": "Григор Нарекаци",
-    "subtitle": "Армянский поэт, богослов и святой",
-    "section": "Религия",
+    "name": "Grigor Narekatsi",
+    "subtitle": "Armenian poet, theologian and saint",
+    "section": "Religion",
     "imageName": "narekatsi",
-    "birthCity": "Нарек",
-    "birthCountry": "Армения",
+    "birthCity": "Narek",
+    "birthCountry": "Armenia",
     "birthLat": 39.5469,
     "birthLon": 43.0087,
     "birthYear": 951,
-    "bio": "Один из величайших армянских богословов и поэтов, автор «Книги скорбных песнопений», святой Армянской Апостольской церкви."
+    "bio": "One of the greatest Armenian theologians and poets, author of the 'Book of Lamentations', saint of the Armenian Apostolic Church."
   },
   {
-    "name": "Месроп Маштоц",
-    "subtitle": "Создатель армянского алфавита, святой",
-    "section": "Религия",
+    "name": "Mesrop Mashtots",
+    "subtitle": "Creator of the Armenian alphabet, saint",
+    "section": "Religion",
     "imageName": "mashtots",
-    "birthCity": "Аштишат",
-    "birthCountry": "Армения",
+    "birthCity": "Ashtishat",
+    "birthCountry": "Armenia",
     "birthLat": 39.6900,
     "birthLon": 42.0700,
     "birthYear": 362,
-    "bio": "Армянский просветитель, монах и лингвист, создатель армянского алфавита и деятель церкви, причислен к святым."
+    "bio": "Armenian enlightener, monk and linguist, creator of the Armenian alphabet and church figure, canonized as a saint."
   },
   {
-    "name": "Саак Партев",
-    "subtitle": "Католикос всех армян",
-    "section": "Религия",
+    "name": "Sahak Partev",
+    "subtitle": "Catholicos of All Armenians",
+    "section": "Religion",
     "imageName": "sahak_partev",
-    "birthCity": "Ервандашат",
-    "birthCountry": "Армения",
+    "birthCity": "Yervandashat",
+    "birthCountry": "Armenia",
     "birthLat": 40.1333,
     "birthLon": 43.8833,
     "birthYear": 348,
-    "bio": "Католикос Армянской Апостольской Церкви (387–436), деятель, сыгравший важную роль в утверждении христианства и развитии армянской культуры."
+    "bio": "Catholicos of the Armenian Apostolic Church (387–436), a prominent figure who played a major role in strengthening Christianity and developing Armenian culture."
   }
 ]

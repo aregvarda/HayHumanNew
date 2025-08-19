@@ -115,6 +115,37 @@ private struct HistoryTodayCard: View {
     }
 }
 
+// Универсальная поисковая строка (заглушка).
+// Предполагается поиск по церквям, событиям и личностям.
+private struct UniversalSearchBar: View {
+    var body: some View {
+        Button(action: {}) {
+            HStack(spacing: 12) {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 19, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                // Placeholder: локализация ключа "search_everything"
+                Text(LocalizedStringKey("search_everything"))
+                    .foregroundStyle(.secondary)
+                    .font(.system(size: 19, weight: .regular))
+                    .lineLimit(1)
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 16)
+            .frame(height: 64)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.black.opacity(0.12), lineWidth: 1)
+            )
+            .accessibilityLabel(LocalizedStringKey("search_everything"))
+        }
+        .buttonStyle(.plain)
+        .shadow(color: .black.opacity(0.03), radius: 6, x: 0, y: 3)
+    }
+}
+
 struct HomeScreen: View {
     private let columns = [GridItem(.flexible(), spacing: 14),
                            GridItem(.flexible(), spacing: 14)]
@@ -183,6 +214,10 @@ struct HomeScreen: View {
                 .buttonStyle(.plain)
                 .padding(.horizontal)
 
+                // Поиск по церквям, событиям и личностям (заглушка)
+                UniversalSearchBar()
+                    .padding(.horizontal)
+
                 // Карта
                 NavigationLink { MapScreen() } label: {
                     OutlineTileButton(titleKey: LocalizedStringKey("map"))
@@ -203,21 +238,26 @@ struct HomeScreen: View {
                 }
                 .padding(.horizontal)
 
+                // События
+                NavigationLink { EventsScreen() } label: {
+                    OutlineTileButton(titleKey: LocalizedStringKey("events"))
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal)
+
                 // Язык (слева квадрат) + Контакты (справа длинная)
                 HStack(spacing: 14) {
                     Button {
                         showLanguageSheet = true
                     } label: {
                         // Компактная квадратная кнопка языка
-                        Text(LocalizedStringKey("language"))
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        Image(systemName: "globe")
+                            .font(.system(size: 22, weight: .semibold))
                             .foregroundStyle(.black)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.8)
-                            .frame(width: 120, height: 56) // квадратная по сути
+                            .frame(width: 56, height: 56)
                             .background(supportBG)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .multilineTextAlignment(.center)
                     }
                     .buttonStyle(.plain)
                     
@@ -261,3 +301,4 @@ struct MapScreen: View {
     }
 }
 struct ContactsScreen: View { var body: some View { Text(LocalizedStringKey("contacts")).padding() } }
+struct EventsScreen: View { var body: some View { StoriesView() } }

@@ -1,38 +1,38 @@
 [
   {
-    "name": "Тигран Петросян",
-    "subtitle": "Чемпион мира по шахматам",
-    "section": "Спорт",
+    "name": "Tigran Petrosian",
+    "subtitle": "World Chess Champion",
+    "section": "sport",
     "imageName": "petrosian",
-    "birthCity": "Тбилиси",
-    "birthCountry": "Грузия",
+    "birthCity": "Tbilisi",
+    "birthCountry": "Georgia",
     "birthLat": 41.7151,
     "birthLon": 44.8271,
     "birthYear": 1929,
-    "bio": "Тигран Петросян — советский и армянский шахматист, десятый чемпион мира по шахматам, известный своей защитной и стратегической игрой."
+    "bio": "Tigran Petrosian was a Soviet and Armenian chess player, the 10th World Chess Champion, known for his defensive and strategic style of play."
   },
   {
-    "name": "Юрий Варданян",
-    "subtitle": "Олимпийский чемпион и рекордсмен мира в тяжелой атлетике.",
-    "section": "Спорт",
+    "name": "Yuri Vardanyan",
+    "subtitle": "Olympic champion and world record holder in weightlifting",
+    "section": "sport",
     "imageName": "vardanyan",
-    "birthCity": "Эребуни",
-    "birthCountry": "Армянская ССР, СССР",
+    "birthCity": "Erebuni",
+    "birthCountry": "Armenian SSR, USSR",
     "birthLat": 40.1792,
     "birthLon": 44.4991,
     "birthYear": 1956,
-    "bio": "Юрий Варданян — советский армянский тяжелоатлет, двукратный олимпийский чемпион и многократный рекордсмен мира в тяжелой атлетике."
+    "bio": "Yuri Vardanyan was a Soviet Armenian weightlifter, Olympic champion and multiple world record holder in weightlifting."
   },
   {
-    "name": "Артур Алексанян",
-    "subtitle": "Олимпийский чемпион по борьбе греко-римского стиля",
-    "section": "Спорт",
+    "name": "Artur Aleksanyan",
+    "subtitle": "Olympic champion in Greco-Roman wrestling",
+    "section": "sport",
     "imageName": "aleksanyan",
-    "birthCity": "Ереван",
-    "birthCountry": "Армения",
+    "birthCity": "Yerevan",
+    "birthCountry": "Armenia",
     "birthLat": 40.1792,
     "birthLon": 44.4991,
     "birthYear": 1991,
-    "bio": "Артур Алексанян — армянский борец греко-римского стиля, олимпийский чемпион и многократный чемпион мира и Европы."
+    "bio": "Artur Aleksanyan is an Armenian Greco-Roman wrestler, Olympic champion and multiple-time World and European champion."
   }
 ]

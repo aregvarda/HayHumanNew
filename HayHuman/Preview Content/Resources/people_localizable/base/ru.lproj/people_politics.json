@@ -4,7 +4,7 @@
   {
     "name": "Арам Манукян",
     "subtitle": "Один из основателей Первой Республики Армения",
-    "section": "Политика",
+    "section": "Politics",
     "imageName": "aram_manukyan",
     "birthCity": "Зейва",
     "birthCountry": "Российская империя",
@@ -16,7 +16,7 @@
   {
     "name": "Ованес Каджазнуни",
     "subtitle": "Первый премьер-министр Армении",
-    "section": "Политика",
+    "section": "Politics",
     "imageName": "katchaznouni",
     "birthCity": "Ахалкалаки",
     "birthCountry": "Российская империя",
@@ -28,7 +28,7 @@
   {
     "name": "Левон Тер-Петросян",
     "subtitle": "Первый президент республики Армения",
-    "section": "Политика",
+    "section": "Politics",
     "imageName": "ter_petrosyan",
     "birthCity": "Алеппо",
     "birthCountry": "Сирия",

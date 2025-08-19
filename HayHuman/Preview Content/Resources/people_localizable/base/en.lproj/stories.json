@@ -1,0 +1,26 @@
+[
+  {
+    "id": "adoption_of_christianity",
+    "title": "Adoption of Christianity",
+    "year": 301,
+    "imageName": "story_christianity",
+    "summary": "Armenia adopts Christianity as a state religion.",
+    "tags": ["religion","statehood"]
+  },
+  {
+    "id": "foundation_of_cilician_armenia",
+    "title": "Foundation of Cilician Armenia",
+    "year": 1080,
+    "imageName": "story_cilicia",
+    "summary": "Armenian statehood arises in Cilicia on the Mediterranean coast.",
+    "tags": ["statehood","cilicia"]
+  },
+  {
+    "id": "battle_of_avarayr",
+    "title": "Battle of Avarayr",
+    "year": 451,
+    "imageName": "story_avarayr",
+    "summary": "Vardan Mamikonian leads Armenians defending their faith and identity.",
+    "tags": ["battle","faith"]
+  }
+]

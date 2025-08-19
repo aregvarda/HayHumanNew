@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%lld" : {
+
+    },
     "active_church" : {
       "comment" : "Active church",
       "localizations" : {
@@ -138,6 +141,28 @@
         }
       }
     },
+    "events" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Events"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Իրադարձություններ "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "События"
+          }
+        }
+      }
+    },
     "filter_active" : {
       "localizations" : {
         "en" : {
@@ -231,6 +256,7 @@
       "extractionState" : "manual"
     },
     "language" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -535,6 +561,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск по культуре"
+          }
+        }
+      }
+    },
+    "search_everything" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search everything"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Փնտրել ամեն ինչ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Искать везде"
           }
         }
       }
@@ -895,6 +943,9 @@
         }
       }
     },
+    "Поиск событий" : {
+
+    },
     "Посмотреть на карте" : {
       "localizations" : {
         "en" : {
@@ -954,6 +1005,12 @@
           }
         }
       }
+    },
+    "Событие" : {
+
+    },
+    "События" : {
+
     },
     "Текст описания будет добавлен позже." : {
       "localizations" : {

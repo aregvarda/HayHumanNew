@@ -1,50 +1,50 @@
 [
   {
-    "name": "Виктор Амбарцумян",
-    "subtitle": "Астрофизик, академик",
+    "name": "Viktor Ambartsumian",
+    "subtitle": "Astrophysicist, academician",
     "section": "Наука\nи образование",
     "imageName": "ambartsumian",
-    "birthCity": "Тифлис",
-    "birthCountry": "Грузия",
+    "birthCity": "Tiflis",
+    "birthCountry": "Georgia",
     "birthLat": 41.7151,
     "birthLon": 44.8271,
     "birthYear": 1908,
-    "bio": "Выдающийся астрофизик, основатель армянской школы астрофизики, академик АН СССР."
+    "bio": "Outstanding astrophysicist, founder of the Armenian school of astrophysics, academician of the USSR Academy of Sciences."
   },
   {
-    "name": "Сергей Мергелян",
-    "subtitle": "Математик, академик",
+    "name": "Sergey Mergelyan",
+    "subtitle": "Mathematician, academician",
     "section": "Наука\nи образование",
     "imageName": "mergelian",
-    "birthCity": "Симферополь",
-    "birthCountry": "Россия",
+    "birthCity": "Simferopol",
+    "birthCountry": "Russia",
     "birthLat": 44.9521,
     "birthLon": 34.1024,
     "birthYear": 1928,
-    "bio": "Математик, внёсший вклад в теорию приближений, академик АН АрмССР и СССР."
+    "bio": "Mathematician who made significant contributions to approximation theory, academician of the Armenian SSR and USSR Academies of Sciences."
   },
   {
-    "name": "Гурген Аскарян",
-    "subtitle": "Физик-экспериментатор",
+    "name": "Gurgen Askaryan",
+    "subtitle": "Experimental physicist",
     "section": "Наука\nи образование",
     "imageName": "askaryan",
-    "birthCity": "Москва",
-    "birthCountry": "Россия",
+    "birthCity": "Moscow",
+    "birthCountry": "Russia",
     "birthLat": 55.7558,
     "birthLon": 37.6173,
     "birthYear": 1928,
-    "bio": "Физик, автор эффекта Аскаряна, внёс вклад в физику высоких энергий."
+    "bio": "Physicist, author of the Askaryan effect, who contributed to high-energy physics."
   },
   {
-    "name": "Мовсес Хоренаци",
-    "subtitle": "Историк, философ, богослов",
+    "name": "Movses Khorenatsi",
+    "subtitle": "Historian, philosopher, theologian",
     "section": "Наука\nи образование",
     "imageName": "khorenatsi",
-    "birthCity": "Хорен",
-    "birthCountry": "Армения",
+    "birthCity": "Khoren",
+    "birthCountry": "Armenia",
     "birthLat": 39.5,
     "birthLon": 45.9,
     "birthYear": 410,
-    "bio": "Армянский историк и философ, автор 'Истории Армении'. Считается отцом армянской историографии."
+    "bio": "Armenian historian and philosopher, author of the 'History of Armenia'. Considered the father of Armenian historiography."
   }
 ]
