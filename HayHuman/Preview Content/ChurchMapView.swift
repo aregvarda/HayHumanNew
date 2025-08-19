@@ -55,7 +55,7 @@ final class HHLocationManager: NSObject, ObservableObject, CLLocationManagerDele
 
 private func L(_ key: String) -> LocalizedStringKey { LocalizedStringKey(key) }
 
-struct Church: Identifiable, Equatable, Hashable {
+struct Church: Identifiable, Equatable, Hashable, Codable {
     let id = UUID()
     let name: String
     let coordinate: CLLocationCoordinate2D
@@ -64,6 +64,45 @@ struct Church: Identifiable, Equatable, Hashable {
     let address: String?
     let descriptionText: String?
     let photoName: String?
+
+    // Codable support (for unified search loader)
+    enum CodingKeys: String, CodingKey {
+        case name, isActive, city, address
+        case descriptionText
+        case description // alternate
+        case photoName
+        case photo // alternate
+        case image // alternate
+        case lat, lon
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try c.decode(String.self, forKey: .name)
+        let lat = try c.decode(Double.self, forKey: .lat)
+        let lon = try c.decode(Double.self, forKey: .lon)
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        self.isActive = try c.decode(Bool.self, forKey: .isActive)
+        self.city = try c.decodeIfPresent(String.self, forKey: .city)
+        self.address = try c.decodeIfPresent(String.self, forKey: .address)
+        self.descriptionText = try c.decodeIfPresent(String.self, forKey: .descriptionText)
+            ?? c.decodeIfPresent(String.self, forKey: .description)
+        self.photoName = try c.decodeIfPresent(String.self, forKey: .photoName)
+            ?? c.decodeIfPresent(String.self, forKey: .photo)
+            ?? c.decodeIfPresent(String.self, forKey: .image)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(name, forKey: .name)
+        try c.encode(isActive, forKey: .isActive)
+        try c.encodeIfPresent(city, forKey: .city)
+        try c.encodeIfPresent(address, forKey: .address)
+        try c.encodeIfPresent(descriptionText, forKey: .descriptionText)
+        try c.encodeIfPresent(photoName, forKey: .photoName)
+        try c.encode(coordinate.latitude, forKey: .lat)
+        try c.encode(coordinate.longitude, forKey: .lon)
+    }
 
     init(
         name: String,

@@ -76,6 +76,7 @@ private struct HistoryTodayCard: View {
             Image(person.imageName)
                 .resizable()
                 .scaledToFill()
+                .grayscale(1.0)
                 .frame(width: imageSide, height: imageSide)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
 
@@ -115,34 +116,29 @@ private struct HistoryTodayCard: View {
     }
 }
 
-// Универсальная поисковая строка (заглушка).
-// Предполагается поиск по церквям, событиям и личностям.
+// Универсальная поисковая строка (plain view, purple border)
 private struct UniversalSearchBar: View {
     var body: some View {
-        Button(action: {}) {
-            HStack(spacing: 12) {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 19, weight: .semibold))
-                    .foregroundStyle(.secondary)
-                // Placeholder: локализация ключа "search_everything"
-                Text(LocalizedStringKey("search_everything"))
-                    .foregroundStyle(.secondary)
-                    .font(.system(size: 19, weight: .regular))
-                    .lineLimit(1)
-                Spacer(minLength: 0)
-            }
-            .padding(.horizontal, 16)
-            .frame(height: 64)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.black.opacity(0.12), lineWidth: 1)
-            )
-            .accessibilityLabel(LocalizedStringKey("search_everything"))
+        HStack(spacing: 12) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 19, weight: .semibold))
+                .foregroundStyle(.secondary)
+            Text(LocalizedStringKey("search_everything"))
+                .foregroundStyle(.secondary)
+                .font(.system(size: 19, weight: .regular))
+                .lineLimit(1)
+            Spacer(minLength: 0)
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 16)
+        .frame(height: 64)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.purple.opacity(0.65), lineWidth: 2.5)
+        )
         .shadow(color: .black.opacity(0.03), radius: 6, x: 0, y: 3)
+        .accessibilityLabel(LocalizedStringKey("search_everything"))
     }
 }
 
@@ -152,28 +148,73 @@ struct HomeScreen: View {
     
     @EnvironmentObject private var lang: LanguageManager
     @State private var showLanguageSheet = false
+    @State private var showSearch = false
 
-    // «Сегодняшний» — берём первого из локальных JSON, иначе заглушка
-    private var featured: Person {
-        LocalPeopleStore.loadAll().first
-        ?? Person(
-            name: "Месроп Маштоц",
-            subtitle: "Создатель армянского алфавита",
-            section: .science,
-            imageName: "mesrop",
-            birthCity: "Ахтала",
-            birthCountry: "Армения",
-            birthLat: 41.1500,
-            birthLon: 44.8333,
-            bio: "Создатель армянского алфавита, живший в V веке.",
-            birthYear: 360
-        )
-    }
+    // Fallback person for "Today in history" in case data is missing
+    private let fallbackFeatured = Person(
+        name: "Месроп Маштоц",
+        subtitle: "Создатель армянского алфавита",
+        section: .science,
+        imageName: "mesrop",
+        birthCity: "Ахтала",
+        birthCountry: "Армения",
+        birthLat: 41.1500,
+        birthLon: 44.8333,
+        bio: "Создатель армянского алфавита, живший в V веке.",
+        birthYear: 360
+    )
 
+    @State private var featured: Person = Person(
+        name: "Месроп Маштоц",
+        subtitle: "Создатель армянского алфавита",
+        section: .science,
+        imageName: "mesrop",
+        birthCity: "Ахтала",
+        birthCountry: "Армения",
+        birthLat: 41.1500,
+        birthLon: 44.8333,
+        bio: "Создатель армянского алфавита, живший в V веке.",
+        birthYear: 360
+    )
 
     // Порядок разделов с «Все личности» в начале
     private var sections: [ArmenianSection] {
         ArmenianSection.allCases
+    }
+
+    // MARK: - Daily featured logic (persist 24h)
+    private func todayKey() -> String {
+        DailyFormatter.shared.string(from: Date())
+    }
+    private func dailyFeatured() -> Person {
+        let defaults = UserDefaults.standard
+        let keyToday = todayKey()
+        if let savedDate = defaults.string(forKey: "featuredDate"),
+           savedDate == keyToday,
+           let savedId = defaults.string(forKey: "featuredId") {
+            // Try to find saved person by id in current locale data
+            let all = LocalPeopleStore.load(section: .all)
+            if let found = all.first(where: { $0.imageName == savedId }) {
+                return found
+            }
+        }
+        // Pick new and persist
+        let all = LocalPeopleStore.load(section: .all)
+        let picked = all.randomElement() ?? fallbackFeatured
+        defaults.set(keyToday, forKey: "featuredDate")
+        defaults.set(picked.imageName, forKey: "featuredId")
+        return picked
+    }
+
+    private struct DailyFormatter {
+        static let shared: DateFormatter = {
+            let df = DateFormatter()
+            df.calendar = Calendar(identifier: .gregorian)
+            df.locale = Locale(identifier: "en_US_POSIX")
+            df.timeZone = .current
+            df.dateFormat = "yyyy-MM-dd"
+            return df
+        }()
     }
 
     var body: some View {
@@ -214,9 +255,13 @@ struct HomeScreen: View {
                 .buttonStyle(.plain)
                 .padding(.horizontal)
 
-                // Поиск по церквям, событиям и личностям (заглушка)
-                UniversalSearchBar()
-                    .padding(.horizontal)
+                // Поиск по церквям, событиям и личностям
+                Button { showSearch = true } label: { UniversalSearchBar() }
+                .buttonStyle(.plain)
+                .padding(.horizontal)
+                .fullScreenCover(isPresented: $showSearch) {
+                    UniversalSearchFullScreen(isPresented: $showSearch)
+                }
 
                 // Карта
                 NavigationLink { MapScreen() } label: {
@@ -288,6 +333,156 @@ struct HomeScreen: View {
         .background(pageBG.ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
         .environment(\.locale, lang.current.locale)
+        .onAppear {
+            // Ежедневный выбор: хранится 24 часа
+            featured = dailyFeatured()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .appLanguageChanged)) { _ in
+            // Сохраняем того же человека по id, но подтягиваем локализованные поля
+            featured = dailyFeatured()
+        }
+    }
+}
+
+
+// MARK: - Universal Search Sheet (soft sheet with live suggestions)
+private struct UniversalSearchSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var query: String = ""
+    @State private var people: [Person] = []
+    @State private var churches: [Church] = []
+    @State private var stories: [Story] = []
+
+    private func filter<T>(_ arr: [T], by predicate: (T) -> Bool) -> [T] { arr.filter(predicate) }
+
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 12) {
+                // Search field with purple outline
+                HStack(spacing: 10) {
+                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                    TextField(LocalizedStringKey("search_everything"), text: $query)
+                        .textInputAutocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
+                .padding(.horizontal, 14)
+                .frame(height: 52)
+                .background(Color(.systemBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.purple.opacity(0.7), lineWidth: 2.5))
+                .padding(.horizontal)
+                .padding(.top, 8)
+
+                // Suggestions list
+                List {
+                    if !query.isEmpty {
+                        let q = query.lowercased()
+                        let peopleFiltered = people.filter { $0.name.lowercased().contains(q) || $0.subtitle.lowercased().contains(q) }
+                        let churchesFiltered = churches.filter { ( ($0.name ?? "").lowercased().contains(q) ) || ( ($0.address ?? "").lowercased().contains(q) ) || ( ($0.city ?? "").lowercased().contains(q) ) }
+                        let storiesFiltered = stories.filter { $0.title.lowercased().contains(q) || ($0.summary ?? "").lowercased().contains(q) }
+
+                        if !peopleFiltered.isEmpty {
+                            Section(header: Text(LocalizedStringKey("people_section"))) {
+                                ForEach(peopleFiltered) { p in
+                                    NavigationLink { PersonDetailView(person: p) } label: {
+                                        HStack(spacing: 12) {
+                                            Image(p.imageName).resizable().scaledToFill().grayscale(1)
+                                                .frame(width: 40, height: 40)
+                                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                Text(p.name).font(.system(size: 16, weight: .semibold))
+                                                Text(p.subtitle).font(.system(size: 13)).foregroundStyle(.secondary).lineLimit(1)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if !churchesFiltered.isEmpty {
+                            Section(header: Text(LocalizedStringKey("churches_section"))) {
+                                ForEach(churchesFiltered) { c in
+                                    NavigationLink { ChurchDetailView(church: c) } label: {
+                                        VStack(alignment: .leading, spacing: 3) {
+                                            Text(c.name ?? "").font(.system(size: 16, weight: .semibold))
+                                            Text([c.city, c.address].compactMap { $0 }.joined(separator: ", "))
+                                                .font(.system(size: 13)).foregroundStyle(.secondary)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if !storiesFiltered.isEmpty {
+                            Section(header: Text(LocalizedStringKey("events_section"))) {
+                                ForEach(storiesFiltered) { s in
+                                    NavigationLink { StoryQuickView(story: s) } label: {
+                                        VStack(alignment: .leading, spacing: 3) {
+                                            Text(s.title).font(.system(size: 16, weight: .semibold))
+                                            Text(String(s.year)).font(.system(size: 13)).foregroundStyle(.secondary)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .listStyle(.insetGrouped)
+                .animation(.easeInOut(duration: 0.2), value: query)
+            }
+            .navigationTitle(LocalizedStringKey("search"))
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Закрыть") { dismiss() } } }
+        }
+        .presentationDetents([.medium, .large])
+        .presentationDragIndicator(.visible)
+        .onAppear {
+            people = LocalPeopleStore.load(section: .all)
+            churches = ChurchesStore.load()
+            stories = StoriesStore.load()
+        }
+    }
+}
+
+// Lightweight quick view for Story (to avoid depending on private StoryDetailView)
+private struct StoryQuickView: View {
+    let story: Story
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                if let name = story.imageName, let ui = UIImage(named: name) {
+                    Image(uiImage: ui)
+                        .resizable().scaledToFill()
+                        .frame(maxWidth: .infinity).frame(height: 220)
+                        .clipped().clipShape(RoundedRectangle(cornerRadius: 16))
+                }
+                Text(story.title).font(.title2.bold())
+                Text(String(story.year)).foregroundStyle(.secondary)
+                if let summary = story.summary, !summary.isEmpty {
+                    Text(summary).font(.body)
+                }
+                Spacer(minLength: 20)
+            }
+            .padding()
+        }
+        .navigationTitle(LocalizedStringKey("event"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+// Minimal Churches loader (reads the same JSON as map)
+private enum ChurchesStore {
+    static func load() -> [Church] {
+        // Reuse ChurchMapView decoding rules by reading localized churches.json
+        guard let url = Bundle.main.url(forResource: "churches", withExtension: "json") else { return [] }
+        do {
+            let data = try Data(contentsOf: url)
+            let dec = JSONDecoder()
+            let items = try dec.decode([Church].self, from: data)
+            return items
+        } catch {
+            print("[ChurchesStore] decode error:", error)
+            return []
+        }
     }
 }
 
@@ -302,3 +497,109 @@ struct MapScreen: View {
 }
 struct ContactsScreen: View { var body: some View { Text(LocalizedStringKey("contacts")).padding() } }
 struct EventsScreen: View { var body: some View { StoriesView() } }
+
+
+// MARK: - Universal Search Fullscreen (push)
+private struct UniversalSearchView: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var query: String = ""
+    @State private var people: [Person] = []
+    @State private var churches: [Church] = []
+    @State private var stories: [Story] = []
+
+    var body: some View {
+        VStack(spacing: 12) {
+            // Search field with purple outline (fixed on top)
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                TextField(LocalizedStringKey("search_everything"), text: $query)
+                    .textInputAutocapitalization(.none)
+                    .disableAutocorrection(true)
+            }
+            .padding(.horizontal, 14)
+            .frame(height: 52)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.purple.opacity(0.7), lineWidth: 2.5))
+            .padding(.horizontal)
+            .padding(.top, 8)
+
+            // Suggestions list
+            List {
+                let q = query.lowercased()
+                if !q.isEmpty {
+                    let peopleFiltered = people.filter { $0.name.lowercased().contains(q) || $0.subtitle.lowercased().contains(q) }
+                    let churchesFiltered = churches.filter { ( ($0.name ?? "").lowercased().contains(q) ) || ( ($0.address ?? "").lowercased().contains(q) ) || ( ($0.city ?? "").lowercased().contains(q) ) }
+                    let storiesFiltered = stories.filter { $0.title.lowercased().contains(q) || ($0.summary ?? "").lowercased().contains(q) }
+
+                    if !peopleFiltered.isEmpty {
+                        Section(header: Text(LocalizedStringKey("people_section"))) {
+                            ForEach(peopleFiltered) { p in
+                                NavigationLink { PersonDetailView(person: p) } label: {
+                                    HStack(spacing: 12) {
+                                        Image(p.imageName).resizable().scaledToFill().grayscale(1)
+                                            .frame(width: 40, height: 40)
+                                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(p.name).font(.system(size: 16, weight: .semibold))
+                                            Text(p.subtitle).font(.system(size: 13)).foregroundStyle(.secondary).lineLimit(1)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if !churchesFiltered.isEmpty {
+                        Section(header: Text(LocalizedStringKey("churches_section"))) {
+                            ForEach(churchesFiltered) { c in
+                                NavigationLink { ChurchDetailView(church: c) } label: {
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(c.name ?? "").font(.system(size: 16, weight: .semibold))
+                                        Text([c.city, c.address].compactMap { $0 }.joined(separator: ", "))
+                                            .font(.system(size: 13)).foregroundStyle(.secondary)
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if !storiesFiltered.isEmpty {
+                        Section(header: Text(LocalizedStringKey("events_section"))) {
+                            ForEach(storiesFiltered) { s in
+                                NavigationLink { StoryQuickView(story: s) } label: {
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(s.title).font(.system(size: 16, weight: .semibold))
+                                        Text(String(s.year)).font(.system(size: 13)).foregroundStyle(.secondary)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .listStyle(.insetGrouped)
+        }
+        .navigationTitle(LocalizedStringKey("search"))
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            people = LocalPeopleStore.load(section: .all)
+            churches = ChurchesStore.load()
+            stories = StoriesStore.load()
+        }
+    }
+}
+
+// MARK: - Fullscreen presenter (bottom-to-top)
+private struct UniversalSearchFullScreen: View {
+    @Binding var isPresented: Bool
+    var body: some View {
+        NavigationView {
+            UniversalSearchView()
+                .navigationTitle(LocalizedStringKey("search"))
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Закрыть") { isPresented = false } } }
+        }
+        .ignoresSafeArea(edges: .bottom)
+    }
+}
