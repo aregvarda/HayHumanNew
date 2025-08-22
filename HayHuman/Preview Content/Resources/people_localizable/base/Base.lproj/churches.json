@@ -485,5 +485,88 @@
             "address": "Minsk, Belarus",
             "description": "The first Armenian church complex in Belarus — St. Gregory the Illuminator Church — was consecrated on May 18, 2025, by Catholicos of All Armenians Karekin II. Construction lasted from August 2022 to April 2025, designed by Armenian architect Samvel Makhyan. Built with volcanic tuff and travertine from Armenia, the church has become the spiritual and cultural center of the Armenian community in Belarus.",
             "photoName": "minsk_surb_grigor"
-          }
+          },
+            {
+              "name": "Church of St. Gregory the Illuminator (Tallinn)",
+              "lat": 59.43376,
+              "lon": 24.76174,
+              "isActive": true,
+              "address": "Tallinn, Tartu Road 16a, Estonia",
+              "description": "The Church of St. Gregory the Illuminator in Tallinn is an Armenian Apostolic Church. The building was originally a Lutheran church of St. John, dating back to the 13th century. The Armenian community received it in 1993 and restored it by the early 2000s. The consecration and installation of khachkars were performed with the participation of Armenian bishops.\n\nToday it functions as an active church and the spiritual center of the Armenian community of Estonia, combining Armenian traditions with the historic fabric of Tallinn.",
+              "photoName": "tallinn_surb_grigor"
+            },
+            {
+              "name": "Church of St. Gregory the Illuminator (Riga)",
+              "lat": 56.9496,
+              "lon": 24.1083,
+              "isActive": true,
+              "address": "Riga, Latvia",
+              "description": "The Church of St. Gregory the Illuminator in Riga is the first Armenian Apostolic church in the Baltic and Scandinavian countries. Its foundation stone was laid on December 17, 1997. Designed by Hakob Babakhanyan, it was clad in travertine imported from Iran. It was consecrated on June 30, 2011, by Catholicos of All Armenians Karekin II. The church also hosts a Sunday school named after Ghazaros Aghayan, and a khachkar made of Armenian tuff stands in the courtyard. Since 2005, the parish priest has been Fr. Khosrov Stepanyan (Ter-Khosrov). The church can hold around 100 worshippers.",
+              "photoName": "riga_surb_grigor"
+            },
+            {
+              "name": "Church of St. Vardan",
+              "lat": 54.6916,
+              "lon": 25.2858,
+              "isActive": true,
+              "address": "Vilnius, Lithuania",
+              "description": "The Church of St. Vardan in Vilnius was founded by the Armenian community of Lithuania. The parish was established in 1994, and the church was opened in 2006. It serves as the main spiritual and cultural center for Armenians in Lithuania.",
+              "photoName": "vilnius_surb_vardan"
+            },
+            {
+              "name": "Church of Surb Gevorg (St. George)",
+              "lat": 43.1144,
+              "lon": 131.8855,
+              "isActive": true,
+              "address": "Vladivostok, Russia",
+              "description": "The Church of Surb Gevorg in Vladivostok is one of the main spiritual centers of the Armenian community of Primorye. Armenians settled in the region at the end of the 19th century, and in 1906 the city council allocated land for a church and community house. By 1915, a prayer house was operating, and services continued until 1942, even under Soviet restrictions.\n\nAfter WWII, the building fell into disrepair, and by the 1990s only ruins remained. Plans to demolish it were stopped by the Armenian community. In the early 2000s, a new church was built on the same site, with part of the old wall preserved as a monument.\n\nThe new church, built of red brick in traditional Armenian style, was consecrated in 2007. Today it is a cultural and spiritual symbol for Armenians in Vladivostok and the Russian Far East.",
+              "photoName": "vladivostok_surb_gevorg"
+            },
+            {
+              "name": "Church of the Holy Mother of God (Surb Astvatsatsin)",
+              "lat": 47.0100,
+              "lon": 28.8636,
+              "isActive": true,
+              "address": "Chisinau, Moldova",
+              "description": "The Church of the Holy Mother of God (Surb Astvatsatsin) in Chisinau is one of the oldest Armenian churches in Bessarabia. Built in 1803–1804 on the site of a destroyed Moldovan church, its architecture includes an elongated nave, a two-tiered bell tower, and a three-arched portico. During Soviet times, it was used as a warehouse, but in 1992 it was returned to the Armenian community, and services resumed on June 19, 1993.",
+              "photoName": "chisinau_surb_astvatsatsin"
+            },
+            {
+              "name": "Church of Surb Karapet",
+              "lat": 43.32972,
+              "lon": 76.95059,
+              "isActive": true,
+              "address": "Almaty, Kazakhstan",
+              "description": "The Church of Surb Karapet in Almaty is the first Armenian Apostolic parish in Kazakhstan. It was opened on October 7, 2006, with the support of the 'Nairi' Association of Armenian Cultural Centers. It was consecrated by Bishop Ezras Nersisyan. The parish hosts a Sunday school and cultural programs.",
+              "photoName": "almaty_surb_karapet"
+            },
+            {
+              "name": "Church of St. Philip (Surb Pilipos)",
+              "lat": 41.3092,
+              "lon": 69.3424,
+              "isActive": true,
+              "address": "Tashkent, Uzbekistan",
+              "description": "The Armenian Apostolic Church of St. Philip in Tashkent was founded by the Armenian community in 1993. After its closure during Soviet times, it was returned to the faithful following Uzbekistan's independence. The consecration and first liturgy were held in 1995. The church was officially registered on January 12, 2007, during the tenure of Fr. Gevorg Vardanyan. Today it is led by Fr. Garnik Loretsyan and serves as the center of the Armenian community in Tashkent.",
+              "photoName": "tashkent_surb_philip"
+            },
+            {
+              "name": "Church of the Holy Mother of God (Surb Astvatsatsin)",
+              "lat": 39.6545,
+              "lon": 66.9740,
+              "isActive": true,
+              "address": "Samarkand, Uzbekistan",
+              "description": "The Church of Surb Astvatsatsin (Holy Mother of God) in Samarkand was built in 1903 with funds from the local Armenian community, with Fr. Ruben Bekgulyants as its first pastor. It was closed in 1939 during the Soviet period. After Uzbekistan's independence, it was restored and re-consecrated in 1995 with the participation of Archbishop Nerses Pozapalyan. Today it serves as the cultural and spiritual center of Armenians in Samarkand.",
+              "photoName": "samarkand_surb_astvatsatsin"
+            },
+            {
+              "name": "Church of Surb Karapet",
+              "lat": 62.0355,
+              "lon": 129.6755,
+              "isActive": true,
+              "address": "Yakutsk, Russia",
+              "description": "The Church of Surb Karapet in Yakutsk is the northernmost Armenian church in the world. Its foundation was laid in 2011, and it was consecrated in 2012. The church is 27 meters high, with materials such as stone, glass, and wood brought from Armenia. The exterior is clad in natural tuff.\n\nThe Armenian community of Yakutia has existed since the late 19th century. Despite the harsh climate and remoteness of the region, Armenians preserved their faith and traditions. Today, the church unites Armenians of Yakutia and neighboring regions, serving as a major cultural and spiritual center.",
+              "photoName": "yakutsk_surb_karapet"
+            }
+    
+          
       ]
