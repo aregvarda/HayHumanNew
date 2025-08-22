@@ -305,6 +305,7 @@
         "description": "The Church of Christ the Savior in Kirov is an Armenian Apostolic church, serving as a spiritual hub for the Armenian community of the region.",
         "photoName": "kirov_christ_savior"
       },
+
         {
           "name": "Church of Surb Astvatsatsin",
           "lat": 51.5331,
@@ -421,5 +422,68 @@
           "address": "Stary Krym, Crimea",
           "description": "The Monastery of Surb Khach (Holy Cross) was founded in 1358. The complex includes Surb Nshan Church, a gavit, refectory, cells, and khachkars. Closed in 1925, restored from the 1980s, services resumed in 1994.",
           "photoName": "surp_hach_crimea"
-        }
+        },
+          {
+            "name": "St. Gregory the Illuminator Church",
+            "lat": 48.4647,
+            "lon": 35.0462,
+            "isActive": true,
+            "address": "Dnipro, Ukraine",
+            "description": "Built at the initiative of the Armenian community of Dnipro, the church was founded in 2003, with active construction beginning in 2010 using peach-colored tuff imported from Armenia. The consecration of the altar and domes took place in 2017, and the church was solemnly consecrated on March 17, 2018, by Catholicos of All Armenians Karekin II. The church hosts a Sunday school and is considered the largest Armenian church in Eastern Europe, serving as a major cultural and religious center.",
+            "photoName": "dnipro_surb_grigor"
+          },
+          {
+            "name": "Armenian Cathedral of the Assumption of the Holy Virgin",
+            "lat": 49.8397,
+            "lon": 24.0297,
+            "isActive": true,
+            "address": "Lviv, Ukraine",
+            "description": "The Armenian Cathedral of the Assumption in Lviv is one of the city’s oldest landmarks. Built between 1363 and 1370 to the design of architect Doring, the church combines Armenian, Romanesque-Gothic, and Galician architectural elements and is included on the UNESCO World Heritage List. The complex includes the belfry (1571), archbishop’s palace, Armenian bank, Benedictine convent, St. Christopher’s column (1726), and southern arcade (1437). The interior features frescoes by Jan Henryk Rosen with Armenian motifs.",
+            "photoName": "lviv_armenian_cathedral"
+          },
+          {
+            "name": "Holy Resurrection Church (Surb Harutyun)",
+            "lat": 50.0028,
+            "lon": 36.2727,
+            "isActive": true,
+            "address": "Kharkiv, Ukraine",
+            "description": "The Armenian Apostolic Church of Surb Harutyun in Kharkiv was founded on July 1, 2000, and consecrated on August 24, 2004, by Catholicos of All Armenians Karekin II. The project was designed by Pavlo Chechelnytskyi, chief architect of Kharkiv. Built with stone imported from Armenia, the interior is decorated in traditional Armenian style.",
+            "photoName": "kharkov_surb_arutyun"
+          },
+          {
+            "name": "Church of the Holy Apostles Peter and Paul",
+            "lat": 48.2889,
+            "lon": 25.9392,
+            "isActive": true,
+            "address": "Chernivtsi, Ukraine",
+            "description": "An Armenian Catholic church built for the Armenian community of Chernivtsi, designed by architect Josef Hlávka. Construction took place between 1869 and October 1875, and it was consecrated on October 9, 1875. The architecture blends Romanesque, Gothic, and Ukrainian Baroque styles. Known for its acoustics and organ, since 1986 it has served as the Organ Hall of the Chernivtsi Philharmonic. Closed during Soviet times, it was later restored and returned to the faithful.",
+            "photoName": "chernivtsi_peter_paul"
+          },
+          {
+            "name": "Church of the Annunciation of the Holy Virgin",
+            "lat": 48.9228,
+            "lon": 24.7094,
+            "isActive": true,
+            "address": "Ivano-Frankivsk, Ukraine",
+            "description": "The Church of the Annunciation in Ivano-Frankivsk (historically Stanislaviv) was built by the Armenian community in the mid-17th century and became a spiritual center for the local Armenian diaspora. The building combines Baroque and Renaissance elements, with frescoes and icons dating to the 17th–18th centuries. The church was renovated in the 19th century, but suffered damage and losses during World War II and Soviet times. Religious life was restored in the 1990s, with cultural initiatives revived in the 2000s. Today, it remains a major spiritual and cultural center of Armenians in Galicia.",
+            "photoName": "ivano_frankivsk_annunciation"
+          },
+          {
+            "name": "Armenian Apostolic Church of Odessa",
+            "lat": 46.4277,
+            "lon": 30.7547,
+            "isActive": true,
+            "address": "Odesa, Ukraine",
+            "description": "The Armenian Apostolic Church in Odessa is located in the Gagarin Plateau district. It serves as the spiritual center of the Armenian community, hosting liturgies, baptisms, and weddings. The modern building, designed in Armenian architectural style, harmonizes with the Black Sea coastal landscape.",
+            "photoName": "odessa_surbarutyun"
+          },
+          {
+            "name": "St. Gregory the Illuminator Church",
+            "lat": 53.9090,
+            "lon": 27.5670,
+            "isActive": true,
+            "address": "Minsk, Belarus",
+            "description": "The first Armenian church complex in Belarus — St. Gregory the Illuminator Church — was consecrated on May 18, 2025, by Catholicos of All Armenians Karekin II. Construction lasted from August 2022 to April 2025, designed by Armenian architect Samvel Makhyan. Built with volcanic tuff and travertine from Armenia, the church has become the spiritual and cultural center of the Armenian community in Belarus.",
+            "photoName": "minsk_surb_grigor"
+          }
       ]
