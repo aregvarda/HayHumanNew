@@ -113,14 +113,14 @@ struct ChurchDetailView: View {
 
                 // Адрес из JSON
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Адрес").font(.subheadline).foregroundStyle(.secondary)
+                    Text("address").font(.subheadline).foregroundStyle(.secondary)
                     if let address = composedAddress {
                         Text(address)
                             .font(.body)
                             .foregroundStyle(.primary)
                             .fixedSize(horizontal: false, vertical: true)
                     } else {
-                        Text("Адрес появится позже")
+                        Text("address_placeholder")
                             .font(.body)
                             .foregroundStyle(.secondary)
                     }
@@ -128,25 +128,55 @@ struct ChurchDetailView: View {
 
                 // Координаты (читаемые подписи)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Координаты").font(.subheadline).foregroundStyle(.secondary)
-                    HStack(spacing: 16) {
-                        Text(String(format: "Широта: %.5f", church.coordinate.latitude))
-                            .font(.body.monospaced())
-                        Text(String(format: "Долгота: %.5f", church.coordinate.longitude))
-                            .font(.body.monospaced())
+                    Text("coordinates").font(.subheadline).foregroundStyle(.secondary)
+                    ViewThatFits(in: .horizontal) {
+                        // Two columns when there's enough width
+                        HStack(spacing: 24) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("latitude")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                                Text("\(church.coordinate.latitude, specifier: "%.5f")")
+                                    .font(.body.monospaced())
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("longitude")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                                Text("\(church.coordinate.longitude, specifier: "%.5f")")
+                                    .font(.body.monospaced())
+                            }
+                        }
+                        // Fallback: stack vertically on narrow widths
+                        VStack(alignment: .leading, spacing: 6) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("latitude").font(.caption).foregroundStyle(.secondary)
+                                Text("\(church.coordinate.latitude, specifier: "%.5f")").font(.body.monospaced())
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("longitude").font(.caption).foregroundStyle(.secondary)
+                                Text("\(church.coordinate.longitude, specifier: "%.5f")").font(.body.monospaced())
+                            }
+                        }
                     }
                 }
 
                 // Описание из JSON
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Описание").font(.subheadline).foregroundStyle(.secondary)
+                    Text("description").font(.subheadline).foregroundStyle(.secondary)
                     if let desc = church.descriptionText, !desc.isEmpty {
                         Text(desc)
                             .font(.body)
                             .foregroundStyle(.primary)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                     } else {
-                        Text("Текст описания будет добавлен позже.")
+                        Text("description_placeholder")
                             .font(.body)
                             .foregroundStyle(.secondary)
                     }
@@ -162,7 +192,7 @@ struct ChurchDetailView: View {
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "heart.fill")
-                            Text("Поддержать проект")
+                            Text("support_project")
                         }
                         .font(.headline)
                         .frame(maxWidth: .infinity)
@@ -186,7 +216,7 @@ struct ChurchDetailView: View {
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "map")
-                            Text("Посмотреть на карте")
+                            Text("view_on_map")
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
@@ -200,7 +230,7 @@ struct ChurchDetailView: View {
             }
             .padding()
         }
-        .navigationTitle("Профиль церкви")
+        .navigationTitle("church_profile")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

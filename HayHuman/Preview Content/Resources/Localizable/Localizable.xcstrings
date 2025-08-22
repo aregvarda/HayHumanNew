@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%.5f" : {
+
+    },
     "%lld" : {
 
     },
@@ -26,6 +29,44 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Действующая"
+          }
+        }
+      }
+    },
+    "address" : {
+      "localizations" : {
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հասցե"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Адрес"
+          }
+        }
+      }
+    },
+    "address_placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address not specified"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հասցեն նշված չէ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Адрес появится позже"
           }
         }
       }
@@ -55,10 +96,22 @@
     },
     "bio_placeholder" : {
       "localizations" : {
-        "hy" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Biography will appear later"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Կենսագրությունը կհայտնվի ավելի ուշ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Биография появится позже"
           }
         }
       }
@@ -82,6 +135,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бизнес"
+          }
+        }
+      }
+    },
+    "church_profile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Church profile"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Եկեղեցու էջ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль церкви"
           }
         }
       }
@@ -131,6 +206,28 @@
         }
       }
     },
+    "coordinates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coordinates"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կոորդինատներ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Координаты"
+          }
+        }
+      }
+    },
     "culture" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -150,6 +247,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Культура"
+          }
+        }
+      }
+    },
+    "description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Նկարագրություն"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
+    },
+    "description_placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description will appear later"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Նկարագրությունը կհայտնվի ավելի ուշ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание появится позже"
           }
         }
       }
@@ -182,6 +323,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Միջոցառում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Событие"
           }
         }
       }
@@ -322,25 +469,46 @@
     "Key" : {
       "extractionState" : "manual"
     },
-    "language" : {
-      "extractionState" : "stale",
+    "latitude" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Language"
+            "value" : "Latitude"
           }
         },
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Լեզու"
+            "value" : "Լայնություն"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Язык"
+            "value" : "Широта"
+          }
+        }
+      }
+    },
+    "longitude" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Երկայնություն"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Долгота"
           }
         }
       }
@@ -860,7 +1028,30 @@
         }
       }
     },
+    "view_on_map" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View on map"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Դիտել քարտեզի վրա"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать на карте"
+          }
+        }
+      }
+    },
     "Адрес" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -883,6 +1074,7 @@
       }
     },
     "Адрес появится позже" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -916,6 +1108,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Վարդանյան Արեգ "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Арег Варданян"
           }
         }
       }
@@ -966,24 +1164,24 @@
         }
       }
     },
-    "Здравствуйте!\nМеня зовут Варданян Арег, я сын священника и учительницы." : {
+    "Здравствуйте!" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hello! \nMy name is Areg Vardanyan, \nI am the son of a priest and a teacher."
+            "value" : "Hello!"
           }
         },
         "hy" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Բարեւ ձեզ։ \nԻմ անունը Վարդանյան Արեգ է, ես քահանայի և ուսուցչուհու որդին եմ։"
+            "state" : "translated",
+            "value" : "Բարև Ձեզ "
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Здравствуйте!\nМеня зовут Варданян Арег, я сын священника и учительницы."
+            "state" : "translated",
+            "value" : "Здравствуйте!"
           }
         }
       }
@@ -1012,6 +1210,7 @@
       }
     },
     "Координаты" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1029,6 +1228,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Координаты"
+          }
+        }
+      }
+    },
+    "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My name is Areg Vardanyan. This application was created by me with the blessing of the Russian and New Nakhichevan Diocese of the Armenian Apostolic Church. Its foundation lies in my desire to preserve what is especially important to me: faith, culture, and memory.\n\nIf it has been useful to you, then my work was not in vain."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ես Արեգ Վարդանյան եմ։\nԱյս հավելվածը ստեղծվել է իմ կողմից՝ Ռուսաստանի և Նոր Նախիջևանի հայոց թեմի օրհնությամբ։ Այն հիմնված է իմ ցանկության վրա պահպանելու այն, ինչ ինձ համար առանձնապես կարևոր է՝ հավատը, մշակույթը և հիշողությունը։\n\nԵթե այն օգտակար է եղել ձեզ համար, ուրեմն իմ աշխատանքը զուր չի եղել։"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
           }
         }
       }
@@ -1078,6 +1299,7 @@
       }
     },
     "Описание" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1144,6 +1366,7 @@
       }
     },
     "Поддержать проект" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1233,6 +1456,7 @@
       }
     },
     "Посмотреть на карте" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1255,6 +1479,7 @@
       }
     },
     "Профиль церкви" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1337,6 +1562,7 @@
       }
     },
     "Текст описания будет добавлен позже." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1423,28 +1649,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фото появится позже"
-          }
-        }
-      }
-    },
-    "Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This application was created by me with the blessing of the Russian and Novo-Nakhichevan Diocese of the Armenian Apostolic Church. \nIts foundation is the desire to preserve what is especially important to me: faith, culture, and memory.\n\nIf it has proven useful to you, then the effort was not in vain."
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Այս հավելվածը ստեղծվել է իմ կողմից՝ Հայ Առաքելական Եկեղեցու Ռուսաստանի և Նոր Նախիջևանի թեմի օրհնությամբ։ Դրա հիմքում այն ցանկությունն է՝ պահպանել այն, ինչը ինձ համար հատկապես կարևոր է՝ հավատքը, մշակույթը և հիշողությունը։\n\nԵթե այն օգտակար է եղել ձեզ համար, ուրեմն ջանքը զուր չի եղել"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
           }
         }
       }

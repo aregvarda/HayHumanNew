@@ -1,26 +1,178 @@
 [
-  {
-    "id": "adoption_of_christianity",
-    "title": "Adoption of Christianity",
-    "year": 301,
-    "imageName": "story_christianity",
-    "summary": "Armenia adopts Christianity as a state religion.",
-    "tags": ["religion","statehood"]
-  },
-  {
-    "id": "foundation_of_cilician_armenia",
-    "title": "Foundation of Cilician Armenia",
-    "year": 1080,
-    "imageName": "story_cilicia",
-    "summary": "Armenian statehood arises in Cilicia on the Mediterranean coast.",
-    "tags": ["statehood","cilicia"]
-  },
-  {
-    "id": "battle_of_avarayr",
-    "title": "Battle of Avarayr",
-    "year": 451,
-    "imageName": "story_avarayr",
-    "summary": "Vardan Mamikonian leads Armenians defending their faith and identity.",
-    "tags": ["battle","faith"]
-  }
+    {
+      "id": "adoption_of_christianity",
+      "title": "Adoption of Christianity",
+      "year": 301,
+      "imageName": "story_christianity",
+      "summary": "In 301, Armenia became the first state in the world to officially adopt Christianity as its state religion, under King Tiridates III and Saint Gregory the Illuminator. According to Armenian and Christian tradition, after the miracle of the king’s healing, Gregory was freed from imprisonment and persuaded the monarch to embrace the new faith.\n\nThis event had a decisive impact: it shaped the cultural and spiritual identity of the Armenian people for centuries. Christianity united the nation, strengthened its institutions, and gave Armenia a special place in history as a stronghold of Eastern Christianity.\n\nThe adoption of Christianity also laid the foundation for a unique tradition of church architecture, art, and literature, which became part of the world’s cultural heritage. The Armenian Apostolic Church has since played a central role in preserving national identity and spiritual heritage.",
+      "tags": ["religion","statehood"]
+    },
+    {
+      "id": "foundation_of_cilician_armenia",
+      "title": "Foundation of Cilician Armenia",
+      "year": 1080,
+      "imageName": "story_cilicia",
+      "summary": "The Armenian state of Cilicia was established in 1080, when Armenian nobles who had moved to the Mediterranean coast after the fall of Bagratid Armenia created a new political entity. Its capital soon became Sis, and the principality gradually transformed into a kingdom.\n\nCilician Armenia became an important ally of the Crusaders, played a significant role in international politics, and maintained close ties with Europe. It represented a new form of Armenian statehood, adapted to the region yet preserving Armenian identity and traditions.\n\nThe kingdom developed into a cultural hub where literature, education, diplomacy, and trade flourished, symbolizing the continuation of Armenian statehood after the loss of the homeland in the Caucasus.",
+      "tags": ["statehood","Cilicia"]
+    },
+    {
+      "id": "foundation_of_ani",
+      "title": "Foundation of the Kingdom of Ani",
+      "year": 961,
+      "imageName": "story_ani_foundation",
+      "summary": "In 961, the Bagratuni dynasty transferred the capital of Armenia to Ani. Situated on key trade routes, the city rapidly grew into one of the most prominent centers of the region, earning the title 'city of 1001 churches' for its extraordinary architecture.\n\nAni became not only a political but also a cultural center, where architecture, painting, crafts, and commerce flourished. Its fortifications, cathedrals, and monasteries amazed contemporaries and remain jewels of medieval architecture.\n\nThe foundation of Ani marked a new phase of Armenian statehood, granting the country economic power and cultural influence felt far beyond its borders.",
+      "tags": ["statehood","culture"]
+    },
+    {
+      "id": "fall_of_ani",
+      "title": "Fall of Ani",
+      "year": 1045,
+      "imageName": "story_ani_fall",
+      "summary": "In 1045, Ani, the capital of Bagratid Armenia, was captured by the Byzantine Empire. This event marked the end of Bagratid independence and was a turning point in Armenian history.\n\nThe fall of Ani weakened Armenian statehood and left the region vulnerable to subsequent invasions by the Seljuks and others. Once a flourishing center of trade and culture, Ani gradually lost its importance.\n\nNevertheless, the memory of Ani’s fall became part of national identity, and its monuments remain enduring symbols of Armenian architecture and cultural heritage.",
+      "tags": ["fall","statehood"]
+    },
+    {
+      "id": "uprising_of_david_bek",
+      "title": "Uprising of David Bek",
+      "year": 1722,
+      "imageName": "story_david_bek",
+      "summary": "The uprising of David Bek (1722–1730) was one of the most significant national liberation movements of Armenians in Syunik. It began during the decline of Persia and the Ottoman Empire, which allowed local forces to take up arms.\n\nUnder David Bek’s leadership, Armenians successfully repelled superior enemy forces, fortified strongholds, and organized self-governance. The uprising became a symbol of resilience and the quest for freedom.\n\nAlthough it did not result in an independent state, it profoundly influenced Armenian national consciousness and is remembered as an example of heroism and resistance.",
+      "tags": ["uprising","freedom"]
+    },
+    {
+      "id": "armenian_in_russian_empire",
+      "title": "Armenians in the Russian Empire",
+      "year": 1829,
+      "imageName": "story_russian_empire",
+      "summary": "After the Treaty of Turkmenchay (1828), Eastern Armenia was annexed to the Russian Empire. By 1829, integration was formalized with administrative reforms, marking a new stage in Armenian history.\n\nWithin the Russian Empire, Armenians enjoyed relative security from external threats, allowing the economy, culture, and education to develop. New cultural centers emerged in Tiflis, Yerevan, and Shushi.\n\nThis era was a time of cultural and scientific revival, when Armenians played an active role in public, military, and academic life while preserving their national identity.",
+      "tags": ["empire","culture"]
+    },
+    {
+      "id": "independence_of_armenia",
+      "title": "Independence of the Republic of Armenia",
+      "year": 1991,
+      "imageName": "story_independence_1991",
+      "summary": "On September 21, 1991, after the collapse of the Soviet Union, Armenia declared its independence. This decision was confirmed by a referendum in which the overwhelming majority supported sovereignty.\n\nThe proclamation of independence marked a historic turning point: Armenia regained statehood after centuries of foreign domination. It opened a new era in the political, economic, and cultural life of the nation.\n\nDespite the severe challenges of the early years — blockade, war in Artsakh, and economic hardship — the restoration of independence became the foundation for Armenia’s development and the strengthening of its national identity.",
+      "tags": ["independence","statehood"]
+    },
+    {
+      "id": "creation_of_armenian_alphabet",
+      "title": "Creation of the Armenian Alphabet",
+      "year": 405,
+      "imageName": "story_alphabet",
+      "summary": "In 405, Saint Mesrop Mashtots, with the support of Catholicos Sahak Partev, created the Armenian alphabet. For the first time, Armenians had their own script, reflecting the particularities of their language and culture.\n\nImmediately after its creation, the Bible was translated into Armenian. Known as the 'Queen of Translations,' this work laid the foundation of Armenian literature and preserved the language through centuries of foreign domination.\n\nThe alphabet became a pillar of Armenian identity, enabling the nation to build a vast cultural and spiritual heritage that remains central to Armenian civilization.",
+      "tags": ["culture","writing"]
+    },
+    {
+      "id": "treaty_of_turkmenchay",
+      "title": "Treaty of Turkmenchay",
+      "year": 1828,
+      "imageName": "story_turkmenchay",
+      "summary": "The Treaty of Turkmenchay was signed on February 10, 1828, between the Russian Empire and Persia, concluding the Russo-Persian War (1826–1828). Eastern Armenia was incorporated into the Russian Empire, and the Armenian Province was established.\n\nThe treaty ended centuries of Persian dominance in the region and provided Armenians with relative security. It also prompted the mass resettlement of Armenians from Persia and the Ottoman Empire back to their ancestral homeland.\n\nThis marked a turning point in Armenian history, opening the path for cultural revival, education, and new social institutions under Russian rule.",
+      "tags": ["treaty","geopolitics"]
+    },
+    {
+      "id": "armenian_genocide",
+      "title": "Armenian Genocide in the Ottoman Empire",
+      "year": 1915,
+      "imageName": "story_genocide",
+      "summary": "The Armenian Genocide of 1915–1917 was one of the darkest chapters in Armenian history. Armenians were subjected to mass deportations, massacres, and starvation, resulting in the deaths of more than one million people.\n\nEntire communities were uprooted, cultural monuments were destroyed, and the Armenian presence in its historic lands was nearly eradicated. Survivors were scattered across the world, forming the modern Armenian diaspora.\n\nThe genocide is recognized by many countries and international organizations as a crime against humanity, and it remains central to Armenian historical memory and identity.",
+      "tags": ["tragedy","genocide"]
+    },
+    {
+      "id": "battle_of_sardarapat",
+      "title": "Battle of Sardarapat",
+      "year": 1918,
+      "imageName": "story_sardarapat",
+      "summary": "The Battle of Sardarapat, fought in May 1918, was a decisive confrontation between Armenian forces and the Ottoman army. Despite being outnumbered, Armenians organized a defense and inflicted a critical defeat.\n\nThis victory saved the Armenian nation from annihilation and laid the foundation for the declaration of the First Republic of Armenia. Sardarapat became a symbol of national unity and determination to survive.\n\nEven today, the battle is remembered as one of the most important events in modern Armenian history, strengthening national consciousness and pride.",
+      "tags": ["battle","independence"]
+    },
+    {
+      "id": "karabakh_movement",
+      "title": "Karabakh Movement",
+      "year": 1988,
+      "imageName": "story_karabakh_movement",
+      "summary": "The Karabakh Movement began in February 1988 with mass demonstrations in Yerevan and Stepanakert. Thousands demanded the reunification of Nagorno-Karabakh with Armenia.\n\nIt became one of the earliest expressions of national awakening in the late Soviet Union. The movement contributed to broader political changes, which eventually led to conflict but also paved the way for Armenian independence.\n\nThe Karabakh Movement is remembered as a symbol of the Armenian people’s quest for freedom and self-determination.",
+      "tags": ["movement","Artsakh"]
+    },
+    {
+      "id": "first_artsakh_war_victory",
+      "title": "Victory in the First Artsakh War",
+      "year": 1994,
+      "imageName": "story_artsakh_war",
+      "summary": "The First Artsakh War (1991–1994) ended with a military victory for Armenia and Artsakh. After years of fierce battles and heavy losses, Armenians liberated most of Nagorno-Karabakh and established control over adjacent territories.\n\nThis victory was achieved through the courage of volunteers, the leadership of commanders, and support from the diaspora. It altered the balance of power in the region and enabled Artsakh to function as a de facto independent entity.\n\nFor Armenians, it remains a symbol of unity and sacrifice in defense of national interests.",
+      "tags": ["war","Artsakh","victory"]
+    },
+    {
+      "id": "great_surgun",
+      "title": "The Great Expulsion",
+      "year": 1604,
+      "imageName": "story_great_surgun",
+      "summary": "In 1604, Shah Abbas I ordered the mass forced relocation of Armenians from their ancestral lands into the heart of Persia. Tens of thousands perished during the marches.\n\nThis tragedy became known as the 'Mets Surgun' (Great Expulsion). It devastated Armenian communities in Eastern Armenia but also led to the creation of New Julfa in Isfahan, which became a thriving center of Armenian commerce and culture.\n\nDespite the suffering, the displaced Armenians preserved their identity and contributed significantly to Persian economic and cultural life.",
+      "tags": ["tragedy","deportation"]
+    },
+    {
+      "id": "armenian_ssr_in_ussr",
+      "title": "Incorporation of Armenia into the USSR",
+      "year": 1922,
+      "imageName": "story_ussr_entry",
+      "summary": "In December 1922, the Armenian Soviet Socialist Republic became one of the founding republics of the USSR. This determined Armenia’s political path for the next seventy years.\n\nAs part of the Soviet Union, Armenia experienced industrialization, advances in science and education, and modernization, but also restrictions on national and religious freedoms. For Armenians, the Soviet era was a time of both achievements and hardships.\n\nIts legacy continues to shape Armenia’s society, politics, and culture to this day.",
+      "tags": ["statehood","USSR"]
+    },
+    {
+      "id": "proclamation_first_republic",
+      "title": "Proclamation of the First Republic of Armenia",
+      "year": 1918,
+      "imageName": "story_first_republic",
+      "summary": "On May 28, 1918, following the victory at Sardarapat, Armenia declared independence, creating the First Republic of Armenia, which lasted until late 1920.\n\nDespite war, famine, refugee crises, and diplomatic isolation, the republic established the foundations of modern Armenian statehood. It was the first modern attempt to restore Armenian independence after centuries of foreign rule.\n\nThe experience of the First Republic remains a vital lesson, showing that even in the harshest conditions, Armenians could build and sustain statehood.",
+      "tags": ["statehood","independence"]
+    },
+    {
+      "id": "velvet_revolution",
+      "title": "Velvet Revolution in Armenia",
+      "year": 2018,
+      "imageName": "story_velvet_revolution",
+      "summary": "In the spring of 2018, mass peaceful protests erupted in Armenia against corruption and stagnation. Led by opposition leader Nikol Pashinyan, the demonstrations spread nationwide.\n\nThe protests forced the resignation of Prime Minister Serzh Sargsyan and ushered in what became known as the 'Velvet Revolution.'\n\nThis event marked a political turning point, opening a new era of democratic expectations and reforms in Armenia.",
+      "tags": ["revolution","politics"]
+    },
+    {
+      "id": "loss_of_artsakh",
+      "title": "Loss of Artsakh",
+      "year": 2020,
+      "imageName": "story_loss_artsakh",
+      "summary": "The Second Karabakh War of 2020 ended in Armenia’s defeat. Most of Artsakh and surrounding territories came under Azerbaijani control.\n\nThe ceasefire agreement of November 9, 2020, shocked Armenian society and triggered political turmoil. Thousands of families lost their homes, and hundreds of cultural monuments were left beyond Armenian oversight.\n\nThis event became one of the most painful trials for Armenian statehood in modern times.",
+      "tags": ["Artsakh","defeat","war"]
+    },
+    {
+      "id": "armenians_in_wwii",
+      "title": "Armenians in World War II",
+      "year": 1941,
+      "imageName": "story_armenians_wwii",
+      "summary": "About 500,000 Armenians fought in World War II. More than 100 rose to the rank of general or marshal, and five Armenians were awarded the title Hero of the Soviet Union twice.\n\nArmenians fought with distinction on all fronts—from the defense of Moscow and Stalingrad to the battles of Kursk and the liberation of Europe. Marshal Ivan Bagramyan and many others became legendary commanders.\n\nTheir service symbolizes Armenia’s contribution to the Allied victory and remains a source of national pride.",
+      "tags": ["war","heroes","WWII"]
+    },
+    {
+      "id": "church_state_conflict_2025",
+      "title": "Persecution of the Armenian Apostolic Church",
+      "year": 2025,
+      "imageName": "story_church_conflict",
+      "summary": "In 2025, a crisis erupted between the Armenian government and the Armenian Apostolic Church. Authorities arrested archbishops and applied pressure on clergy.\n\nThese actions triggered resistance from the faithful and protests in Etchmiadzin and other cities. International organizations condemned the interference of the state in religious life.\n\nThe conflict highlighted deep divisions in Armenian society and tested the Church’s historic role as guardian of national identity.",
+      "tags": ["church","persecution","crisis"]
+    },
+    {
+      "id": "fall_of_cilicia",
+      "title": "Fall of Cilician Armenia",
+      "year": 1375,
+      "imageName": "story_fall_cilicia",
+      "summary": "In 1375, the Mamluks captured Sis, the capital of the Cilician Armenian Kingdom. The last king, Levon V Lusignan, was taken prisoner and brought to Cairo.\n\nThe fall of Cilicia marked the end of Armenian statehood in the region after nearly 300 years. It dealt a heavy blow to Armenian political and cultural traditions.\n\nNevertheless, Cilicia remains a symbol of Armenian independence and a cherished part of historical memory.",
+      "tags": ["Cilicia","fall","statehood"]
+    },
+    {
+      "id": "battle_of_avarayr",
+      "title": "Battle of Avarayr",
+      "year": 451,
+      "imageName": "story_avarayr",
+      "summary": "The Battle of Avarayr took place in 451 between Armenians, led by Vardan Mamikonian, and the Sasanian Persian Empire. Despite a military defeat, the battle carried immense spiritual significance.\n\nThe Armenians defended their right to practice Christianity, demonstrating unwavering faith and willingness to sacrifice their lives. Avarayr became a symbol of fidelity to faith and identity.\n\nThe memory of Vardan Mamikonian and his companions lives on in the Armenian Church and tradition as an example of courage and devotion.",
+      "tags": ["battle","faith"]
+    }
 ]

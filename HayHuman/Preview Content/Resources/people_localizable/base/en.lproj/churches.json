@@ -90,12 +90,12 @@
     "photoName": "zvartnots"
   },
   {
-    "name": "Cathedral of the Holy Resurrection (Surb Harutyun)",
+    "name": "Holy Transfiguration Cathedral (Moscow)",
     "lat": 55.7882,
     "lon": 37.6213,
     "isActive": true,
     "address": "Moscow, Russia",
-    "description": "The Cathedral of the Holy Resurrection (Surb Harutyun), consecrated in 2013, is the main church of the Armenian Apostolic Church in Russia and the spiritual center of the community.",
+    "description": "The Holy Transfiguration Cathedral, consecrated in 2013, is the main church of the Armenian Apostolic Church in Russia and the spiritual center of the community.",
     "photoName": "moscow_surharutyun"
   },
   {
@@ -115,5 +115,311 @@
     "address": "Glendale, California, USA",
     "description": "St. Gregory the Illuminator Church in Glendale is one of the largest Armenian churches in California and the spiritual center of the local community.",
     "photoName": "glendale_stgregory"
-  }
-]
+  },
+  {
+      "name": "Saint Catherine's Armenian Church",
+      "lat": 59.9343,
+      "lon": 30.3351,
+      "isActive": true,
+      "address": "Saint Petersburg, Russia",
+      "description": "Saint Catherine's Armenian Church, designed by Yury Felten and built in 1771–1776, was consecrated on February 18, 1780, by Archbishop Joseph (Argutinsky) in the presence of Prince Potemkin. It is one of the oldest Armenian churches in Russia and has long served as a spiritual and cultural center of the Armenian community.",
+      "photoName": "spb_stcatherine"
+    },
+    {
+      "name": "Church of the Resurrection (Surb Harutyun)",
+      "lat": 47.2357,
+      "lon": 39.7015,
+      "isActive": true,
+      "address": "Rostov-on-Don, Russia",
+      "description": "The Church of the Resurrection (Surb Harutyun) in Rostov-on-Don, consecrated in 2011, was built in the traditional style of Armenian church architecture.",
+      "photoName": "rostov_surbarutyun"
+    },
+    {
+      "name": "Holy Cross Church (Surb Khach)",
+      "lat": 47.2221,
+      "lon": 39.7208,
+      "isActive": true,
+      "address": "Nakhichevan-on-Don, Rostov-on-Don, Russia",
+      "description": "Holy Cross Church (Surb Khach) in Nakhichevan-on-Don was built in 1786–1792. After being closed during the Soviet era, it was reopened in 2000.",
+      "photoName": "rostov_surkhach"
+    },
+    {
+      "name": "Church of the Ascension",
+      "lat": 47.2186,
+      "lon": 39.6158,
+      "isActive": true,
+      "address": "Chaltyr village, Rostov Oblast, Russia",
+      "description": "The Church of the Ascension in Chaltyr was founded in 1860. It has been functioning since 1944 and serves as the spiritual center of the Armenians in the region.",
+      "photoName": "chaltyr_ascension"
+    },
+    {
+      "name": "Saint Hripsime Church",
+      "lat": 46.3497,
+      "lon": 48.0408,
+      "isActive": true,
+      "address": "Astrakhan, Russia",
+      "description": "Saint Hripsime Church is an Armenian Apostolic church in Astrakhan, serving as a functioning temple and the spiritual center of the local Armenian community.",
+      "photoName": "astrakhan_ripsime"
+    },
+    {
+      "name": "Saint George Church (Surb Gevorg)",
+      "lat": 44.2269,
+      "lon": 42.0468,
+      "isActive": true,
+      "address": "Cherkessk, Karachay-Cherkess Republic, Russia",
+      "description": "Saint George Church (Surb Gevorg) is an Armenian Apostolic church in Cherkessk, a functioning temple and spiritual center of the Armenian community in the city.",
+      "photoName": "cherkessk_gevorg"
+    },
+    {
+      "name": "Saint Gevorg Church",
+      "lat": 48.708,
+      "lon": 44.5133,
+      "isActive": true,
+      "address": "Volgograd, Russia",
+      "description": "Saint Gevorg Church in Volgograd is an active Armenian church, uniting the Armenian community of the city.",
+      "photoName": "volgograd_gevorg"
+    },
+    {
+      "name": "Saint Hovhannes Church (Surb Hovhannes)",
+      "lat": 44.6098,
+      "lon": 40.1007,
+      "isActive": true,
+      "address": "Maykop, Republic of Adygea, Russia",
+      "description": "Saint Hovhannes Church (Surb Hovhannes) is an Armenian Apostolic church in Maykop, serving as a spiritual and cultural center of the Armenian community in the region.",
+      "photoName": "maykop_hovhannes"
+    },
+    {
+      "name": "Surb Karapet Church",
+      "lat": 56.8389,
+      "lon": 60.6057,
+      "isActive": true,
+      "address": "Yekaterinburg, Russia",
+      "description": "Surb Karapet Church in Yekaterinburg is an active Armenian church, built at the end of the 20th century, bringing together the Armenian community of the Urals.",
+      "photoName": "yekaterinburg_karapet"
+    },
+    {
+      "name": "Church of Saint Sarkis",
+      "lat": 43.4396,
+      "lon": 39.9273,
+      "isActive": true,
+      "address": "Adler, Sochi, Russia",
+      "description": "The Church of Saint Sarkis in Adler was built in 1997–1998. The temple is designed in traditional Armenian architectural style and serves as a spiritual center of the Armenian diaspora of the city.",
+      "photoName": "adler_sarkis"
+    },
+    {
+      "name": "Church of Saint Mariam Astvatsatsin",
+      "lat": 45.0448,
+      "lon": 38.976,
+      "isActive": true,
+      "address": "Krasnodar, Turgeneva St. 165, Russia",
+      "description": "The Church of Saint Mariam Astvatsatsin is an Armenian Apostolic church in Krasnodar. It is an active temple serving as a spiritual and cultural center for Armenians of Kuban.",
+      "photoName": "krasnodar_astvatsatsin"
+    },
+    {
+      "name": "Church of Surb Vardan",
+      "lat": 43.9133,
+      "lon": 42.7208,
+      "isActive": true,
+      "address": "Kislovodsk, Kutuzov St. 107B, Russia",
+      "description": "The Church of Surb Vardan in Kislovodsk is an Armenian Apostolic church, an active temple founded in the early 21st century.",
+      "photoName": "kislovodsk_vardan"
+    },
+    {
+      "name": "Church of Surb Sargis",
+      "lat": 44.0486,
+      "lon": 43.0594,
+      "isActive": true,
+      "address": "Pyatigorsk, Stavropol Krai, Russia",
+      "description": "The Church of Surb Sargis in Pyatigorsk is an active Armenian temple built with the support of the local community.",
+      "photoName": "pyatigorsk_sarkis"
+    },
+    {
+      "name": "Church of Surb Gevorg",
+      "lat": 47.3561,
+      "lon": 39.5842,
+      "isActive": false,
+      "address": "Sultan-Saly village, Rostov Region, Russia",
+      "description": "The Church of Surb Gevorg (Saint George) in Sultan-Saly was founded in 1795 and rebuilt in 1867. It is one of the oldest Armenian temples in the Don region. During World War II the building was damaged and partially destroyed. Today the church remains in ruins and requires restoration, but it is still regarded as an important monument of Armenian heritage in Russia.",
+      "photoName": "sultan_saly_gevorg"
+    },
+    {
+      "name": "Church of Saint Gregory the Illuminator",
+      "lat": 44.7244,
+      "lon": 37.7675,
+      "isActive": true,
+      "address": "Novorossiysk, Krasnodar Krai, Russia",
+      "description": "The Church of Saint Gregory the Illuminator in Novorossiysk was built between 2001 and 2008. Designed by architect Levon Avalyan, the temple is clad in pink tuff brought from Armenia.",
+      "photoName": "novorossiysk_grigor"
+    },
+    {
+      "name": "Church of Saint Gregory the Illuminator",
+      "lat": 56.129,
+      "lon": 40.4066,
+      "isActive": true,
+      "address": "Vladimir, Russia",
+      "description": "The Church of Saint Gregory the Illuminator in Vladimir is an Armenian Apostolic church consecrated in 2017. It was built with the support of the city’s Armenian community.",
+      "photoName": "vladimir_grigor"
+    },
+      {
+        "name": "Church of the Holy Cross (Surb Khach)",
+        "lat": 53.1959,
+        "lon": 50.1008,
+        "isActive": true,
+        "address": "Samara, Russia",
+        "description": "The Church of the Holy Cross (Surb Khach) in Samara was built between 1998 and 2003 and consecrated in 2003. It serves as an active parish and the spiritual center of the Armenian community in the Volga region.",
+        "photoName": "samara_surkhach"
+      },
+      {
+        "name": "Church of St. Grigoris",
+        "lat": 41.5057,
+        "lon": 48.4004,
+        "isActive": true,
+        "address": "Nyugdi village, Dagestan, Russia",
+        "description": "The Church of St. Grigoris in Nyugdi was built in 1916. It remains an important religious center for the Armenian community of the region.",
+        "photoName": "nyugdi_grigoris"
+      },
+      {
+        "name": "Church of Surb Sargis",
+        "lat": 56.0184,
+        "lon": 92.8672,
+        "isActive": true,
+        "address": "Krasnoyarsk, Russia",
+        "description": "The Church of Surb Sargis in Krasnoyarsk is the first Armenian church built east of the Urals. Constructed in the late 1990s, it was consecrated in 2003 and unites the Armenian community of Siberia.",
+        "photoName": "krasnoyarsk_sarkis"
+      },
+      {
+        "name": "Church of Surb Astvatsatsin",
+        "lat": 55.0302,
+        "lon": 82.9204,
+        "isActive": true,
+        "address": "Novosibirsk, Russia",
+        "description": "The Church of Surb Astvatsatsin in Novosibirsk is an Armenian Apostolic church, serving as an active parish and cultural center for the local Armenian community.",
+        "photoName": "novosibirsk_astvatsatsin"
+      },
+      {
+        "name": "Church of Christ the Savior",
+        "lat": 58.6036,
+        "lon": 49.6680,
+        "isActive": true,
+        "address": "Kirov, Russia",
+        "description": "The Church of Christ the Savior in Kirov is an Armenian Apostolic church, serving as a spiritual hub for the Armenian community of the region.",
+        "photoName": "kirov_christ_savior"
+      },
+        {
+          "name": "Church of Surb Astvatsatsin",
+          "lat": 51.5331,
+          "lon": 46.0342,
+          "isActive": true,
+          "address": "Saratov, Russia",
+          "description": "The Church of Surb Astvatsatsin in Saratov is an Armenian Apostolic church, serving as an active parish and spiritual center for Armenians of the Volga region.",
+          "photoName": "saratov_astvatsatsin"
+        },
+        {
+          "name": "Church of St. Gregory the Illuminator",
+          "lat": 54.3180,
+          "lon": 48.3978,
+          "isActive": true,
+          "address": "Ulyanovsk, Russia",
+          "description": "The Church of St. Gregory the Illuminator in Ulyanovsk was consecrated in 2023. A modern Armenian Apostolic church built with the support of the local community.",
+          "photoName": "ulyanovsk_grigor"
+        },
+        {
+          "name": "Church of Surb Stepanos",
+          "lat": 54.7104,
+          "lon": 20.4522,
+          "isActive": true,
+          "address": "Kaliningrad, Russia",
+          "description": "The Church of Surb Stepanos in Kaliningrad is an Armenian Apostolic church and a spiritual center for the city’s Armenian community.",
+          "photoName": "kaliningrad_stepanos"
+        },
+        {
+          "name": "Church of Surb Harutyun",
+          "lat": 55.7636,
+          "lon": 37.5595,
+          "isActive": true,
+          "address": "Moscow, ul. Sergeya Makeeva, 10",
+          "description": "The Church of Surb Harutyun in Moscow was founded in 1815 by the Lazarev brothers. It was later closed, but returned to the community in 1956. Today it functions as an active parish and a historical cultural center.",
+          "photoName": "moscow_surbarutyun_old"
+        },
+        {
+          "name": "Church of Surb Harutyun",
+          "lat": 56.8583,
+          "lon": 35.9044,
+          "isActive": true,
+          "address": "Tver, Russia",
+          "description": "The Church of Surb Harutyun in Tver is an active Armenian Apostolic church and a community center for Armenians of the city.",
+          "photoName": "tver_surbarutyun"
+        },
+        {
+          "name": "Church of Surb Gevorg",
+          "lat": 57.6373,
+          "lon": 39.8161,
+          "isActive": true,
+          "address": "Yaroslavl, Russia",
+          "description": "The Church of Surb Gevorg in Yaroslavl is the first Armenian church in the region, consecrated in 2017.",
+          "photoName": "yaroslavl_gevorg"
+        },
+        {
+          "name": "Church of Surb Sargis",
+          "lat": 51.6744,
+          "lon": 39.1763,
+          "isActive": true,
+          "address": "Voronezh, Russia",
+          "description": "The Church of Surb Sargis in Voronezh is an active parish of the Armenian Apostolic Church, built with Armenian tuff and decorated with khachkars. Architect: Gevorg Shirvanyan.",
+          "photoName": "voronezh_surb_sargis"
+        },
+        {
+          "name": "Church of Surb Amenaprkich (All-Savior)",
+          "lat": 56.3153,
+          "lon": 43.9786,
+          "isActive": true,
+          "address": "Nizhny Novgorod, Russia",
+          "description": "The Armenian Apostolic Church of Surb Amenaprkich in Nizhny Novgorod was built between 2008–2014 and consecrated on May 25, 2014. Constructed from Armenian tuff, it features khachkars and a cultural center.",
+          "photoName": "nn_surb_amenaprkich"
+        },
+        {
+          "name": "Church of Surb Ripsime",
+          "lat": 53.3320,
+          "lon": 83.6667,
+          "isActive": true,
+          "address": "Barnaul, Russia",
+          "description": "The Church of Surb Ripsime in Barnaul was built between 2001–2008, consecrated by Catholicos Karekin II in October 2008. Built in traditional Armenian style with red brick, with a khachkar nearby.",
+          "photoName": "barnaul_surb_ripsime"
+        },
+        {
+          "name": "Church of St. Gregory the Illuminator",
+          "lat": 53.6681,
+          "lon": 87.1583,
+          "isActive": true,
+          "address": "Sosnovka, Kemerovo Region, Russia",
+          "description": "The Church of St. Gregory the Illuminator in Sosnovka was registered in May 2008 and consecrated on August 24, 2008. The opening was attended by over 400 Armenians and representatives of other faith communities.",
+          "photoName": "sosnovka_surb_grigor"
+        },
+        {
+          "name": "Church of St. Gregory the Illuminator",
+          "lat": 43.0187,
+          "lon": 44.6802,
+          "isActive": true,
+          "address": "Vladikavkaz, Russia",
+          "description": "The Church of St. Gregory the Illuminator in Vladikavkaz was built in 1868. It is a cultural heritage monument, with a khachkar in the yard dedicated to the memory of the Armenian Genocide victims.",
+          "photoName": "vladikavkaz_surb_grigor"
+        },
+        {
+          "name": "Church of Surb Amenaprkich (All-Savior)",
+          "lat": 42.05694,
+          "lon": 48.28694,
+          "isActive": true,
+          "address": "Derbent, Russia",
+          "description": "The Church of Surb Amenaprkich in Derbent was built in 1870–1871, with a bell tower added in 1888. Recognized as an architectural monument in 1975, services resumed in 2009.",
+          "photoName": "derbent_surb_amenaprkich"
+        },
+        {
+          "name": "Monastery of Surb Khach",
+          "lat": 45.0007,
+          "lon": 35.0625,
+          "isActive": true,
+          "address": "Stary Krym, Crimea",
+          "description": "The Monastery of Surb Khach (Holy Cross) was founded in 1358. The complex includes Surb Nshan Church, a gavit, refectory, cells, and khachkars. Closed in 1925, restored from the 1980s, services resumed in 1994.",
+          "photoName": "surp_hach_crimea"
+        }
+      ]

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Saint_Catherine's_Armenian_Church,_St_Petersburg,_Russia_(retouched).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

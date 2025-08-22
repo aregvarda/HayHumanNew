@@ -9,11 +9,11 @@
     "birthLat": 41.0082,
     "birthLon": 28.9784,
     "birthYear": 1869,
-    "bio": "Calouste Sarkis Gulbenkian — an Armenian-British entrepreneur, known as 'Mr. Five Percent'. A major philanthropist and art collector."
+    "bio": "Calouste Sarkis Gulbenkian (1869–1955) was born in Constantinople to an Armenian family. He studied engineering in London and entered the oil industry in the late 19th century, becoming a mediator between governments and major companies.\n\nIn the 1920s he played a key role in the formation of the Iraq Petroleum Company, where he secured 5% of the shares, which gave him the nickname 'Mr. Five Percent'.\n\nGulbenkian was also a major art collector. His collection included European paintings, oriental carpets, manuscripts and antiquities. After his death, this became the basis of the Calouste Gulbenkian Museum in Lisbon.\n\nAccording to his will, a foundation was established to support projects in science, culture and education, which continues its work today."
   },
   {
-    "name": "Alexander Mantashev",
-    "subtitle": "Oil industrialist and benefactor",
+    "name": "Alexander Mantashov",
+    "subtitle": "Oil industrialist and philanthropist",
     "section": "Бизнес",
     "imageName": "mantashev",
     "birthCity": "Tiflis",
@@ -21,7 +21,7 @@
     "birthLat": 41.7151,
     "birthLon": 44.8271,
     "birthYear": 1842,
-    "bio": "Alexander (Aleksan) Mantashev — one of the largest oil industrialists of the early 20th century and an outstanding benefactor of the Armenian community."
+    "bio": "Alexander Mantashov (1842–1911) was born in Tiflis. He initially traded textiles in France and Russia, later investing in the oil industry in Baku. By the end of the 19th century he became one of the leading entrepreneurs in the region.\n\nHis company owned oil fields, refineries and distribution networks, competing with the largest firms in Russia and Europe and securing a place in the international market.\n\nHe allocated part of his income to the construction of schools, churches and theaters. He also financed book publishing and supported Armenian students abroad.\n\nBy the early 20th century Mantashov was considered one of the wealthiest businessmen in the Russian Empire. His name is often mentioned in the history of Baku oil and Armenian philanthropy."
   },
   {
     "name": "Kirk Kerkorian",
@@ -33,6 +33,138 @@
     "birthLat": 36.7378,
     "birthLon": -119.7871,
     "birthYear": 1917,
-    "bio": "Kirk Kerkorian — an American entrepreneur of Armenian descent, one of the creators of modern Las Vegas, and a philanthropist."
+    "bio": "Kirk Kerkorian (1917–2015) was born in Fresno, California, to an Armenian family. During World War II he served in aviation. After the war he went into business, including aviation services and construction.\n\nFrom the 1960s he invested heavily in the hotel industry of Las Vegas. He was involved in the construction of the International Hotel and the MGM Grand, which at their time were the largest hotels in the world.\n\nKerkorian also made major investments in the US automobile industry, buying shares in Chrysler, Ford and General Motors.\n\nFrom the late 1980s he financed programs to support Armenia, particularly after the 1988 Spitak earthquake. His Lincy Foundation directed hundreds of millions of dollars into infrastructure and humanitarian projects."
+  },
+  {
+    "name": "Mikael Aramyants",
+    "subtitle": "Oil magnate, financier, philanthropist",
+    "section": "Бизнес",
+    "imageName": "aramyants",
+    "birthCity": "Kyatuk",
+    "birthCountry": "Russian Empire",
+    "birthLat": 40.0,
+    "birthLon": 46.0,
+    "birthYear": 1843,
+    "bio": "Mikael Aramyants (1843–1923) was born in the village of Kyatuk in Artsakh. He began as a trader and later became a shareholder in oil enterprises in Baku, amassing considerable wealth by the 1890s.\n\nHe worked in partnership with Alexander Mantashov and was part of major oil companies operating in Baku at the turn of the 20th century.\n\nAramyants was well known as a philanthropist in Tiflis. He financed the construction of the city hospital, the Majestic Hotel, and supported cultural and educational initiatives. His printing house published Armenian authors.\n\nDespite his wealth, his final years were modest. He died in Tiflis in 1923 and was buried at the Armenian cemetery Khojivank."
+  },
+  {
+    "name": "Ruben Vardanyan",
+    "subtitle": "Banker, investor, philanthropist",
+    "section": "Бизнес",
+    "imageName": "ruben_vardanyan",
+    "birthCity": "Yerevan",
+    "birthCountry": "USSR",
+    "birthLat": 40.1792,
+    "birthLon": 44.4991,
+    "birthYear": 1968,
+    "bio": "Ruben Vardanyan (born 1968) is an Armenian entrepreneur and philanthropist. In 1991 he founded the investment company Troika Dialog, which became one of the largest in Russia and the post-Soviet space.\n\nSince the 2000s he has focused on projects connected with Armenia. He initiated the establishment of the international UWC Dilijan College and co-founded the Aurora Prize for Awakening Humanity.\n\nIn 2022 Vardanyan renounced Russian citizenship and moved to Artsakh, where he became involved in public and humanitarian activities. This step was widely regarded as a demonstration of commitment to Armenia.\n\nAfter the events of 2023 he was taken prisoner in Baku. His name is associated both with investment activity in the post-Soviet market and with educational and humanitarian initiatives linked to Armenia and Artsakh."
+  },
+  {
+    "name": "Eduardo Eurnekian",
+    "subtitle": "Entrepreneur, billionaire",
+    "section": "Бизнес",
+    "imageName": "ernekyan",
+    "birthCity": "Buenos Aires",
+    "birthCountry": "Argentina",
+    "birthLat": -34.6037,
+    "birthLon": -58.3816,
+    "birthYear": 1932,
+    "bio": "Eduardo Eurnekian (born 1932) is an Argentine businessman of Armenian origin. He made his fortune in media and commerce and later founded Corporación América, which manages dozens of airports around the world.\n\nSince the 2000s he has actively invested in Armenia. His company participated in the reconstruction of Zvartnots International Airport in Yerevan and the airport in Gyumri. He also invested in road construction, agriculture and energy projects.\n\nEurnekian supports educational and cultural initiatives of the Armenian diaspora. His name is linked to some of the largest foreign investments in the Armenian economy."
+  },
+  {
+    "name": "Alex Manoogian",
+    "subtitle": "Businessman and philanthropist",
+    "section": "Бизнес",
+    "imageName": "manukyan",
+    "birthCity": "Smyrna",
+    "birthCountry": "Ottoman Empire",
+    "birthLat": 38.4237,
+    "birthLon": 27.1428,
+    "birthYear": 1901,
+    "bio": "Alex Manoogian (1901–1996) was born in Smyrna. After the massacres of 1922 he emigrated to the United States, settling in Detroit, where he built a successful business in auto parts.\n\nFrom 1953 for over three decades he led the Armenian General Benevolent Union (AGBU). Under his leadership schools, cultural centers and hospitals were built in many countries.\n\nHe consistently supported educational initiatives and projects aimed at preserving Armenian identity in the diaspora. His activities contributed to the consolidation of Armenian communities in the 20th century."
+  },
+  {
+    "name": "Ivan Lazarevich Lazarev",
+    "subtitle": "Merchant, court jeweler, philanthropist",
+    "section": "Бизнес",
+    "imageName": "lazarev",
+    "birthCity": "New Julfa",
+    "birthCountry": "Persia",
+    "birthLat": 32.6126,
+    "birthLon": 51.6692,
+    "birthYear": 1735,
+    "bio": "Ivan Lazarevich Lazarev (1735–1801) came from an Armenian merchant family of New Julfa (Persia). In his youth he moved to Moscow, where he became wealthy trading precious stones and metals and working as a jeweler.\n\nHe became a court jeweler of Catherine II and executed orders for the imperial court. By the late 18th century he was among the most influential Moscow merchants.\n\nHe financed the construction of the Armenian church Surb Khach in Moscow. His descendants founded the Lazarev Institute of Oriental Languages, which became an important educational center for oriental studies and Armenian studies in Russia."
+  },
+  {
+    "name": "Georgy Lianozov",
+    "subtitle": "Oil industrialist",
+    "section": "Бизнес",
+    "imageName": "lianozov",
+    "birthCity": "Baku",
+    "birthCountry": "Russian Empire",
+    "birthLat": 40.4093,
+    "birthLon": 49.8671,
+    "birthYear": 1850,
+    "bio": "Georgy Lianozov (1850–1916) was born in Baku to an Armenian family. By the late 19th century he was one of the major oil industrialists of the city. His company controlled significant volumes of oil extraction and refining, earning him the nickname 'Kerosene King'.\n\nIn the early 20th century the Lianozov family transferred part of their capital to Moscow, where they established a fish processing enterprise. Around it grew the settlement of Lianozovo, later incorporated into Moscow.\n\nHe also allocated funds to cultural and educational projects of the Armenian community. His name remains both in the history of Baku oil and in Moscow toponymy."
+  },
+  {
+    "name": "Sir Paul Chater",
+    "subtitle": "Entrepreneur and philanthropist",
+    "section": "Бизнес",
+    "imageName": "paul_chater",
+    "birthCity": "Calcutta",
+    "birthCountry": "India",
+    "birthLat": 22.5726,
+    "birthLon": 88.3639,
+    "birthYear": 1846,
+    "bio": "Sir Paul Chater (1846–1926) was born in Calcutta to an Armenian family. As a young man he moved to Hong Kong, where he entered commerce and soon became a leading businessman in the colony.\n\nHe co-founded Hongkong Land, which played a central role in the development of the city's Central district. Chater participated in major infrastructure projects including land reclamation at Victoria Harbour, construction of the tramway and a power station.\n\nHe was a member of both the Executive and Legislative Councils of Hong Kong, representing the business community. For his service he was knighted by the British Crown.\n\nChater donated significant funds to education and culture, including La Martiniere College in Calcutta and the University of Hong Kong. He also supported the Armenian Church of Saint Nazareth."
+  },
+  {
+    "name": "Իսահակ Իսահակի Ջամգարով",
+    "subtitle": "Բանկիր և բարերար",
+    "section": "Бизнес",
+    "imageName": "jamgarov",
+    "birthCity": "Շուշի",
+    "birthCountry": "Արցախ",
+    "birthLat": 39.7600,
+    "birthLon": 46.7500,
+    "birthYear": 1845,
+    "bio": "Իսահակ Ջամգարովը (1845–1902) հանդիսանում էր Ռուսական կայսրության ամենամեծ բանկային տների հիմնադիրներից և համասեփականատերերից մեկը՝ «Ջամգարով եղբայրներ», որը հիմնադրվել էր Մոսկվայում 1874 (կամ 1878) թվականին։ Բանկի կապիտալը գերազանցում էր 5 միլիոն ռուբլին, տարեկան շրջանառությունը հասնում էր մինչև 1,4 միլիարդ ռուբլու։ Այն ուներ գրասենյակներ Մոսկվայում և Սանկտ Պետերբուրգում և ֆինանսավորում էր արդյունաբերական ու էներգետիկ նախագծեր։\n\nՋամգարովները ներգրավված էին առաջատար բանկերի խորհրդներում և ակտիվորեն աջակցում էին հասարակական նախաձեռնություններին․ նրանք ֆինանսավորեցին հիվանդանոցի կառուցումը Արցախում, հիշատակի տունը հայկական գերեզմանոցում և աջակցեցին «Ջամգարովկա» կոչվող թաղամասի զարգացմանը։\n\nԻսահակը սպանվեց 1902 թվականին՝ Մոսկվայի հայկական եկեղեցու մոտ։ Նրա հիշատակի համար կառուցվեց հիշատակի տուն, իսկ թաղամասը պահպանում է նրա անունը։"
+  },
+  {
+    "name": "Նուբար Աֆեյան",
+    "subtitle": "Ձեռնարկատեր, գիտնական և բարերար",
+    "section": "Бизнес",
+    "imageName": "afeyan",
+    "birthCity": "Բեյրութ",
+    "birthCountry": "Լիբանան",
+    "birthLat": 33.8938,
+    "birthLon": 35.5018,
+    "birthYear": 1962,
+    "bio": "Նուբար Աֆեյանը (ծն. 1962) հայ-կանադա-ամերիկացի ձեռնարկատեր և կենսատեխնոլոգ։ Ավարտել է ՄքԳիլի համալսարանը և Մասաչուսեթսի տեխնոլոգիական ինստիտուտը՝ ստանալով դոկտորի աստիճան կենսաքիմիական ինժեներիայում (1987)։\n\n1999 թվականին հիմնեց Flagship Pioneering ընկերությունը, որի շրջանակում ստեղծվել է ավելի քան 100 գիտական ձեռնարկություն, գնահատված միլիարդավոր դոլարներով, հարյուրավոր արտոնագրերով և տասնյակ դեղամիջոցներով կլինիկական փորձարկումներում։ 2009 թվականին համահիմնեց Moderna ընկերությունը, որը առաջիններից էր, որ ստեղծեց COVID-19-ի դեմ պատվաստանյութ։\n\nԱֆեյանը նաև ակտիվ է բարեգործության մեջ․ համահիմնադրել է «Ավրորա» մարդասիրական նախաձեռնությունը, UWC Dilijan միջազգային դպրոցը և IDeA հիմնադրամը՝ ուղղված Հայաստանի և սփյուռքի զարգացմանը։"
+  },
+  {
+    "name": "Սերգեյ Գալիցկի (Արուտյունյան)",
+    "subtitle": "«Մագնիտ» ցանցի հիմնադիր, ֆուտբոլի հովանավոր",
+    "section": "Бизнес",
+    "imageName": "galitsky",
+    "birthCity": "Լազարևսկոյե",
+    "birthCountry": "Ռուսաստան",
+    "birthLat": 43.5853,
+    "birthLon": 39.7958,
+    "birthYear": 1967,
+    "bio": "Սերգեյ Գալիցկին (Արուտյունյան) (ծն. 1967) ծագումով հայկական ընտանիքից էր։ Հետագայում վերցրեց կնոջ ազգանունը։\n\nՆա «Մագնիտ» խանութների ցանցի հիմնադիրն ու համասեփականատերն է՝ Ռուսաստանի ամենամեծ ռիթեյլ ընկերությունը, որը վերածվեց տասնյակ հազարավոր խանութներով կայսրության և հաջողությամբ իրականացրեց IPO 2006 թվականին։ Նա նաև «Կրասնոդար» ֆուտբոլային ակումբի սեփականատերն է և ֆինանսավորել է մարզադաշտի ու հարակից պարկի կառուցումը։\n\nՉնայած հայկական ծագմանը՝ Գալիցկին ընկալվում է հիմնականում որպես ռուս գործարար, ով կարևոր դեր է խաղացել երկրի ռիթեյլի և սպորտի զարգացման մեջ։"
+  },
+  {
+    "name": "Սամվել Կարապետյան",
+    "subtitle": "Tashir Group-ի հիմնադիր և բարերար",
+    "section": "Бизнес",
+    "imageName": "karapetyan",
+    "birthCity": "Կալինինո (ներկայում՝ Տաշիր)",
+    "birthCountry": "Հայկական ՍՍՀ",
+    "birthLat": 41.1261,
+    "birthLon": 44.0194,
+    "birthYear": 1965,
+    "bio": "Սամվել Կարապետյանը (ծն. 1965) հայ-ռուս գործարար միլիարդատեր է, Tashir Group-ի հիմնադիրն ու սեփականատերը՝ բազմաճյուղ հոլդինգ անշարժ գույքի, շինարարության, էներգետիկայի և առևտրի ոլորտներում։\n\nՆա ակտիվորեն ներդրումներ է կատարել Հայաստանի սոցիալական ենթակառուցվածքներում․ ֆինանսավորել է Ստեփանակերտում հիվանդանոցի կառուցումը և հայտարարել շուրջ 600 մլն դոլարի ներդրման ծրագրեր երկրի էներգետիկ ոլորտում։\n\n2025 թվականի հունիսին նա ձերբակալվեց՝ Հայ Առաքելական Եկեղեցուն աջակցող հրապարակային ելույթից հետո։ Ձերբակալությունը լայն արձագանք ստացավ և ընկալվեց որպես քաղաքականապես մոտիվացված։ Չնայած ձերբակալության վիճահարույց բնույթին՝ նրա նկատմամբ կիրառված սահմանափակող միջոցները երկարաձգվեցին։"
   }
 ]
