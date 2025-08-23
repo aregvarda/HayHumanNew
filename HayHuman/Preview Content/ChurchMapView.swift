@@ -13,119 +13,8 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-// MARK: - Location Manager (nearest church support)
-final class HHLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    @Published var lastLocation: CLLocation?
-    @Published var status: CLAuthorizationStatus = .notDetermined
-
-    private let manager = CLLocationManager()
-
-    override init() {
-        super.init()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-    }
-
-    func request() {
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-        case .authorizedWhenInUse, .authorizedAlways:
-            manager.startUpdatingLocation()
-        case .restricted, .denied:
-            break
-        @unknown default:
-            break
-        }
-    }
-
-    // MARK: CLLocationManagerDelegate
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        status = manager.authorizationStatus
-        if status == .authorizedWhenInUse || status == .authorizedAlways {
-            manager.startUpdatingLocation()
-        }
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let loc = locations.last else { return }
-        lastLocation = loc
-    }
-}
 
 private func L(_ key: String) -> LocalizedStringKey { LocalizedStringKey(key) }
-
-struct Church: Identifiable, Equatable, Hashable, Codable {
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-    let isActive: Bool
-    let city: String?
-    let address: String?
-    let descriptionText: String?
-    let photoName: String?
-
-    // Codable support (for unified search loader)
-    enum CodingKeys: String, CodingKey {
-        case name, isActive, city, address
-        case descriptionText
-        case description // alternate
-        case photoName
-        case photo // alternate
-        case image // alternate
-        case lat, lon
-    }
-
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try c.decode(String.self, forKey: .name)
-        let lat = try c.decode(Double.self, forKey: .lat)
-        let lon = try c.decode(Double.self, forKey: .lon)
-        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-        self.isActive = try c.decode(Bool.self, forKey: .isActive)
-        self.city = try c.decodeIfPresent(String.self, forKey: .city)
-        self.address = try c.decodeIfPresent(String.self, forKey: .address)
-        self.descriptionText = try c.decodeIfPresent(String.self, forKey: .descriptionText)
-            ?? c.decodeIfPresent(String.self, forKey: .description)
-        self.photoName = try c.decodeIfPresent(String.self, forKey: .photoName)
-            ?? c.decodeIfPresent(String.self, forKey: .photo)
-            ?? c.decodeIfPresent(String.self, forKey: .image)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var c = encoder.container(keyedBy: CodingKeys.self)
-        try c.encode(name, forKey: .name)
-        try c.encode(isActive, forKey: .isActive)
-        try c.encodeIfPresent(city, forKey: .city)
-        try c.encodeIfPresent(address, forKey: .address)
-        try c.encodeIfPresent(descriptionText, forKey: .descriptionText)
-        try c.encodeIfPresent(photoName, forKey: .photoName)
-        try c.encode(coordinate.latitude, forKey: .lat)
-        try c.encode(coordinate.longitude, forKey: .lon)
-    }
-
-    init(
-        name: String,
-        coordinate: CLLocationCoordinate2D,
-        isActive: Bool,
-        city: String? = nil,
-        address: String? = nil,
-        descriptionText: String? = nil,
-        photoName: String? = nil
-    ) {
-        self.name = name
-        self.coordinate = coordinate
-        self.isActive = isActive
-        self.city = city
-        self.address = address
-        self.descriptionText = descriptionText
-        self.photoName = photoName
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
 
 struct ChurchMapView: View {
     private enum ChurchFilter: String, CaseIterable, Identifiable {
@@ -148,9 +37,25 @@ struct ChurchMapView: View {
     @State private var selectedChurch: Church? = nil
     @State private var navTarget: Church? = nil
     @State private var searchText: String = ""
+    @State private var showList = false
     @StateObject private var locationManager = HHLocationManager()
     @State private var didAutoCenter = false
     @State private var allowAutoLock = false
+
+    // List filters
+    @State private var nearMeOn: Bool = false
+    @State private var withPhotoOn: Bool = false
+    @State private var selectedCountry: String? = nil // nil = all
+    private let nearMeRadius: CLLocationDistance = 25_000 // 25 km
+    // --- Filters/List Mode Sheets
+    @State private var showFiltersSheet = false
+    @State private var showCountrySheet = false
+
+    private enum SortMode: String, CaseIterable, Identifiable { case distance, name; var id: Self { self } }
+    @State private var sortMode: SortMode = .name
+
+    // Controls visibility of bottom mini-map in list mode
+    @State private var showBottomMiniMapInList = false
 
     @SceneStorage("HHMap.didFreshInit") private var didFreshInit: Bool = false
 
@@ -275,6 +180,61 @@ struct ChurchMapView: View {
         case .active: return churches.filter { $0.isActive }
         case .inactive: return churches.filter { !$0.isActive }
         }
+    }
+
+    // Apply search text to a church array (name + address)
+    private func applySearch(_ arr: [Church]) -> [Church] {
+        let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return arr }
+        return arr.filter { c in
+            let hay = [c.name, c.address ?? "", c.city ?? ""].joined(separator: " ").lowercased()
+            return hay.contains(q)
+        }
+    }
+
+    // Helpers for list filters
+    private func distanceFromUser(_ church: Church) -> CLLocationDistance? {
+        guard let loc = locationManager.lastLocation else { return nil }
+        let c = CLLocation(latitude: church.coordinate.latitude, longitude: church.coordinate.longitude)
+        return c.distance(from: loc)
+    }
+
+    private func countryOf(_ church: Church) -> String? {
+        guard let addr = church.address, !addr.isEmpty else { return nil }
+        let parts = addr.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        return parts.last
+    }
+
+    private var availableCountries: [String] {
+        let arr = applySearch(filteredChurches)
+        let all = arr.compactMap { countryOf($0) }
+        // top 6 by frequency
+        let counts = Dictionary(grouping: all, by: { $0 }).mapValues { $0.count }
+        return all.uniqued().sorted { (counts[$0] ?? 0) > (counts[$1] ?? 0) }.prefix(6).map { $0 }
+    }
+    private var topCountries: [String] { Array(availableCountries.prefix(3)) }
+
+    // List mode uses filter + search + extra filters
+    private var listFilteredChurches: [Church] {
+        var arr = applySearch(filteredChurches)
+        if withPhotoOn { arr = arr.filter { ($0.photoName ?? "").isEmpty == false } }
+        if let country = selectedCountry { arr = arr.filter { countryOf($0) == country } }
+        if nearMeOn, let _ = locationManager.lastLocation {
+            arr = arr.compactMap { ch in
+                if let d = distanceFromUser(ch), d <= nearMeRadius { return ch } else { return nil }
+            }
+        }
+        switch sortMode {
+        case .distance:
+            if locationManager.lastLocation != nil {
+                arr = arr.sorted { (distanceFromUser($0) ?? .greatestFiniteMagnitude) < (distanceFromUser($1) ?? .greatestFiniteMagnitude) }
+            } else {
+                fallthrough
+            }
+        case .name:
+            arr = arr.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        }
+        return arr
     }
     
     // Compact Apple/Maps-like preview card shown in the bottom sheet
@@ -428,41 +388,6 @@ struct ChurchMapView: View {
         }
     }
 
-    // Helper model to decode JSON (lat/lon) and map to `Church`
-    private struct DecChurch: Decodable {
-        let name: String
-        let lat: Double
-        let lon: Double
-        let isActive: Bool
-        let city: String?
-        let address: String?
-        let descriptionText: String?
-        let photoName: String?
-
-        enum CodingKeys: String, CodingKey {
-            case name, lat, lon, isActive, city, address
-            case descriptionText
-            case description
-            case photoName
-            case photo
-            case image
-        }
-
-        init(from decoder: Decoder) throws {
-            let c = try decoder.container(keyedBy: CodingKeys.self)
-            name = try c.decode(String.self, forKey: .name)
-            lat = try c.decode(Double.self, forKey: .lat)
-            lon = try c.decode(Double.self, forKey: .lon)
-            isActive = try c.decode(Bool.self, forKey: .isActive)
-            city = try c.decodeIfPresent(String.self, forKey: .city)
-            address = try c.decodeIfPresent(String.self, forKey: .address)
-            descriptionText = try c.decodeIfPresent(String.self, forKey: .descriptionText)
-                ?? c.decodeIfPresent(String.self, forKey: .description)
-            photoName = try c.decodeIfPresent(String.self, forKey: .photoName)
-                ?? c.decodeIfPresent(String.self, forKey: .photo)
-                ?? c.decodeIfPresent(String.self, forKey: .image)
-        }
-    }
 
     private func loadChurches() {
         do {
@@ -486,18 +411,7 @@ struct ChurchMapView: View {
 
             let data = try Data(contentsOf: url)
             let decoded = try JSONDecoder().decode([DecChurch].self, from: data)
-
-            self.churches = decoded.map { item in
-                Church(
-                    name: item.name,
-                    coordinate: CLLocationCoordinate2D(latitude: item.lat, longitude: item.lon),
-                    isActive: item.isActive,
-                    city: item.city,
-                    address: item.address,
-                    descriptionText: item.descriptionText,
-                    photoName: item.photoName
-                )
-            }
+            self.churches = decoded.map { Church(from: $0) }
 
             // (removed auto-centering to first church)
 
@@ -623,7 +537,8 @@ struct ChurchMapView: View {
         .padding(.top, 8)
     }
 
-    var body: some View {
+    // Group heavy overlays separately to help the type-checker
+    private var mapWithOverlays: some View {
         mapContent
             .overlay(alignment: .top) {
                 ZStack(alignment: .top) {
@@ -655,6 +570,35 @@ struct ChurchMapView: View {
                 .padding(.bottom, 48)
                 .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
             }
+            .overlay(alignment: .bottom) {
+                if !showList {
+                    Button(action: { showList = true }) {
+                        HStack(spacing: 8) {
+                            Image(systemName: "list.bullet").font(.system(size: 16, weight: .semibold))
+                            Text("Список").font(.system(size: 16, weight: .semibold))
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 12)
+                        .background(
+                            ZStack {
+                                Capsule().fill(Color(.systemBackground).opacity(0.92))
+                                Capsule().fill(.ultraThinMaterial)
+                            }
+                        )
+                        .clipShape(Capsule())
+                        .overlay(Capsule().stroke(Color.black.opacity(0.12), lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.bottom, 72)
+                    .shadow(color: .black.opacity(0.16), radius: 6, y: 2)
+                    .shadow(color: .black.opacity(0.08), radius: 12, y: 6)
+                }
+            }
+    }
+
+    // Attach presentation modifiers in a generic helper (reduces type-checking load)
+    private func attachPresentations<V: View>(_ base: V) -> some View {
+        base
             .sheet(item: $selectedChurch) { church in
                 PreviewCard(church: church) {
                     // Lock current region so coming back restores this viewpoint
@@ -669,52 +613,51 @@ struct ChurchMapView: View {
             .navigationDestination(item: $navTarget) { church in
                 ChurchDetailView(church: church)
             }
-            .onAppear {
-                // Fresh entry from Home only once per session
-                if !didFreshInit {
-                    userLockedRegion = false
-                    didAutoCenter = false
-                    allowAutoLock = false
-                    storedSpanLat = 0
-                    storedSpanLon = 0
-                }
-                loadChurches()
-                locationManager.request()
+    }
 
-                // Try to restore where the user left the map last time
-                if restoreRegionIfAvailable() {
-                    // If we restored a region, don't auto-center away from it
-                    didAutoCenter = true
-                } else if !userLockedRegion, let loc = locationManager.lastLocation {
-                    // First run and no stored region — center around the NEAREST CHURCH to the user's location at city scale
-                    let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
-                    withAnimation(.easeInOut) {
-                        region = MKCoordinateRegion(
-                            center: targetCoord,
-                            span: citySpan
-                        )
-                    }
-                    didAutoCenter = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                    allowAutoLock = true
-                }
-                didFreshInit = true
+    // MARK: - Lifecycle handlers (reduce type-check complexity)
+    private func handleOnAppearMain() {
+        if !didFreshInit {
+            userLockedRegion = false
+            didAutoCenter = false
+            allowAutoLock = false
+            storedSpanLat = 0
+            storedSpanLon = 0
+        }
+        loadChurches()
+        locationManager.request()
+
+        if restoreRegionIfAvailable() {
+            didAutoCenter = true
+        } else if !userLockedRegion, let loc = locationManager.lastLocation {
+            let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
+            withAnimation(.easeInOut) {
+                region = MKCoordinateRegion(center: targetCoord, span: citySpan)
             }
-            .onChange(of: locationManager.lastLocation) { newLocation in
-                guard let loc = newLocation else { return }
-                // Center once to the nearest church to the user's location (city-scale)
-                if !didAutoCenter && !userLockedRegion && selectedChurch == nil {
-                    let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
-                    withAnimation(.easeInOut) {
-                        region = MKCoordinateRegion(
-                            center: targetCoord,
-                            span: citySpan
-                        )
-                    }
-                    didAutoCenter = true
-                }
+            didAutoCenter = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            allowAutoLock = true
+        }
+        didFreshInit = true
+    }
+
+    private func handleLocationChangeMain(_ loc: CLLocation) {
+        if !didAutoCenter && !userLockedRegion && selectedChurch == nil {
+            let targetCoord = nearestChurch(to: loc.coordinate)?.coordinate ?? loc.coordinate
+            withAnimation(.easeInOut) {
+                region = MKCoordinateRegion(center: targetCoord, span: citySpan)
             }
+            didAutoCenter = true
+        }
+    }
+
+    var body: some View {
+        let base = mapWithOverlays
+        let presented = attachPresentations(base)
+        return presented
+            .onAppear { handleOnAppearMain() }
+            .onChange(of: locationManager.lastLocation) { if let loc = $0 { handleLocationChangeMain(loc) } }
             // Let the map go under the home indicator, but keep the top area clean
             .ignoresSafeArea(.container, edges: [.bottom])
             .navigationTitle(L("map_churches_and_shrines"))
@@ -725,17 +668,20 @@ struct ChurchMapView: View {
             .onChange(of: region.center.longitude) { _, _ in saveAndLockRegion() }
             .onChange(of: region.span.latitudeDelta) { _, _ in saveAndLockRegion() }
             .onChange(of: region.span.longitudeDelta) { _, _ in saveAndLockRegion() }
+            // MARK: - List Mode FullScreenCover
+            .fullScreenCover(isPresented: $showList) {
+                ChurchListView(churches: $churches, locationManager: locationManager)
+            }
     }
 }
 
 
-extension Church {
-    static func == (lhs: Church, rhs: Church) -> Bool { lhs.id == rhs.id }
-}
 
-private extension Array where Element: Hashable {
-    func uniqued() -> [Element] {
-        var seen = Set<Element>()
-        return self.filter { seen.insert($0).inserted }
+// Preference key for tracking top mini-map position in list mode
+private struct TopMapMaxYKey: PreferenceKey {
+    static var defaultValue: CGFloat = .infinity
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = min(value, nextValue())
     }
 }
+

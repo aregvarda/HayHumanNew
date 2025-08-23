@@ -29,10 +29,10 @@ struct ChurchDetailView: View {
 
     // MARK: - Derived data from JSON
     private var composedAddress: String? {
-        var parts: [String] = []
-        if let city = church.city, !city.isEmpty { parts.append(city) }
-        if let addr = church.address, !addr.isEmpty { parts.append(addr) }
-        return parts.isEmpty ? nil : parts.joined(separator: ", ")
+        if let addr = church.address, !addr.isEmpty {
+            return addr
+        }
+        return nil
     }
     
     @ViewBuilder
@@ -173,7 +173,6 @@ struct ChurchDetailView: View {
                             .font(.body)
                             .foregroundStyle(.primary)
                             .multilineTextAlignment(.leading)
-                            .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                     } else {
                         Text("description_placeholder")
@@ -235,17 +234,3 @@ struct ChurchDetailView: View {
     }
 }
 
-#Preview {
-    // Превью с заглушкой
-    ChurchDetailView(
-        church: Church(
-            name: "Сурб Аствацацин",
-            coordinate: CLLocationCoordinate2D(latitude: 40.18, longitude: 44.51),
-            isActive: true,
-            city: "Эчмиадзин",
-            address: "Армавирская область, Армения",
-            descriptionText: "Предварительное описание для превью.",
-            photoName: "zoravor_astsavatsin"
-        )
-    )
-}
