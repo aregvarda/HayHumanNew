@@ -71,6 +71,16 @@
         }
       }
     },
+    "all_countries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все страны"
+          }
+        }
+      }
+    },
     "all_people" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -135,6 +145,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бизнес"
+          }
+        }
+      }
+    },
+    "cancel" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
           }
         }
       }
@@ -228,6 +248,16 @@
         }
       }
     },
+    "countries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Страны"
+          }
+        }
+      }
+    },
     "culture" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -294,6 +324,19 @@
           }
         }
       }
+    },
+    "distance" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Расстояние"
+          }
+        }
+      }
+    },
+    "done" : {
+
     },
     "English" : {
       "localizations" : {
@@ -443,6 +486,16 @@
         }
       }
     },
+    "filters" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтры"
+          }
+        }
+      }
+    },
     "history_today" : {
       "comment" : "Today in history tag",
       "localizations" : {
@@ -554,7 +607,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Карта церквей и святынь"
+            "value" : "Церкви и святыни"
           }
         }
       }
@@ -576,10 +629,13 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Карта церквей и святынь"
+            "value" : "Церкви и святыни"
           }
         }
       }
+    },
+    "media" : {
+
     },
     "military" : {
       "extractionState" : "manual",
@@ -600,6 +656,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Военное дело"
+          }
+        }
+      }
+    },
+    "more" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "еще"
+          }
+        }
+      }
+    },
+    "near_me" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рядом со мной"
           }
         }
       }
@@ -982,6 +1058,36 @@
         }
       }
     },
+    "sort" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сортировка"
+          }
+        }
+      }
+    },
+    "sort_distance" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По расстоянию"
+          }
+        }
+      }
+    },
+    "sort_name" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По названию"
+          }
+        }
+      }
+    },
     "sport" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1001,6 +1107,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Спорт"
+          }
+        }
+      }
+    },
+    "status" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статус"
           }
         }
       }
@@ -1050,48 +1166,12 @@
         }
       }
     },
-    "Адрес" : {
-      "extractionState" : "stale",
+    "with_photo" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Address"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Հասցե"
-          }
-        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Адрес"
-          }
-        }
-      }
-    },
-    "Адрес появится позже" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Address will appear later"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Հասցեն կհայտնվի ավելի ուշ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Адрес появится позже"
+            "value" : "С фотографией"
           }
         }
       }
@@ -1114,30 +1194,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Арег Варданян"
-          }
-        }
-      }
-    },
-    "Действующая" : {
-      "comment" : "Active church",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Active"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Գործող"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Действующая"
           }
         }
       }
@@ -1186,52 +1242,6 @@
         }
       }
     },
-    "Карта церквей и святынь" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Map of churches and shrines"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Եկեղեցիների և սրբավայրերի քարտեզ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта церквей и святынь"
-          }
-        }
-      }
-    },
-    "Координаты" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Coordinates"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Կոորդինատներ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Координаты"
-          }
-        }
-      }
-    },
     "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
       "localizations" : {
         "en" : {
@@ -1250,6 +1260,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
+          }
+        }
+      }
+    },
+    "На карте" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На карте"
           }
         }
       }
@@ -1298,29 +1318,6 @@
         }
       }
     },
-    "Описание" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Նկարագրություն"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Описание"
-          }
-        }
-      }
-    },
     "Открыть это место в «Картах»" : {
       "localizations" : {
         "en" : {
@@ -1365,29 +1362,6 @@
         }
       }
     },
-    "Поддержать проект" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Support the project"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Աջակցել նախագծին"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поддержать проект"
-          }
-        }
-      }
-    },
     "Поддержать проект в Donationalerts" : {
       "localizations" : {
         "en" : {
@@ -1411,7 +1385,6 @@
       }
     },
     "Поиск по церквям" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1451,52 +1424,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поиск по событиям"
-          }
-        }
-      }
-    },
-    "Посмотреть на карте" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "View on map"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Դիտել քարտեզի վրա"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Посмотреть на карте"
-          }
-        }
-      }
-    },
-    "Профиль церкви" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Church profile"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Եկեղեցու պրոֆիլ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль церкви"
           }
         }
       }
@@ -1561,75 +1488,8 @@
         }
       }
     },
-    "Текст описания будет добавлен позже." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description text will be added later."
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Նկարագրության տեքստը կհավելվի ավելի ուշ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Текст описания будет добавлен позже"
-          }
-        }
-      }
-    },
-    "Утраченная" : {
-      "comment" : "Lost/destroyed church",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lost"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Կորցրած"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Утраченная церковь"
-          }
-        }
-      }
-    },
-    "Фильтр" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filter"
-          }
-        },
-        "hy" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ֆիլտր"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Фильтр"
-          }
-        }
-      }
+    "Список" : {
+
     },
     "Фото появится позже" : {
       "localizations" : {

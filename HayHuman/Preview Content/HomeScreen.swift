@@ -261,6 +261,9 @@ struct HomeScreen: View {
                 .padding(.horizontal)
                 .fullScreenCover(isPresented: $showSearch) {
                     UniversalSearchFullScreen(isPresented: $showSearch)
+                        .environmentObject(lang)
+                        .environment(\.locale, lang.current.locale)
+                        .id(showSearch) // force fresh NavigationView each time to avoid re-presentation crash
                 }
 
                 // Карта
@@ -378,7 +381,9 @@ private struct UniversalSearchSheet: View {
                     if !query.isEmpty {
                         let q = query.lowercased()
                         let peopleFiltered = people.filter { $0.name.lowercased().contains(q) || $0.subtitle.lowercased().contains(q) }
-                        let churchesFiltered = churches.filter { ( ($0.name ?? "").lowercased().contains(q) ) || ( ($0.address ?? "").lowercased().contains(q) ) || ( ($0.city ?? "").lowercased().contains(q) ) }
+                        let churchesFiltered = churches.filter {
+                            $0.name.lowercased().contains(q) || (($0.address ?? "").lowercased().contains(q))
+                        }
                         let storiesFiltered = stories.filter { $0.title.lowercased().contains(q) || ($0.summary ?? "").lowercased().contains(q) }
 
                         if !peopleFiltered.isEmpty {
@@ -404,9 +409,10 @@ private struct UniversalSearchSheet: View {
                                 ForEach(churchesFiltered) { c in
                                     NavigationLink { ChurchDetailView(church: c) } label: {
                                         VStack(alignment: .leading, spacing: 3) {
-                                            Text(c.name ?? "").font(.system(size: 16, weight: .semibold))
-                                            Text([c.city, c.address].compactMap { $0 }.joined(separator: ", "))
-                                                .font(.system(size: 13)).foregroundStyle(.secondary)
+                                            Text(c.name).font(.system(size: 16, weight: .semibold))
+                                            if let addr = c.address, !addr.isEmpty {
+                                                Text(addr).font(.system(size: 13)).foregroundStyle(.secondary)
+                                            }
                                         }
                                     }
                                 }
@@ -477,7 +483,8 @@ private enum ChurchesStore {
         do {
             let data = try Data(contentsOf: url)
             let dec = JSONDecoder()
-            let items = try dec.decode([Church].self, from: data)
+            let raw = try dec.decode([DecChurch].self, from: data)
+            let items = raw.map { Church(from: $0) }
             return items
         } catch {
             print("[ChurchesStore] decode error:", error)
@@ -639,7 +646,9 @@ private struct UniversalSearchView: View {
                 let q = query.lowercased()
                 if !q.isEmpty {
                     let peopleFiltered = people.filter { $0.name.lowercased().contains(q) || $0.subtitle.lowercased().contains(q) }
-                    let churchesFiltered = churches.filter { ( ($0.name ?? "").lowercased().contains(q) ) || ( ($0.address ?? "").lowercased().contains(q) ) || ( ($0.city ?? "").lowercased().contains(q) ) }
+                    let churchesFiltered = churches.filter {
+                        $0.name.lowercased().contains(q) || (($0.address ?? "").lowercased().contains(q))
+                    }
                     let storiesFiltered = stories.filter { $0.title.lowercased().contains(q) || ($0.summary ?? "").lowercased().contains(q) }
 
                     if !peopleFiltered.isEmpty {
@@ -665,9 +674,10 @@ private struct UniversalSearchView: View {
                             ForEach(churchesFiltered) { c in
                                 NavigationLink { ChurchDetailView(church: c) } label: {
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text(c.name ?? "").font(.system(size: 16, weight: .semibold))
-                                        Text([c.city, c.address].compactMap { $0 }.joined(separator: ", "))
-                                            .font(.system(size: 13)).foregroundStyle(.secondary)
+                                        Text(c.name).font(.system(size: 16, weight: .semibold))
+                                        if let addr = c.address, !addr.isEmpty {
+                                            Text(addr).font(.system(size: 13)).foregroundStyle(.secondary)
+                                        }
                                     }
                                 }
                             }
