@@ -566,7 +566,96 @@
               "address": "Yakutsk, Russia",
               "description": "The Church of Surb Karapet in Yakutsk is the northernmost Armenian church in the world. Its foundation was laid in 2011, and it was consecrated in 2012. The church is 27 meters high, with materials such as stone, glass, and wood brought from Armenia. The exterior is clad in natural tuff.\n\nThe Armenian community of Yakutia has existed since the late 19th century. Despite the harsh climate and remoteness of the region, Armenians preserved their faith and traditions. Today, the church unites Armenians of Yakutia and neighboring regions, serving as a major cultural and spiritual center.",
               "photoName": "yakutsk_surb_karapet"
-            }
-    
+            },
+              {
+                "name": "Armenian Apostolic Church",
+                "lat": 56.8495,
+                "lon": 53.2053,
+                "isActive": true,
+                "address": "Izhevsk, Udmurt Republic, Russia",
+                "description": "A multifunctional Armenian spiritual and cultural complex in Izhevsk. It includes a church, a memorial to the victims of the Armenian Genocide, and a miniature of Mount Ararat with a pond shaped like Lake Sevan and fountains symbolizing the regions of Armenia. Built with support from the Armenian community of Udmurtia, it serves about 5,000 Armenians (around 3,000 in Izhevsk). The complex houses a national school and a library and is open to everyone. Today the church holds regular liturgies and religious rites and is the spiritual center of the region’s Armenian community.",
+                "photoName": "izhevsk_surb_vardan_complex"
+              },
+              {
+                "name": "Church of the Holy Resurrection",
+                "lat": 23.7125,
+                "lon": 90.4021,
+                "isActive": false,
+                "address": "Dhaka, Armanitola district, Bangladesh",
+                "description": "The Armenian Apostolic Church of the Holy Resurrection in old Armanitola, Dhaka, is one of the city’s oldest Christian structures. Built in 1781 on the site of a former wooden chapel at the cemetery, it was consecrated by Bishop Yeprem. The church preserves original Armenian architectural features with four arched doors, 27 windows, and wooden seating for about one hundred worshipers. Around it lies an Armenian cemetery with many granite tombstones. Today there is no permanent parish: services are held twice a year by an archbishop from Australia.",
+                "photoName": "dhaka_surb_arutyun"
+              },
+              {
+                "name": "Church of St. Nazareth (Surb Nazareth)",
+                "lat": 22.5796,
+                "lon": 88.3514,
+                "isActive": true,
+                "address": "Kolkata (Calcutta), Armenian Street, Burrabazar, India",
+                "description": "The Armenian Apostolic Church of St. Nazareth is one of Kolkata’s oldest Christian sanctuaries. Founded around 1708, rebuilt in 1724, and the current building dates to 1764. The interiors feature marble, frescoes, and paintings by A. E. Harris; the altar bears crosses, the Gospel, and candlesticks. The grounds include an Armenian cemetery with historic tombstones. Today the church remains a spiritual and cultural center for the city’s Armenian community.",
+                "photoName": "kolkata_surb_nazareth"
+              },
+              {
+                "name": "Church of the Holy Mother of God (Surb Astvatsatsin)",
+                "lat": 13.0891,
+                "lon": 80.2873,
+                "isActive": true,
+                "address": "Chennai, Armenian Street, George Town, Tamil Nadu, India",
+                "description": "The Armenian Apostolic Church of the Holy Mother of God in Chennai is one of the oldest on the Indian subcontinent. Built in 1712 and reconstructed in 1772, it is famed for its belfry with six bells, the largest weighing up to 150 kg, rung every Sunday at 9:30 a.m. Around the church lie about 350 Armenian graves, including that of Harutyun Shmavonyan, publisher of the first Armenian periodical, Azdarar. The church functions as a historical and cultural landmark and is open daily; services are held rarely.",
+                "photoName": "chennai_surb_astvatsatsin"
+              },
+              {
+                "name": "Church of St. John",
+                "lat": 22.8914,
+                "lon": 88.4014,
+                "isActive": true,
+                "address": "Chinsurah, West Bengal, India",
+                "description": "The Church of St. John in Chinsurah was built in 1697 (some sources say 1695) and dedicated to St. John the Baptist. It is the second-oldest Christian church in Bengal and the oldest Armenian church in India. Each year on January 13–14, a feast is celebrated in honor of St. John the Baptist, when relics are brought from the Armenian church in Nazareth (about 65 km away). Nearby is the family cemetery of the Melik-Beglaryan princes. The Armenian community began forming here in 1645, after the Dutch established the colony in 1625; by the late 19th century it was quite sizable. On March 1, 2007, Catholicos of All Armenians Karekin II visited the church.",
+                "photoName": "chinsura_surb_hovhannes"
+              },
+              {
+                "name": "Church of St. John the Baptist",
+                "lat": 16.7950,
+                "lon": 96.1570,
+                "isActive": true,
+                "address": "66 Bo Aung Kyaw Street, Yangon, Myanmar",
+                "description": "The Armenian Apostolic Church of St. John the Baptist in Yangon is the country’s oldest and only active Armenian church. Built in 1862 and consecrated in 1863, it stands on land granted to the Armenian community by the King of Burma. The Armenian presence dates to the 17th century. Today only about 10–20 Armenian families remain; services are held regularly, often by a visiting priest.",
+                "photoName": "yangon_surb_hovhannes"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church",
+                "lat": 25.3492,
+                "lon": 55.4122,
+                "isActive": true,
+                "address": "Sharjah, United Arab Emirates",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator in the Emirate of Sharjah is the principal spiritual center of the Armenian Apostolic Church in the UAE. Built in 1980 with the blessing of Catholicos Vazgen I and through the efforts of the Gulf Armenian community, it was consecrated by Archbishop Shaghe Aidemiryan. The complex, executed in traditional Armenian style with modern elements, includes the church, parish rooms, and a cultural hall. Today it serves Armenians across the UAE and neighboring countries.",
+                "photoName": "sharjah_surb_grigor"
+              },
+              {
+                "name": "Armenian Church in Payadzhuk",
+                "lat": 38.5667,
+                "lon": 44.7667,
+                "isActive": false,
+                "address": "Payadzhuk village, Salmas County, West Azerbaijan, Iran",
+                "description": "The church in Payadzhuk is almost completely ruined; only foundation traces remain. Cemeteries and the grave of Archimandrite Yeghiazar were also destroyed; khachkars were overturned and broken, and tombstones looted, especially after 2011. The village also housed the birthplace of the Armenian writer Raffi (Hakob Melik-Hakobyan, 1835), the remnants of which have likewise vanished.",
+                "photoName": "payadzhuk_ruins"
+              },
+              {
+                "name": "Armenian Church of St. John in Sarna",
+                "lat": 38.5660,
+                "lon": 44.8000,
+                "isActive": false,
+                "address": "Sarna village, Salmas County, West Azerbaijan, Iran",
+                "description": "The Armenian Church of St. John in Sarna suffered extensive illicit excavations. Huge pits were dug inside the building and near the altar, damaging the walls. The destruction is linked to widespread treasure-hunting; both Christian and Muslim graves were disturbed.",
+                "photoName": "sarna_ruins"
+              },
+              {
+                "name": "Armenian Cemeteries in Salmas County",
+                "lat": 38.5900,
+                "lon": 44.7667,
+                "isActive": false,
+                "address": "Salmas County, West Azerbaijan, Iran",
+                "description": "Armenian cemeteries at churches and separate clergy burials in Salmas County were destroyed: stones overturned, tombs dug up, khachkars disappeared. This wave of looting was especially intense after 2011.",
+                "photoName": "salmas_graves"
+              }
           
       ]

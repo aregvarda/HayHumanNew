@@ -942,8 +942,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Искать везде"
+            "state" : "translated",
+            "value" : "Искать события, людей, церкви"
           }
         }
       }
