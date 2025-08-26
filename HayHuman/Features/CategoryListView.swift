@@ -120,17 +120,18 @@ private struct PersonPhotoTile: View {
                     .fill(hasImage ? Color.black.opacity(0.18) : Color.clear)
             )
 
-            // Заголовок внизу (авто‑уменьшение, если не влезает)
-            Text(person.overlayTitle)
+            // Заголовок внизу (нормализованная типографика)
+            Text(person.name)
                 .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
-                .lineLimit(2)
-                .multilineTextAlignment(.center)
-                .minimumScaleFactor(0.5)   // сжимать до 50% от размера
+                .lineLimit(2)                 // до двух строк
+                .minimumScaleFactor(0.85)     // лёгкое сжатие, но без «каши» размеров
                 .allowsTightening(true)
-                .padding(.horizontal, 10)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 12)
                 .shadow(radius: 6)
-                .padding(.bottom, 14)
+                .frame(height: 58, alignment: .bottom) // одинаковый блок под заголовок у всех карточек
+                .padding(.bottom, 12)
         }
         .contentShape(RoundedRectangle(cornerRadius: 22))
     }
