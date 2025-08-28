@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Saint_Gevorg_of_Mughni_Armenian_Church,_Old_Tbilisi,_XIX_century,_photo_made_by_D._Ermakov.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Çarekvəng_monastırının_(həmçinin_Mahrasa_kimi_bilinir)_görüntüsü.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

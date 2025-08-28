@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "result_Chapel_of_Saint_Helena_in_the_lower_level_of_The_Church_of_the_Holy_Sepulchre_(10806198943).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

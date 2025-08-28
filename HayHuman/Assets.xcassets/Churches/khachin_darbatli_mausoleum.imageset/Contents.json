@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Qutlu_Musa_türbəsi_2022-ci_ildə.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

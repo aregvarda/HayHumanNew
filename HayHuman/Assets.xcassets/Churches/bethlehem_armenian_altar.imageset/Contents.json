@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "960px-Church_of_the_Nativity_(7703592746).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

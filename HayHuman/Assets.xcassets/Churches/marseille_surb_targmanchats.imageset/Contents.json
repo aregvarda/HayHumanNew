@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Церковь_Свв._Саака_и_Месропа,_Марсель._me_—_(6,_boulevard_Charles_Zeytountzian_—_Saint-Jérô13013_Marseille)DSC09001-EFFECTS.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

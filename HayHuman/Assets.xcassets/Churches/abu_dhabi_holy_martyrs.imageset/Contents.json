@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Armenian_church,_Abu_Dhabi_(6_May_2016).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

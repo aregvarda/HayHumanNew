@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Genova_-_Chiesa_di_San_Bartolomeo_degli_Armeni_-_2024-09-15_18-00-50_001.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

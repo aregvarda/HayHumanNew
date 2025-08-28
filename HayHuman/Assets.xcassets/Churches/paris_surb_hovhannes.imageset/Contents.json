@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Eglise_apostolique_arménienne_de_Paris,_cathédrale_Saint_Jean-Baptiste.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
