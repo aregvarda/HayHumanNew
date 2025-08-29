@@ -520,7 +520,7 @@ struct ContactsScreen: View {
                     Text("Здравствуйте!")
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
                         .fixedSize(horizontal: false, vertical: true)
-                    Text("Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен.")
+                    Text("Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭтот проект создан мной по благословению Главы Российской и Ново-Нахичеванской епархии ААЦ, Архиепископа Езраса Нерсисяна. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен.")
                         .font(.system(size: 16))
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -591,18 +591,19 @@ struct ContactsScreen: View {
                 .padding(.horizontal)
 
                 // Photo at bottom
-                VStack(spacing: 8) {
-                    Image("areg")
+                Button {
+                    if let url = URL(string: "https://websiberia.com/") { openURL(url) }
+                } label: {
+                    Image("websiberia")
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: .infinity)
                         .clipShape(RoundedRectangle(cornerRadius: corner))
                         .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
                         .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
-                    Text("Арег Варданян")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.secondary)
                 }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Открыть websiberia.com")
                 .padding(.top, 24)
                 .padding(.horizontal)
 

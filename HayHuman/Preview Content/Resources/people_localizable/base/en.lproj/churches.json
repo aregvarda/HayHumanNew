@@ -656,6 +656,2289 @@
                 "address": "Salmas County, West Azerbaijan, Iran",
                 "description": "Armenian cemeteries at churches and separate clergy burials in Salmas County were destroyed: stones overturned, tombs dug up, khachkars disappeared. This wave of looting was especially intense after 2011.",
                 "photoName": "salmas_graves"
+              },
+              {
+                "name": "Armenian Church in Turkmenbashi",
+                "lat": 40.3,
+                "lon": 53.0,
+                "isActive": false,
+                "address": "Turkmenbashi, Turkmenistan",
+                "description": "The Armenian Apostolic Church was consecrated in 1905. In the early 1920s, Soviet authorities removed its dome and converted the building into an industrial facility. In recent years, Turkmen authorities have taken measures to protect the monument and have promised its full restoration.",
+                "photoName": "turkmenbashi_armenian_church"
+              },
+              {
+                "name": "St. Mary’s Church (Saidabad)",
+                "lat": 24.1223,
+                "lon": 88.2577,
+                "isActive": true,
+                "address": "Saidabad, Cossimbazar, Murshidabad District, West Bengal, India",
+                "description": "The Armenian Apostolic Church of St. Mary in Saidabad was built in 1757–1758 by merchant Khoja Petros Arathoon at his own expense in memory of his parents and brothers. Petros Arathoon was the head of the Armenian community of Calcutta. In 1827, Manasakan Vardan — a merchant and founder of the Armenian Philanthropic Academy — was buried here.\n\nThe church remained an important spiritual and cultural center for Armenians of West Bengal until its closure in 1860. In 2005–2006, the Armenian community of Calcutta carried out a major restoration, and in 2006 the church was reconsecrated.\n\nToday St. Mary’s Church stands as a monument to the Armenian presence in India and as evidence of the active role Armenians played in the region’s history.",
+                "photoName": "saidabad_st_mary"
+              },
+              {
+                "name": "Armenian Chapel in Fort-Shevchenko",
+                "lat": 44.5128,
+                "lon": 50.2647,
+                "isActive": true,
+                "address": "Fort-Shevchenko, Mangystau Region, Kazakhstan",
+                "description": "The Armenian chapel in Fort-Shevchenko was built in 1893 by Armenian merchants from Astrakhan to commemorate the twentieth anniversary of victory over the Khiva Khanate. It is one of the few surviving Armenian religious buildings in Kazakhstan. The chapel features architectural traits reminiscent of traditional Armenian design, with an arched entrance and decorative columns.\n\nAfter a long period of neglect, the chapel was restored and reconsecrated in October 2022. The consecration was performed by a priest from Astrakhan. Today the chapel serves as an important symbol of Armenian spiritual presence in Kazakhstan and as a reminder of the diaspora’s contribution to the region’s history.",
+                "photoName": "fort_shevchenko_chapel"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church (Bălți)",
+                "lat": 47.7613,
+                "lon": 27.9293,
+                "isActive": true,
+                "address": "Bălți, Historic Center, Moldova",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator is located in the historic center of Bălți. Construction took place from 1910 to 1914 with funding from the local Armenian community. The project architect was Alexander Leonidovich Krasnoselsky. The church, built of limestone and rubble stone, is styled after medieval Armenian ecclesiastical architecture, with harmonious proportions and a fitting integration into the landscape. Its height is about 16.8 meters.\n\nThe church is an important monument of Armenian culture and architecture in Moldova. Today the building is used as a Catholic church and no longer functions as an Armenian parish.",
+                "photoName": "balti_surb_grigor"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church (Singapore)",
+                "lat": 1.2966,
+                "lon": 103.8518,
+                "isActive": true,
+                "address": "60 Hill Street, Singapore, Singapore",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator is the oldest Christian building in Singapore. It was built in 1834–1835 and consecrated in 1836. Designed by Irish architect George Drumgoole Coleman, it is in the neoclassical style, with a cruciform plan, Doric columns, and a distinctive spire. The church was the spiritual center of a small but influential Armenian community that made significant contributions to Singapore’s development.\n\nThe building was declared a national monument and has been protected by the state since 1973. Nearby is the 'Memorial Garden,' where Armenian tombstones from Fort Canning Hill and Bukit Timah have been relocated. Today the church continues to hold occasional services and remains a key symbol of Armenian heritage in Singapore.",
+                "photoName": "singapore_armenian_church"
+              },
+              {
+                "name": "St. Harutyun Church, Sydney",
+                "lat": -33.798,
+                "lon": 151.180,
+                "isActive": true,
+                "address": "10 Macquarie Street, Chatswood, Sydney, New South Wales, Australia",
+                "description": "The Church of St. Harutyun (Holy Resurrection) is an Armenian Apostolic Church and an active parish in Sydney. The building was purchased by the Armenian community in 1965 from a Baptist congregation. It was consecrated on February 27, 1966 by Bishop Komitas Der-Stepanian.\n\nThe church became a center of Armenian spiritual and cultural life: over time, it was renovated, expanded, fitted with a traditional Armenian dome and bell tower, an enlarged altar, marble altar table, and decorative friezes. Today, liturgies, educational and cultural events are held here, along with Sunday school, women’s and youth associations.\n\nThe church serves as an important spiritual stronghold for the Armenian diaspora of Australia and a symbol of their preservation of national and religious identity.",
+                "photoName": "sydney_st_harutyun"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Buenos Aires",
+                "lat": -34.5919,
+                "lon": -58.4305,
+                "isActive": true,
+                "address": "Acevedo-Armenia 1369, Palermo, Buenos Aires, Argentina",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator in Palermo, Buenos Aires, was built and consecrated in 1938 through the efforts of the Armenian community, with the participation of Bishop Karkegin Khachaturian on behalf of Catholicos Khoren I. The church serves as the cathedral of the Argentine Armenian Diocese and a center of the spiritual life of the Armenian Apostolic community in Argentina.\n\nThe building is included in official tourist routes of the city and recognized as an architectural and cultural heritage monument. Next to the church is 'Mount Ararat Square' with a symbolic fountain inaugurated in 1998, complementing its architectural and cultural setting.\n\nThe church continues to function actively, holding liturgies, cultural and community events, remaining an important spiritual center of the Armenian diaspora in South America.",
+                "photoName": "buenosaires_surb_grigor"
+              },
+              {
+                "name": "Cathedral of Our Lady of Narek, Buenos Aires",
+                "lat": -34.5896,
+                "lon": -58.4149,
+                "isActive": true,
+                "address": "Charcas Street, Palermo district, Buenos Aires, Argentina",
+                "description": "The Armenian Catholic Cathedral of Our Lady of Narek (Nuestra Señora de Narek) is the main church of the Armenian Catholic Eparchy of San Gregorio de Narek in Buenos Aires. The land was purchased in 1942; the present building was constructed between 1971 and 1981 and consecrated in 1981. In 1983, 'Mount Ararat Square' was arranged in front of the church, and in 1998 a symbolic fountain dedicated to Ararat was installed. The cathedral follows the Armenian rite and is in full communion with Rome. Today, it is one of the key spiritual and cultural centers of the Armenian Catholic community of Argentina.",
+                "photoName": "buenosaires_our_lady_of_narek"
+              },
+              {
+                "name": "Armenian Chapel",
+                "lat": 36.7286,
+                "lon": 68.8679,
+                "isActive": false,
+                "address": "Kunduz, Afghanistan",
+                "description": "The Armenian Chapel in Kunduz was built by Armenian peacekeepers with the support of international forces. Located near the airport, it was consecrated by Bishop Vrtanes Abrahamyan, spiritual leader of the Armenian Armed Forces, in July 2010. This chapel served as a spiritual place not only for Armenians but also for all Christians involved in the mission in the region.",
+                "photoName": "kunduz_surb_tadevos"
+              },
+              {
+                "name": "St. Gevorg (Saint George) Church, São Paulo",
+                "lat": -23.5285,
+                "lon": -46.6316,
+                "isActive": true,
+                "address": "São Paulo, Brazil",
+                "description": "The Armenian Apostolic Church of St. Gevorg (Saint George) in São Paulo was founded in 1937, with the first church consecrated in 1938. After its demolition in 1943, Armenian philanthropist George Tahanian initiated the construction of a new temple, which began in 1945 and was consecrated in 1949.\n\nThe church is the spiritual center of the Armenian Apostolic community of Brazil, under the jurisdiction of the Mother See of Holy Etchmiadzin. It serves as a place of worship and cultural events for the Armenian diaspora of São Paulo.",
+                "photoName": "saopaulo_surb_gevorgh"
+              },
+              {
+                "name": "Holy Mother of God (Surb Mariam Astvatsatsin) Church, Toronto",
+                "lat": 43.77097,
+                "lon": -79.32302,
+                "isActive": true,
+                "address": "North York, Toronto, Ontario, Canada",
+                "description": "The Armenian Apostolic Church of Surb Mariam Astvatsatsin was founded in 1983 in North York as a parish under the jurisdiction of the Catholicosate of the Great House of Cilicia. Before acquiring its own building, services were held at St. Augustine’s Anglican Church. The new church was laid in 1987, consecrated on May 27, 1990, and underwent major restoration in 2012. The church actively serves the Armenian community of Toronto, holding liturgies, baptisms, weddings, as well as cultural and educational events.",
+                "photoName": "toronto_surb_mariam"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Binghamton",
+                "lat": 42.1048,
+                "lon": -75.8991,
+                "isActive": true,
+                "address": "12 Corbett Avenue, Binghamton, New York, USA",
+                "description": "The Church of St. Gregory the Illuminator is an Armenian Apostolic Church in Binghamton. Located at 12 Corbett Avenue, it is an active parish church. Divine Liturgy (Badarak) is held twice a month. It serves as a center of spiritual life and cultural events for the local Armenian community.",
+                "photoName": "binghamton_surb_grigor"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Houston",
+                "lat": 29.7236,
+                "lon": -95.6192,
+                "isActive": true,
+                "address": "Houston, Texas, USA",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator was opened in 1982 and serves the Armenian community of Houston and its surroundings. The parish is active, holding regular liturgies (Badarak). The church is served by Father Martiros Haobyan.",
+                "photoName": "houston_surb_grigor"
+              },
+              {
+                "name": "Holy Cross Church, New York",
+                "lat": 40.8526,
+                "lon": -73.9305,
+                "isActive": true,
+                "address": "580 West 187th Street, Washington Heights, Manhattan, New York, USA",
+                "description": "The Armenian Apostolic Church of the Holy Cross (Surb Khach) is located in Washington Heights, Manhattan, New York. The building was erected in 1925–1926 by architect Stoyan N. Karastoyanoff for a Lutheran congregation, and since 1929 has been used by the Armenian Apostolic Church. It is an important spiritual center of the Armenian diaspora in New York, where Divine Liturgy (Badarak) is regularly held on Sundays and feast days.",
+                "photoName": "nyc_surb_khach"
+              },
+              {
+                "name": "St. James Church, Watertown",
+                "lat": 42.3734,
+                "lon": -71.1705,
+                "isActive": true,
+                "address": "465 Mount Auburn Street, Watertown, Massachusetts, USA",
+                "description": "The Armenian Apostolic Church of St. James (Soorp Hagop / St. James) is located in Watertown, Massachusetts — the center of the region’s Armenian community. The parish was founded in the 1930s, and the current church was built on Mount Auburn Street. It hosts regular worship services, educational and cultural events for parishioners.",
+                "photoName": "watertown_st_james"
+              },
+              {
+                "name": "St. Poghos Church, Syracuse",
+                "lat": 43.05145,
+                "lon": -76.17062,
+                "isActive": true,
+                "address": "310 N. Geddes St., Syracuse, New York, USA",
+                "description": "St. Paul’s Armenian Apostolic Church in Syracuse is one of the oldest Armenian parishes in America, founded in 1908. Located at 310 N. Geddes St. since the purchase of the current building in 1956 and consecration in 1958, it has served as an active spiritual and cultural center of the Armenian community in Syracuse. In 2010, the church was added to the U.S. National Register of Historic Places.",
+                "photoName": "syracuse_surb_poghos"
+              },
+              {
+                "name": "St. Sarkis Cathedral, Dearborn",
+                "lat": 42.3314,
+                "lon": -83.0458,
+                "isActive": true,
+                "address": "Dearborn, Michigan, USA",
+                "description": "The Armenian Apostolic Church of St. Sarkis was founded on May 24, 1942, on Waterman Street in Detroit. The current building in Dearborn was consecrated on October 14, 1962. The cathedral is under the jurisdiction of the Catholicosate of the Great House of Cilicia and serves as a spiritual center for Armenians of Eastern Michigan. The parish is active in community life, including support for the St. Sarkis Towers housing complex for elderly Armenians.",
+                "photoName": "dearborn_st_sarkis"
+              },
+              {
+                "name": "Church of Our Saviour, Worcester",
+                "lat": 42.2667,
+                "lon": -71.8000,
+                "isActive": true,
+                "address": "87 Salisbury Street, Worcester, Massachusetts, USA",
+                "description": "The Armenian Apostolic Church of Our Saviour is the first Armenian church in the Western Hemisphere. Founded on January 18, 1891, the original building was constructed on Laurel Street by architect Stephen Earle. The current building, built in the Armenian cross-dome style, was consecrated in 1952 at the intersection of Salisbury and Dean Streets. The church serves as the spiritual center of the Armenian community of Worcester and belongs to the Diocese of the Armenian Church of America (Eastern).",
+                "photoName": "worcester_church_of_our_saviour"
+              },
+              {
+                "name": "St. Stepan Church, New Britain",
+                "lat": 41.6693,
+                "lon": -72.7795,
+                "isActive": true,
+                "address": "167 Tremont Street, New Britain, Connecticut, USA",
+                "description": "The Armenian Apostolic Church of St. Stepan was founded in 1933. In 1953, land was purchased on Elton Avenue in New Britain, and construction of the new church began in 1956. It was consecrated by Archbishop (later Catholicos) Khoren I Paroyan on October 20, 1957. The church continues to serve as an active spiritual center of the Armenian diaspora of Connecticut.",
+                "photoName": "newbritain_surb_stepan"
+              },
+              {
+                "name": "Holy Trinity Armenian Apostolic Church, Fresno",
+                "lat": 36.7317,
+                "lon": -119.7826,
+                "isActive": true,
+                "address": "2226 Ventura Street, Fresno, California, USA",
+                "description": "The Armenian Apostolic Holy Trinity Church is one of the first Armenian churches in America. Laid on November 1, 1913, consecrated on December 13, 1914, its architect was Lawrence Karekin Cone. The church is an example of revived architecture with Armenian elements and the first Armenian church built in the traditional Armenian style in the USA. It seats up to 660 people. Listed in the National Register of Historic Places since 1986, the church remains an active spiritual center for the Armenian community of Fresno.",
+                "photoName": "fresno_holy_trinity"
+              },
+              {
+                "name": "Armenian Evangelical Church, Montevideo",
+                "lat": -34.9000,
+                "lon": -56.1500,
+                "isActive": true,
+                "address": "Luis Alberto de Herrera 3790, Montevideo, Uruguay",
+                "description": "The Armenian Evangelical Church (Iglesia Evangélica Armenia) is the religious center of Uruguay’s Armenian Protestant community. Founded in 1926, it serves as the headquarters of this denomination in the country. The church is a member of the Federation of Evangelical Churches of Uruguay and connected with the World Council of Churches. A parish community functions here, along with a Sunday school and regular services.",
+                "photoName": "montevideo_arm_evangelical"
+              },
+              {
+                "name": "Cathedral of Our Lady of Bzommar, Montevideo",
+                "lat": -34.9050,
+                "lon": -56.1850,
+                "isActive": true,
+                "address": "Prado district, Montevideo, Uruguay",
+                "description": "The Armenian Catholic Cathedral of Our Lady of Bzommar (Catedral Católica Armenia Nuestra Señora de Bzommar) is the main church of Armenian Catholics in Montevideo and the cathedral of the Exarchate of Armenian Catholics of Latin America and Mexico. It is dedicated to the patroness of Armenian Catholics — the Holy Virgin Mary of Bzommar. The church is a key center of the spiritual life of the local Armenian community.",
+                "photoName": "montevideo_catedral_bzommar"
+              },
+              {
+                "name": "St. Nerses Shnorhali Cathedral, Montevideo",
+                "lat": -34.87822,
+                "lon": -56.19604,
+                "isActive": true,
+                "address": "Av. Agraciada, Bella Vista, Montevideo, Uruguay",
+                "description": "The Armenian Apostolic Church of St. Nerses Shnorhali is the cathedral of the Armenian Apostolic Church of Uruguay, dedicated to Catholicos Saint Nerses the Gracious. The modern building was constructed in 1968, designed by architect Rafael Israelyan. The church is integrated into a complex of Armenian institutions in the Bella Vista district and includes a memorial to the victims of the Armenian Genocide, created by sculptor Nerses Ounanian. The cathedral actively functions as a spiritual and cultural center of the Armenian community of Uruguay, under the leadership of Archbishop Glnjyan.",
+                "photoName": "montevideo_surb_nerses_shnorhali"
+              },
+              {
+                "name": "St. George Church, Addis Ababa",
+                "lat": 9.0378,
+                "lon": 38.7710,
+                "isActive": true,
+                "address": "Arat-Kilo district, Addis Ababa, Ethiopia",
+                "description": "The Armenian Apostolic Church of St. George in Addis Ababa was founded on the site of a 1923 chapel, with the present stone building constructed in 1935 as a charitable project by Mikhran Muradyan in memory of his father Gevorg. The cornerstone was laid in 1928 with the participation of an archbishop from Constantinople, and Empress Menen Asfaw was present. The church belongs to the spiritual jurisdiction of the Mother See of Holy Etchmiadzin and serves as the center of the Armenian community of Ethiopia. In its courtyard stands a khachkar memorial to the victims of the Armenian Genocide (installed in 2005).",
+                "photoName": "addisababa_surb_gevorg"
+              },
+              {
+                "name": "Holy Resurrection Church, Mbabane",
+                "lat": -26.3167,
+                "lon": 31.1333,
+                "isActive": true,
+                "address": "Pine Valley, outskirts of Mbabane, Eswatini",
+                "description": "The Armenian Apostolic Church of the Holy Resurrection (Surb Harutyun) was founded in Pine Valley — a picturesque 'Valley of Pines' — by benefactor Grigor Derbelian in 1985. Construction lasted four years and was completed in 1989. The small chapel has two domes, one of which serves as a bell tower. Its foundation incorporates local materials, and the altar is organically built into the rock, reminiscent of the Geghard Monastery in Armenia.\n\nNearby runs a small river named 'Arax' by Derbelian in memory of his homeland. The church was consecrated according to strict Armenian canons and is an official parish of the Armenian Apostolic Church in the country. In January 2016, King Mswati III transferred the chapel to the jurisdiction of the Etchmiadzin Catholicosate. Despite its remoteness, the church is actively used by the local Armenian community for sacraments, including baptisms and weddings.",
+                "photoName": "mbabane_surb_arutyun"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Khartoum",
+                "lat": 15.5000,
+                "lon": 32.5599,
+                "isActive": true,
+                "address": "Khartoum, Sudan",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator (Սուրբ Գրիգոր Լուսավորիչ) in Khartoum was founded in 1953 with funds from the Seferian family and consecrated in 1956. The decision to build was first made in 1933. The church served as the spiritual center of the Armenian diaspora of Sudan. During times of conflict, the church remained unharmed, and as of 2025, it still functions, though the community has shrunk to a few dozen people. Services are held under the jurisdiction of the Armenian Diocese of Egypt.",
+                "photoName": "khartoum_surb_grigor"
+              },
+              {
+                "name": "Surb Hripsime Church, Vienna",
+                "lat": 48.2040,
+                "lon": 16.3800,
+                "isActive": true,
+                "address": "Kolonitzgasse 11 (Armenierplatz), 1030 Vienna, Austria",
+                "description": "The Armenian Apostolic Church of Surb Hripsime is the parish church of the Armenian community of Austria and the cathedral of the Diocese of Central Europe and Scandinavia. Laid in 1964; construction was based on the drawings of Armenian architect Eduard Sarabyan from Yerevan, executed by Walter Dürschmid. Consecrated on April 21, 1968, by Catholicos Vazgen I. The interior is decorated with traditional Armenian elements: a stone frieze with plant ornament, mosaics, and a memorial arch dedicated to the victims of the Genocide. Beyond its liturgical function, the church serves as a cultural and educational center (including the Hovhannes Shiraz school).",
+                "photoName": "vienna_surb_hripsime"
+              },
+              {
+                "name": "Holy Martyrs Church, Abu Dhabi",
+                "lat": 24.34727,
+                "lon": 54.52252,
+                "isActive": true,
+                "address": "Bldg 16, Street M-26, Mussafah district, Abu Dhabi, UAE",
+                "description": "The Armenian Apostolic 'Holy Martyrs' Church in Abu Dhabi is a parish under the jurisdiction of the Catholicosate of the Great House of Cilicia, serving the Armenian community of the UAE. Founded in 2014 in the Mussafah district. Built in Armenian style, the church functions as a spiritual, cultural, and educational center of the diaspora, with an active Sunday school. A khachkar stands in the courtyard as a memorial to the victims of the Armenian Genocide.",
+                "photoName": "abu_dhabi_holy_martyrs_church"
+              },
+              {
+                "name": "Mekhitarist Monastery, Vienna",
+                "lat": 48.2050,
+                "lon": 16.3587,
+                "isActive": true,
+                "address": "Mechitaristengasse 2–4, Neubau district, Vienna, Austria",
+                "description": "The Armenian Catholic Mekhitarist Monastery (Armeno-Catholic branch) was opened in Vienna in 1811 as a branch of the order from the island of San Lazzaro (Venice). The modern building was erected according to the project of Joseph Kornhäusel: the foundation stone was laid in 1837, and the Church of Mary the Protectress was consecrated in 1874 (interior by Camillo Sitte). The monastery housed one of the largest collections of Armenian manuscripts (≈ 2,800), journals (≈ 70,000 volumes), coins (≈ 10,000 Armenian), and other cultural artifacts. Since 1889, it has also produced the herbal liqueur 'Mechitharine'. In 2015, a khachkar was erected in the courtyard in memory of the victims of the Armenian Genocide.",
+                "photoName": "vienna_mekhitarist_monastery"
+              },
+              {
+                "name": "St. Mary Magdalene Church (Surb Mariam Magdalene), Brussels",
+                "lat": 50.8280,
+                "lon": 4.3700,
+                "isActive": true,
+                "address": "Kindermansstraat 1A, Ixelles, 1050 Brussels, Belgium",
+                "description": "The Armenian Apostolic Church of St. Mary Magdalene is the only Armenian church in Belgium, built with the support of the Armenian Church Foundation. It was designed by Armenian architect Haik Mardikian, with engineer Jacques Kupelian. Construction began after receiving permits in 1985, and it was consecrated on May 6, 1990, by Catholicos Vazgen I. The church is spiritually led by Father Zatik Avetisyan.",
+                "photoName": "brussels_surp_mari_magdalen"
+              },
+              {
+                "name": "St. Gregory the Illuminator Armenian Apostolic Church, Cairo",
+                "lat": 30.063733,
+                "lon": 31.253724,
+                "isActive": true,
+                "address": "Ramses Street, Cairo, Egypt",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator in Cairo is a unique example of architectural synthesis, combining Armenian, Egyptian, French, and Coptic elements. Designed by a French architect using yellow tuff, its backdrop includes Islamic columns, Greco-Roman mosaics, and Armenian ornamentation. The entrance is adorned with motifs inspired by the Ibn Tulun Mosque; above it is a mosaic of Gregory the Illuminator. The interior includes Byzantine frescoes, Coptic motifs, icons, and wrought-iron details in the style of 18th-century France. The church remains the spiritual core of Cairo’s Armenian community, embodying valuable cultural dialogue.",
+                "photoName": "cairo_surb_grigor_lusavorich"
+              },
+              {
+                "name": "Annunciation Cathedral, Cairo",
+                "lat": 30.0444,
+                "lon": 31.2357,
+                "isActive": true,
+                "address": "Mohamed Sabry Abu Alam Street, Abdeen district, Cairo, Egypt",
+                "description": "The Armenian Catholic Cathedral of the Annunciation (Annunciation Cathedral) in Cairo was built and inaugurated in 1926. It serves as the cathedral of the Armenian Catholic Eparchy of Alexandria (Eparchia Alexandrina Armenorum), founded in 1885 by Pope Leo XIII. The church is under the pastoral care of Bishop Kricor-Okosdinos Coussa. It is the spiritual center of Armenian Catholics in Egypt and Sudan.",
+                "photoName": "cairo_annunciation"
+              },
+              {
+                "name": "St. Bartholomew Church",
+                "lat": 44.4091,
+                "lon": 8.9359,
+                "isActive": true,
+                "address": "Genoa, Italy",
+                "description": "St. Bartholomew’s Church in Genoa is an Armenian Catholic monastery of the 13th century, founded in 1308 by Armenian Mekhitarist monks. The church is dedicated to the Apostle Bartholomew, one of the Twelve Apostles of Christ and the first illuminator of Armenia, who, together with the Apostle Thaddeus, brought Christianity to the country.\n\nThe church preserves relics and a treasured fragment of the True Cross, donated in the 16th century. Its architecture combines Gothic and Romanesque elements, preserving its historical appearance to this day.\n\nSt. Bartholomew’s remains an active church, linking the Armenian community of Genoa with its spiritual and cultural heritage.",
+                "photoName": "genoa_surb_bartolomeos"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Livorno",
+                "lat": 43.5443,
+                "lon": 10.3262,
+                "isActive": false,
+                "address": "Livorno, Tuscany, Italy",
+                "description": "The Armenian Catholic Church of St. Gregory the Illuminator in Livorno was built in the early 18th century (construction began in 1701, consecrated in 1714) by the city’s Armenian diaspora. It was designed by Giovanni del Fantasia, commissioned by Prince Ferdinando, son of Cosimo III. Destroyed during World War II, today only its elegant Baroque marble façade survives, featuring Andrea Vaccà’s sculptures 'Sacrifice' and 'Faith', along with an oval portrait of St. Gregory the Illuminator. Since 2008, the façade has been used as an intercultural center.",
+                "photoName": "livorno_surb_grigor"
+              },
+              {
+                "name": "Holy Cross Church (Santa Croce degli Armeni), Venice",
+                "lat": 45.4356,
+                "lon": 12.3378,
+                "isActive": true,
+                "address": "Calle dei Armeni, Venice, Italy",
+                "description": "The Armenian Catholic Church 'Surb Khach' (Santa Croce degli Armeni) in Venice is the church of the Armenian community. Located on Armeni Street, near St. Mark’s Basilica. Its history goes back to 1434, when an altar and chapel were built here. In 1688, with merchant Murmanian’s permission, the chapel was expanded into a full church. In 1740, it was taken over by the Mekhitarist Order, which preserved it as a religious and cultural center. The church has a single nave with a dome, three altars adorned with Baroque paintings. Services are held once a month, on the last Sunday.",
+                "photoName": "venice_santa_croce_armeni"
+              },
+              {
+                "name": "St. Nicholas of Tolentino Armenian Catholic Church, Rome",
+                "lat": 41.902,
+                "lon": 12.483,
+                "isActive": true,
+                "address": "Salita di San Nicola da Tolentino, 17, Trevi district, Rome, Italy",
+                "description": "St. Nicholas of Tolentino is one of two Armenian churches in Rome. Originally founded for the Order of Discalced Augustinians in 1599, it was rebuilt in the 17th century under architects led by Alessandro Algardi. Since 1883, it has been entrusted to Armenian Catholics along with a college. It houses the Pontifical Armenian College — the seminary of the Armenian Catholic Church. The church remains active to this day.",
+                "photoName": "st_nicholas_tolentino_rome"
+              },
+              {
+                "name": "Mekhitarist Monastery (San Lazzaro degli Armeni)",
+                "lat": 45.4178,
+                "lon": 12.3543,
+                "isActive": true,
+                "address": "San Lazzaro Island, Venice, Italy",
+                "description": "The Mekhitarist Monastery on San Lazzaro Island in Venice is the main center of the Armenian Catholic order, founded in 1701 by Mkhitar Sebastatsi. In 1717, the community settled on the island, which soon became a spiritual and cultural hub of the Armenian diaspora. The monastery is renowned for its rich library (over 150,000 volumes and around 4,000 manuscripts), printing house (publishing books and journals since the 18th century), and as a place of education for clergy and scholars. Through the order’s activities, Armenian culture and language were preserved and represented in Europe. Today, the monastery remains an active center and pilgrimage site.",
+                "photoName": "venice_san_lazzaro_mekhitarists"
+              },
+              {
+                "name": "St. Blaise Church (San Biagio degli Armeni), Rome",
+                "lat": 41.8983,
+                "lon": 12.4660,
+                "isActive": true,
+                "address": "Via Giulia, 64, Ponte district, Rome, Italy",
+                "description": "The Armenian Catholic Church of St. Blaise, also known as San Biagio della Pagnotta or San Biagio degli Armeni, is located in Rome on Via Giulia. Founded before the 11th century, first documented in 1072; rebuilt in the 18th century (facade and interior). It is the national church of the Armenians, dedicated to the martyr St. Blaise (Blaise of Sebaste). Relics of his throat are kept here, as well as paintings by Pietro da Cortona, including the miracle of the fishbone and the Virgin of Mercy. Since 1856, the church has been under the jurisdiction of the Armenian Catholic community of Rome and is considered their national church.",
+                "photoName": "rome_surb_vlas"
+              },
+              {
+                "name": "Holy Mother of God Church (Surb Astvatsatsin), Shumen",
+                "lat": 43.2712,
+                "lon": 26.9081,
+                "isActive": true,
+                "address": "15 Zlatitsa St., Shumen, Bulgaria",
+                "description": "The Armenian Apostolic Church of the Holy Mother of God (Սուրբ Աստվածածին) in Shumen was built in 1834 by a refugee Armenian community and consecrated with a dedicatory inscription. In 2001 the church was restored and a new bell tower was added. Marble slabs bearing the names of Armenian princes and benefactors of the 18th–19th centuries remain in the courtyard. In 1849 Lajos Kossuth and his followers celebrated Christmas here.",
+                "photoName": "shumen_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church (Surb Astvatsatsin), Ruse",
+                "lat": 43.8564,
+                "lon": 25.9708,
+                "isActive": true,
+                "address": "Ruse, Bulgaria",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin in Ruse is the oldest Armenian church in Bulgaria. The original wooden building was erected in 1610 but rebuilt in stone in 1832 after a fire. The church is listed as a cultural monument of Bulgaria. A khachkar memorial to the victims of the Armenian Genocide stands in the yard, and local Armenians revere it as a historic and spiritual center of the community.",
+                "photoName": "ruse_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 44.1171,
+                "lon": 27.2670,
+                "isActive": true,
+                "address": "Silistra, Bulgaria",
+                "description": "The Holy Mother of God Church in Silistra is an Armenian Apostolic church founded in the 19th century by the city's Armenian community. It served as a spiritual and cultural hub where liturgies, baptisms, and weddings took place. Despite historical trials and the community’s decline, the church has survived and continues to stand as a symbol of Armenian presence in the region.",
+                "photoName": "silistra_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 42.6977,
+                "lon": 23.3219,
+                "isActive": true,
+                "address": "6 Lajos Kossuth St., Sofia, Bulgaria",
+                "description": "The Holy Mother of God Church in Sofia is an Armenian Apostolic church, opened in 2022 through the efforts of the Armenian community. Construction began in 2006 based on a design by Armenian architect Hagop Karakashian. The church combines traditional Armenian elements, such as sharp domes, with modern design and large windows. Today it functions as the cathedral and cultural-spiritual center of Armenians in Bulgaria.",
+                "photoName": "sofia_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 43.0836,
+                "lon": 25.6493,
+                "isActive": false,
+                "address": "Veliko Tarnovo, Bulgaria",
+                "description": "The Holy Mother of God Church is a 17th-century Armenian Apostolic church discovered during archaeological excavations in Veliko Tarnovo. Built on the site of an earlier Catholic structure, the wooden church burned down and eventually collapsed. Only fragments remain; it was once the only functioning Armenian church in Bulgaria, now abandoned and in ruins.",
+                "photoName": "veliko_tarnovo_surb_astvatsatsin_ruins"
+              },
+              {
+                "name": "St. George Church (Surb Kevork), Plovdiv",
+                "lat": 42.15073,
+                "lon": 24.75161,
+                "isActive": true,
+                "address": "4-ti Januari St., Old Town, Plovdiv, Bulgaria",
+                "description": "St. George Church (Surb Kevork) is an Armenian Apostolic church in Plovdiv. Originally an Eastern Orthodox church dedicated to St. George the Victorious, it was handed over to the Armenian community in 1767. Consecrated in 1828 after reconstruction. The church includes a crypt-museum preserving artifacts brought by Armenian refugees after the 1915 Genocide and serves as a religious, cultural, and historic center for the community.",
+                "photoName": "plovdiv_surp_gevork"
+              },
+              {
+                "name": "St. Jacob Church",
+                "lat": 42.4850,
+                "lon": 26.5030,
+                "isActive": true,
+                "address": "Yambol, Bulgaria",
+                "description": "St. Jacob Church is an Armenian Apostolic church in Yambol, Bulgaria. It is the most modern church under the jurisdiction of the Armenian Apostolic Diocese of Bulgaria. Consecrated on September 24, 2017, by Archbishop Ezras Nersisyan with the support of patron Sonia Arshavir. Construction began in 2008, designed by architects Zhirayr and Alvard Patukanyan.",
+                "photoName": "yambol_saint_hakob"
+              },
+              {
+                "name": "St. John Church",
+                "lat": 43.5667,
+                "lon": 27.8333,
+                "isActive": true,
+                "address": "8 Dame Gruev St., Dobrich, Bulgaria",
+                "description": "St. John Church is an Armenian Apostolic church in Dobrich, Bulgaria. Built in 1894 on the site of an older church from the 1830s, designed by Italian architects. A single-nave church with a stone foundation, stone walls, and a wooden roof. Inside, original images of Armenian saints painted in the late 19th century are preserved.",
+                "photoName": "dobrich_saint_john"
+              },
+              {
+                "name": "Holy Cross Church",
+                "lat": 42.4972,
+                "lon": 27.4713,
+                "isActive": true,
+                "address": "13 Lermontov St., Burgas, Bulgaria",
+                "description": "Holy Cross Church is an Armenian Apostolic church in central Burgas, one of the city’s oldest structures. Built in 1853 on the site of a wooden chapel of St. Stepanos (1673). Consecrated in 1896 by Father Vahtang Sisakyan. A stone bell tower was erected in 1958 by engineer Grant Baklayan, featuring an inscription commemorating Catholicos Vazgen I. In 1970 the church gained the status of a Bulgarian cultural monument. A khachkar memorial to the victims of the Armenian Genocide, created by sculptor Hari Arabyian, was erected in 1991 in the courtyard.",
+                "photoName": "burgas_saint_cross"
+              },
+              {
+                "name": "St. Sarkis Church",
+                "lat": 43.2025,
+                "lon": 27.9178,
+                "isActive": true,
+                "address": "15 Khan Asparuh St., Varna, Bulgaria",
+                "description": "St. Sarkis Church is an Armenian Apostolic church in central Varna, built in 1844 at the initiative of charismatic Father Hadji Sarkis. Located in the historic Armenian district, where a smaller memorial chapel once stood. The church follows traditional Armenian style with a single-nave basilica plan and characteristic bell tower. A khachkar memorial to the victims of the Armenian Genocide was erected in 2006 in the courtyard. The church is recognized as a Bulgarian cultural heritage monument and remains a spiritual center for Varna’s Armenian community.",
+                "photoName": "varna_saint_sarkis"
+              },
+              {
+                "name": "St. Stephen Church",
+                "lat": 42.1864,
+                "lon": 24.3297,
+                "isActive": true,
+                "address": "8 Antim I St., Pazardzhik, Bulgaria",
+                "description": "The Armenian Apostolic Church of St. Stephen in Pazardzhik was consecrated on December 18, 2011. Throughout history, Armenian churches had stood here since the 13th century, but all were destroyed by fires or earthquakes. The last, built in 1820, was demolished by disasters. The modern church was rebuilt after a fundraising campaign: foundation laid on July 4, 2005, consecrated in 2011 with a holy stone from Etchmiadzin placed in the altar. Today it is an active spiritual and cultural center, with the Armenian cultural club 'Arto Bozdigian' operating within it.",
+                "photoName": "pazardzhik_saint_stepanos"
+              },
+              {
+                "name": "Holy Resurrection Church",
+                "lat": 51.4793,
+                "lon": 11.9775,
+                "isActive": true,
+                "address": "Halle (Saale), Germany",
+                "description": "The Armenian Apostolic Church of the Holy Resurrection in Halle (Saxony-Anhalt, Germany) was consecrated in 2007 with the participation of Catholicos Karekin II of All Armenians. Built with donations from the Armenian community of Germany, it became the first Armenian church in eastern Germany. Designed in traditional Armenian architectural style with a dome and khachkars brought from Armenia. It serves as the spiritual and cultural center for Armenians in Halle and the surrounding area, hosting liturgies, baptisms, and weddings.",
+                "photoName": "halle_surbarutyun"
+              },
+              {
+                "name": "Holy Trinity Church",
+                "lat": 50.29152,
+                "lon": 18.66781,
+                "isActive": true,
+                "address": "3/6 Mikołowska St., Gliwice, Silesian Voivodeship, Poland",
+                "description": "The Armenian Catholic Holy Trinity Church in Gliwice is an architectural monument used by the Armenian Catholic community since 1945. Built between 1836 and 1838 on the site of a wooden church destroyed in 1813. Originally belonging to Old Catholics, it was transferred to the Armenian Catholic community after World War II. It remains an active parish church to this day.",
+                "photoName": "gliwice_surb_treffn"
+              },
+              {
+                "name": "St. Peter and Paul Church",
+                "lat": 54.4000,
+                "lon": 18.6500,
+                "isActive": true,
+                "address": "3 Żabi Kruk St., Gdańsk, Poland",
+                "description": "The Church of Saints Peter and Paul in Gdańsk is an outstanding example of brick Gothic, built between 1396 and 1516. In 1958, the church was granted for use by Roman and Armenian Catholics, and today it serves as the parish church of the Armenian Catholic community. In 2009, a khachkar memorial was erected in the Armenian Alley courtyard, where liturgies are conducted in Armenian.",
+                "photoName": "gdansk_saints_peter_paul"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 37.9753,
+                "lon": 23.7320,
+                "isActive": true,
+                "address": "Athens, Greece",
+                "description": "The Armenian Apostolic Church of the Holy Mother of God (Surb Astvatsatsin) in Athens was built in 1935 on the site of a wooden church that had existed since 1908 and became the spiritual center of the Armenian community. It also serves as the residence of the Armenian Prelacy of Greece and fosters cultural and religious ties between the diaspora and the homeland.",
+                "photoName": "athens_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 40.6278,
+                "lon": 22.9528,
+                "isActive": true,
+                "address": "4 Dialetti St., Thessaloniki, Greece",
+                "description": "The Armenian Apostolic Church of the Holy Mother of God in Thessaloniki has been a religious and cultural center of the Armenian community for over 120 years. Built by Italian architect Vitaliano Poselli, consecrated on November 6, 1903. Its architecture blends Armenian and local traditions: the facade crowned by a central tower, side towers resembling Armenian domes. The interior features frescoes and stained glass depicting the life of the Virgin Mary. The church also plays social roles, including education and charity. Nearby stands a khachkar memorial to the victims of the Armenian Genocide.",
+                "photoName": "thessaloniki_surp_astvatsatsin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church",
+                "lat": 41.1150,
+                "lon": 25.4080,
+                "isActive": true,
+                "address": "2 Armeniou St., Komotini, Greece",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator in Komotini was built with funds from the Armenian community and consecrated on November 25, 1834. Built in classic Armenian style, it stands in the city center and serves as the main spiritual and cultural hub of the local Armenian diaspora.",
+                "photoName": "komotini_saint_grigor"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church",
+                "lat": 37.9697,
+                "lon": 23.7385,
+                "isActive": true,
+                "address": "2 Rene Pio St., Neos Kosmos, Athens, Greece",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator is the cathedral of the Armenian Apostolic Prelacy of Greece. Located in Neos Kosmos, Athens, built in 1935 on the site of a wooden church (1908), it was consecrated as the spiritual center of the diaspora. It serves as the Prelate’s residence and organizes the religious, cultural, and educational life of Athens’ Armenian community.",
+                "photoName": "athens_surb_grigor"
+              },
+              {
+                "name": "St. John the Baptist Church",
+                "lat": 35.3407,
+                "lon": 25.1347,
+                "isActive": true,
+                "address": "24 Ntentidakidon St., Heraklion, Crete, Greece",
+                "description": "The Armenian Apostolic Church of St. John the Baptist is one of the oldest Armenian churches in Europe. Transferred to the Armenian community in 1669 after the Ottoman conquest of Heraklion. It remains the spiritual center of the Armenian diaspora of Crete and is still active today.",
+                "photoName": "crete_heraklion_surb_karapet"
+              },
+              {
+                "name": "St. Karapet Church",
+                "lat": 37.9760,
+                "lon": 23.7140,
+                "isActive": true,
+                "address": "4 Praksagoru St., Neos Kosmos, Athens, Greece",
+                "description": "The Armenian Apostolic Church of St. Karapet (Surb Karapet), also called St. John the Baptist, is located in Neos Kosmos, Athens. It serves as a center of Armenian spiritual life in the city under the jurisdiction of the Armenian Apostolic Church.",
+                "photoName": "athens_surb_karapet"
+              },
+              {
+                "name": "Armenian Catholic Church of the Holy Mother of God",
+                "lat": 47.4822,
+                "lon": 19.0509,
+                "isActive": true,
+                "address": "6 Orlay St., Budapest, Hungary",
+                "description": "The Armenian Catholic Church of the Holy Mother of God (Surb Astvatsatsin) is the spiritual center of the Armenian Catholic community in Hungary, located in Budapest’s 11th district. Close to the famous Gellért Baths, the church is an architecturally and culturally significant monument for Hungary’s Armenians.",
+                "photoName": "budapest_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Sarkis Church",
+                "lat": 51.4996,
+                "lon": -0.1936,
+                "isActive": true,
+                "address": "Iverna Gardens, Kensington, London W8 6TP, United Kingdom",
+                "description": "The Armenian Apostolic Church of St. Sarkis in Kensington is the cathedral of the Armenian Apostolic Diocese of the UK. Built in 1922–1923 by architects Arthur Davis and Charles Mewes, funded by Calouste Gulbenkian in memory of his parents. The only Armenian church in England constructed in traditional Armenian style, inspired by the bell tower of Haghpat Monastery. Consecrated on January 11, 1923; expanded in 1937–1950; listed as a Grade II* monument in 1981.",
+                "photoName": "london_surb_sarkis"
+              },
+              {
+                "name": "St. Yeghishe Church",
+                "lat": 51.4894,
+                "lon": -0.1778,
+                "isActive": true,
+                "address": "Cranley Gardens, South Kensington, London SW7, United Kingdom",
+                "description": "St. Yeghishe Church is the largest Armenian Apostolic church in the UK. Built in 1867 as an Anglican church dedicated to St. Peter, commissioned by developer Charles Freake. Declared redundant in 1972, it was acquired in 1998 by a benefactor, restored for Armenian liturgy, and became an Armenian church. It features a four-manual organ, constructed of ragstone in the Victorian 'Decorated' Gothic style, with a broach spire and refined interior.",
+                "photoName": "london_surb_yeghiche"
+              },
+              {
+                "name": "Holy Trinity Church",
+                "lat": 53.4731,
+                "lon": -2.2340,
+                "isActive": true,
+                "address": "Upper Brook Street, Chorlton-on-Medlock, Manchester, United Kingdom",
+                "description": "The Armenian Apostolic Holy Trinity Church in Manchester is the first Armenian church built in Western Europe, consecrated on Easter 1870. Constructed in 1869–1870 by Liverpool architects Royle and Bennett in eclectic Neo-Gothic style. It is listed as a Grade II building for its historic and cultural significance.",
+                "photoName": "manchester_holy_trinity"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church",
+                "lat": 52.3540,
+                "lon": 6.6620,
+                "isActive": true,
+                "address": "174 Vriezenveenseweg, 7602 PV Almelo, Netherlands",
+                "description": "The Armenian Apostolic Church of St. Gregory the Illuminator in Almelo was consecrated in November 2003. Built with funds from the local Armenian community after selling their previous parish building, transformed from a multi-purpose hall with Sunday school rooms (founded in 1991). The church hosts a youth union, women’s union, Sunday school named after Mesrop Mashtots, a diaconate, and the 'Zartonk' ensemble. A memorial to the victims of the Armenian Genocide was installed on the grounds in April 2014.",
+                "photoName": "almelo_surb_grigor"
+              },
+              {
+                "name": "St. Karapet Church",
+                "lat": 50.8512,
+                "lon": 5.6584,
+                "isActive": true,
+                "address": "Potterieplein 50, 6216 VB Maastricht, Netherlands",
+                "description": "The Armenian Apostolic Church of St. Karapet in Maastricht was consecrated on January 26, 2013. It is the third Armenian church in the Netherlands (after Amsterdam and Almelo). The building is a reconstructed Catholic property handed over to the Armenian community. The parish hosts a Sunday school, women’s union, youth and cultural associations under the name 'Ani'.",
+                "photoName": "maastricht_surb_karapet"
+              },
+              {
+                "name": "Holy Spirit Church",
+                "lat": 52.37172,
+                "lon": 4.90217,
+                "isActive": true,
+                "address": "Krom Boomssloot 22, 1011 GW Amsterdam, Netherlands",
+                "description": "The Armenian Apostolic Church of the Holy Spirit (*Surb Hoki*) is the first Armenian church in Amsterdam, founded around 1714. Built through the efforts of Armenian merchants on purchased land; renovated in 1747–1749 by priest Johannes Minas Amasiatsi and his successor. In 1985 the church was purchased and restored by the Armenian diaspora, and reconsecrated on November 29, 1989. A khachkar was erected in the courtyard as a memorial, and in 2018 another cross-stone was added in memory of the war victims of Artsakh, supported by the community.",
+                "photoName": "amsterdam_surb_hogi"
+              },
+              {
+                "name": "St. Hakob Church",
+                "lat": 46.1658,
+                "lon": 6.1461,
+                "isActive": true,
+                "address": "Route de Troinex 64, 1256 Troinex, Geneva, Switzerland",
+                "description": "The Armenian Apostolic Church of Surb Hakob is the only Armenian Apostolic church in Switzerland. Built between 1967 and 1969 with donations from Hakob Topalian. The consecration took place on September 14, 1969. It serves the Armenian community of Geneva and remains its spiritual center.",
+                "photoName": "geneva_surb_akob"
+              },
+              {
+                "name": "Armenian Apostolic Church of the Forty Martyrs",
+                "lat": 45.4869,
+                "lon": 9.2257,
+                "isActive": true,
+                "address": "Via Niccolò Jommelli 30–32, 20131 Milan, Italy",
+                "description": "The Armenian Apostolic Church of the Forty Martyrs of Sebaste (Chiesa dei Quaranta Martiri di Sebaste) in Milan is the only Armenian Apostolic church in Italy. Built in 1957 to the designs of architects R. Israelyan and P. Suryan, consecrated in 1958. The interior is decorated with old murals, creating an atmosphere of spiritual and aesthetic harmony. The church has become the center of religious, cultural, and communal life for Armenians in Lombardy.",
+                "photoName": "milan_surb_sebaste"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 48.8214,
+                "lon": 2.2631,
+                "isActive": true,
+                "address": "Boulevard du Bourg-d’Issy, Issy-les-Moulineaux, Paris Suburb, France",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin (Holy Mother of God) in Issy-les-Moulineaux, a suburb of Paris, belongs to the Armenian Apostolic Church of France under the jurisdiction of the Mother See of Holy Etchmiadzin. Built by architect Henri Kanjyan and consecrated in 1975. Its altar was renewed in the early 2000s under Tigran-Manvel Deirmendjian and reconsecrated on April 7, 2001 by Archbishop Kude Nakatian.",
+                "photoName": "paris_issy_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 43.7034,
+                "lon": 7.2654,
+                "isActive": true,
+                "address": "Boulevard de la Madeleine, Nice, France",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin (Holy Mother of God) in Nice belongs to the French Diocese of the Mother See of Holy Etchmiadzin. The church serves as the spiritual center of the Armenian community of Nice, hosting liturgies and preserving national traditions.",
+                "photoName": "nice_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church",
+                "lat": 48.7890,
+                "lon": 2.2190,
+                "isActive": true,
+                "address": "Komitas Street, Chaville, Hauts-de-Seine Department, France",
+                "description": "The Armenian Apostolic Church of Surb Grigor Lusavorich in Chaville belongs to the French Diocese of the Mother See of Holy Etchmiadzin. It serves as the spiritual center for the Armenian community of Chaville and surrounding areas.",
+                "photoName": "chaville_surb_grigor"
+              },
+              {
+                "name": "Holy Translators Church",
+                "lat": 43.2706,
+                "lon": 5.3889,
+                "isActive": true,
+                "address": "339 Avenue du Prado, 8th District, Marseille, France",
+                "description": "The Catholicosal Cathedral of the Armenian Apostolic Church in Marseille, consecrated on October 25, 1931, designed by architect Aram Tahtadjian with reference to the Etchmiadzin Cathedral. Dedicated to Saints Sahak Parthian and Mesrop Mashtots. In the garden stand monuments: the bust of Vahan Khorasanyan, the bust of Grigor Balakian, and a Genocide memorial unveiled in 1973.",
+                "photoName": "marseille_surb_targmanchats"
+              },
+              {
+                "name": "Holy Cross Varag Church",
+                "lat": 48.9889,
+                "lon": 2.4166,
+                "isActive": true,
+                "address": "31–33 Rue Saint-Just, 95400 Arnouville-lès-Gonesse, France",
+                "description": "The Armenian Apostolic Church of Surb Khach–Varag (Holy Cross of Varag) in Arnouville-lès-Gonesse was built in 1931 on land donated by benefactor Armenak Ambartsumyan. Architect: Armen Aopyan. The cornerstone was laid on August 2, 1931, by Bishop Vramshapuh Kibaryan. The church’s tower is crowned with an octagonal dome in Armenian style. In the yard stands a khachkar memorial to the victims of the Armenian Genocide.",
+                "photoName": "arnouville_surb_khach_varag"
+              },
+              {
+                "name": "St. Hakob Church",
+                "lat": 45.7544,
+                "lon": 4.8520,
+                "isActive": true,
+                "address": "40 rue d’Arménie, 69003 Lyon, France",
+                "description": "The Armenian Apostolic Church of Surb Hakob (St. James) in Lyon is an active parish under the jurisdiction of the Armenian Diocese of France. Founded in 1963 and dedicated to the Apostle James, one of the Twelve Apostles. Located on Rue d’Arménie, it serves as the spiritual center of Lyon’s Armenian community.",
+                "photoName": "lyon_surb_hakob"
+              },
+              {
+                "name": "Armenian Cathedral of St. John the Baptist",
+                "lat": 48.8658,
+                "lon": 2.3070,
+                "isActive": true,
+                "address": "15 Rue Jean-Goujon, 8th District, Paris, France",
+                "description": "The Armenian Apostolic Cathedral of St. John the Baptist in Paris was built by architect Albert Guilbert at the initiative of oil magnate Alexandre Mantashev. Construction began on October 5, 1902 and was completed in 1904. The cathedral became the spiritual center of the Armenian community of France and a symbol of its cultural solidarity.",
+                "photoName": "paris_surb_hovhannes"
+              },
+              {
+                "name": "Holy Cross Cathedral",
+                "lat": 48.860903,
+                "lon": 2.36058036,
+                "isActive": true,
+                "address": "13–15 Rue du Perche, 3rd District, Paris, France",
+                "description": "The Armenian Catholic Cathedral of the Holy Cross in the Marais, Paris. Originally the church of Saint-Jean-Saint-François, built in 1623. Transformed into the Armenian cathedral in 1970 and, since 1986, has served as the seat of the Sainte-Croix-de-Paris Armenian Eparchy. The church preserves its historic architecture, Victor Baltard’s portico, and antique organs.",
+                "photoName": "paris_surb_khach"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 47.1590,
+                "lon": 27.5848,
+                "isActive": true,
+                "address": "22 Strada Armeană, Iași, Romania",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin in Iași is one of the oldest churches in the city, built in the 14th century and dedicated to the Dormition of the Mother of God. The church was restored in 1803 and again after World War II. Inside, a stone inscription dated 1395 has been preserved, though its origin remains debated. The building is recognized as a historical monument of Romania.",
+                "photoName": "iasi_surb_astvatsatsin"
+              },
+              {
+                "name": "St. John the Baptist Church",
+                "lat": 44.85297,
+                "lon": 24.87674,
+                "isActive": true,
+                "address": "43 Strada Egalității, Pitești, Romania",
+                "description": "The Armenian Apostolic Church of Surb Hovhannes Mkrtich (St. John the Baptist) in Pitești was built in 1852 in a trefoil shape with a hexagonal spire. It is an architectural monument and serves as the spiritual center of the Armenian community of the city.",
+                "photoName": "pitesti_surb_hovhannes"
+              },
+              {
+                "name": "Holy Archangels Church",
+                "lat": 44.4361,
+                "lon": 26.1058,
+                "isActive": true,
+                "address": "43 Carol I Boulevard, Sector 2, Bucharest, Romania",
+                "description": "The Armenian Apostolic Church of the Holy Archangels Michael and Gabriel is the cathedral of the Armenian Church in Romania. The cornerstone was laid in July 1911. Built to the designs of Armenian architects Dimitrie Maimarolu and Grigore Cerchez in the style of Etchmiadzin Cathedral, it was consecrated in September 1915. The complex includes the bishop’s residence, library, museum, cultural center, kindergarten, and the headquarters of the Union of Armenians of Romania. It is listed as a national historic monument.",
+                "photoName": "bucharest_srbots_hreshtakapetac"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 33.3450,
+                "lon": 44.3866,
+                "isActive": true,
+                "address": "Al-Midan District, Baghdad, Iraq",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin, also known as 'Meskinta', was founded in 1639–1640 by an Armenian officer serving under Sultan Murad IV. The church was restored multiple times, particularly in the 19th century, and underwent major reconstruction between 1967 and 1970 under Catholicos Vazgen I and Archbishop Asoghik Ghazarian, supported by benefactors. During this renovation, the crypt containing the relics of the '40 Martyrs of Sebaste' was rediscovered.",
+                "photoName": "baghdad_surb_astvadzadzin"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 30.49998,
+                "lon": 47.81436,
+                "isActive": true,
+                "address": "Old Basra District (Al-Basra al-Qadima), Basra, Iraq",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin is the main spiritual and cultural center of Armenians in Basra and its surroundings. First built in 1736 on the site of an older church and repeatedly restored. Inside is a portrait of the Virgin Mary brought from India in 1882.",
+                "photoName": "basra_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Cathedral",
+                "lat": 33.3130,
+                "lon": 44.3580,
+                "isActive": true,
+                "address": "Al-Tayaran Square, Bab al-Sharqi District, Baghdad, Iraq",
+                "description": "The Armenian Apostolic Cathedral of Surb Grigor Lusavorich (St. Gregory the Illuminator) is the seat of the Armenian Apostolic Diocese of Iraq. Built between 1954 and 1957 on land that included an Armenian cemetery established in 1904. Funded through a major donation by Calouste Gulbenkian. Its features include a white reinforced concrete façade, an octagonal dome with ornamentation, and a metal cross on top. In front stand two Genocide memorials (1990 and 2015), while the interior contains realistic murals depicting scenes of the Armenian Genocide.",
+                "photoName": "baghdad_surb_grigor"
+              },
+              {
+                "name": "St. James Cathedral",
+                "lat": 31.7774,
+                "lon": 35.2320,
+                "isActive": true,
+                "address": "Armenian Quarter, Old City, Jerusalem",
+                "description": "The Armenian Cathedral of St. James is the main church of the Armenian Patriarchate of Jerusalem, built in the 12th century incorporating parts of two ancient chapels from the 5th century. Dedicated to St. James the Greater and St. James the Just (brother of the Lord), whose relics are preserved here. The cathedral is the spiritual and administrative center of the Armenian community of the Old City and the patriarchal seat.",
+                "photoName": "jerusalem_cathedral_st_james"
+              },
+              {
+                "name": "St. Nicholas Armenian Monastery",
+                "lat": 32.0553,
+                "lon": 34.7523,
+                "isActive": true,
+                "address": "Old Jaffa, Tel Aviv–Jaffa, Israel",
+                "description": "The Armenian Monastery of St. Nicholas in Old Jaffa is one of the oldest monasteries of the Armenian Apostolic Church, founded before the 10th century near the port of Jaffa. It served as a hostel for pilgrims and sailors. Expanded and fortified in the 18th century. Napoleon visited this monastery during his campaign, meeting plague-stricken soldiers and thanking the Armenian priests. Today the complex includes the church and residential quarters and is under the jurisdiction of the Armenian Patriarchate of Jerusalem.",
+                "photoName": "jaffa_saint_nicholas_monastery"
+              },
+              {
+                "name": "Armenian Shrines in the Church of the Holy Sepulchre",
+                "lat": 31.7784,
+                "lon": 35.2296,
+                "isActive": true,
+                "address": "Old City, Jerusalem",
+                "description": "The Church of the Holy Sepulchre in Jerusalem, one of the holiest sites in Christianity, has long included the historical and spiritual presence of the Armenian Apostolic Church. The Armenian Patriarchate of Jerusalem is one of the three main communities sharing service and governance of the church. Among the Armenian-held sanctuaries is the Chapel of St. Helena, built where Empress Helena is said to have discovered the True Cross. Nearby stands the Chapel of St. Vardan Mamikonian and Companions, commemorating 5th-century Armenian martyrs. In the Edicule above the Holy Tomb burns an Armenian Church lamp, symbolizing continuous Armenian participation. The Patriarchate shares responsibility for liturgy, maintenance, and custodianship of the site.",
+                "photoName": "jerusalem_holy_sepulchre_armenian"
+              },
+              {
+                "name": "Tomb of the Virgin Mary (Church of the Dormition)",
+                "lat": 31.7772,
+                "lon": 35.2435,
+                "isActive": true,
+                "address": "Gethsemane, Kidron Valley, East Jerusalem",
+                "description": "The Tomb of the Virgin Mary is an underground shrine of the 17th century (preserving 5th-century elements) in Gethsemane, on the western slope of the Mount of Olives, where according to tradition the apostles buried the Holy Virgin Mary, and on the third day found the tomb empty. The cave church was built during the Crusades in the 12th century. The sanctuary contains three altars: the Armenian chapel of St. Joseph the Betrothed at the west of the Edicule; the others belong to the Greek Orthodox and Syriac-Coptic communities. Pilgrims descend a 48-step stone staircase to the marble Edicule surrounding the tomb, about 2×2 meters, and to the Chapel of Saints Joachim and Anne.",
+                "photoName": "tomb_of_virgin_mary_jerusalem"
+              },
+              {
+                "name": "Armenian Altar in the Church of the Nativity",
+                "lat": 31.7056,
+                "lon": 35.2026,
+                "isActive": true,
+                "address": "Church of the Nativity, Bethlehem, Palestine",
+                "description": "The Armenian Apostolic Church maintains its own altar in the Church of the Nativity, built above the grotto where Christ was born according to tradition. The governance, liturgical rights, and upkeep of the church are shared by the Greek Orthodox, Armenian, and Roman Catholic communities under the 'Status Quo'. The Armenian community holds the northern transept and its altar, while sharing custody of the Nativity grotto’s altar with the Greeks. On the silver star marking the birth site, five of the lamps belong to the Armenians, six to the Greeks, and four to the Catholics. Armenians celebrate Christmas on January 18–19, using their altar for liturgy. The Armenian altar is not only an architectural element but a living testimony of centuries of presence and service of the Armenian Church in Bethlehem.",
+                "photoName": "bethlehem_armenian_altar"
+              },
+              {
+                "name": "Holy Mother of God Church, Bourj Hammoud",
+                "lat": 33.8908,
+                "lon": 35.5364,
+                "isActive": true,
+                "address": "Nor-Adana, Bourj Hammoud, Lebanon",
+                "description": "The Holy Mother of God Church (Surb Astvatsatsin) in the Nor-Adana district of Bourj Hammoud was built by Armenian refugees after the Genocide and became the spiritual heart of the district. It plays a key role in community life: liturgies, baptisms, weddings, and Sunday school are held here. Inside are icons and relics brought from Western Armenia. The church also functions as a cultural and charitable center, uniting Lebanese Armenians in faith and identity.",
+                "photoName": "bourj_hammoud_surb_astvadzadzin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Cathedral, Antelias",
+                "lat": 33.8961,
+                "lon": 35.5317,
+                "isActive": true,
+                "address": "Antelias, Lebanon",
+                "description": "The Cathedral of St. Gregory the Illuminator in Antelias is the seat of the Catholicosate of the Great House of Cilicia. Built in the mid-20th century, it became a symbol of Armenian presence in Lebanon. The cathedral features monumental architecture in the style of medieval Armenia. It hosts ordinations, church synods, and ecumenical meetings. The cathedral is surrounded by a large complex: the Catholicos’s residence, a seminary, museum, and library. It is not only a religious but also a cultural hub for Armenians across the Middle East.",
+                "photoName": "antelias_surb_grigor"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Zahlé",
+                "lat": 33.8462,
+                "lon": 35.9020,
+                "isActive": true,
+                "address": "Zahlé, Beqaa Valley, Lebanon",
+                "description": "The Church of St. Gregory the Illuminator in Zahlé was built by the city’s Armenian community, formed by survivors who resettled from the Ottoman Empire. It serves as a spiritual and cultural center for Armenians of the Beqaa. Liturgies, baptisms, weddings, and community celebrations take place here. The church actively engages in the city’s social life, fostering intercommunal ties and preserving Armenian identity.",
+                "photoName": "zahleh_surb_grigor"
+              },
+              {
+                "name": "St. Gevorg Church, Beirut",
+                "lat": 33.8892,
+                "lon": 35.4955,
+                "isActive": true,
+                "address": "Beirut, Lebanon",
+                "description": "St. Gevorg Church (Surb Gevorg) is located in the center of Beirut and is one of the capital’s main Armenian churches. Built in the 20th century, it became a spiritual refuge for thousands of Armenians who settled in Lebanon. The church is built in the traditional Armenian style and remains an active parish, hosting liturgies, celebrations, educational, and cultural activities. St. Gevorg is a vital part of the religious and cultural life of Lebanon’s Armenian diaspora.",
+                "photoName": "beirut_surb_gevorg"
+              },
+              {
+                "name": "St. Hakob Church, Beirut",
+                "lat": 33.8925,
+                "lon": 35.5050,
+                "isActive": true,
+                "address": "Beirut, Lebanon",
+                "description": "The St. Hakob Church (Surb Hakob) in Beirut is one of the important churches of the Armenian community. Built in the 20th century by the diaspora, it was named after the Apostle James. Regular liturgies, celebrations, and commemorations are held here. The church plays a key role in preserving the spiritual and cultural identity of Armenians living in Lebanon’s capital.",
+                "photoName": "beirut_surb_hakob"
+              },
+              {
+                "name": "Holy Resurrection Church, Jounieh",
+                "lat": 33.9817,
+                "lon": 35.6430,
+                "isActive": true,
+                "address": "Jounieh, Lebanon",
+                "description": "The Church of the Holy Resurrection (Surb Harutyun) in Jounieh, a city known as a center of the Armenian diaspora, was built in the second half of the 20th century. The church’s austere and modern architecture reflects its era. It actively serves the Armenian community of Jounieh, hosting liturgies, baptisms, weddings, and cultural celebrations. The church has become a symbol of Armenian spiritual renewal in Lebanon.",
+                "photoName": "jounieh_surb_harutyun"
+              },
+              {
+                "name": "Holy Pentecost Church, Tripoli",
+                "lat": 34.4403,
+                "lon": 35.8330,
+                "isActive": true,
+                "address": "Tripoli, Lebanon",
+                "description": "The Holy Pentecost Church (Surb Hogegalust) in Tripoli is an important spiritual center for Armenians of northern Lebanon. Built by the Armenian community after resettlement, it serves as a place of worship, education, and charity. The church is especially noted for its Pentecost liturgies, drawing Armenians from across the region.",
+                "photoName": "tripoli_surb_pentecost"
+              },
+              {
+                "name": "St. Nshan Church, Beirut",
+                "lat": 33.8930,
+                "lon": 35.4955,
+                "isActive": true,
+                "address": "Central Beirut, Lebanon",
+                "description": "The St. Nshan Church (Holy Sign) in Beirut is one of the city’s oldest Armenian churches. Built in the 20th century, it symbolizes the spiritual revival of the Armenian community. Liturgies, weddings, baptisms, and cultural programs are held here. The church unites Beirut’s Armenians, serving as a symbol of their faith and national unity.",
+                "photoName": "beirut_surb_nshan"
+              },
+              {
+                "name": "St. Paul Church, Anjar",
+                "lat": 33.7278,
+                "lon": 35.9236,
+                "isActive": true,
+                "address": "Anjar, Beqaa Valley, Lebanon",
+                "description": "The St. Paul Church (Surb Poghos) in Anjar is the main church of the unique Armenian community of the town, founded by refugees from Musa Dagh (Syria) in 1939. The church became the spiritual center of the community, hosting liturgies, celebrations, and commemorations. It symbolizes the preservation of Armenian faith and traditions in exile and strengthens the national identity of Anjar’s residents.",
+                "photoName": "anjar_surb_poghos"
+              },
+              {
+                "name": "St. Thaddeus Church",
+                "lat": 31.9516,
+                "lon": 35.9239,
+                "isActive": true,
+                "address": "Amman, Jordan",
+                "description": "The St. Thaddeus Church in Amman is an Armenian Apostolic church serving as the spiritual and cultural center of Jordan’s Armenian community. Dedicated to Apostle Thaddeus, one of the first preachers of Christianity in Armenia. Regular liturgies, celebrations, and rites are held here, along with Sunday school and cultural initiatives. The church plays a vital role in preserving the spiritual life and national identity of Armenians living in Amman and nearby regions.",
+                "photoName": "amman_surb_taddeos"
+              },
+              {
+                "name": "St. Mark’s Church",
+                "lat": 37.0549,
+                "lon": 41.2282,
+                "isActive": true,
+                "address": "Qamishli, Al-Hasakah Province, Syria",
+                "description": "St. Mark’s Church in Qamishli is the spiritual center of the Armenian community of northeastern Syria. Built in the 20th century, it became a place of prayer and cultural life for Armenians who resettled after the 1915 Genocide. The church functions under the jurisdiction of the Armenian Apostolic Church.",
+            
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Qamishli",
+                "lat": 37.0500,
+                "lon": 41.2300,
+                "isActive": true,
+                "address": "Qamishli, Syria",
+                "description": "The Church of St. Gregory the Illuminator in Qamishli is one of the main churches of Armenians in northeastern Syria. Built in the early 20th century by Armenian refugees who survived the Genocide, it became a center of spiritual and educational life, with schools and cultural circles founded here. Today it remains a symbol of the resilience of Qamishli’s Armenians despite years of war in the region.",
+            
+              },
+              {
+                "name": "St. Karapet Church, Qamishli",
+                "lat": 37.0550,
+                "lon": 41.2250,
+                "isActive": true,
+                "address": "Qamishli, Syria",
+                "description": "The Church of St. Karapet in Qamishli was founded by settlers from Western Armenia in the 1920s. Dedicated to John the Baptist (Surb Karapet), it serves as a spiritual refuge for the local Armenian community. The church also hosts a parish school and cultural circles that play an important role in preserving language and traditions. Despite instability in Syria, the church remains a place of strength and faith."
+              },
+              {
+                "name": "St. Gregory the Illuminator Cathedral",
+                "lat": 36.5093,
+                "lon": 37.0680,
+                "isActive": true,
+                "address": "Aleppo, Syria",
+                "description": "The Cathedral of St. Gregory the Illuminator in Aleppo is the city’s main Armenian cathedral, built in the 1930s in memory of the victims of the Armenian Genocide. It is the regional center of the Armenian Apostolic Church, surrounded by schools and cultural institutions."
+              },
+              {
+                "name": "Surb Karapet Church, Aleppo",
+                "lat": 36.5110,
+                "lon": 37.0688,
+                "isActive": true,
+                "address": "Aleppo, Syria",
+                "description": "The Surb Karapet Church in Aleppo was founded in the early 20th century in the Armenian resettlement quarter. One of the city’s oldest Armenian parishes, it is known for its active parish and educational life."
+              },
+              {
+                "name": "St. Hripsime Church, Damascus",
+                "lat": 33.5141,
+                "lon": 36.2767,
+                "isActive": true,
+                "address": "Damascus, Syria",
+                "description": "The Church of St. Hripsime in Damascus is one of the oldest Armenian churches in the Syrian capital. Dedicated to the martyr Hripsime who brought Christianity to Armenia, it served as a spiritual center for Armenians relocated to Damascus in the Ottoman era, and later became a refuge for refugees from Anatolia after the Armenian Genocide. Today, it is active with liturgies, feasts, and a parish Sunday school."
+              },
+              {
+                "name": "St. Sarkis Church, Damascus",
+                "lat": 33.5138,
+                "lon": 36.2765,
+                "isActive": true,
+                "address": "Damascus, Syria",
+                "description": "The Church of St. Sarkis in Damascus was built by the Armenian community in the 19th century and became a center of spiritual and cultural life. Dedicated to St. Sarkis the Warrior, one of Armenia’s beloved patron saints, the church is also known for its parish school and council activities. It continues to preserve Armenian tradition and communal unity.",
+                "photoName": "damascus_surb_sargis"
+              },
+              {
+                "name": "Surb Astvatsatsin Church, Idlib",
+                "lat": 35.9306,
+                "lon": 36.6339,
+                "isActive": true,
+                "address": "Idlib, Syria",
+                "description": "The Church of Surb Astvatsatsin in Idlib served as a place of worship for the Armenian community until the outbreak of war in Syria. Today it stands as a reminder of the once-numerous Armenians of the region."
+              },
+              {
+                "name": "Surb Sarkis Church, Idlib",
+                "lat": 35.9333,
+                "lon": 36.6333,
+                "isActive": false,
+                "address": "Idlib, Syria",
+                "description": "The Church of Surb Sarkis was built by the Armenian community of Idlib and served for worship until the outbreak of the civil war. Today it is heavily damaged and no longer functions."
+              },
+              {
+                "name": "Bzommar Monastery, Homs",
+                "lat": 34.5514,
+                "lon": 36.1911,
+                "isActive": true,
+                "address": "Homs, Syria",
+                "description": "The Armenian Catholic Monastery of Bzommar in Homs was founded in the 19th century and served as the center of the Armenian Catholic community of the region. It housed schools and cultural institutions connected with the church."
+              },
+              {
+                "name": "Surb Harutyun Church, Kessab",
+                "lat": 35.9221,
+                "lon": 36.0108,
+                "isActive": true,
+                "address": "Kessab, Latakia Province, Syria",
+                "description": "The Surb Harutyun Church in Kessab is one of the main churches of the Armenian community of northern Latakia. Built by settlers from Cilicia, it plays a vital role in the cultural and spiritual life of the region."
+              },
+              {
+                "name": "St. Karapet Monastery",
+                "lat": 35.3451,
+                "lon": 36.4365,
+                "isActive": false,
+                "address": "Hama Province, Syria",
+                "description": "The Monastery of St. Karapet, founded in the Middle Ages, was one of the spiritual centers of Armenian monasticism in Syria. Today it lies in ruins but retains historical significance."
+              },
+              {
+                "name": "St. Hripsime Church",
+                "lat": 40.1567,
+                "lon": 44.2923,
+                "isActive": true,
+                "address": "Etchmiadzin, Armenia",
+                "description": "The 7th-century martyrion built over the tomb of St. Hripsime is an exemplar of solemn and inspired Armenian architecture. Here we learn steadfastness of faith and purity of heart; prayer before the saint’s relics strengthens us in courage and love which ‘never fails’.",
+                "photoName": "riphsime"
+              },
+              {
+                "name": "St. Gayane Church",
+                "lat": 40.1580,
+                "lon": 44.2925,
+                "isActive": true,
+                "address": "Etchmiadzin, Armenia",
+                "description": "St. Gayane, with her companions, sealed the Gospel with her blood. This beautiful 7th-century church stands over her tomb, where prayers for peace, families, and teachers of faith rise warmly. The soul finds a haven here, and the church’s beauty nurtures meekness of heart.",
+                "photoName": "gayane"
+              },
+              {
+                "name": "Shoghakat Church",
+                "lat": 40.1555,
+                "lon": 44.2930,
+                "isActive": true,
+                "address": "Etchmiadzin, Armenia",
+                "description": "“Shoghakat” means “ray of light” — a memory of the grace that shone on the site of the martyrs’ death. This church is a prayer school of thanksgiving to God for the light of Baptism and the path of sanctification followed by the Armenian Church through the ages.",
+                "photoName": "shoghakat"
+              },
+              {
+                "name": "Sevanavank",
+                "lat": 40.5489,
+                "lon": 45.0005,
+                "isActive": true,
+                "address": "Sevan Peninsula, Gegharkunik Province, Armenia",
+                "description": "The monastery on the island-lighthouse: here water and sky become icons of Baptism and Resurrection. Sevanavank calls to renewal of life and watchfulness of heart — like morning prayer over the lake.",
+                "photoName": "sevanavank"
+              },
+              {
+                "name": "Saghmosavank",
+                "lat": 40.0045,
+                "lon": 44.4392,
+                "isActive": true,
+                "address": "Aragatsotn Province, Armenia",
+                "description": "The 'Monastery of Psalms' on the edge of a picturesque canyon. For centuries, the Church here taught the people to sing the Psalms so that the Word of God would dwell with wisdom and thanksgiving. A place where the echo of Armenia’s prayers resounds.",
+                "photoName": "saghmosavank"
+              },
+              {
+                "name": "Hovhannavank",
+                "lat": 40.0920,
+                "lon": 44.3200,
+                "isActive": true,
+                "address": "Ohanavan, Aragatsotn Province, Armenia",
+                "description": "Strong as the rock, this monastery guarded the faith of border villages. Its strict forms instruct in courage and unity; here the liturgy sustains daily labor and nurtures brotherly love.",
+                "photoName": "hovhannavank"
+              },
+              {
+                "name": "Akhtala Monastery",
+                "lat": 41.1512,
+                "lon": 44.7650,
+                "isActive": true,
+                "address": "Akhtala, Lori Province, Armenia",
+                "description": "Akhtala is famed for its magnificent frescoes — theology in colors. In them, intellectual faith and prayerful heart unite for the edification of the faithful. The monastery teaches us to contemplate Beauty and live it out in deeds of mercy.",
+                "photoName": "akhtala"
+              },
+              {
+                "name": "Odzun Monastery (Holy Mother of God Church)",
+                "lat": 41.1460,
+                "lon": 44.6350,
+                "isActive": true,
+                "address": "Odzun, Lori Province, Armenia",
+                "description": "Odzun Monastery, lying on a plateau above the Debed canyon, is an ancient domed basilica of the 6th century, renewed in the 19th and 21st centuries. Its pink felsite walls echo prayers and psalms, while the double-storied sacristies and choirs continue the angelic song. Here, ancestral memory and the power of faith remain in stone, revived by each trembling heart.",
+                "photoName": "odzun"
+              },
+              {
+                "name": "Vahanavank Monastery",
+                "lat": 39.2178,
+                "lon": 46.3319,
+                "isActive": true,
+                "address": "≈ 5 km west of Kapan, Syunik Province, Armenia",
+                "description": "Vahanavank is a 10th-century monastery founded in 911 by Prince Vahan, son of Syunik’s ruler Dzaqik. It includes the Church of St. Gregory the Illuminator, to which were later added a gavit, columned hall, and two-storied Church of the Holy Mother of God. The complex served as the royal necropolis of the Syunik dynasty and as the region’s spiritual center. Nearby are khachkars, ruins, a medieval school, and a 10th-century spring. Today it remains a spiritual beacon of Syunik.",
+                "photoName": "vahanavank"
+              },
+              {
+                "name": "St. Gregory the Illuminator Cathedral",
+                "lat": 40.1719,
+                "lon": 44.5165,
+                "isActive": true,
+                "address": "Yervand Kochar St., Kentron District, Yerevan, Armenia",
+                "description": "This majestic cathedral was a gift of the nation for the 1700th anniversary of Christianity as Armenia’s state religion. Its jewel-carved stone proclaims the faith, and at its heart are relics of St. Gregory the Illuminator brought from Naples. The cathedral is not just a building but the Mother Church’s home, where the liturgy flows like a river of grace and prayer rekindles hearts with fire.",
+                "photoName": "yerevan_surb_grigor"
+              },
+              {
+                "name": "Holy Resurrection Church (Surb Harutyun)",
+                "lat": 42.8169,
+                "lon": 132.8946,
+                "isActive": true,
+                "address": "Nakhodka, Primorsky Krai, Russia",
+                "description": "In 2024, the Church of the Holy Resurrection (Surb Harutyun) was consecrated in Nakhodka as the spiritual home of Primorye’s Armenian community. Built with local diaspora efforts and support of the diocese, constructed from tuff imported from Armenia, it became a symbol of faith and unity. Its walls recall the homeland, while prayers within link the Far East to Armenia’s spiritual heart. Today it serves as a center for worship, feasts, and gatherings, strengthening generational ties.",
+                "photoName": "nahodka_surb_arutyun"
+              },
+              {
+                "name": "Holy Mother of God Church",
+                "lat": 36.7202,
+                "lon": -4.4202,
+                "isActive": true,
+                "address": "Malaga, Andalusia, Spain",
+                "description": "In 2022, the Holy Mother of God Church was built in Malaga, becoming the first Armenian church on Spanish soil. Just as a mother carries and protects, this house of prayer became a haven for Armenians arriving from afar. Built from light tuff brought from the homeland, it serves as a hearth of faith, uniting hearts through word and song even far from native mountains.",
+                "photoName": "malaga_surb_asteghtsatsin"
+              },
+              {
+                "name": "Karmravor Church (Surb Astvatsatsin)",
+                "lat": 40.2889,
+                "lon": 44.4233,
+                "isActive": true,
+                "address": "Ashtarak, Aragatsotn Province, Armenia",
+                "description": "Karmravor is a small yet precious 7th-century church crowning the slopes of Ashtarak. Its modest walls convey an Old Testament truth: faith is not measured by size. Bathed in the stillness of sunset, the church reminds us that God reveals Himself not in scale but in a heart open to humility and prayer.",
+                "photoName": "karmravor"
+              },
+              {
+                "name": "St. John the Baptist Church (Mastara)",
+                "lat": 40.4518,
+                "lon": 43.8840,
+                "isActive": true,
+                "address": "Mastara village, Talin District, Aragatsotn Province, Armenia",
+                "description": "Surb Hovhannes in Mastara is one of the oldest sanctuaries of the 5th century, where architectural grandeur merges with humility of faith. From its dome, the soul soars heavenward, while surrounding khachkars seem to sing psalms in stone. Here we surrender to holiness and recall that truth dwells in man-made prayer and in the legacy of St. John.",
+                "photoName": "mastara_surb_ovanes"
+              },
+              {
+                "name": "St. Mesrop Mashtots Church",
+                "lat": 40.2584,
+                "lon": 44.3146,
+                "isActive": true,
+                "address": "Oshakan, Aragatsotn Province, Armenia",
+                "description": "On the sacred ground of Oshakan stands the Church of St. Mesrop Mashtots, the father of Armenian letters. Beneath its altar rests the saint who gave the nation the alphabet with which we glorify Christ today. Built in the 12th century on the site of an ancient crypt (443 AD) and restored in the 19th century, it preserves the memory of the creator of the alphabet and the power of enlightenment. Frescoes, bell tower, chapel, and school all radiate faith and thanksgiving.",
+                "photoName": "oshakan_surb_mesrop"
+              },
+              {
+                "name": "Kecharis Monastery",
+                "lat": 40.5338,
+                "lon": 44.7162,
+                "isActive": true,
+                "address": "Tsaghkadzor, Kotayk Province, Armenia",
+                "description": "Kecharis is an ancient monastic stronghold in the valley of flowers, where the power of faith meets the beauty of creation. Founded in the 11th century by the Pahlavuni princes, the complex stands on the slope of the Pambak Range, amid birches and mountain wind. In its four churches, two chapels, and gavit, prayers rose, treatises were written, and spirituality was nurtured. Khachkars of the 12th–13th centuries nearby remind us: steadfast faith is our national fortress.",
+                "photoName": "kecharis"
+              },
+              {
+                "name": "St. George Cathedral (Surb Gevorg), Tbilisi",
+                "lat": 41.689242,
+                "lon": 44.808898,
+                "isActive": true,
+                "address": "5 Samgebro St., Tbilisi, Georgia",
+                "description": "The Surb Gevorg Cathedral, a 13th-century Armenian church, stands in the heart of old Tbilisi near Narikala Fortress. Its longevity is a living memory of the continuous Armenian spiritual presence. Within its holy walls prayerful tradition meets art, still being restored today to lead us on the path of repentance, hope, and fellowship.",
+                "photoName": "tbilisi_surb_gevorg"
+              },
+              {
+                "name": "Holy Mother of God Church (Surb Astvatsatsin), Baku",
+                "lat": 40.3667,
+                "lon": 49.8369,
+                "isActive": false,
+                "address": "Old City (İçərişəhər), Baku, Azerbaijan",
+                "description": "The Armenian Apostolic Church of Surb Astvatsatsin in Baku, built in the late 18th–19th centuries near the Maiden Tower, was one of two stone Armenian churches in the city alongside Surb Grigor Cathedral. It could still be seen in photographs during Soviet times, but was finally destroyed in the early 1990s. Only the lower tier of the bell tower remains.",
+                "photoName": "baku_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church (Surb Grigor Lusavorich)",
+                "lat": 40.3711,
+                "lon": 49.8364,
+                "isActive": false,
+                "address": "38 Nizami St., Baku, Azerbaijan",
+                "description": "Built between 1863–1869 to the design of architect Karl Gustav Hippius, this Armenian Apostolic church stood near Fountain Square. It was one of the few Armenian sanctuaries to survive in Baku. During Soviet times it was repurposed, and in 2002 it was handed over to serve as a library repository. It no longer functions as a church but remains a monument of architecture.",
+                "photoName": "baku_surb_grigor_lusavorich"
+              },
+              {
+                "name": "Cathedral of Sts. Thaddeus and Bartholomew",
+                "lat": 40.3721,
+                "lon": 49.8537,
+                "isActive": false,
+                "address": "Baku (exact location unknown, lost), Azerbaijan",
+                "description": "The Armenian cathedral in Baku, dedicated to the Apostles Thaddeus and Bartholomew, was demolished in 1934 during the Soviet anti-religious campaign. Before its destruction it was the main spiritual center of the Armenian community of the city.",
+                "photoName": "baku_cathedral_faddey_varfolomey"
+              },
+              {
+                "name": "St. Hovhannes Mkrtich Church",
+                "lat": 40.3721,
+                "lon": 49.8537,
+                "isActive": false,
+                "address": "Baku, Azerbaijan",
+                "description": "The Church of St. Hovhannes Mkrtich (St. John the Baptist) in Baku was built by the Armenian community and served as the district’s spiritual center. In the 1930s it was demolished by the Soviet authorities, and its building materials were reused for the Azerbaijan Drama Theater. Today the church no longer survives, though its memory remains an important part of the Armenian heritage of the city.",
+                "photoName": "baku_surb_hovhannes_mkrtich"
+              },
+              {
+                "name": "St. Hovhannes Church, Ganja",
+                "lat": 40.6697,
+                "lon": 46.3638,
+                "isActive": false,
+                "address": "Ganja (formerly Gandzak), Azerbaijan",
+                "description": "This Armenian Apostolic church was founded in 1633, according to an inscription at the entrance, and later restored in 1860. Until the 1990s it remained active. After the anti-Armenian pogroms the local community ceased to exist, the church lost its crosses and Armenian inscriptions, and it was converted into a music club.",
+                "photoName": "ganja_surb_hovhannes"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Ganja",
+                "lat": 40.6609,
+                "lon": 46.3597,
+                "isActive": false,
+                "address": "Ganja (formerly Gandzak), Azerbaijan",
+                "description": "This Armenian Apostolic church was founded on September 14, 1853 and consecrated on November 9, 1869 by Archbishop Makar, head of Georgia and Imereti. The church was monumental in size: about 30.5 m long and 19.7 m wide, with four columns, three entrances, and a decorative fence with stone angels and wrought iron gates. A parish school for both boys and girls operated here. Today the building no longer functions as a church but remains an important historical and architectural monument.",
+                "photoName": "ganja_surb_grigor_lusavorich"
+              },
+              {
+                "name": "St. Sargis Church, Ganja",
+                "lat": 40.6835,
+                "lon": 46.3400,
+                "isActive": false,
+                "address": "Ganja (formerly Gandzak), Azerbaijan",
+                "description": "This 18th-century Armenian Apostolic church stood by the Armenian cemetery in the Norshen district of Ganja. Initially a small prayer site, mentioned in documents of 1881, it was restored after the destruction of 1905–1906 by Nikoghayos Ghukasyants and reconsecrated on June 4, 1917. In Soviet times it was turned into a ‘Palace of Friendship of Peoples’. Today the building has been refurbished in Turkish style and is used as a museum.",
+                "photoName": "ganja_surb_sargis"
+              },
+              {
+                "name": "St. Stepanos Church, Pip",
+                "lat": 40.5531,
+                "lon": 46.0090,
+                "isActive": false,
+                "address": "Pip village, Dashkesan District, Azerbaijan",
+                "description": "The Church of St. Stepanos in Pip was built in the 19th century, completed in 1849, with its bell tower erected in 1847 funded by Stepan Mirimyants. It was a single-domed basilica about 22 m long and 12 m wide, with six interior columns and a western entrance. It was an important spiritual center for local Armenians, housing handwritten Gospels and inscriptions. In 1928 it was closed by Soviet authorities, and after the expulsion of Armenians in the late 20th century it lost its function. Used as a barn for years, it fell into ruin. Today it has not survived, though its memory remains part of the Armenian spiritual heritage of Gandzak and its surroundings.",
+                "photoName": "pip_surb_stepanos"
+              },
+              {
+                "name": "St. Pepronia Church, Pip",
+                "lat": 40.5683,
+                "lon": 46.0440,
+                "isActive": false,
+                "address": "Pip village, Dashkesan District, Azerbaijan",
+                "description": "Dedicated to St. Pepronia the Virgin, this church stood in the historic Gardman district (Pip area) of Dashkesan. It was the settlement’s main shrine, built in the style of medieval Armenian double-domed churches with thick walls and vaults. Dimensions: about 26.35 m by 12.70 m, wall thickness 2.40 m. The church had two arched coverings and secret niches near the altar. By the late 20th century it lost its function after Armenians were expelled; its present state is unknown.",
+                "photoName": "pip_surb_pepronia"
+              },
+              {
+                "name": "Charek Monastery (Charek Vank)",
+                "lat": 40.5333,
+                "lon": 45.8856,
+                "isActive": false,
+                "address": "≈10 km from Pip village, Dashkesan District, Azerbaijan",
+                "description": "Also known as Charekavank or Chareka-anapat, this monastery in the Gardman district of Greater Armenia was founded in the 17th century by Bishop David (Garamanian from Shamkhor). The complex included the Church of the Holy Mother of God (a three-nave basilica, 17.28 × 9.72 m), a gavit, a bell tower (1659), Harants chapel, refectory, and monastic cells. It was repeatedly destroyed and rebuilt, and held extensive land. After Soviet power the monastery’s lands were confiscated and a Turkish Hanafi family settled there. Today the ruins are semi-destroyed, used as a livestock yard by local Turkish-Kurdish shepherds.",
+                "photoName": "charek_vank_ruins"
+              },
+              {
+                "name": "Charek Monastery (Kharants Vank)",
+                "lat": 40.5625,
+                "lon": 45.6569,
+                "isActive": false,
+                "address": "≈1 km NE of Böyük Qaramurad village, Getabek District, Azerbaijan",
+                "description": "Also known as Böyük Qaramurad Vank, this 12th-century Armenian monastery stood on a hill between two gorges. It included a hewn-stone church (≈15 × 9.6 m), a bell tower on the NE corner, and a stone cross on a pedestal beside it. The church was repeatedly restored: manuscripts were copied here in 1659, 1679, and 1682. Today the complex is partly ruined; the church and bell tower survive in fragments, used by locals as a cattle yard.",
+                "photoName": "charek_vank_ruins"
+              },
+              {
+                "name": "Monastery of the Translators (Surb Targmanchats Vank)",
+                "lat": 40.5681,
+                "lon": 46.0896,
+                "isActive": false,
+                "address": "≈4 km north of Dashkesan (Khachakap / Quşçu), Azerbaijan",
+                "description": "Founded in the late 4th–early 5th century by St. Mesrop Mashtots and Sahak Partev, this monastery was a cradle of Armenian literacy. Located at 1315 m elevation on a scenic slope, its main cross-domed church with gavit and bell tower was restored in 989 and again in 1845. Here Gospels and historic documents were stored, and by tradition the first Armenian translations were made. It functioned until the early 20th century, later abandoned. Today walls, monk cells, basements, and architectural fragments remain visible.",
+                "photoName": "dashkasan_targmanchats_vank"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Banants",
+                "lat": 40.5533,
+                "lon": 46.1483,
+                "isActive": false,
+                "address": "Banants village, Dashkesan District, Azerbaijan",
+                "description": "Built between 1863–1866 by Banants villagers, this Armenian Apostolic church stood beside the older Surb Astvatsatsin and was known as the ‘new’ church. Size: 27.9 × 13.3 m. Simple and harmonious architecture. It functioned until the 1990s, after which it was abandoned and desecrated following the expulsion of Armenians. Today it lies semi-ruined, with a state flag placed on its roof, and is officially listed as ‘Albanian’ cultural heritage.",
+                "photoName": "bananc_surb_grigor_lusavorich"
+              },
+              {
+                "name": "St. Karapet Church, Aprakunis",
+                "lat": 39.1340,
+                "lon": 45.6369,
+                "isActive": false,
+                "address": "Near Aprakunis village (now Nakhchivan AR), Azerbaijan",
+                "description": "Founded in the late 14th century by Malakia from Crimea and completed by his disciple Grigor Tatevatsi in 1386, this monastery served as a major spiritual and cultural center in the 14th–18th centuries with a school, manuscripts, and relics. In the 17th century new structures were added: a four-domed church, gavit, and bell tower. The interior contained frescoes, khachkars, and inscriptions. By the early 20th century it ceased to function and after the Armenian expulsion was destroyed. Only ruins remain today.",
+                "photoName": "aprakunis_surb_karapet"
+              },
+              {
+                "name": "St. Elishe (Kish) Church",
+                "lat": 41.2170,
+                "lon": 47.1869,
+                "isActive": false,
+                "address": "Kish village, ≈5 km north of Sheki, Azerbaijan",
+                "description": "Also known as the Church of St. Elishe or Holy Mother of God, this ancient Christian shrine stands in Kish, near Sheki. Likely built in the early 12th century, it has belonged to Georgian Orthodox, then to Albanian, and later Armenian Apostolic traditions. Archaeological digs (2000–2003) revealed cult layers under the altar dating to 3000 BC. The current structure dates to ca. 990–1160 AD.",
+                "photoName": "kish_church"
+              },
+              {
+                "name": "Mesrop Mashtots Monastery (Surb Grigor Lusavorich), Nesirvas",
+                "lat": 39.16838,
+                "lon": 45.92363,
+                "isActive": false,
+                "address": "Nesirvas village, Ordubad District, Nakhchivan AR, Azerbaijan",
+                "description": "Founded in 456 by Prince Shabit of Goghtn, this Armenian Apostolic monastery included a domed church with hall, altar, forechurch, bell tower, and residence. It was repeatedly restored in the 15th–19th centuries. Partly standing until the late 20th century, it was completely destroyed by 2006, as documented by satellite research.",
+                "photoName": "mesrop_mashtots_monastery_ruins"
+              },
+              {
+                "name": "Holy Mother of God Monastery (Surb Astvatsatsin), Channab",
+                "lat": 39.0191,
+                "lon": 45.9066,
+                "isActive": false,
+                "address": "Channab village, Ordubad District, Nakhchivan AR, Azerbaijan",
+                "description": "Rebuilt in the late 12th century and renovated in the 16th–17th, this Armenian cross-domed basilica had a bright apse, two sacristies, and a dome on four cruciform pillars. A bell tower adjoined its south façade, decorated with Armenian inscriptions and sculptures. Still intact in the 1980s, by February 3, 2000 it was completely destroyed, as confirmed by satellite evidence. Nearby stood an Armenian cemetery with 180–200 tombstones, also erased by that date.",
+                "photoName": "channab_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Saviour Monastery, Julfa",
+                "lat": 38.97417,
+                "lon": 45.56472,
+                "isActive": false,
+                "address": "NW of Julfa cemetery, Nakhchivan AR, Azerbaijan",
+                "description": "Founded no later than the 9th–10th centuries, this monastery was mentioned in 976 under King Ashot the Pious. Possibly earlier, perhaps in the reign of Khachik II or in 1271 by Baron Vahram. It stood above the Araxes near Myakharda ridge. Survived until the 1980s, but between 1997–2003 it was destroyed during the campaign against Armenian heritage. The Julfa cemetery with 47 tombs was also obliterated by 2003.",
+                "photoName": "julfa_holy_saviour_monastery_ruins"
+              },
+              {
+                "name": "St. Kristapor Church, Upper Aylis",
+                "lat": 38.9574,
+                "lon": 45.9808,
+                "isActive": false,
+                "address": "Upper Aylis village (Yukhari Aylis), Nakhchivan AR, Azerbaijan",
+                "description": "The Church of St. Kristapor was an Armenian Apostolic church located on Gindar hill in central Upper Aylis. First mentioned in the 15th century, it was restored in 1671–1675 according to Armenian inscriptions. Architecturally it was a domed basilica with four naves, including sanctuary, storage, and a prayer hall with large windows. It had three decorated arched entrances: west, north, and south. Still standing in the 1980s, it was completely destroyed by February 3, 2000, as confirmed by satellite studies. Today nothing remains, yet its memory survives as part of the Armenian heritage of Aylis.",
+                "photoName": "yukhari_aylis_surb_kristapor"
+              },
+              {
+                "name": "St. Hakob-Hayrapet Church, Shurud",
+                "lat": 39.1455,
+                "lon": 45.7992,
+                "isActive": false,
+                "address": "Shurud village, Julfa District, Nakhchivan AR, Azerbaijan",
+                "description": "Built in the 12th century in central Shurud, this Armenian Apostolic church was a cruciform basilica with a tall conical dome visible from afar. Its facades bore Armenian inscriptions and frescoes, with 17th-century khachkars above the entrances. The dome was painted by artist Naghash Ovnatanyan in the 1680s. The church was destroyed between 1997 and June 15, 2006, as confirmed by satellite evidence.",
+                "photoName": "shurud_surb_hakob_hayrapet"
+              },
+              {
+                "name": "St. Sarkis Monastery of Gag",
+                "lat": 41.1414,
+                "lon": 45.2661,
+                "isActive": false,
+                "address": "Gag Mountain, ~500 m east of today’s Armenia border, Azerbaijan",
+                "description": "A medieval Armenian Apostolic monastery located on the summit of Mount Gag at ~922 m altitude. Tradition holds it was founded by St. Mesrop Mashtots, who buried part of St. Sarkis’s skull here, attested by ancient Armenian hymns. Inscriptions and records note renovations, including in 1851 by mason Yesayi Nurinyants under patron Sargis Varshamyan. Known as a pilgrimage and educational center, its remains survive only in fragments, with many inscriptions deliberately erased.",
+                "photoName": "gag_st_sarkis_monastery_ruins"
+              },
+              {
+                "name": "Khachin-Darbatli Mausoleum",
+                "lat": 40.0330,
+                "lon": 46.8170,
+                "isActive": false,
+                "address": "Khachin-Dorbatly village, Aghdam District (historic Artsakh), Azerbaijan",
+                "description": "Built in 1314 by Armenian architect Vardapet Shahik, this 12-sided mausoleum is a rare example of medieval Armenian architecture in Artsakh, blending Armenian style with Islamic ornamental elements. Connected to the princely house of Khachin, it stood as a symbol of Armenian aristocracy and heritage. Despite conflicts and destruction in the 20th century, surveys in 2023 confirmed it survived relatively intact. For Armenians it remains testimony of centuries of presence and culture in Artsakh.",
+                "photoName": "khachin_darbatli_mausoleum"
+              },
+              {
+                "name": "Vankasar Church",
+                "lat": 40.0721,
+                "lon": 46.8874,
+                "isActive": false,
+                "address": "On Vankasar hilltop, Askeran District (historic Artsakh / de jure Aghdam District), Azerbaijan",
+                "description": "The Vankasar Church, dating from the 7th century, stood atop a mountain ridge, visible for kilometers as a symbol of spiritual permanence. First documented in 1858, Archbishop Sargis Jalalyants described it as ‘monastery ruins’. In the 1980s restoration erased Armenian inscriptions and khachkars. Damaged in the First Karabakh War but later restored by Artsakh authorities. After the 2020s it fell under Azerbaijani control; in 2024 video evidence showed its cross removed. For Armenians it is not just architecture but a spiritual beacon of Artsakh.",
+                "photoName": "vankasar_church_ruins"
+              },
+              {
+                "name": "Dadivank Monastery",
+                "lat": 40.0728,
+                "lon": 46.8858,
+                "isActive": false,
+                "address": "Mountains near Terter river valley, historic Khachen, Azerbaijan",
+                "description": "One of the greatest monuments of Armenian spirituality, founded between the 9th–13th centuries over the tomb of St. Dadi. Until 2020 it functioned as a monastic center of Artsakh’s diocese. After the 2020 war it came under Russian peacekeepers, later under Azerbaijani police. Armenian clergy were gradually expelled. By late 2024 it was handed to the Udi community and ceased as an Armenian Apostolic shrine. For Armenians Dadivank remains a symbol of millennial faith and cultural continuity in Artsakh.",
+                "photoName": "dadivank_terter"
+              },
+              {
+                "name": "Amaras Monastery",
+                "lat": 39.6840,
+                "lon": 47.0570,
+                "isActive": false,
+                "address": "Near Sos village, historic Artsakh (now Aghdam District), Azerbaijan",
+                "description": "Founded in the 4th century by St. Gregory the Illuminator over the tomb of his grandson St. Grigoris, Amaras was site of Armenia’s first school, opened by Mesrop Mashtots in the 5th century. Through centuries it served as a bishopric, fortified with walls, and was rebuilt many times. Revived after Artsakh’s liberation, it ceased after late 2023 when the region fell under Azerbaijani control. Armenian crosses were removed and clergy forced out. For Armenians Amaras is forever a symbol of literacy and roots.",
+                "photoName": "amaras_monastery"
+              },
+              {
+                "name": "Gtichavank Monastery",
+                "lat": 39.5935,
+                "lon": 46.9419,
+                "isActive": false,
+                "address": "Northern slope of Toghasar Mountain, near Togh village, historic Dizak, Azerbaijan",
+                "description": "Built 1241–1246 by Bishops Sargis and Vrtanes of Amaras over ruins of an older center, Gtichavank was a major spiritual and cultural hub of Dizak. The complex had a domed main church, a smaller northern church with sacristies under the altar, schools, library, and khachkars. Flourished in the 13th–18th centuries, patronized by Dizak’s meliks. Restored in the late 20th century, but since 2020 no longer under Armenian control. For Armenians, Gtichavank is a proud monument of faith and continuity.",
+                "photoName": "gtichavank_monastery"
+              },
+              {
+                "name": "Katarovank Monastery",
+                "lat": 39.52623,
+                "lon": 46.85659,
+                "isActive": false,
+                "address": "Mount Dizapayt, near Hin Tagher village, Hadrut District, Azerbaijan",
+                "description": "Founded in the 4th century and mentioned by historian Pavstos Buzand, Katarovank was once one of the greatest sanctuaries of Artsakh. Children of St. Grigoris were said to have fled here with his relics. A stone chapel built in the 17th century preserved memory until modern times. Though inactive by the 20th century, it survived as a symbol of continuity. During the war it briefly functioned as a stronghold, later lost. Today it is no longer an Armenian shrine but a reminder of millennial endurance.",
+                "photoName": "katarovank"
+              },
+              {
+                "name": "St. John the Baptist Church, Martakert",
+                "lat": 40.2125,
+                "lon": 46.8049,
+                "isActive": false,
+                "address": "Martakert town (Tartar District, historic Artsakh), Azerbaijan",
+                "description": "Built in 1883, this Armenian Apostolic church was Martakert’s spiritual heart. Restored in 2003, it remained active until recent years. The adjacent cemetery with priests’ tombs bore historic memory. After the 2023 expulsion of Armenians from Artsakh, the church fell under Azerbaijani control.",
+                "photoName": "martakert_surb_hovhannes_mkrtich"
+              },
+              {
+                "name": "Yerits Mankants Monastery",
+                "lat": 40.2521,
+                "lon": 46.6407,
+                "isActive": false,
+                "address": "Mountains west of Maghavuz, near Tonashen and Jraberd fortress, Martakert, Azerbaijan",
+                "description": "Built in 1691 by the melik Israelian family of Jraberd, Yerits Mankants was rival to Gandzasar. The basilica had a dome supported by four cruciform pillars, with sacristy, refectory, monastic quarters, and cemetery with khachkars dating to 14th–16th centuries. It sheltered refugees during the war, later partly restored, but again abandoned. Today it no longer functions, though it remains a vivid witness of Armenian Artsakh.",
+                "photoName": "yerits_mankants_monastery"
+              },
+              {
+                "name": "Cathedral of the Holy Mother of God, Stepanakert",
+                "lat": 39.8128,
+                "lon": 46.7489,
+                "isActive": false,
+                "address": "Southern Stepanakert, historic Artsakh, Azerbaijan",
+                "description": "Consecrated in 2019 after 13 years of construction, this cathedral became the eparchial center of Artsakh. During the 2020 war it sheltered civilians. The last liturgy was served October 1, 2023, after which it ceased to function under Armenian clergy. For Armenians it symbolizes resilience and faith, even in exile.",
+                "photoName": "stepanakert_cathedral_astvatsatsin"
+              },
+              {
+                "name": "Agulecots Holy Mother of God Church, Shushi",
+                "lat": 39.7539,
+                "lon": 46.7467,
+                "isActive": false,
+                "address": "Central Shushi, historic Artsakh, Azerbaijan",
+                "description": "Known as Agulecots (‘church of Aylis settlers’), this Armenian church was built in 1822 by nobles of the Ter-Matevos-Tarumyan family from Aylis. It was Shushi’s main church until Ghazanchetsots was built. A domed hall with cross-shaped exterior and three entrances, rotunda bell tower, and two-story side chapels. Destroyed in the 1960s and replaced with a school. Only archaeological remains preserve its memory as the lost spiritual and cultural heart of Shushi’s Armenians.",
+                "photoName": "agulecots_church_shusha"
+              },
+              {
+                "name": "St. John the Baptist Church, Byurakan",
+                "lat": 40.3372,
+                "lon": 44.2703,
+                "isActive": true,
+                "address": "Byurakan village, Aragatsotn Province, Armenia",
+                "description": "Surb Hovhannes Mkrtich in Byurakan is a majestic 10th-century basilica. With two entrances, narrow windows, and a Maltese-cross facade, it is surrounded by khachkars that stand as witnesses of faith. Inside is silence and grace, where ancient walls keep the prayers of generations. More than a building, it is a beacon of the Armenian Church on Aragats’s slopes.",
+                "photoName": "byurakan_surb_hovhannes"
+              },
+              {
+                "name": "Aghjots Monastery",
+                "lat": 40.2000,
+                "lon": 44.6220,
+                "isActive": false,
+                "address": "North of Garni gorge, Armenia",
+                "description": "Aghjots Vank, a 7th-century Armenian monastery, now lies in ruins along the gorge between Garni and Geghard. The main church was dedicated to St. John the Baptist, with a basilica, apse, carved portal, cells, and auxiliary buildings. Abandoned in Soviet times, parts collapsed. Today it is a reminder of unbroken spiritual tradition and prayerful memory.",
+                "photoName": "aghjots_vank"
+              },
+              {
+                "name": "Kobayr Monastery",
+                "lat": 41.0051,
+                "lon": 44.6351,
+                "isActive": false,
+                "address": "Above Debed gorge, near Tumanyan, Lori Province, Armenia",
+                "description": "Founded in 1171 by Princess Mariam of the Kyurikid dynasty, later passing to the Zakarian house, Kobayr flourished as a spiritual center in the 12th–13th centuries. Known for frescoes in Byzantine-Georgian style and a belfry-mausoleum, it was abandoned in the 19th–20th centuries. Partial restorations began in the 20th and 21st centuries. It is a fragile yet living memory of Armenian spirituality.",
+                "photoName": "kobayr_monastery"
+              },
+              {
+                "name": "Holy Mother of God Church, Kurtan",
+                "lat": 40.9550,
+                "lon": 44.5652,
+                "isActive": true,
+                "address": "Kurtan village, Lori Province, Armenia",
+                "description": "Built in the 5th century, this is one of the earliest stone churches of the region. A single-nave basilica with three entrances, horseshoe apse, and early medieval windows, it was partly destroyed in the 20th century but restored in 1982–84 and re-consecrated in 2017. Today it remains a spiritual beacon of Lori.",
+                "photoName": "kurtan_surb_astvatsatsin"
+              },
+              {
+                "name": "Arichavank Monastery",
+                "lat": 40.1775,
+                "lon": 43.9150,
+                "isActive": true,
+                "address": "Arich village, Shirak Province, Armenia",
+                "description": "A jewel of Armenian architecture (7th–13th cc.), Arichavank consists of St. Grigor (7th c.), St. Astvatsatsin (1201), and a grand gavit (1224). Once a seminary and Catholicos’s summer residence, its multicolored tuff walls are adorned with carvings, sirens, doves, and symbolic miniatures. For Armenians it is a living stone of memory and prayer.",
+                "photoName": "arichavank_monastery"
+              },
+              {
+                "name": "Holy Saviour Church, Gyumri",
+                "lat": 40.7842,
+                "lon": 43.8414,
+                "isActive": true,
+                "address": "Vardanants Square, Gyumri, Shirak Province, Armenia",
+                "description": "Built 1858–1872 by architect Tadevos Andikyan, consecrated in 1873, Surb Amenaprkich resembles Ani Cathedral but larger. Nationalized in Soviet times, its belfry destroyed in 1932, later rebuilt in 1964. Damaged in 1988 Spitak earthquake, restored in the 2000s, and re-consecrated in 2024. Today it stands as a symbol of rebirth.",
+                "photoName": "gyumri_surb_amenaprkich"
+              },
+              {
+                "name": "Cathedral of St. Gregory the Illuminator, Goris",
+                "lat": 39.5042,
+                "lon": 46.3542,
+                "isActive": true,
+                "address": "SE Goris, Syunik Province, Armenia",
+                "description": "Built 1897–1904, consecrated in 1903, this cathedral was closed in Soviet years, turned into a granary and museum, then restored and re-consecrated in 1989. Its gray tuff walls keep prayers of generations, and its yard gathers khachkars and stones from the 10th–18th centuries.",
+                "photoName": "goris_cathedral_surb_grigor"
+              },
+              {
+                "name": "Aghartsin Monastery",
+                "lat": 40.7833,
+                "lon": 44.9667,
+                "isActive": true,
+                "address": "Dilijan Gorge, Tavush Province, Armenia",
+                "description": "Aghartsin (11th–13th cc.) enchants with St. Grigor, St. Astvatsatsin (1281), St. Stepanos (1244), refectory, treasury, and royal tombs of the Kyurikids. Known for carved eagles, khachkars, and forest setting. For Armenians it unites stone prayer with forest hymn.",
+                "photoName": "aghartsin_monastery"
+              },
+              {
+                "name": "Holy Mother of God Church, Vardenis",
+                "lat": 40.1800,
+                "lon": 45.7700,
+                "isActive": true,
+                "address": "Vardenis, Gegharkunik Province, Armenia",
+                "description": "Built in 1905, surrounded by 14th–17th-century khachkars, this church became the spiritual center of the city. Historian Hovhannes Tsaretsi once served here, giving it cultural significance as well.",
+                "photoName": "vardenis_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church, Gavar",
+                "lat": 40.3536,
+                "lon": 45.1235,
+                "isActive": true,
+                "address": "Gavar, Gegharkunik Province, Armenia",
+                "description": "Built in 1905 of finely hewn stone blocks under Bishop Khoren I, this cross-domed church is a symbol of Gavar’s faith and identity. Surrounded by old khachkars and inscriptions, its dome rises above the city. Today it remains one of the region’s main churches.",
+                "photoName": "gavar_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Grigor Narekatsi Church, Vanadzor",
+                "lat": 40.8150,
+                "lon": 44.4939,
+                "isActive": true,
+                "address": "Vanadzor, Lori Province, Armenia",
+                "description": "A modern Armenian Apostolic church, built in the early 21st century, dedicated to St. Grigor Narekatsi, poet and theologian. Its traditional style with dome and stone cladding harmonizes with Lori’s landscape. Today it is Vanadzor’s spiritual center, hosting liturgies, schools, and cultural programs.",
+                "photoName": "vanadzor_surb_grigor_narekatsi"
+              },
+              {
+                "name": "St. John Church, Sohrol",
+                "lat": 38.3000,
+                "lon": 46.1978,
+                "isActive": false,
+                "address": "Sohrol village, Shabestar District, East Azerbaijan, Iran",
+                "description": "An Armenian Catholic church, originally from the 5th–6th c., rebuilt in brick in 1840 by General Samson Khan and patron Hagubov. It had three domes: an octagonal belfry, a conical dome, and a smaller octagonal dome over the altar. Damaged by earthquake in 1936, closed, listed as Iranian heritage in 1968. Repairs in 2020 stabilized the structure.",
+                "photoName": "sohrol_surb_hovhannes"
+              },
+              {
+                "name": "Holy Mother of God Church, Darashamb",
+                "lat": 38.9794,
+                "lon": 45.4733,
+                "isActive": false,
+                "address": "Darashamb valley, East Azerbaijan, Iran",
+                "description": "A rare 17th-century Armenian sanctuary in the Araxes valley near Nakhichevan, dedicated to the Holy Mother of God. Now in ruins, it remains a marker of Armenian presence.",
+                "photoName": "darashamb_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Thaddeus Monastery (Qareh Kelisa)",
+                "lat": 38.9200,
+                "lon": 44.3800,
+                "isActive": false,
+                "address": "Chaldoran District, West Azerbaijan Province, Iran",
+                "description": "Also known as the ‘Black Church’, this is one of Armenia’s oldest monasteries, where St. Thaddeus is said to be buried. The current church dates to 1329 after an earthquake, with major 19th-c. restorations under Prince Abbas Mirza. Listed by UNESCO, it hosts annual pilgrimages in July.",
+                "photoName": "qareh_kelisa_monastery"
+              },
+              {
+                "name": "St. Stepanos Monastery, Darashamb",
+                "lat": 38.9792,
+                "lon": 45.4739,
+                "isActive": false,
+                "address": "Right bank of Araxes near abandoned Darashamb, East Azerbaijan, Iran",
+                "description": "A 9th-century Armenian monastery in historic Vaspurakan, later rebuilt in the 17th century with belfry, refectory, and carvings. Though no longer active, it remains a symbol of Armenia’s spiritual legacy.",
+                "photoName": "darashamb_surb_stepanos"
+              },
+              {
+                "name": "St. Sarkis Cathedral, Tehran",
+                "lat": 35.7075,
+                "lon": 51.4231,
+                "isActive": true,
+                "address": "Intersection of Karimkhan Zand and Nejatollahi (formerly Villa Street), Tehran, Iran",
+                "description": "The Surb Sarkis Cathedral is the seat of the Armenian Apostolic Church in Tehran, built by the Sarkisian brothers in memory of their parents. Construction began in 1964 and was completed in 1970, consecrated in 1973. It is the largest Armenian church in Tehran, built in basilica style with a single nave, clad in white marble. The dome was originally suspended on the walls but later reinforced by four columns. The facade is crowned with twin bell towers with octagonal domes. Inside are a choir gallery, altar with biblical frescoes, and a 3.5 m marble memorial to the victims of the Armenian Genocide of 1915 in the courtyard.",
+                "photoName": "tehran_surb_sarkis_cathedral"
+              },
+              {
+                "name": "Holy Mother of God Church, Tabriz",
+                "lat": 38.0790,
+                "lon": 46.2882,
+                "isActive": true,
+                "address": "Tabriz, East Azerbaijan, Iran",
+                "description": "Surb Astvatsatsin, completed in 1785 on the site of a 12th-century church mentioned by Marco Polo, is the largest and oldest Christian sanctuary of Tabriz. It long served as the cathedral of the Atrpatakan diocese. Located in the Dik-Bashi district, it is cross-domed with four massive stone columns supporting the dome. The area also houses church buildings and the Tabriz Armenian Museum. It was the spiritual center of Iran’s Armenians for centuries.",
+                "photoName": "tabriz_surb_mariam_astvatsatsin"
+              },
+              {
+                "name": "St. Sarkis Church, Tabriz",
+                "lat": 38.0699,
+                "lon": 46.2831,
+                "isActive": true,
+                "address": "Baron-Avak (Lilava) district, Tabriz, East Azerbaijan, Iran",
+                "description": "Built in 1821 by the Petrosyan family, this cruciform Armenian Apostolic church was restored in 1845. Its stone walls, brick dome, and three entrances reflect Armenian architectural tradition blended with the local setting. It remains a symbol of continuity of faith for Tabriz Armenians. The Tamaryan school complex and Sahakyan center are adjacent, and a memorial to Armenian martyrs stands in its courtyard.",
+                "photoName": "tabriz_surb_sargis"
+              },
+              {
+                "name": "St. Shoghakat Chapel, Tabriz",
+                "lat": 38.0561,
+                "lon": 46.2842,
+                "isActive": true,
+                "address": "Tabriz, East Azerbaijan, Iran",
+                "description": "This 17th-century chapel, part of the Atrpatakan diocese, stands in the Armenian cemetery of Tabriz. Dedicated to the martyrs Hripsime and Gayane, it became a vital spiritual site especially in difficult times. It remains active today, serving the Armenian community of Tabriz.",
+                "photoName": "tabriz_shoghakat"
+              },
+              {
+                "name": "Holy Mother of God Chapel, Tabriz",
+                "lat": 38.0611,
+                "lon": 46.3128,
+                "isActive": true,
+                "address": "Maralan district, Tabriz, East Azerbaijan, Iran",
+                "description": "Mariam Nane Chapel, built around 1776 in basilica style, replaced a 16th-century church destroyed by an earthquake in 1721. Its clay-and-brick walls are unplastered inside, with eastern entrance and iconographic windows on north and south sides. Nearby, a new cemetery chapel was founded in the 19th century, but Mariam Nane preserves ties with earlier generations. It remains a spiritual center, especially during Transfiguration feasts with blessing of grapes.",
+                "photoName": "tabriz_mariam_nane_matur"
+              },
+              {
+                "name": "Holy Cross Church, Mets Pamaj",
+                "lat": 38.0556,
+                "lon": 46.3000,
+                "isActive": true,
+                "address": "Mets Pamaj, East Azerbaijan, Iran",
+                "description": "This 18th-century Armenian Apostolic church is a 25×15 m basilica with a dome on an octagonal drum, built of large cut stones. Surrounded by khachkars and tombstones of the 18th–19th cc., it exemplifies rural Armenian architecture. Still active, it serves as a place of prayer for the region’s Armenians.",
+                "photoName": "mets_pamaj_surb_khach"
+              },
+              {
+                "name": "St. John Church, Maragheh",
+                "lat": 37.3847,
+                "lon": 46.2317,
+                "isActive": true,
+                "address": "Maragheh, East Azerbaijan, Iran",
+                "description": "Originally founded in the 5th–6th cc., the current building was erected in 1840 under General Samson Khan with Russian and French architects. The complex includes the archbishop’s residence, a school, and a candle hall. Though partly abandoned after Armenian migration, it retains spiritual and historical significance. Restoration in 2020 reinforced its walls and facade.",
+                "photoName": "maragheh_holy_hovhannes"
+              },
+              {
+                "name": "St. Shepherd Chapel",
+                "lat": 38.4260,
+                "lon": 44.7510,
+                "isActive": true,
+                "address": "8 km NW of Julfa, East Azerbaijan, Iran",
+                "description": "Built in 1518 on the rocky right bank of the Araxes, this small chapel commemorates two shepherd brothers. Constructed in the Safavid basilica style, it belongs to the Atrpatakan diocese. Restored in 1836, it remains active today, guiding pilgrims to nearby monasteries of Darashamb and St. Stepanos.",
+                "photoName": "jolfa_hovvi_maturr"
+              },
+              {
+                "name": "Dzor-Dzor Monastery (Holy Mother of God)",
+                "lat": 39.4000,
+                "lon": 44.4333,
+                "isActive": false,
+                "address": "Maku District, West Azerbaijan, Iran",
+                "description": "Dating to the 10th (or 14th) century, only its small chapel survives. Part of the UNESCO-listed Armenian Monastic Ensembles of Iran, it exemplifies Armenian architecture and art abroad. Today it stands as a silent witness to Armenian spiritual presence.",
+                "photoName": "dzor_dzor_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Gevorg Church, Haftvan",
+                "lat": 38.1700,
+                "lon": 44.7565,
+                "isActive": true,
+                "address": "Haftvan village, Salmas District, West Azerbaijan, Iran",
+                "description": "Dating to the 13th century, this church was restored in 1652 and again after the 1930 earthquake. Its massive stone walls, domed roof, and austere interior reflect Armenian prayer tradition. Still active, it symbolizes centuries of perseverance of faith and identity.",
+                "photoName": "haftvan_surb_gevorg"
+              },
+              {
+                "name": "Holy Mother of God Church, Tehran",
+                "lat": 35.6957,
+                "lon": 51.4145,
+                "isActive": true,
+                "address": "Between Masoud-e-Saad St. and Mirza Kuchak Khan St., near Jomhouri-e Eslami Ave., Tehran, Iran",
+                "description": "Surb Astvatsatsin, laid in 1938 and completed in 1945, was designed by Nikolai Lauri and finished by architect Nikolai Markov. Built in 7th–10th century Armenian style from gray basalt, it is cross-domed with two domes. It served as the Archbishop’s residence (1945–1970) and was listed as a national monument in 2002. Nearby stands the Archbishop Ardak Manoukian Museum, preserving Armenian ecclesiastical heritage.",
+                "photoName": "tehran_surb_astvatsatsin"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Tehran",
+                "lat": 35.70,
+                "lon": 51.43,
+                "isActive": true,
+                "address": "Majidieh District, Tehran, Iran",
+                "description": "Built in 1982 in cross-domed basilica style, this Armenian Apostolic church belongs to the Tehran diocese of the Cilician Catholicosate. It continues to serve as a spiritual center for Tehran’s Armenians.",
+                "photoName": "tehran_surb_grigor"
+              },
+              {
+                "name": "St. Gevorg Church, Tehran",
+                "lat": 35.6738,
+                "lon": 51.4121,
+                "isActive": true,
+                "address": "Darkhungah Alley, Sangilaj District, Tehran, Iran",
+                "description": "Originally a small chapel built in 1795 by Armenians resettled from Tbilisi and Artsakh, the current building dates to 1882–1884. In Armenian cross-domed style, with an octagonal drum and a southern bell tower, it is Tehran’s second oldest Armenian sanctuary. Beneath it lie notable burials including artist Hakob Hovnatanian and General Martiros Davidkhanian. Registered as a national monument (#1621), it remains active.",
+                "photoName": "tehran_surb_gevorg"
+              },
+              {
+                "name": "Church of the Holy Translators, Tehran",
+                "lat": 35.77,
+                "lon": 51.42,
+                "isActive": true,
+                "address": "Vahideh District, Madraseh Aramane St., Tehran, Iran",
+                "description": "Consecrated in November 1968, built as a cross-shaped basilica with a dome on a cylindrical drum and a pyramid roof. Dedicated to the disciples of Mesrop Mashtots, it features frescoes and an eight-sided belfry. In its courtyard stands a bust of Mesrop by artist Lilit Teryan. It serves as a center of prayer and cultural memory for Tehran’s Armenians.",
+                "photoName": "tehran_surb_targmantsats"
+              },
+              {
+                "name": "St. Mesrop Church, Mashhad",
+                "lat": 36.2978,
+                "lon": 59.6050,
+                "isActive": true,
+                "address": "Khorasan Street, near Imam Khomeini Metro, Mashhad, Iran",
+                "description": "Built in 1941, it is the only Armenian Apostolic church in Mashhad. Cross-basilica with two conical domes, one topped by an iron cross. It once held a library of 1,000 volumes. Registered as a national heritage site in 2005, restored in 2017, it remains a symbol of Armenian presence in the region.",
+                "photoName": "mashhad_surb_mesrop"
+              },
+              {
+                "name": "St. Mesrop Church, Rasht",
+                "lat": 37.2821,
+                "lon": 49.5842,
+                "isActive": true,
+                "address": "Saadi Street, opposite former governor’s office, Rasht, Gilan, Iran",
+                "description": "Built in the late Qajar period and completed in 1954 in Pahlavi style. The present church was laid after a fire destroyed the old one in 1920, and consecrated in 1966 by Archbishop Hovhannes Hovhanian. Listed as a national cultural monument (#21523). It remains active for Rasht’s Armenians.",
+                "photoName": "rasht_surb_mesrop"
+              },
+              {
+                "name": "Holy Mother of God Church, Bandar-e Anzali",
+                "lat": 37.4733,
+                "lon": 49.4609,
+                "isActive": true,
+                "address": "Imam Khomeini Square, Motahari Ave., Bandar-e Anzali, Gilan, Iran",
+                "description": "Built in 1885 by an Armenian family during the Qajar era. Rectangular, east–west oriented, with three entrances and a bell tower dome supported by six columns. Declared for restoration in 2023. It remains a living testimony of Armenian presence in Anzali.",
+                "photoName": "bandar_anzali_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Mother of God Church, Hamadan",
+                "lat": 34.7980,
+                "lon": 48.5150,
+                "isActive": true,
+                "address": "Ekbatana Street, Hamadan, Iran",
+                "description": "Founded in 1676 by Armenians resettled from Eastern Armenia, it was the first church of Hamadan’s Armenian community. It served not only the city but surrounding villages. Still active today, it symbolizes enduring faith and cultural continuity.",
+                "photoName": "hamadan_surb_astvatsatsin"
+              },
+              {
+                "name": "Holy Savior Cathedral, New Julfa (Isfahan)",
+                "lat": 32.6363,
+                "lon": 51.6557,
+                "isActive": true,
+                "address": "New Julfa, Isfahan, Iran",
+                "description": "Founded c.1606, completed in 1664 under Archbishop David. It fuses Armenian cross-domed style with Persian miniatures: frescoes, gilded carvings, a dome with Creation and Paradise scenes. Its courtyard houses a bell tower and the Khachatur Kesaratsi Museum. It remains the crown of Armenian spirituality and art in Iran.",
+                "photoName": "isfahan_vank_cathedral"
+              },
+              {
+                "name": "St. Karapet Church, Abadan",
+                "lat": 30.3359,
+                "lon": 48.2959,
+                "isActive": true,
+                "address": "Near Imam Musa ibn Jafar Mosque, Abadan, Khuzestan, Iran",
+                "description": "Built in 1958 in Pahlavi style with a domed rectangular plan. Damaged in the Iran–Iraq war, restored in the 1990s, and registered as a national monument (#8352). It stands as a reminder of Armenian presence in Abadan.",
+                "photoName": "abadan_surb_karapet"
+              },
+              {
+                "name": "St. Mesrop Church, Ahvaz",
+                "lat": 31.3200,
+                "lon": 48.6900,
+                "isActive": true,
+                "address": "Shahid Mostafa St., Ahvaz, Khuzestan, Iran",
+                "description": "Consecrated in 1968, initiated by architect Trdat Davtyan. It included a church, school, hall, and clergy house. Damaged in the revolution and war, it remains a silent witness of Armenian cultural presence.",
+                "photoName": "ahvaz_surb_mesrop"
+              },
+              {
+                "name": "St. Mary Church, Shiraz",
+                "lat": 29.6300,
+                "lon": 52.5450,
+                "isActive": true,
+                "address": "Sang-e Siah district, Shiraz, Fars, Iran",
+                "description": "Built in 1662 under Shah Abbas II, replacing a mid-16th c. chapel. Without a dome, it has a flat-roofed hall flanked by two-story galleries. Its painted wooden ceiling in turquoise and gold is a jewel of Safavid art. Damaged by earthquakes, restored in 2020s. Usually closed, it opens on special days for Armenians and pilgrims.",
+                "photoName": "shiraz_surb_mariam"
+              },
+              {
+                "name": "Armenian Patriarchate of Constantinople (Cathedral of the Holy Mother of God), Istanbul",
+                "lat": 41.0043,
+                "lon": 28.9598,
+                "isActive": true,
+                "address": "Kumkapı district, Istanbul, Turkey",
+                "description": "Founded in 1461 by Sultan Mehmed II, the Armenian Patriarchate of Constantinople remains the spiritual center of Armenians in Turkey. Its seat is in the Cathedral of the Holy Mother of God in Kumkapı. Despite 20th-century upheavals, it continues to serve as the heart of Armenian church life in Istanbul.",
+                "photoName": "istanbul_patriarchate"
+              },
+              {
+                "name": "Ermenčik Monastery",
+                "lat": 43.6189,
+                "lon": 21.8320,
+                "isActive": false,
+                "address": "Mount Ozren, near Sokobanja, Serbia",
+                "description": "The Ermenčik Monastery, dedicated to Archangels Gabriel and Michael, was founded in the late 14th century by Armenians who settled after the Battle of Kosovo. Two legends exist: one tells of Armenian soldiers switching sides to Christians and founding the monastery; another of monks fleeing persecution. Once home to 400 monks, it was destroyed and rebuilt many times. Today only the church of the Archangels survives, used annually on July 26 for the feast of Archangel Gabriel.",
+                "photoName": "ermenchich_serbian"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church (Abughamrents), Ani",
+                "lat": 40.5160,
+                "lon": 43.5805,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built around 980 by Prince Grigor Pahlavuni or his wife Shushanik, this small but well-preserved 10th-century Armenian church later became the Pahlavuni family mausoleum. Unique for its six-apse rotunda under a domed drum, its facade once showed traces of red and cream paint. Looted in the 1990s, it remains a fine example of Ani’s late 10th–11th c. revival.",
+                "photoName": "ani_st_gregory_abughamrents"
+              },
+              {
+                "name": "Church of the Holy Savior (Surb Prkich), Ani",
+                "lat": 40.5115,
+                "lon": 43.5790,
+                "isActive": false,
+                "address": "300 m east of Ani Cathedral, Ani, Turkey",
+                "description": "Built in 1035 by Prince Abulgharib Pahlavuni to house a relic of the True Cross. With a 19-sided foundation and tall cylindrical drum, it combines monumentality with intricate detailing. Frescoes of Christ and the Evangelists survive beneath whitewash. Damaged by storms (1957) and the 1988 earthquake, it remains part of Ani’s UNESCO World Heritage ensemble.",
+                "photoName": "ani_surb_prkich"
+              },
+              {
+                "name": "Church of the Holy Cross (Surb Khach), Akhtamar",
+                "lat": 38.3317,
+                "lon": 43.0494,
+                "isActive": false,
+                "address": "Akhtamar Island, Lake Van, Turkey",
+                "description": "Built 915–921 by monk-architect Manuel under King Gagik Artsruni as a palace chapel. Famous for its rich biblical reliefs on the facade, including Old and New Testament scenes. Abandoned after 1915, restored in 2007, it now functions as a museum with one liturgy annually in September. It remains a cultural and artistic treasure of Armenian heritage.",
+                "photoName": "akhtamar_holy_cross"
+              },
+              {
+                "name": "St. Kirakos Church, Diyarbakır",
+                "lat": 37.9110,
+                "lon": 40.2376,
+                "isActive": true,
+                "address": "Sur district, Diyarbakır, Turkey",
+                "description": "One of the largest Armenian churches in the Middle East, with capacity for 1,400–3,000. Originally built c.1376, rebuilt in the 16th c., its bell tower once dominated the skyline. Confiscated in WWI, used as depot and factory, restored 2009–2011 with diaspora support, reopened in 2011. Damaged in 2016 fighting, returned to Armenians in 2022 and reopened for worship.",
+                "photoName": "diyarbakir_surb_kirakos"
+              },
+              {
+                "name": "St. Gregory the Illuminator Church, Kayseri",
+                "lat": 38.71748,
+                "lon": 35.48980,
+                "isActive": true,
+                "address": "Tacettinveli Mah., Topaç Sok. 5, Kayseri, Turkey",
+                "description": "Founded in 1191, rebuilt in 1653 and renovated several times. A three-nave basilica with a domed drum. Restored in the late 20th–early 21st century, it again serves worshippers and preserves Armenian spiritual heritage in Kayseri.",
+                "photoName": "kayseri_surp_krikor_lusavoric"
+              },
+              {
+                "name": "Church of the Holy Apostles (Surb Arakelots), Kars",
+                "lat": 40.61133,
+                "lon": 43.09075,
+                "isActive": false,
+                "address": "Below Kars Fortress, Kaleiçi, Kars, Turkey",
+                "description": "Built 931–942 by King Abas I Bagratuni as a domed tetraconch. Reliefs of the Twelve Apostles decorate its drum. Converted to a mosque (16th c.), Orthodox cathedral, museum, and back to a mosque in 1993. Today it forms part of a major Islamic complex.",
+                "photoName": "kars_mechet_arakeloc"
+              },
+              {
+                "name": "Holy Mother of God Church, Gaziantep",
+                "lat": 37.0688,
+                "lon": 37.3831,
+                "isActive": false,
+                "address": "Tepebaşı district, Kıymet Tepe, Gaziantep, Turkey",
+                "description": "Built 1892–1893 by architect Sarkis Balyan and mason Sarkis Tasciyan as the main Armenian cathedral of Gaziantep. Looted and closed in 1915, later converted into a prison, then into Kurtuluş Mosque (1984–1986). Preserves Gothic–Neoclassical Armenian architecture with arched and circular windows and a hipped roof.",
+                "photoName": "gaziantep_surb_astvatsatsin"
+              },
+              {
+                "name": "Monastery of St. Bartholomew, Albayrak (Van)",
+                "lat": 38.3573,
+                "lon": 43.2225,
+                "isActive": false,
+                "address": "Albayrak (historic Aghbak), Başkale district, Van Province, Turkey",
+                "description": "Traditionally built over the tomb of Apostle Bartholomew, sources differ on its founding: by King Sanatruk (2nd c.) or St. Gregory the Illuminator (4th c.). First mentioned in 10th c., known as the Apostle’s Monastery from 1316. Once a spiritual center with scriptorium and 30 monks. Damaged over centuries, destroyed by the Turkish army in the 1960s. Plans for restoration announced in 2011 remain unrealized.",
+                "photoName": "van_saint_bartholomew_monastery"
+              },
+              {
+                "name": "Eghgnamor Monastery (Holy Mother of God Church)",
+                "lat": 40.1986,
+                "lon": 43.5850,
+                "isActive": false,
+                "address": "Chengilli (formerly Eghgnamor), Kars Province, Turkey",
+                "description": "Eghgnamor Monastery, also known as the Church of the Holy Mother of God, was one of the most significant medieval Armenian monastic complexes in the Kars region. Founded in the early Middle Ages, it served as a spiritual center of the local community. Built of cut stone, it featured a domed composition typical of Armenian ecclesiastical architecture. Over centuries, it functioned as a place of pilgrimage and learning, with manuscripts copied and theology cultivated. Abandoned after the Armenian Genocide, it fell into ruin. Today only picturesque remains survive, bearing witness to its former significance.",
+                "photoName": "eghgnamor_monastery"
+              },
+              {
+                "name": "Karmravank Monastery",
+                "lat": 38.3658,
+                "lon": 42.9081,
+                "isActive": false,
+                "address": "Southern shore of Lake Van, Gevaş District, Van Province, Turkey",
+                "description": "Karmravank, the 'Red Monastery,' was founded in the 10th century by King Gagik I Artsruni. It was named for its reliquary adorned with red jewels and containing a relic of the True Cross. The complex included two churches (mainly Surb Astvatsatsin) and a defensive wall. Under the Aghtamar Catholicosate until the 19th c., it was plundered in 1895. Today only ruins remain.",
+                "photoName": "karmravank_monastery"
+              },
+              {
+                "name": "Amenaprkich (Holy Savior) Monastery, Trabzon",
+                "lat": 40.9855,
+                "lon": 39.7150,
+                "isActive": false,
+                "address": "3 km from Trabzon, Turkey",
+                "description": "Founded in 1424 by Stepan Baghdasar, this monastery combined medieval Armenian architecture with local features. Known also as Kaymaklı Monastery, legend tells of a builder’s miraculous survival after falling from its dome, giving it the name 'All Savior.' Frescoes with biblical scenes decorated its walls. Once the episcopal seat of Trabzon, it was abandoned after 1915 and left in ruin. Remains of its main church and a small chapel survive as reminders of centuries of Armenian presence.",
+                "photoName": "trabzon_amenaprkich_monastery"
+              },
+              {
+                "name": "Varzahan Monastery",
+                "lat": 40.2660,
+                "lon": 40.2310,
+                "isActive": false,
+                "address": "Varzahan village, Bayburt Province, Turkey",
+                "description": "A large Armenian monastic complex dating to the 10th–12th centuries. It reportedly contained three central churches: an octagonal, a gate church, and a cross-domed basilica, as well as a cemetery with ram-shaped tombstones. Noted by travelers like Austen Henry Layard (1849) and photographed in 1911, it was fully destroyed by the mid-20th century. Today nothing remains but descriptions and archival images.",
+                "photoName": "varzahan_monastery_ruins"
+              },
+              {
+                "name": "Church of the Holy Apostles, Ani",
+                "lat": 40.5510,
+                "lon": 43.3515,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built in 1031 by the Pahlavuni family, this cross-domed church with four apses once held inscriptions noting land donations. The central dome was surrounded by small domes on corner niches, typical of the 11th century. The southern porch survived better and was reinforced by archaeologist Marr in the early 20th century. Most of the church was later destroyed under Turkish rule.",
+                "photoName": "ani_surb_apostles"
+              },
+              {
+                "name": "Agperig Monastery (St. Thaddeus), Sasun",
+                "lat": 38.6211,
+                "lon": 41.7367,
+                "isActive": false,
+                "address": "Sasun Mountains, 20 km SE of Mush, Turkey",
+                "description": "Also known as Agperkavank, this monastery was famed for its sacred spring, said to have been blessed by Apostle Thaddeus with one of Christ’s crucifixion nails. Its complex included St. Thaddeus Church (pre-10th c.), St. Stephen’s Chapel, and the Savior’s Church (mid-10th c.) built by Prince Viken Mamikonian. It was a place of learning and pilgrimage until the early 20th century. Attacks in 1899 and 1908 killed abbots, and in 1914 monks and students were massacred during the Armenian Genocide. Today only ruins remain.",
+                "photoName": "aghperig_monastery_ruins"
+              },
+              {
+                "name": "Holy Mother of God Monastery, Arapgir",
+                "lat": 38.6211,
+                "lon": 41.7367,
+                "isActive": false,
+                "address": "Arapgir, Malatya Province, Turkey",
+                "description": "A large 13th-century Armenian monastery that could accommodate up to 3,000 people. It was looted and burned during the Armenian Genocide (1915) and later used as a school. In 1957 the municipality demolished it with dynamite, and the land was sold. Today only ruins remain as a reminder of its past significance.",
+                "photoName": "arapgir_surb_astvatsatsin"
+              },
+              
+              {
+                "name": "Virgin's Monastery (Hripsime Nunnery), Ani",
+                "lat": 40.5320,
+                "lon": 43.5310,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built in the 13th century by Tigran Honents, this nunnery stood on a rocky promontory above the Akhuryan River. Only a fragment of the gate and the six-apse domed church remain. Its exterior featured elegant arcades, and the dome was topped by a multi-gabled umbrella roof—an architectural rarity in Ani. It was dedicated to the virgin martyrs led by Hripsime, possibly housing a community of nuns.",
+                "photoName": "ani_hri_psimian_virgins_monastery"
+              },
+              {
+                "name": "Cathedral of St. John the Baptist (Bagavan)",
+                "lat": 39.6231,
+                "lon": 43.5252,
+                "isActive": false,
+                "address": "Bagavan, Ağrı Province, Turkey",
+                "description": "One of the largest Armenian churches of the 7th century, built between 631–639 by architect Israel of Odzun under Bishop Ezra. It was a royal spiritual center of Bagrevand Province: coronations and noble councils took place here, and tradition says Gregory the Illuminator baptized King Tiridates III here. Its vast basilica (46 × 27 m) was destroyed in 1877 and completely demolished after 1915.",
+                "photoName": "bagavan_st_john_cathedral"
+              },
+              {
+                "name": "Narekavank Monastery (St. Sandukht), Narek",
+                "lat": 38.2967,
+                "lon": 42.9281,
+                "isActive": false,
+                "address": "Narek (now Yemişli), Lake Van, Turkey",
+                "description": "A renowned 10th-century monastery where St. Gregory of Narek studied and wrote. Founded under Anania Narekatsi, it included the Church of St. Sandukht, Gregory’s mausoleum, and a library of illuminated manuscripts. Destroyed during the Armenian Genocide, in 1949 a mosque was built on its ruins.",
+                "photoName": "narekavank_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Marine, Mush",
+                "lat": 38.7286,
+                "lon": 41.4876,
+                "isActive": false,
+                "address": "Muş, Turkey",
+                "description": "The only surviving Armenian church in Mush, dedicated to St. Marine. Used until 1915, then turned into a prison during the Armenian Genocide. Today it lies in ruins, but remains a memorial to the martyrs.",
+                "photoName": "mush_surb_marine_ruins"
+              },
+              {
+                "name": "Holy Savior Monastery (Yerazgavors), Shirakavan",
+                "lat": 40.6936,
+                "lon": 43.7361,
+                "isActive": false,
+                "address": "Shirakavan (Çetindurak), Turkey",
+                "description": "Founded by King Smbat I in the 9th century, this domed basilica served as a royal and spiritual seat. It was exempted from taxes by the Zakarians in the 13th century. By the 19th century its dome had collapsed. Destroyed after 1920, only traces remain.",
+                "photoName": "shirakavan_holy_savior"
+              },
+              {
+                "name": "Varagavank Monastery (Seven Churches)",
+                "lat": 38.4494,
+                "lon": 43.4608,
+                "isActive": false,
+                "address": "Mount Varag, near Van, Turkey",
+                "description": "Tradition says a relic of the True Cross was found here in 653. The complex contained seven churches and became the cultural heart of Vaspurakan. Burned during the Genocide of 1915, only ruins survive.",
+                "photoName": "varagavank_ruins"
+              },
+              {
+                "name": "St. Nshan Monastery, Sivas",
+                "lat": 39.8408,
+                "lon": 36.9422,
+                "isActive": false,
+                "address": "Mount Mayragom, near Sivas, Turkey",
+                "description": "Founded around 1022 by King Senekerim Artsruni, it housed relics of the Cross and the tombstone of St. John Chrysostom. Once a center of learning with a vast library. Looted and destroyed during the Armenian Genocide; nothing remains.",
+                "photoName": "sivas_surb_nshan_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Stephen, Smyrna (Izmir)",
+                "lat": 38.4237,
+                "lon": 27.1428,
+                "isActive": false,
+                "address": "Armenian Quarter, Izmir, Turkey",
+                "description": "The largest Armenian church of Izmir, originally built in the 16th century, rebuilt after the 1689 earthquake and again after fires. Burned in the Great Fire of Smyrna in 1922 with the Armenian quarter. No remains today.",
+                "photoName": "izmir_surb_stepanos_ruins"
+              },
+              {
+                "name": "Church of St. Gregory the Illuminator (Tigran Honents), Ani",
+                "lat": 40.5075,
+                "lon": 43.5728,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built in 1215 by merchant Tigran Honents, richly decorated with Byzantine-style frescoes depicting the life of Christ and St. Gregory. Exterior inscriptions glorify the patron. Partially restored in the 20th century.",
+                "photoName": "ani_tigran_honents_church"
+              },
+              {
+                "name": "Aparank Monastery (Holy Cross)",
+                "lat": 39.5,
+                "lon": 39.0,
+                "isActive": false,
+                "address": "Near Erzincan, Turkey",
+                "description": "Founded in the 10th century as a reliquary of the True Cross. Contained multiple churches: Surb Karapet (950), Surb Astvatsatsin (983), St. Stephen, and Holy Apostles. Destroyed in the 20th century; ruins remain.",
+                "photoName": "aparank_monastery_ruins"
+              },
+              {
+                "name": "Lim Monastery (Limin Desert)",
+                "lat": 38.8647,
+                "lon": 43.3519,
+                "isActive": false,
+                "address": "Adır Island (Lim), Lake Van, Turkey",
+                "description": "Founded before 884, rebuilt by Catholicos Zakaria in 1305. It once housed a scriptorium with 300 manuscripts. Destroyed in 1915; today only the narthex survives.",
+                "photoName": "lim_monastery_ruins"
+              },
+              {
+                "name": "Armas Monastery (Holy Virgin Charkhapan), near Izmit",
+                "lat": 40.8472,
+                "lon": 30.1950,
+                "isActive": false,
+                "address": "Armaş, near Izmit, Turkey",
+                "description": "Founded in 1611 (possibly 1416). It housed a seminary, printing press, and the Charkhapan icon of the Virgin, a pilgrimage object. Destroyed after the Genocide in 1923–24; only foundations remain.",
+                "photoName": "armash_surb_astvatsatsin_ruins"
+              },
+              {
+                "name": "Holy Trinity Church, Sivrihisar",
+                "lat": 39.4370,
+                "lon": 31.0980,
+                "isActive": false,
+                "address": "Sivrihisar, Eskişehir Province, Turkey",
+                "description": "One of Anatolia’s largest Armenian churches, built 1650, restored in 1881. After 1915 it became a warehouse. Restored as a museum space in 2010.",
+                "photoName": "sivrihisar_surb_tertutyun_church"
+              },
+              {
+                "name": "St. Nicholas Church, Samsun",
+                "lat": 41.2860,
+                "lon": 36.33,
+                "isActive": false,
+                "address": "Selahiye District, Samsun, Turkey",
+                "description": "Built in 1840–49, center of the Armenian diocese with a school and journal. Destroyed in 1936; replaced by a school. No remains.",
+                "photoName": "samsun_nikogayos"
+              },
+              
+              {
+                "name": "Virgin's Monastery (Hripsime Nunnery), Ani",
+                "lat": 40.5320,
+                "lon": 43.5310,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built in the 13th century by Tigran Honents, this nunnery stood on a rocky promontory above the Akhuryan River. Only a fragment of the gate and the six-apse domed church remain. Its exterior featured elegant arcades, and the dome was topped by a multi-gabled umbrella roof—an architectural rarity in Ani. It was dedicated to the virgin martyrs led by Hripsime, possibly housing a community of nuns.",
+                "photoName": "ani_hri_psimian_virgins_monastery"
+              },
+              {
+                "name": "Cathedral of St. John the Baptist (Bagavan)",
+                "lat": 39.6231,
+                "lon": 43.5252,
+                "isActive": false,
+                "address": "Bagavan, Ağrı Province, Turkey",
+                "description": "One of the largest Armenian churches of the 7th century, built between 631–639 by architect Israel of Odzun under Bishop Ezra. It was a royal spiritual center of Bagrevand Province: coronations and noble councils took place here, and tradition says Gregory the Illuminator baptized King Tiridates III here. Its vast basilica (46 × 27 m) was destroyed in 1877 and completely demolished after 1915.",
+                "photoName": "bagavan_st_john_cathedral"
+              },
+              {
+                "name": "Narekavank Monastery (St. Sandukht), Narek",
+                "lat": 38.2967,
+                "lon": 42.9281,
+                "isActive": false,
+                "address": "Narek (now Yemişli), Lake Van, Turkey",
+                "description": "A renowned 10th-century monastery where St. Gregory of Narek studied and wrote. Founded under Anania Narekatsi, it included the Church of St. Sandukht, Gregory’s mausoleum, and a library of illuminated manuscripts. Destroyed during the Armenian Genocide, in 1949 a mosque was built on its ruins.",
+                "photoName": "narekavank_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Marine, Mush",
+                "lat": 38.7286,
+                "lon": 41.4876,
+                "isActive": false,
+                "address": "Muş, Turkey",
+                "description": "The only surviving Armenian church in Mush, dedicated to St. Marine. Used until 1915, then turned into a prison during the Armenian Genocide. Today it lies in ruins, but remains a memorial to the martyrs.",
+                "photoName": "mush_surb_marine_ruins"
+              },
+              {
+                "name": "Holy Savior Monastery (Yerazgavors), Shirakavan",
+                "lat": 40.6936,
+                "lon": 43.7361,
+                "isActive": false,
+                "address": "Shirakavan (Çetindurak), Turkey",
+                "description": "Founded by King Smbat I in the 9th century, this domed basilica served as a royal and spiritual seat. It was exempted from taxes by the Zakarians in the 13th century. By the 19th century its dome had collapsed. Destroyed after 1920, only traces remain.",
+                "photoName": "shirakavan_holy_savior"
+              },
+              {
+                "name": "Varagavank Monastery (Seven Churches)",
+                "lat": 38.4494,
+                "lon": 43.4608,
+                "isActive": false,
+                "address": "Mount Varag, near Van, Turkey",
+                "description": "Tradition says a relic of the True Cross was found here in 653. The complex contained seven churches and became the cultural heart of Vaspurakan. Burned during the Genocide of 1915, only ruins survive.",
+                "photoName": "varagavank_ruins"
+              },
+              {
+                "name": "St. Nshan Monastery, Sivas",
+                "lat": 39.8408,
+                "lon": 36.9422,
+                "isActive": false,
+                "address": "Mount Mayragom, near Sivas, Turkey",
+                "description": "Founded around 1022 by King Senekerim Artsruni, it housed relics of the Cross and the tombstone of St. John Chrysostom. Once a center of learning with a vast library. Looted and destroyed during the Armenian Genocide; nothing remains.",
+                "photoName": "sivas_surb_nshan_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Stephen, Smyrna (Izmir)",
+                "lat": 38.4237,
+                "lon": 27.1428,
+                "isActive": false,
+                "address": "Armenian Quarter, Izmir, Turkey",
+                "description": "The largest Armenian church of Izmir, originally built in the 16th century, rebuilt after the 1689 earthquake and again after fires. Burned in the Great Fire of Smyrna in 1922 with the Armenian quarter. No remains today.",
+                "photoName": "izmir_surb_stepanos_ruins"
+              },
+              {
+                "name": "Church of St. Gregory the Illuminator (Tigran Honents), Ani",
+                "lat": 40.5075,
+                "lon": 43.5728,
+                "isActive": false,
+                "address": "Ani, Kars Province, Turkey",
+                "description": "Built in 1215 by merchant Tigran Honents, richly decorated with Byzantine-style frescoes depicting the life of Christ and St. Gregory. Exterior inscriptions glorify the patron. Partially restored in the 20th century.",
+                "photoName": "ani_tigran_honents_church"
+              },
+              {
+                "name": "Aparank Monastery (Holy Cross)",
+                "lat": 39.5,
+                "lon": 39.0,
+                "isActive": false,
+                "address": "Near Erzincan, Turkey",
+                "description": "Founded in the 10th century as a reliquary of the True Cross. Contained multiple churches: Surb Karapet (950), Surb Astvatsatsin (983), St. Stephen, and Holy Apostles. Destroyed in the 20th century; ruins remain.",
+                "photoName": "aparank_monastery_ruins"
+              },
+              {
+                "name": "Lim Monastery (Limin Desert)",
+                "lat": 38.8647,
+                "lon": 43.3519,
+                "isActive": false,
+                "address": "Adır Island (Lim), Lake Van, Turkey",
+                "description": "Founded before 884, rebuilt by Catholicos Zakaria in 1305. It once housed a scriptorium with 300 manuscripts. Destroyed in 1915; today only the narthex survives.",
+                "photoName": "lim_monastery_ruins"
+              },
+              {
+                "name": "Armas Monastery (Holy Virgin Charkhapan), near Izmit",
+                "lat": 40.8472,
+                "lon": 30.1950,
+                "isActive": false,
+                "address": "Armaş, near Izmit, Turkey",
+                "description": "Founded in 1611 (possibly 1416). It housed a seminary, printing press, and the Charkhapan icon of the Virgin, a pilgrimage object. Destroyed after the Genocide in 1923–24; only foundations remain.",
+                "photoName": "armash_surb_astvatsatsin_ruins"
+              },
+              {
+                "name": "Holy Trinity Church, Sivrihisar",
+                "lat": 39.4370,
+                "lon": 31.0980,
+                "isActive": false,
+                "address": "Sivrihisar, Eskişehir Province, Turkey",
+                "description": "One of Anatolia’s largest Armenian churches, built 1650, restored in 1881. After 1915 it became a warehouse. Restored as a museum space in 2010.",
+                "photoName": "sivrihisar_surb_tertutyun_church"
+              },
+              {
+                "name": "St. Nicholas Church, Samsun",
+                "lat": 41.2860,
+                "lon": 36.33,
+                "isActive": false,
+                "address": "Selahiye District, Samsun, Turkey",
+                "description": "Built in 1840–49, center of the Armenian diocese with a school and journal. Destroyed in 1936; replaced by a school. No remains.",
+                "photoName": "samsun_nikogayos"
+              },
+              
+              {
+                "name": "Monastery of St. Hakob (Surb Hakob), Achn",
+                "lat": 37.0000,
+                "lon": 35.5000,
+                "isActive": false,
+                "address": "Achn (now Saimbeyli), Adana Province, Turkey",
+                "description": "The Monastery of St. Hakob (Surb Hakob) was founded in 1004 by Bishop Khachatur, as recorded in an inscription found during dome restoration in 1900. It became the main educational and spiritual center of Achn before schools were built, training future catholicoi, bishops, and priests, and preserving manuscripts. Built of finely cut stone with a rectangular plan, parts of its western and northern walls (1.5–2 m high) remain, while the eastern façade is largely intact. The monastery symbolizes the spiritual strength of Armenians in Cilicia and the preservation of sacred knowledge. Its ruins remind us of the great tradition of faith and learning that sanctified the ancestral land.",
+                "photoName": "achn_surb_akop_ruins"
+              },
+              {
+                "name": "Monastery of Miracles (Surb Yerashkavor / Ardzge)",
+                "lat": 38.8053,
+                "lon": 42.7344,
+                "isActive": false,
+                "address": "≈3.5 km northwest of Adilcevaz, Bitlis Province, Turkey",
+                "description": "This 8th-century monastery was revered as a place of healing and miracles. St. Vahan of Goght resided here, martyred around 737 for refusing to renounce Christianity. From the 14th–17th centuries it functioned as a scriptorium, with Archbishop Simeon restoring it in the 17th century. It was plundered and burned during the 1896 Hamidian massacres, and abandoned after the Armenian Genocide of 1915. Today only ruins remain, a silent witness to the spiritual strength and enduring mercy of Armenian faith.",
+                "photoName": "monastery_of_miracles_historical"
+              },
+              {
+                "name": "Cathedral of the Holy Virgin (Surb Astvatsatsin), Adana",
+                "lat": 36.9850,
+                "lon": 35.3275,
+                "isActive": false,
+                "address": "Adana, Tepebaş District, Turkey",
+                "description": "The grand Armenian Cathedral of the Holy Virgin in Adana was built in 1840 on the site of a 13th-century Cilician Armenian church. Dedicated to Surb Astvatsatsin, it became the spiritual and communal heart of Armenians in Adana. Expanded in the early 20th century under Archbishop Mushegh Seropian, it also served as the episcopal seat and housed a secondary school. After 1915 it was used as a military depot, later converted into the Tan Sineması cinema in the 1930s, and demolished in the 1970s to make way for the Central Bank’s regional headquarters. Today only the memory of this cathedral remains.",
+                "photoName": "adana_astvacacin_tepebash"
+              },
+              {
+                "name": "Church of the Holy Virgin (Surb Astvatsatsin), Kayseri",
+                "lat": 38.7175,
+                "lon": 35.4894,
+                "isActive": false,
+                "address": "City center, Cumhuriyet District, Kayseri, Turkey",
+                "description": "Built in the 19th century with funds from Karapet Zartaryan, this Armenian church once stood within Kayseri’s old city walls. After 1915 it was repurposed as an exhibition hall, police station, and gymnasium. Restoration began in 2017, and in 2020 it was reopened as a library holding 50,000 books. Today it stands as a memorial site for the spiritual life of Armenians in Kayseri.",
+                "photoName": "kayseri_surb_astvatsatsin"
+              },
+              {
+                "name": "Church of the Holy Sign (Surb Nshan), Kartal, Istanbul",
+                "lat": 40.890041,
+                "lon": 29.187611,
+                "isActive": true,
+                "address": "Kartal District, Istanbul, Turkey",
+                "description": "Surb Nshan is an active Armenian Apostolic church in Kartal, founded in 1776 on the site of an earlier chapel. Rebuilt in 1857 by faithful Armenians led by Simon, Hagop, and Hadji Grigor Noradounian, it has remained a house of prayer for peace, the preservation of language, and faith. Coordinates verified by official geographic data.",
+                "photoName": "istanbul_kartal_surb_nishan"
+              },
+              {
+                "name": "Cathedral of the Holy Virgin (Surb Astvatsatsin), Kumkapı, Istanbul",
+                "lat": 41.0044,
+                "lon": 28.9611,
+                "isActive": true,
+                "address": "Kumkapı Quarter, Fatih District, Istanbul, Turkey",
+                "description": "The Cathedral of the Holy Virgin (Surb Astvatsatsin Atoranist Mother Cathedral) is the principal church of the Armenian Patriarchate of Constantinople. Rebuilt in 1828 after repeated fires, it has since remained the spiritual center of Istanbul Armenians. A school stood beside it, and in 1870 a stone bell tower was added. It continues to serve as a place of worship and spiritual guidance.",
+                "photoName": "istanbul_surb_astvatsatsin_cathedral_kumkapi"
+              },
+              {
+                "name": "Church of the Holy King (Surb Tagavor), Kadıköy, Istanbul",
+                "lat": 40.9890,
+                "lon": 29.0280,
+                "isActive": true,
+                "address": "Kadıköy District, Istanbul, Turkey",
+                "description": "Originally called Surb Astvatsatsin, this Armenian church dates back to at least 1722. Rebuilt in 1814 and restored after the 1840 earthquake, in 1858 it was renamed Surb Tagavor (“Holy King”). That year it also opened the Amazasbian and Muradian girls’ schools. Expanded in 1936, it underwent restorations in 2006 and 2011. Despite occasional vandalism, it remains a vital spiritual center for Istanbul’s Asian-side Armenian community.",
+                "photoName": "istambul_tagavor_kadikay"
+              },
+              {
+                "name": "Church of St. Peter (Surb Bedros), Gaziantep",
+                "lat": 37.0586,
+                "lon": 37.3761,
+                "isActive": true,
+                "address": "Şahinbey District, Gaziantep, Turkey",
+                "description": "Built in 1723, this Armenian church became a symbol of the faith of Armenians in Antep. In the 19th–20th centuries it was repurposed as a yarn warehouse and later as a cultural venue. Restored in 2008, it now serves as the Ömer Ersoy Cultural Center. Today it continues to stand as a testament to unshakable faith.",
+                "photoName": "gaziantep_surb_pedros"
+              },
+              {
+                "name": "Monastery of St. Anania (Surb Anania), Por (Değirmenaltı)",
+                "lat": 38.4300,
+                "lon": 42.1750,
+                "isActive": false,
+                "address": "Por (Değirmenaltı), 7 km northeast of Bitlis, Turkey",
+                "description": "Founded in the 6th–7th centuries, rebuilt in the 15th century, this monastery featured a single nave with a domed apse and a zamatun (prayer gallery). Rows of khachkars dated to the 15th–16th centuries lined its southern wall. After the Genocide it was seized and used as a barn; only ruins remain today.",
+                "photoName": "por_st_anania_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Theodoros (Surb Teodoros), Bagaran",
+                "lat": 39.6550,
+                "lon": 43.0000,
+                "isActive": false,
+                "address": "Bagaran, Ayrarat Province (today Kars), Turkey",
+                "description": "Built in 624–631 by Prince But Aravegyan and his wife Anna, this early domed cross-in-square church influenced Byzantine and European architecture. Its quadrifoil plan, dome on four supports, and large windows made it a masterpiece of early medieval Armenian design. Destroyed in the 1950s, only ruins remain.",
+                "photoName": "bagaran_surb_teodoros_ruins"
+              },
+              {
+                "name": "Church of St. Gregory the Illuminator (Surb Grigor Lusavorich), Kuzguncuk, Istanbul",
+                "lat": 41.0367,
+                "lon": 29.0303,
+                "isActive": true,
+                "address": "Çarşı Cad. 49, Kuzguncuk (Üsküdar), Istanbul, Turkey",
+                "description": "Originally a wooden church built in 1835, it was rebuilt in 1861 through the support of a pious benefactor. For generations it served as a parish center with an attached school. Restored in the 21st century, it continues to serve as a beacon of Armenian Christian faith.",
+                "photoName": "kuzguncuk_surb_krikor"
+              },
+              {
+                "name": "Monastery of St. Thomas (Surb Tovmas), Van",
+                "lat": 38.6000,
+                "lon": 42.5700,
+                "isActive": false,
+                "address": "≈2 km northwest of Kanzak (Altınsaç), Gevaş District, Van Province, Turkey",
+                "description": "Dating to the 10th–11th centuries, this monastery was built to house the relics of the Apostle Thomas, the “Enlightener of the East.” Once a flourishing scriptorium, it was fortified in the 17th century. Abandoned after 1915 and used as a sheepfold, today only ruins remain: the three-apse church, narthex, defensive walls, and cemetery.",
+                "photoName": "van_surb_tovmas_monastery_ruins"
+              },
+              {
+                "name": "Church of St. Gregory the Illuminator, Galata, Istanbul",
+                "lat": 41.0256,
+                "lon": 28.9784,
+                "isActive": true,
+                "address": "Galata (Beyoğlu), Istanbul, Turkey",
+                "description": "Founded in 1360, repeatedly rebuilt after fires. Demolished in 1958 during urban renewal, it was rebuilt in 1962 and consecrated in 1966. Restored again in 2011, it remains a vibrant spiritual center for Armenians in Istanbul.",
+                "photoName": "galata_surb_krikor"
+              },
+              {
+                "name": "Church of St. Stepanos, Larnaca",
+                "lat": 34.9148,
+                "lon": 33.6356,
+                "isActive": true,
+                "address": "Armenian Church Street, Larnaca, Cyprus",
+                "description": "Built in 1909 as a chapel in memory of victims of the Cilician massacres, it became a church in 1918. Restored in the mid-20th century and again in the 21st, with a khachkar added in 2009. Today it is a place of prayer and remembrance for the Armenian community.",
+                "photoName": "larnaca_surb_stepanos"
+              },
+              {
+                "name": "Church of the Holy Virgin (Surb Astvatsatsin), Nicosia",
+                "lat": 35.1528,
+                "lon": 33.3683,
+                "isActive": true,
+                "address": "Armenias Street, Strovolos, Nicosia, Cyprus",
+                "description": "Built in 1981 after the loss of the old church in the Turkish zone, with support from the Cypriot government and the World Council of Churches. Consecrated on 22 November 1981, it stands as a house of prayer, faith, and resilience for the Armenian community.",
+                "photoName": "nicosia_surb_astvatsatsin"
+              },
+              {
+                "name": "Church of St. George (Surb Kevork), Limassol",
+                "lat": 34.69,
+                "lon": 33.07,
+                "isActive": true,
+                "address": "16 Vasili Michaelidi Street, Limassol, Cyprus",
+                "description": "Founded in 1939, this church became the heart of the Limassol Armenian community. Services are held twice a month, and a school opened in 1951. It continues to serve as a place of prayer, education, and hope.",
+                "photoName": "limassol_surb_gevorg"
               }
+              
+              
+              
           
       ]

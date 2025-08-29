@@ -35,15 +35,21 @@
     },
     "address" : {
       "localizations" : {
-        "hy" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Address"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Հասցե"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Адрес"
           }
         }
@@ -73,9 +79,21 @@
     },
     "all_countries" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "All countries"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Բոլոր երկրները"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Все страны"
           }
         }
@@ -145,16 +163,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бизнес"
-          }
-        }
-      }
-    },
-    "cancel" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отмена"
           }
         }
       }
@@ -248,16 +256,6 @@
         }
       }
     },
-    "countries" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Страны"
-          }
-        }
-      }
-    },
     "culture" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -327,16 +325,47 @@
     },
     "distance" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Distance"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հեռավորություն"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Расстояние"
           }
         }
       }
     },
     "done" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Արված է"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
+          }
+        }
+      }
     },
     "English" : {
       "localizations" : {
@@ -488,9 +517,21 @@
     },
     "filters" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Filters"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Իրադարձություն"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Фильтры"
           }
         }
@@ -617,25 +658,38 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Map of churches and shrines"
+            "value" : "Churches and Temples"
           }
         },
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Եկեղեցիների և սրբավայրերի քարտեզ"
+            "value" : "Եկեղեցիներ եւ Տաճարներ"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Церкви и святыни"
           }
         }
       }
     },
     "media" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Media"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Մեդիա"
+          }
+        }
+      }
     },
     "military" : {
       "extractionState" : "manual",
@@ -662,9 +716,21 @@
     },
     "more" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "More"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ավելին"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "еще"
           }
         }
@@ -672,9 +738,21 @@
     },
     "near_me" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Near me"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Իմ մոտակայքում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Рядом со мной"
           }
         }
@@ -1060,9 +1138,21 @@
     },
     "sort" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Sort"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Տեսակավորել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Сортировка"
           }
         }
@@ -1070,9 +1160,21 @@
     },
     "sort_distance" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Sort by distance"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Տեսակավորել ըստ հեռավորության"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "По расстоянию"
           }
         }
@@ -1080,9 +1182,21 @@
     },
     "sort_name" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Sort by name"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Տեսակավորել ըստ անվան"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "По названию"
           }
         }
@@ -1113,9 +1227,21 @@
     },
     "status" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Status"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կարգավիճակ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Статус"
           }
         }
@@ -1168,32 +1294,44 @@
     },
     "with_photo" : {
       "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "С фотографией"
-          }
-        }
-      }
-    },
-    "Арег Варданян" : {
-      "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Areg Vardanyan"
+            "value" : "With photo"
           }
         },
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Վարդանյան Արեգ "
+            "value" : "Լուսանկարով"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "С фотографией"
+          }
+        }
+      }
+    },
+    "Готово" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Արված է"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Арег Варданян"
+            "value" : "Готово"
           }
         }
       }
@@ -1242,33 +1380,45 @@
         }
       }
     },
-    "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
+    "Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭто приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My name is Areg Vardanyan. This application was created by me with the blessing of the Russian and New Nakhichevan Diocese of the Armenian Apostolic Church. Its foundation lies in my desire to preserve what is especially important to me: faith, culture, and memory.\n\nIf it has been useful to you, then my work was not in vain."
+            "value" : "My name is Areg Vardanyan. I am the head of the international IT company Websiberia, specializing in the creation of modern digital solutions, applications, and platforms for business and social projects.\n\nThis application was created by me with the blessing of the Russian and New Nakhichevan Diocese of the Armenian Apostolic Church. At its foundation lies my desire to preserve what is especially important to me: faith, culture, and memory.\n\nIf this application has been useful to you, then my work was not in vain."
           }
         },
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ես Արեգ Վարդանյան եմ։\nԱյս հավելվածը ստեղծվել է իմ կողմից՝ Ռուսաստանի և Նոր Նախիջևանի հայոց թեմի օրհնությամբ։ Այն հիմնված է իմ ցանկության վրա պահպանելու այն, ինչ ինձ համար առանձնապես կարևոր է՝ հավատը, մշակույթը և հիշողությունը։\n\nԵթե այն օգտակար է եղել ձեզ համար, ուրեմն իմ աշխատանքը զուր չի եղել։"
+            "value" : "Իմ անունն է Արեգ Վարդանյան։ Ես ղեկավարն եմ միջազգային Websiberia տեղեկատվական տեխնոլոգիական ընկերության, որն մասնագիտանում է ժամանակակից թվային լուծումների, հավելվածների և հարթակների ստեղծման մեջ՝ բիզնեսի և հասարակական ծրագրերի համար։\n\nԱյս ծրագիրը ստեղծվել է իմ կողմից՝ Հայ Առաքելական Եկեղեցու Ռուսաստանի և Նոր Նախիջևանի թեմի օրհնությամբ։ Այն հիմնված է իմ ցանկության վրա՝ պահպանելու այն, ինչ ինձ համար առանձնահատուկ կարևոր է՝ հավատը, մշակույթը և հիշողությունը։\n\nԵթե այս ծրագիրն օգտակար է եղել Ձեզ համար, ուրեմն իմ աշխատանքը զուր չի եղել։"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Меня зовут Варданян Арег. Это приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
+            "value" : "Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭто приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
           }
         }
       }
     },
     "На карте" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "On the map"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Քարտեզի վրա"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "На карте"
           }
         }
@@ -1318,6 +1468,28 @@
         }
       }
     },
+    "Открыть websiberia.com" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open websiberia.com"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Բացել websiberia.com"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть websiberia.com"
+          }
+        }
+      }
+    },
     "Открыть это место в «Картах»" : {
       "localizations" : {
         "en" : {
@@ -1340,6 +1512,28 @@
         }
       }
     },
+    "Отмена" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Չեղարկել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
     "По вопросам сотрудничества, а также для замечаний и пожеланий вы можете связаться со мной по указанным контактам." : {
       "localizations" : {
         "en" : {
@@ -1351,7 +1545,7 @@
         "hy" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Համագործակցության, ինչպես նաև առաջարկությունների և դիտողությունների համար կարող եք կապ հաստատել ինձ հետ նշված կոնտակտներով։"
+            "value" : "Համագործակցության, ինչպես նաեւ առաջարկությունների եւ դիտողությունների համար կարող եք կապ հաստատել ինձ հետ՝ նշված տվյալներով։"
           }
         },
         "ru" : {
@@ -1380,6 +1574,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поддержать проект в Donationalerts"
+          }
+        }
+      }
+    },
+    "Поделиться" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կիսվել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделиться"
+          }
+        }
+      }
+    },
+    "Поиск по странам" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search by countries"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Որոնել ըստ երկրների"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск по странам"
           }
         }
       }
@@ -1444,6 +1682,28 @@
         }
       }
     },
+    "Сбросить" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Վերականգնել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сбросить"
+          }
+        }
+      }
+    },
     "Событие" : {
       "localizations" : {
         "en" : {
@@ -1489,7 +1749,48 @@
       }
     },
     "Список" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ցանկ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список"
+          }
+        }
+      }
+    },
+    "Страны" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Countries"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Երկրներ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Страны"
+          }
+        }
+      }
     },
     "Фото появится позже" : {
       "localizations" : {

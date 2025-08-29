@@ -8,6 +8,10 @@ struct ChurchListView: View {
     @ObservedObject var locationManager: HHLocationManager
 
     @State private var searchText: String = ""
+    @State private var searchDebounced: String = ""
+    @State private var searchTimer: Timer? = nil
+    @State private var focusWorkItem: DispatchWorkItem? = nil
+    @FocusState private var isSearchFocused: Bool
     @State private var filter: ChurchFilter = .all
     @State private var nearMeOn: Bool = false
     @State private var withPhotoOn: Bool = false
@@ -84,7 +88,13 @@ struct ChurchListView: View {
                 VStack(spacing: 8) {
                     // Back + Search + Filters
                     HStack(spacing: 10) {
-                        Button(action: { dismiss() }) {
+                        Button(action: {
+                            // Safely cancel focus/timers before dismissing to avoid crash
+                            isSearchFocused = false
+                            focusWorkItem?.cancel(); focusWorkItem = nil
+                            searchTimer?.invalidate(); searchTimer = nil
+                            dismiss()
+                        }) {
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.secondary)
@@ -97,8 +107,18 @@ struct ChurchListView: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "magnifyingglass").foregroundColor(.secondary)
                                 TextField("Поиск по церквям", text: $searchText)
+                                    .focused($isSearchFocused)
                                     .textFieldStyle(.plain)
                                     .padding(.vertical, 6)
+                                    .onChange(of: searchText) { newValue in
+                                        searchTimer?.invalidate()
+                                        // schedule on common runloop to avoid race with presentation transitions
+                                        let t = Timer(timeInterval: 0.25, repeats: false) { _ in
+                                            searchDebounced = newValue
+                                        }
+                                        RunLoop.main.add(t, forMode: .common)
+                                        searchTimer = t
+                                    }
                                 if !searchText.isEmpty {
                                     Button(action: { searchText = "" }) {
                                         Image(systemName: "xmark.circle.fill")
@@ -169,6 +189,14 @@ struct ChurchListView: View {
             .sheet(isPresented: $showCountrySheet) { countrySheet }
             .onAppear {
                 if let first = churches.first { previewRegion.center = first.coordinate }
+                // Не фокусируем поиск автоматически при открытии
+                isSearchFocused = false
+                focusWorkItem?.cancel(); focusWorkItem = nil
+            }
+            .onDisappear {
+                isSearchFocused = false
+                focusWorkItem?.cancel(); focusWorkItem = nil
+                searchTimer?.invalidate(); searchTimer = nil
             }
         }
     }
@@ -200,7 +228,7 @@ struct ChurchListView: View {
     }
 
     private func applySearch(_ arr: [Church]) -> [Church] {
-        let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let q = searchDebounced.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return arr }
         return arr.filter { c in
             let hay = [c.name, c.address ?? ""].joined(separator: " ").lowercased()
@@ -256,22 +284,126 @@ struct ChurchListView: View {
         }
     }
 
+    @State private var countrySearch: String = ""
+
+    private var groupedCountries: [Character: [String]] {
+        let all = Array(Set(churches.compactMap { countryOf($0) }))
+            .sorted()
+            .filter { countrySearch.isEmpty ? true : $0.lowercased().contains(countrySearch.lowercased()) }
+        return Dictionary(grouping: all) { $0.first ?? "#" }
+    }
+
+    @ViewBuilder
+    private func countryRowLabel(_ title: String, isSelected: Bool) -> some View {
+        let bg = isSelected ? Color.black : Color.white
+        let fg = isSelected ? Color.white : Color.primary
+
+        HStack {
+            Text(title)
+                .font(.system(size: 17, weight: .regular))
+                .foregroundColor(fg)
+            Spacer()
+            if isSelected {
+                Image(systemName: "checkmark")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.white)
+                    .transition(.opacity)
+            }
+        }
+        .padding(.horizontal, 14)
+        .frame(height: 44)
+        .background(bg)
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(Color.black.opacity(0.06), lineWidth: isSelected ? 0 : 1)
+        )
+    }
+
     private var countrySheet: some View {
         NavigationStack {
-            List {
-                Button { selectedCountry = nil; showCountrySheet = false } label: {
-                    HStack { Text("all_countries"); if selectedCountry == nil { Spacer(); Image(systemName: "checkmark") } }
-                }
-                ForEach(Array(Set(churches.compactMap { countryOf($0) })), id: \.self) { c in
-                    Button { selectedCountry = c; showCountrySheet = false } label: {
-                        HStack { Text(c); if selectedCountry == c { Spacer(); Image(systemName: "checkmark") } }
+            VStack(spacing: 0) {
+                // Поиск по странам
+                HStack(spacing: 8) {
+                    Image(systemName: "magnifyingglass").foregroundColor(.secondary)
+                    TextField("Поиск по странам", text: $countrySearch)
+                        .textFieldStyle(.plain)
+                        .padding(.vertical, 6)
+                    if !countrySearch.isEmpty {
+                        Button { countrySearch = "" } label: {
+                            Image(systemName: "xmark.circle.fill").foregroundColor(.secondary)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
+                .padding(.horizontal, 12)
+                .frame(height: 44)
+                .background(.regularMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.horizontal, 16)
+                .padding(.top, 2)      // было 10
+                .padding(.bottom, 8)   // чтобы отделить от списка
+
+                List {
+                    Section {
+                        Button {
+                            selectedCountry = nil
+                            showCountrySheet = false
+                        } label: {
+                            countryRowLabel("Все страны", isSelected: selectedCountry == nil)
+                        }
+                    }
+                    ForEach(groupedCountries.keys.sorted(), id: \.self) { letter in
+                        if let items = groupedCountries[letter] {
+                            Section(header: Text(String(letter)).font(.caption).foregroundStyle(.secondary)) {
+                                ForEach(items, id: \.self) { c in
+                                    Button {
+                                        selectedCountry = c
+                                        showCountrySheet = false
+                                    } label: {
+                                        countryRowLabel(c, isSelected: selectedCountry == c)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .listStyle(.insetGrouped)
+
+                // Липкая нижняя панель
+                HStack(spacing: 12) {
+                    Button {
+                        selectedCountry = nil
+                        countrySearch = ""
+                    } label: {
+                        Text("Сбросить")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(Color(.systemGray6))
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button { showCountrySheet = false } label: {
+                        Text("Готово")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(Color.black)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(.ultraThinMaterial)
             }
-            .navigationTitle(Text("countries"))
+            .navigationTitle("Страны")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("cancel") { showCountrySheet = false }
+                    Button("Отмена") { showCountrySheet = false }
                 }
             }
         }
