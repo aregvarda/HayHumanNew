@@ -30,6 +30,11 @@ private let donateURL = URL(string: "https://www.donationalerts.com/r/hayhuman")
 
 // Fullscreen photo viewer state
 @State private var showPhotoViewer = false
+@SceneStorage("HHMap.pendingFocusID") private var pendingFocusID: Int = 0
+@SceneStorage("HHNav.popToMap") private var popToMap: Bool = false
+@SceneStorage("HHNav.closeList") private var closeList: Bool = false
+
+@State private var cachedShareURL: URL? = nil
 
 // MARK: - Derived data from JSON
 private var composedAddress: String? {
@@ -111,36 +116,67 @@ private func shortHash(_ input: String) -> String {
 }
 
 private func shareChurch() {
-    let slug = prettySlug(for: church)
-    let url = URL(string: "https://hayhuman.app/church/\(slug)")!
+    if cachedShareURL == nil {
+        let slug = prettySlug(for: church)
+        cachedShareURL = URL(string: "https://hayhuman.app/church/\(slug)")
+    }
+    guard let url = cachedShareURL else { return }
     let activity = UIActivityViewController(activityItems: [url], applicationActivities: nil)
     if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
        let root = scene.windows.first?.rootViewController {
         root.present(activity, animated: true)
     }
 }
+
+private func openInMaps() {
+    let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+    let options: [String : Any] = [
+        MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: church.coordinate),
+        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: span)
+    ]
+    let placemark = MKPlacemark(coordinate: church.coordinate)
+    let item = MKMapItem(placemark: placemark)
+    item.name = church.name
+    item.openInMaps(launchOptions: options)
+}
 var body: some View {
     ScrollView {
         VStack(alignment: .leading, spacing: 16) {
 
             // Мини‑карта с пином локации
-            Map(
-                initialPosition: .region(
-                    MKCoordinateRegion(
-                        center: church.coordinate,
-                        span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
-                    )
-                ),
-                interactionModes: []
-            ) {
-                Annotation(church.name, coordinate: church.coordinate) {
-                    Image(systemName: "mappin.and.ellipse.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 36, height: 36)
-                        .foregroundColor(statusColor)
-                        .shadow(radius: 2, y: 1)
+            ZStack {
+                Map(
+                    initialPosition: .region(
+                        MKCoordinateRegion(
+                            center: church.coordinate,
+                            span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+                        )
+                    ),
+                    interactionModes: []
+                ) {
+                    Annotation(church.name, coordinate: church.coordinate) {
+                        Image(systemName: "mappin.and.ellipse.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 36, height: 36)
+                            .foregroundColor(statusColor)
+                            .shadow(radius: 2, y: 1)
+                    }
                 }
+                .allowsHitTesting(false)
+
+                // Full-size tap target
+                Rectangle()
+                    .fill(Color.clear)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        pendingFocusID = church.id
+                        closeList = true
+                        popToMap = true
+                        dismiss()
+                    }
+                    .accessibilityAddTraits(.isButton)
+                    .accessibilityLabel("Открыть на общей карте")
             }
             .frame(height: 180)
             .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -255,15 +291,10 @@ var body: some View {
                 .accessibilityLabel("Поддержать проект в Donationalerts")
 
                 Button {
-                    let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-                    let options: [String : Any] = [
-                        MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: church.coordinate),
-                        MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: span)
-                    ]
-                    let placemark = MKPlacemark(coordinate: church.coordinate)
-                    let item = MKMapItem(placemark: placemark)
-                    item.name = church.name
-                    item.openInMaps(launchOptions: options)
+                    pendingFocusID = church.id
+                    closeList = true
+                    popToMap = true
+                    dismiss()
                 } label: {
                     HStack(spacing: 8) {
                         Image(systemName: "map")
@@ -280,6 +311,12 @@ var body: some View {
             .padding(.top, 8)
         }
         .padding()
+    }
+    .onAppear {
+        if cachedShareURL == nil {
+            let slug = prettySlug(for: church)
+            cachedShareURL = URL(string: "https://hayhuman.app/church/\(slug)")
+        }
     }
     .navigationTitle("church_profile")
     .navigationBarTitleDisplayMode(.inline)
@@ -310,6 +347,36 @@ let imageName: String
 @State private var lastScale: CGFloat = 1.0
 @State private var offset: CGSize = .zero
 @State private var lastOffset: CGSize = .zero
+@State private var showSaveAlert = false
+@State private var saveErrorMessage: String? = nil
+
+private final class ImageSaver: NSObject {
+    var onFinish: ((Error?) -> Void)?
+    func save(_ image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(done(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    @objc private func done(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeMutableRawPointer?) {
+        onFinish?(error)
+    }
+}
+
+private func saveImageToPhotos() {
+    guard let uiImg = UIImage(named: imageName) else {
+        saveErrorMessage = "Изображение не найдено"
+        showSaveAlert = true
+        return
+    }
+    let saver = ImageSaver()
+    saver.onFinish = { error in
+        if let error = error {
+            saveErrorMessage = error.localizedDescription
+        } else {
+            saveErrorMessage = nil
+        }
+        showSaveAlert = true
+    }
+    saver.save(uiImg)
+}
 
 var body: some View {
     ZStack {
@@ -394,6 +461,29 @@ var body: some View {
         .padding(.top, 12)
         .padding(.trailing, 16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+
+        HStack {
+            Button { saveImageToPhotos() } label: {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(.white)
+                    .frame(width: 34, height: 34)
+                    .background(.black.opacity(0.5))
+                    .clipShape(Circle())
+                    .shadow(radius: 6)
+            }
+            Spacer()
+        }
+        .padding(.top, 12)
+        .padding(.leading, 16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+    .alert(isPresented: $showSaveAlert) {
+        if let msg = saveErrorMessage {
+            return Alert(title: Text("Не удалось сохранить"), message: Text(msg), dismissButton: .default(Text("OK")))
+        } else {
+            return Alert(title: Text("Сохранено"), message: Text("Фото добавлено в Фотоплёнку"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 

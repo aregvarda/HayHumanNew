@@ -13,6 +13,22 @@ struct Story: Identifiable, Decodable, Hashable {
 
 // MARK: - Store
 enum StoriesStore {
+    // MARK: - Stable ID and lookup
+    private static func _stableEventID(title: String, year: Int) -> Int {
+        let key = "\(title.lowercased())|\(year)"
+        var hash: UInt64 = 0xcbf29ce484222325
+        let prime: UInt64 = 0x00000100000001B3
+        for b in key.utf8 { hash ^= UInt64(b); hash &*= prime }
+        return Int(truncatingIfNeeded: hash)
+    }
+
+    static func stableID(for s: Story) -> Int {
+        _stableEventID(title: s.title, year: s.year)
+    }
+
+    static func find(byStableID id: Int) -> Story? {
+        load().first { stableID(for: $0) == id }
+    }
     static func load() -> [Story] {
         do {
             // stories.json должен быть локализован (Base / en / ru / hy)

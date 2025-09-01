@@ -41,6 +41,7 @@ struct ChurchMapView: View {
     @StateObject private var locationManager = HHLocationManager()
     @State private var didAutoCenter = false
     @State private var allowAutoLock = false
+    @State private var saveRegionWorkItem: DispatchWorkItem? = nil
 
     // List filters
     @State private var nearMeOn: Bool = false
@@ -65,6 +66,9 @@ struct ChurchMapView: View {
     @SceneStorage("HHMap.spanLat") private var storedSpanLat: Double = 0
     @SceneStorage("HHMap.spanLon") private var storedSpanLon: Double = 0
     @SceneStorage("HHMap.userLocked") private var userLockedRegion: Bool = false
+    @SceneStorage("HHMap.pendingFocusID") private var pendingFocusID: Int = 0
+    @SceneStorage("HHNav.popToMap") private var popToMap: Bool = false
+    @SceneStorage("HHNav.closeList") private var closeList: Bool = false
 
     // City-scale span for first auto-centering (show whole city around user)
     private let citySpan = MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
@@ -100,6 +104,11 @@ struct ChurchMapView: View {
             region = target
             selectedChurch = church
         }
+    }
+
+    private func focusByID(_ id: Int) {
+        guard let church = churches.first(where: { $0.id == id }) else { return }
+        focus(on: church)
     }
 
     private func nearestChurch(to coordinate: CLLocationCoordinate2D) -> Church? {
@@ -162,6 +171,14 @@ struct ChurchMapView: View {
         guard allowAutoLock else { return }
         saveCurrentRegion()
         userLockedRegion = true
+    }
+
+    private func scheduleSaveRegion() {
+        guard allowAutoLock else { return }
+        saveRegionWorkItem?.cancel()
+        let work = DispatchWorkItem { saveAndLockRegion() }
+        saveRegionWorkItem = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: work)
     }
 
     init() {
@@ -227,12 +244,17 @@ struct ChurchMapView: View {
         switch sortMode {
         case .distance:
             if locationManager.lastLocation != nil {
-                arr = arr.sorted { (distanceFromUser($0) ?? .greatestFiniteMagnitude) < (distanceFromUser($1) ?? .greatestFiniteMagnitude) }
+                var distCache = [Int: CLLocationDistance]()
+                distCache.reserveCapacity(arr.count)
+                for ch in arr {
+                    distCache[ch.id] = distanceFromUser(ch) ?? .greatestFiniteMagnitude
+                }
+                arr.sort { (distCache[$0.id] ?? .greatestFiniteMagnitude) < (distCache[$1.id] ?? .greatestFiniteMagnitude) }
             } else {
                 fallthrough
             }
         case .name:
-            arr = arr.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            arr.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         }
         return arr
     }
@@ -417,6 +439,10 @@ struct ChurchMapView: View {
 
             let lproj = url.path.components(separatedBy: "/").first { $0.hasSuffix(".lproj") } ?? "<base>"
             print("[ChurchMap] Loaded \(churches.count) from \(lproj)/\(filename).json")
+            // If a focus was requested earlier, apply once data is loaded
+            if pendingFocusID != 0, let ch = churches.first(where: { $0.id == pendingFocusID }) {
+                DispatchQueue.main.async { focus(on: ch); userLockedRegion = true; pendingFocusID = 0 }
+            }
         } catch {
             print("[ChurchMap] Failed to load churches: \(error)")
             self.churches = []
@@ -627,6 +653,16 @@ struct ChurchMapView: View {
         loadChurches()
         locationManager.request()
 
+        // If another screen requested to focus a church, center on it now
+        if pendingFocusID != 0 {
+            if let ch = churches.first(where: { $0.id == pendingFocusID }) {
+                focus(on: ch)
+                userLockedRegion = true
+            }
+            pendingFocusID = 0
+            didAutoCenter = true
+        }
+
         if restoreRegionIfAvailable() {
             didAutoCenter = true
         } else if !userLockedRegion, let loc = locationManager.lastLocation {
@@ -657,6 +693,12 @@ struct ChurchMapView: View {
         let presented = attachPresentations(base)
         return presented
             .onAppear { handleOnAppearMain() }
+            .onAppear {
+                if popToMap || closeList {
+                    popToMap = false; closeList = false
+                    showList = false
+                }
+            }
             .onChange(of: locationManager.lastLocation) { if let loc = $0 { handleLocationChangeMain(loc) } }
             // Let the map go under the home indicator, but keep the top area clean
             .ignoresSafeArea(.container, edges: [.bottom])
@@ -664,10 +706,22 @@ struct ChurchMapView: View {
             .navigationBarTitleDisplayMode(.inline)
             // Hide the default nav bar material/underline to avoid white/gray bands under the Dynamic Island
             .toolbarBackground(.hidden, for: .navigationBar)
-            .onChange(of: region.center.latitude) { _, _ in saveAndLockRegion() }
-            .onChange(of: region.center.longitude) { _, _ in saveAndLockRegion() }
-            .onChange(of: region.span.latitudeDelta) { _, _ in saveAndLockRegion() }
-            .onChange(of: region.span.longitudeDelta) { _, _ in saveAndLockRegion() }
+            .onChange(of: region.center.latitude) { _, _ in scheduleSaveRegion() }
+            .onChange(of: region.center.longitude) { _, _ in scheduleSaveRegion() }
+            .onChange(of: region.span.latitudeDelta) { _, _ in scheduleSaveRegion() }
+            .onChange(of: region.span.longitudeDelta) { _, _ in scheduleSaveRegion() }
+            .onChange(of: popToMap) { _, newValue in
+                if newValue {
+                    popToMap = false
+                    showList = false
+                }
+            }
+            .onChange(of: closeList) { _, newValue in
+                if newValue {
+                    closeList = false
+                    showList = false
+                }
+            }
             // MARK: - List Mode FullScreenCover
             .fullScreenCover(isPresented: $showList) {
                 ChurchListView(churches: $churches, locationManager: locationManager)

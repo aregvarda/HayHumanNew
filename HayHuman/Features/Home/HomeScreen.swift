@@ -29,7 +29,19 @@ extension ArmenianSection {
     }
 }
 
+
+
 import SwiftUI
+import UserNotifications
+
+// File-level helper so it is visible from debug functions too
+fileprivate func hhStableEventID(title: String, year: Int) -> Int {
+    let key = "\(title.lowercased())|\(year)"
+    var hash: UInt64 = 0xcbf29ce484222325
+    let prime: UInt64 = 0x00000100000001B3
+    for b in key.utf8 { hash ^= UInt64(b); hash &*= prime }
+    return Int(truncatingIfNeeded: hash)
+}
 
 // Палитра
 private let pageBG      = Color(uiColor: .systemGroupedBackground)
@@ -164,6 +176,9 @@ struct HomeScreen: View {
         birthYear: 360
     )
 
+    // Placeholder story for deep link navigation
+    private let placeholderStory = Story(id: "placeholder", title: "-", year: 0, imageName: nil, summary: nil, tags: [])
+
     @State private var featured: Person = Person(
         name: "Месроп Маштоц",
         subtitle: "Создатель армянского алфавита",
@@ -181,6 +196,7 @@ struct HomeScreen: View {
     private var sections: [ArmenianSection] {
         ArmenianSection.allCases
     }
+
 
     // MARK: - Daily featured logic (persist 24h)
     private func todayKey() -> String {
@@ -215,6 +231,46 @@ struct HomeScreen: View {
             df.dateFormat = "yyyy-MM-dd"
             return df
         }()
+    }
+
+    // Stable event ID (deterministic): FNV-1a 64-bit of "title|year"
+    private func stableEventID(title: String, year: Int) -> Int {
+        let key = "\(title.lowercased())|\(year)"
+        var hash: UInt64 = 0xcbf29ce484222325
+        let prime: UInt64 = 0x00000100000001B3
+        for b in key.utf8 { hash ^= UInt64(b); hash &*= prime }
+        return Int(truncatingIfNeeded: hash)
+    }
+
+    // MARK: - Start 3-day person reminders
+    private func startPersonReminders() {
+        // Only provide persons, clear events provider
+        RandomReminderManager.getPersons = { LocalPeopleStore.allPeopleLite() }
+        RandomReminderManager.getEvents  = { [] }
+        // Планируем основную серию: каждые 3 дня, первый пуш ~через минуту
+        let now = Date()
+        let cal = Calendar.current
+        let hour = cal.component(.hour, from: now)
+        let minute = (cal.component(.minute, from: now) + 1) % 60
+        RandomReminderManager.scheduleSeries(days: 90, hour: hour, minute: minute)
+
+    }
+
+    // MARK: - Start 3-day event reminders
+    private func startEventReminders() {
+        // Only provide events, clear persons provider
+        RandomReminderManager.getPersons = { [] }
+        RandomReminderManager.getEvents = {
+            let stories = StoriesStore.load()
+            return stories.map { s in
+                EventLite(id: hhStableEventID(title: s.title, year: s.year), title: s.title)
+            }
+        }
+        let now = Date()
+        let cal = Calendar.current
+        let hour = cal.component(.hour, from: now)
+        let minute = (cal.component(.minute, from: now) + 1) % 60
+        RandomReminderManager.scheduleSeries(days: 90, hour: hour, minute: minute)
     }
 
     var body: some View {
@@ -265,6 +321,7 @@ struct HomeScreen: View {
                         .environment(\.locale, lang.current.locale)
                         .id(showSearch) // force fresh NavigationView each time to avoid re-presentation crash
                 }
+
 
                 // Карта
                 NavigationLink { MapScreen() } label: {
@@ -346,6 +403,7 @@ struct HomeScreen: View {
         }
     }
 }
+
 
 
 // MARK: - Universal Search Sheet (soft sheet with live suggestions)
@@ -594,13 +652,40 @@ struct ContactsScreen: View {
                 Button {
                     if let url = URL(string: "https://websiberia.com/") { openURL(url) }
                 } label: {
-                    Image("websiberia")
-                        .resizable()
-                        .scaledToFit()
+                    ZStack(alignment: .bottomLeading) {
+                        Image("websiberia")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: corner))
+                            .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
+                            .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+
+                        // Bottom gradient strip to indicate interactivity
+                        LinearGradient(
+                            colors: [Color.black.opacity(0.0), Color.black.opacity(0.45)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                         .frame(maxWidth: .infinity)
+                        .frame(height: 84)
                         .clipShape(RoundedRectangle(cornerRadius: corner))
-                        .overlay(RoundedRectangle(cornerRadius: corner).stroke(cardStroke, lineWidth: 1))
-                        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+
+                        // Button-like caption
+                        HStack(spacing: 8) {
+                            Image(systemName: "safari.fill")
+                            Text("Открыть websiberia.com")
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        }
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 10)
+                        .background(Color.white.opacity(0.12))
+                        .clipShape(Capsule())
+                        .padding(.leading, 14)
+                        .padding(.bottom, 12)
+                    }
+                    .contentShape(RoundedRectangle(cornerRadius: corner))
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Открыть websiberia.com")
@@ -720,6 +805,7 @@ private struct UniversalSearchView: View {
 // MARK: - Fullscreen presenter (bottom-to-top)
 private struct UniversalSearchFullScreen: View {
     @Binding var isPresented: Bool
+
     var body: some View {
         NavigationView {
             UniversalSearchView()
@@ -730,3 +816,36 @@ private struct UniversalSearchFullScreen: View {
         .ignoresSafeArea(edges: .bottom)
     }
 }
+
+#if DEBUG
+private func debugPersonOnce() {
+    let people = LocalPeopleStore.allPeopleLite()
+    guard let pl = people.randomElement() else { return }
+    let content = UNMutableNotificationContent()
+    content.title = "HayHuman"
+    content.body  = "5 минут истории: кто такой \(pl.name)?"
+    content.sound = .default
+    let deeplink = "hayhuman://person/\(pl.id)"
+    content.userInfo = ["deeplink": deeplink]
+    print("[DEBUG] scheduling person deeplink:", deeplink)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+    UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "debug.person.once", content: content, trigger: trigger))
+}
+
+private func debugEventOnce() {
+    let stories = StoriesStore.load()
+    guard !stories.isEmpty else { return }
+    let index = Int.random(in: 0..<stories.count)
+    let st = stories[index]
+    let content = UNMutableNotificationContent()
+    content.title = "HayHuman"
+    content.body  = "История на вечер: \(st.title)"
+    content.sound = .default
+    let eid = hhStableEventID(title: st.title, year: st.year)
+    let deeplink = "hayhuman://event/\(eid)"
+    content.userInfo = ["deeplink": deeplink]
+    print("[DEBUG] scheduling event deeplink:", deeplink)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+    UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "debug.event.once", content: content, trigger: trigger))
+}
+#endif

@@ -6,11 +6,29 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
 struct HayHumanApp: App {
+    @AppStorage("pendingDeepLinkApp") private var pendingDeepLinkApp: String = ""
     @StateObject private var lang = LanguageManager()
     @State private var showSplash = true
+
+    init() {
+        UNUserNotificationCenter.current().delegate = NotificationDelegate.shared
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+            print("Notifications permission: \(granted)")
+        }
+        RandomReminderManager.getPersons = {
+            // Лёгкие модели персон из локального стора (стабильный Int id = индекс)
+            LocalPeopleStore.allPeopleLite()
+        }
+        RandomReminderManager.getEvents = {
+            StoriesStore.load().enumerated().map { (idx, s) in
+                EventLite(id: idx, title: s.title)
+            }
+        }
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -33,6 +51,25 @@ struct HayHumanApp: App {
                 }
             }
             .animation(nil, value: showSplash)
+            .onAppear {
+                if !pendingDeepLinkApp.isEmpty, let url = URL(string: pendingDeepLinkApp) {
+                    // Wait until splash is dismissed
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        if !showSplash {
+                            NotificationCenter.default.post(name: .HayHumanOpenDeepLink, object: url, userInfo: ["deeplink": url.absoluteString])
+                            pendingDeepLinkApp = ""
+                        }
+                    }
+                }
+            }
+            .onChange(of: pendingDeepLinkApp) { newValue in
+                if !newValue.isEmpty, let url = URL(string: newValue) {
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: .HayHumanOpenDeepLink, object: url, userInfo: ["deeplink": url.absoluteString])
+                        pendingDeepLinkApp = ""
+                    }
+                }
+            }
         }
     }
 }

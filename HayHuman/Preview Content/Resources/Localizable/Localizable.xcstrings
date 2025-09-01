@@ -405,6 +405,9 @@
         }
       }
     },
+    "Event not found" : {
+
+    },
     "events" : {
       "localizations" : {
         "en" : {
@@ -560,6 +563,9 @@
         }
       }
     },
+    "id=%lld" : {
+
+    },
     "Key" : {
       "extractionState" : "manual"
     },
@@ -654,6 +660,7 @@
       }
     },
     "map_churches_and_shrines" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -764,6 +771,9 @@
         }
       }
     },
+    "OK" : {
+
+    },
     "open_in_maps" : {
       "localizations" : {
         "en" : {
@@ -782,6 +792,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Открыть это место в «Картах»"
+          }
+        }
+      }
+    },
+    "param=%lld allCount=%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "param=%1$lld allCount=%2$lld"
           }
         }
       }
@@ -807,6 +827,9 @@
           }
         }
       }
+    },
+    "Person not found" : {
+
     },
     "politics" : {
       "extractionState" : "manual",
@@ -967,6 +990,7 @@
       }
     },
     "search_churches" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1478,6 +1502,12 @@
         }
       }
     },
+    "Напоминание" : {
+
+    },
+    "Не удалось сохранить" : {
+
+    },
     "Открыть websiberia.com" : {
       "localizations" : {
         "en" : {
@@ -1499,6 +1529,9 @@
           }
         }
       }
+    },
+    "Открыть на общей карте" : {
+
     },
     "Открыть это место в «Картах»" : {
       "localizations" : {
@@ -1676,6 +1709,12 @@
         }
       }
     },
+    "Почитайте биографию: %@" : {
+
+    },
+    "Почитайте о событии: %@" : {
+
+    },
     "Русский" : {
       "localizations" : {
         "en" : {
@@ -1758,6 +1797,9 @@
         }
       }
     },
+    "Сохранено" : {
+
+    },
     "Список" : {
       "localizations" : {
         "en" : {
@@ -1801,6 +1843,9 @@
           }
         }
       }
+    },
+    "Фото добавлено в Фотоплёнку" : {
+
     },
     "Фото появится позже" : {
       "localizations" : {

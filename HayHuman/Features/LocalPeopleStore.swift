@@ -20,9 +20,37 @@ enum PeopleFile {
         case .science:  return "people_science"
         }
     }
+    
 }
 
 enum LocalPeopleStore {
+    // Deterministic stable ID (FNV-1a 64-bit) over normalized title+year
+    private static func stableID(for p: Person) -> Int {
+        let key = normalizedKey(for: p)
+        let hash64 = fnv1a64(key)
+        return Int(truncatingIfNeeded: hash64)
+    }
+
+    // Normalize to Latin and strip diacritics/spaces to be language-agnostic
+    private static func normalizedKey(for p: Person) -> String {
+        var base = p.overlayTitle
+        if let y = p.birthYear { base += "|\(y)" } else { base += "|0" }
+        let ms = NSMutableString(string: base.lowercased())
+        CFStringTransform(ms, nil, kCFStringTransformToLatin, false)
+        CFStringTransform(ms, nil, kCFStringTransformStripCombiningMarks, false)
+        let allowed = CharacterSet.alphanumerics.union(["|"])
+        let filtered = (ms as String).unicodeScalars.filter { allowed.contains($0) }
+        return String(String.UnicodeScalarView(filtered))
+    }
+
+    // FNV-1a 64-bit hash (deterministic across runs)
+    private static func fnv1a64(_ s: String) -> UInt64 {
+        var hash: UInt64 = 0xcbf29ce484222325
+        let prime: UInt64 = 0x00000100000001B3
+        for b in s.utf8 { hash ^= UInt64(b); hash &*= prime }
+        return hash
+    }
+
     /// Current 2-letter language code (from app settings or system fallback)
     static func currentLangCode() -> String {
         // 1) explicit app setting
@@ -98,5 +126,26 @@ enum LocalPeopleStore {
         ArmenianSection.allCases
             .filter { $0 != .all }
             .flatMap { load(section: $0) }
+    }
+
+    /// Полная модель Person по индексу в общем списке (соответствует allPeopleLite())
+    static func personFull(at index: Int) -> Person? {
+        let all = loadAll()
+        guard index >= 0 && index < all.count else { return nil }
+        return all[index]
+    }
+
+    /// Full model by stable generated id
+    static func personFull(byStableID id: Int) -> Person? {
+        let all = loadAll()
+        return all.first { stableID(for: $0) == id }
+    }
+
+    /// Лёгкие модели для уведомлений (стабильный Int id = индекс в общем списке)
+    static func allPeopleLite() -> [PersonLite] {
+        let all = loadAll()
+        return all.map { p in
+            PersonLite(id: stableID(for: p), name: p.name)
+        }
     }
 }

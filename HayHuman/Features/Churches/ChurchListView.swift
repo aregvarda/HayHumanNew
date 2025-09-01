@@ -22,6 +22,7 @@ struct ChurchListView: View {
 
     @State private var showBottomMiniMap = false
     @State private var previewRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.0, longitude: 45.0), span: MKCoordinateSpan(latitudeDelta: 15, longitudeDelta: 15))
+    @SceneStorage("HHNav.popToMap") private var popToMap: Bool = false
 
     private let nearMeRadius: CLLocationDistance = 25_000 // 25 km
 
@@ -29,31 +30,37 @@ struct ChurchListView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 ScrollView {
-                    // Mini map header (scrolls with list)
+                    // Mini map header with sticky measurement
                     ZStack {
                         Map(coordinateRegion: $previewRegion)
                             .frame(height: 160)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .background(
                                 GeometryReader { proxy in
-                                    Color.clear.preference(key: TopMapMaxYKey.self, value: proxy.frame(in: .named("listScroll")).maxY)
+                                    Color.clear.preference(key: TopMapMaxYKey.self,
+                                                           value: proxy.frame(in: .named("listScroll")).maxY)
                                 }
                             )
                         Button(action: { dismiss() }) {
-                            HStack { Image(systemName: "map"); Text("На карте") }
-                                .padding(.horizontal, 18)
-                                .padding(.vertical, 10)
-                                .background(Color.black)
-                                .foregroundColor(.white)
-                                .clipShape(Capsule())
-                                .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
+                            HStack {
+                                Image(systemName: "map")
+                                Text("На карте")
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.85)
+                                    .truncationMode(.tail)
+                            }
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 10)
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                            .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
                         }
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 8)
-
                     LazyVStack(spacing: 16) {
-                        ForEach(listFilteredChurches) { church in
+                        ForEach(listFilteredChurchesUnique, id: \.id) { church in
                             NavigationLink {
                                 ChurchDetailView(church: church)
                             } label: {
@@ -62,25 +69,37 @@ struct ChurchListView: View {
                             .buttonStyle(.plain)
                         }
                     }
-                    .padding(.vertical, 12)
+                    .padding(.top, 8)
+                    .padding(.bottom, 80) // leave space for floating button
                 }
                 .coordinateSpace(name: "listScroll")
                 .onPreferenceChange(TopMapMaxYKey.self) { maxY in
                     showBottomMiniMap = maxY < 100
                 }
+                .onChange(of: popToMap) { newValue in
+                    if newValue {
+                        popToMap = false
+                        dismiss()
+                    }
+                }
                 .overlay(alignment: .bottom) {
                     if showBottomMiniMap {
                         Button(action: { dismiss() }) {
-                            HStack(spacing: 8) { Image(systemName: "map"); Text("На карте") }
-                                .padding(.horizontal, 18)
-                                .padding(.vertical, 10)
-                                .background(Color.black)
-                                .foregroundColor(.white)
-                                .clipShape(Capsule())
-                                .overlay(Capsule().stroke(Color.black.opacity(0.12), lineWidth: 1))
-                                .shadow(color: .black.opacity(0.16), radius: 6, y: 2)
+                            HStack {
+                                Image(systemName: "map")
+                                Text("На карте")
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.85)
+                                    .truncationMode(.tail)
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 12)
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                            .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
                         }
-                        .padding(.bottom, 28)
+                        .padding(.bottom, 20)
                     }
                 }
             }
@@ -109,10 +128,11 @@ struct ChurchListView: View {
                                 TextField("Поиск по церквям", text: $searchText)
                                     .focused($isSearchFocused)
                                     .textFieldStyle(.plain)
+                                    .textInputAutocapitalization(.never)
+                                    .disableAutocorrection(true)
                                     .padding(.vertical, 6)
                                     .onChange(of: searchText) { newValue in
                                         searchTimer?.invalidate()
-                                        // schedule on common runloop to avoid race with presentation transitions
                                         let t = Timer(timeInterval: 0.25, repeats: false) { _ in
                                             searchDebounced = newValue
                                         }
@@ -151,6 +171,7 @@ struct ChurchListView: View {
                             Button { selectedCountry = nil } label: {
                                 Text("all_countries")
                                     .font(.subheadline.weight(.semibold))
+                                    .lineLimit(1).minimumScaleFactor(0.8).truncationMode(.tail)
                                     .padding(.horizontal, 12).padding(.vertical, 8)
                                     .background(selectedCountry == nil ? Color.purple.opacity(0.15) : Color(.systemGray6))
                                     .clipShape(Capsule())
@@ -161,6 +182,7 @@ struct ChurchListView: View {
                                 Button { selectedCountry = c } label: {
                                     Text(c)
                                         .font(.subheadline.weight(.semibold))
+                                        .lineLimit(1).minimumScaleFactor(0.8).truncationMode(.tail)
                                         .padding(.horizontal, 12).padding(.vertical, 8)
                                         .background(selectedCountry == c ? Color.purple.opacity(0.15) : Color(.systemGray6))
                                         .clipShape(Capsule())
@@ -169,7 +191,7 @@ struct ChurchListView: View {
                             }
 
                             Button { showCountrySheet = true } label: {
-                                HStack(spacing: 6) { Image(systemName: "ellipsis"); Text("more") }
+                                HStack(spacing: 6) { Image(systemName: "ellipsis"); Text("more").lineLimit(1).minimumScaleFactor(0.8).truncationMode(.tail) }
                                     .font(.subheadline.weight(.semibold))
                                     .padding(.horizontal, 12).padding(.vertical, 8)
                                     .background(Color(.systemGray6))
@@ -184,6 +206,7 @@ struct ChurchListView: View {
                 .padding(.top, 8)
                 .padding(.bottom, 8)
                 .background(.regularMaterial)
+                .zIndex(2)
             }
             .sheet(isPresented: $showFiltersSheet) { filtersSheet }
             .sheet(isPresented: $showCountrySheet) { countrySheet }
@@ -216,6 +239,9 @@ struct ChurchListView: View {
                 if let d = distanceFromUser(ch), d <= nearMeRadius { return ch } else { return nil }
             }
         }
+        
+     
+        
         switch sortMode {
         case .distance:
             if locationManager.lastLocation != nil {
@@ -247,6 +273,17 @@ struct ChurchListView: View {
         let all = arr.compactMap { countryOf($0) }
         let counts = Dictionary(grouping: all, by: { $0 }).mapValues { $0.count }
         return all.uniqued().sorted { (counts[$0] ?? 0) > (counts[$1] ?? 0) }.prefix(2).map { $0 }
+    }
+    
+    private var listFilteredChurchesUnique: [Church] {
+        var seen = Set<Int>()
+        var result: [Church] = []
+        for ch in listFilteredChurches {
+            if seen.insert(ch.id).inserted {
+                result.append(ch)
+            }
+        }
+        return result
     }
 
     // Sheets
@@ -437,6 +474,7 @@ struct ChurchCardView: View {
                     .font(.title3.weight(.semibold))
                     .foregroundColor(.white)
                     .shadow(radius: 2)
+                    .lineLimit(2).minimumScaleFactor(0.8).truncationMode(.tail)
                     .padding(.horizontal, 12)
                     .padding(.bottom, 12)
             }
@@ -445,6 +483,7 @@ struct ChurchCardView: View {
                 HStack {
                     Text(church.isActive ? "active_church" : "lost_church")
                         .font(.caption.weight(.semibold))
+                        .lineLimit(1).minimumScaleFactor(0.8).truncationMode(.tail)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background(church.isActive ? Color.purple.opacity(0.9) : Color.black.opacity(0.85))
@@ -459,6 +498,7 @@ struct ChurchCardView: View {
                 Text(address)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    .lineLimit(1).truncationMode(.tail)
                     .padding(.horizontal, 6)
                     .padding(.bottom, 6)
             }
