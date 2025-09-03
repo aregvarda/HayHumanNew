@@ -36,11 +36,10 @@ enum RandomReminderManager {
         cancelSeries()
 
         // соберём уникальный пул кандидатов (персоны+события)
-        var payloads = buildUniqueShuffledPayloads()
+        let payloads = buildUniqueShuffledPayloads()
         guard !payloads.isEmpty else { return }
 
         let totalNotifications = max(1, days / 3)
-        let start = secondsUntil(hour: hour, minute: minute)
 
         // Берём первые N из перемешанного пула; если их меньше — берём без повторов сколько есть
         let picked = Array(payloads.prefix(totalNotifications))

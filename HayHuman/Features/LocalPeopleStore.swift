@@ -7,6 +7,11 @@
 
 import Foundation
 
+fileprivate struct _PeopleCache {
+    static var cache: [String: [String: [Person]]] = [:] // lang -> filename -> persons
+    static let ioQueue = DispatchQueue(label: "LocalPeopleStore.io", qos: .userInitiated)
+}
+
 enum PeopleFile {
     static func filename(for section: ArmenianSection) -> String {
         switch section {
@@ -24,6 +29,54 @@ enum PeopleFile {
 }
 
 enum LocalPeopleStore {
+    /// Preload all sections for current (or provided) language on a background queue
+    static func warmup(lang: String? = nil) {
+        let lc = lang ?? currentLangCode()
+        _PeopleCache.ioQueue.async {
+            ArmenianSection.allCases.filter { $0 != .all }.forEach { _ = _load(section: $0, lang: lc) }
+        }
+    }
+
+    /// Internal loader with caching; never prints misses repeatedly
+    private static func _load(section: ArmenianSection, lang: String) -> [Person] {
+        let name = PeopleFile.filename(for: section)
+        if let entry = _PeopleCache.cache[lang]?[name] { return entry }
+
+        // Try localized first, then fallbacks
+        let candidates: [String] = {
+            var arr: [String] = []
+            arr.append(lang)
+            if !arr.contains("en") { arr.append("en") }
+            if !arr.contains("ru") { arr.append("ru") }
+            if !arr.contains("hy") { arr.append("hy") }
+            arr.append("Base")
+            return arr
+        }()
+
+        var loaded: [Person]? = nil
+        for code in candidates {
+            if code == "Base" {
+                if let url = Bundle.main.url(forResource: name, withExtension: "json"),
+                   let d = try? Data(contentsOf: url),
+                   let dec = try? JSONDecoder().decode([Person].self, from: d) {
+                    loaded = dec; break
+                }
+            } else {
+                if let url = Bundle.main.url(forResource: name, withExtension: "json", subdirectory: nil, localization: code),
+                   let d = try? Data(contentsOf: url),
+                   let dec = try? JSONDecoder().decode([Person].self, from: d) {
+                    loaded = dec; break
+                }
+            }
+        }
+        let result = loaded ?? []
+        // memoize under requested lang to avoid repeated disk hits
+        var byFile = _PeopleCache.cache[lang] ?? [:]
+        byFile[name] = result
+        _PeopleCache.cache[lang] = byFile
+        return result
+    }
+
     // Deterministic stable ID (FNV-1a 64-bit) over normalized title+year
     private static func stableID(for p: Person) -> Int {
         let key = normalizedKey(for: p)
@@ -72,60 +125,16 @@ enum LocalPeopleStore {
     /// Загрузить одну секцию из бандла
     static func load(section: ArmenianSection) -> [Person] {
         if section == .all { return loadAll() }
-
-        let name = PeopleFile.filename(for: section)
         let lang = currentLangCode()
-        var data: Data?
-        var usedLocalization: String = "<none>"
-
-        // Try localized files in priority order: selected, then en/ru/hy
-        let candidates: [String] = {
-            var arr: [String] = []
-            arr.append(lang)
-            if !arr.contains("en") { arr.append("en") }
-            if !arr.contains("ru") { arr.append("ru") }
-            if !arr.contains("hy") { arr.append("hy") }
-            return arr
-        }()
-
-        for code in candidates where code != "Base" {
-            if let url = Bundle.main.url(forResource: name,
-                                         withExtension: "json",
-                                         subdirectory: nil,
-                                         localization: code),
-               let d = try? Data(contentsOf: url) {
-                data = d
-                usedLocalization = "\(code).lproj"
-                print("[People] Loaded \(name).json from \(usedLocalization)")
-                break
-            } else {
-                print("[People] Miss \(name).json for lang=\(code)")
-            }
-        }
-
-        // Final fallback — unlocalized (Base)
-        if data == nil {
-            if let url = Bundle.main.url(forResource: name, withExtension: "json"),
-               let d = try? Data(contentsOf: url) {
-                data = d
-                usedLocalization = "Base (unlocalized)"
-                print("[People] Loaded \(name).json from \(usedLocalization)")
-            }
-        }
-
-        guard let data = data,
-              let decoded = try? JSONDecoder().decode([Person].self, from: data) else {
-            print("⚠️ [People] Failed to load \(name).json (lang=\(lang))")
-            return []
-        }
-        return decoded
+        return _load(section: section, lang: lang)
     }
 
     /// Собрать «все личности» из всех секций
     static func loadAll() -> [Person] {
-        ArmenianSection.allCases
+        let lang = currentLangCode()
+        return ArmenianSection.allCases
             .filter { $0 != .all }
-            .flatMap { load(section: $0) }
+            .flatMap { _load(section: $0, lang: lang) }
     }
 
     /// Полная модель Person по индексу в общем списке (соответствует allPeopleLite())
@@ -149,3 +158,5 @@ enum LocalPeopleStore {
         }
     }
 }
+
+// Tip: call LocalPeopleStore.warmup() at app launch to preload current language.

@@ -9,12 +9,25 @@ import Foundation
 
 
 
+
 import SwiftUI
 import MapKit
 import CoreLocation
 
+private extension Double {
+    func rounded(to places: Int) -> Double {
+        let p = pow(10.0, Double(places))
+        return (self * p).rounded() / p
+    }
+}
+
 
 private func L(_ key: String) -> LocalizedStringKey { LocalizedStringKey(key) }
+
+fileprivate struct _ChurchCache {
+    static var byLang: [String: [Church]] = [:]
+    static let io = DispatchQueue(label: "HH.ChurchIO", qos: .userInitiated)
+}
 
 struct ChurchMapView: View {
     private enum ChurchFilter: String, CaseIterable, Identifiable {
@@ -37,11 +50,25 @@ struct ChurchMapView: View {
     @State private var selectedChurch: Church? = nil
     @State private var navTarget: Church? = nil
     @State private var searchText: String = ""
+    @State private var debouncedQuery: String = ""
+    @State private var searchIndex: [Int: String] = [:] // church.id -> lowercased "name address city"
     @State private var showList = false
     @StateObject private var locationManager = HHLocationManager()
     @State private var didAutoCenter = false
     @State private var allowAutoLock = false
     @State private var saveRegionWorkItem: DispatchWorkItem? = nil
+
+    // Caches to avoid heavy recomputation
+    @State private var listCacheKey: String = ""
+    @State private var cachedList: [Church] = []
+    @State private var cachedCountriesKey: String = ""
+    @State private var cachedAvailableCountries: [String] = []
+    @State private var distCache: [Int: CLLocationDistance] = [:]
+    // Async compute & movement threshold
+    @State private var rebuildWorkItem: DispatchWorkItem? = nil
+    private let computeQueue = DispatchQueue(label: "HH.MapCompute", qos: .userInitiated)
+    @State private var lastDistanceOrigin: CLLocationCoordinate2D? = nil
+    private let locationThreshold: CLLocationDistance = 400 // meters
 
     // List filters
     @State private var nearMeOn: Bool = false
@@ -57,6 +84,8 @@ struct ChurchMapView: View {
 
     // Controls visibility of bottom mini-map in list mode
     @State private var showBottomMiniMapInList = false
+
+    @State private var isActive: Bool = false
 
     @SceneStorage("HHMap.didFreshInit") private var didFreshInit: Bool = false
 
@@ -74,11 +103,11 @@ struct ChurchMapView: View {
     private let citySpan = MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
 
     private var searchResults: [Church] {
-        let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let q = debouncedQuery
         guard !q.isEmpty else { return [] }
         let results = churches.filter { c in
-            let hay = [c.name, c.address ?? "", c.city ?? ""].joined(separator: " ").lowercased()
-            return hay.contains(q)
+            if let hay = searchIndex[c.id] { return hay.contains(q) }
+            return false
         }
         return Array(results.prefix(6))
     }
@@ -201,12 +230,73 @@ struct ChurchMapView: View {
 
     // Apply search text to a church array (name + address)
     private func applySearch(_ arr: [Church]) -> [Church] {
-        let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let q = debouncedQuery
         guard !q.isEmpty else { return arr }
         return arr.filter { c in
-            let hay = [c.name, c.address ?? "", c.city ?? ""].joined(separator: " ").lowercased()
-            return hay.contains(q)
+            if let hay = searchIndex[c.id] { return hay.contains(q) }
+            return false
         }
+    }
+
+    private func makeListKey() -> String {
+        let q = debouncedQuery
+        let photo = withPhotoOn ? "1" : "0"
+        let near = nearMeOn ? "1" : "0"
+        let country = selectedCountry ?? "*"
+        let sort = sortMode.rawValue
+        let filt = filter.rawValue
+        let loc = locationManager.lastLocation.map { "\($0.coordinate.latitude.rounded(to: 3))|\($0.coordinate.longitude.rounded(to: 3))" } ?? "nil"
+        return [filt, photo, near, country, sort, q, loc].joined(separator: "#")
+    }
+
+    private func rebuildCachesIfNeeded() {
+        let newKey = makeListKey()
+        // If nothing important changed, skip
+        if newKey == listCacheKey { return }
+        // Cancel previous scheduled compute
+        rebuildWorkItem?.cancel()
+        let work = DispatchWorkItem { [newKey] in
+            // Heavy compute off main
+            var arr = applySearch(filteredChurches)
+            if withPhotoOn { arr = arr.filter { ($0.photoName ?? "").isEmpty == false } }
+            if let country = selectedCountry { arr = arr.filter { countryOf($0) == country } }
+            var localDistCache: [Int: CLLocationDistance] = [:]
+            if (sortMode == .distance || nearMeOn), let _ = locationManager.lastLocation {
+                arr = arr.compactMap { ch in
+                    if let d = distanceFromUser(ch) { localDistCache[ch.id] = d; return nearMeOn ? (d <= nearMeRadius ? ch : nil) : ch }
+                    return nearMeOn ? nil : ch
+                }
+            }
+            switch sortMode {
+            case .distance:
+                if locationManager.lastLocation != nil {
+                    arr.sort { (localDistCache[$0.id] ?? .greatestFiniteMagnitude) < (localDistCache[$1.id] ?? .greatestFiniteMagnitude) }
+                } else {
+                    arr.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+                }
+            case .name:
+                arr.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            }
+            let countriesAll = applySearch(filteredChurches).compactMap { countryOf($0) }
+            let counts = Dictionary(grouping: countriesAll, by: { $0 }).mapValues { $0.count }
+            let countriesTop = countriesAll.uniqued().sorted { (counts[$0] ?? 0) > (counts[$1] ?? 0) }.prefix(6).map { $0 }
+            // Publish to UI on main
+            DispatchQueue.main.async {
+                // Do not publish if view is no longer active
+                guard isActive else { return }
+                listCacheKey = newKey
+                cachedList = arr
+                distCache = localDistCache
+                cachedAvailableCountries = countriesTop
+            }
+        }
+        rebuildWorkItem = work
+        computeQueue.asyncAfter(deadline: .now() + 0.05, execute: work)
+    }
+    private func isSignificantMove(_ newLoc: CLLocation) -> Bool {
+        guard let origin = lastDistanceOrigin else { return true }
+        let dist = newLoc.distance(from: CLLocation(latitude: origin.latitude, longitude: origin.longitude))
+        return dist > locationThreshold
     }
 
     // Helpers for list filters
@@ -222,42 +312,11 @@ struct ChurchMapView: View {
         return parts.last
     }
 
-    private var availableCountries: [String] {
-        let arr = applySearch(filteredChurches)
-        let all = arr.compactMap { countryOf($0) }
-        // top 6 by frequency
-        let counts = Dictionary(grouping: all, by: { $0 }).mapValues { $0.count }
-        return all.uniqued().sorted { (counts[$0] ?? 0) > (counts[$1] ?? 0) }.prefix(6).map { $0 }
-    }
+    private var availableCountries: [String] { cachedAvailableCountries }
     private var topCountries: [String] { Array(availableCountries.prefix(3)) }
 
     // List mode uses filter + search + extra filters
-    private var listFilteredChurches: [Church] {
-        var arr = applySearch(filteredChurches)
-        if withPhotoOn { arr = arr.filter { ($0.photoName ?? "").isEmpty == false } }
-        if let country = selectedCountry { arr = arr.filter { countryOf($0) == country } }
-        if nearMeOn, let _ = locationManager.lastLocation {
-            arr = arr.compactMap { ch in
-                if let d = distanceFromUser(ch), d <= nearMeRadius { return ch } else { return nil }
-            }
-        }
-        switch sortMode {
-        case .distance:
-            if locationManager.lastLocation != nil {
-                var distCache = [Int: CLLocationDistance]()
-                distCache.reserveCapacity(arr.count)
-                for ch in arr {
-                    distCache[ch.id] = distanceFromUser(ch) ?? .greatestFiniteMagnitude
-                }
-                arr.sort { (distCache[$0.id] ?? .greatestFiniteMagnitude) < (distCache[$1.id] ?? .greatestFiniteMagnitude) }
-            } else {
-                fallthrough
-            }
-        case .name:
-            arr.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
-        }
-        return arr
-    }
+    private var listFilteredChurches: [Church] { cachedList }
     
     // Compact Apple/Maps-like preview card shown in the bottom sheet
     private struct PreviewCard: View {
@@ -412,40 +471,44 @@ struct ChurchMapView: View {
 
 
     private func loadChurches() {
-        do {
+        let lang = LocalPeopleStore.currentLangCode()
+        if let cached = _ChurchCache.byLang[lang], !cached.isEmpty {
+            self.churches = cached
+            // index too
+            var idx: [Int: String] = [:]
+            idx.reserveCapacity(cached.count)
+            for c in cached { idx[c.id] = [c.name, c.address ?? "", c.city ?? ""].joined(separator: " ").lowercased() }
+            self.searchIndex = idx
+            return
+        }
+        // Load on background queue
+        _ChurchCache.io.async {
             let filename = "churches"
-            let lang = LocalPeopleStore.currentLangCode()
             var url: URL?
-
-            // Пытаемся взять локализованный JSON
+            // localized first
             url = Bundle.main.url(forResource: filename, withExtension: "json", subdirectory: nil, localization: lang)
-
-            // Если не нашли, fallback на Base
-            if url == nil {
-                url = Bundle.main.url(forResource: filename, withExtension: "json")
-            }
-
-            guard let url else {
-                print("[ChurchMap] File not found: \(filename).json (lang=\(lang))")
-                self.churches = []
+            if url == nil { url = Bundle.main.url(forResource: filename, withExtension: "json") }
+            guard let u = url, let data = try? Data(contentsOf: u),
+                  let decoded = try? JSONDecoder().decode([DecChurch].self, from: data) else {
+                DispatchQueue.main.async { self.churches = [] }
                 return
             }
-
-            let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode([DecChurch].self, from: data)
-            self.churches = decoded.map { Church(from: $0) }
-
-            // (removed auto-centering to first church)
-
-            let lproj = url.path.components(separatedBy: "/").first { $0.hasSuffix(".lproj") } ?? "<base>"
-            print("[ChurchMap] Loaded \(churches.count) from \(lproj)/\(filename).json")
-            // If a focus was requested earlier, apply once data is loaded
-            if pendingFocusID != 0, let ch = churches.first(where: { $0.id == pendingFocusID }) {
-                DispatchQueue.main.async { focus(on: ch); userLockedRegion = true; pendingFocusID = 0 }
+            let mapped = decoded.map { Church(from: $0) }
+            // cache
+            _ChurchCache.byLang[lang] = mapped
+            // build index
+            var idx: [Int: String] = [:]
+            idx.reserveCapacity(mapped.count)
+            for c in mapped { idx[c.id] = [c.name, c.address ?? "", c.city ?? ""].joined(separator: " ").lowercased() }
+            DispatchQueue.main.async {
+                self.churches = mapped
+                self.searchIndex = idx
+                // If a focus was requested earlier, apply once data is loaded
+                if pendingFocusID != 0, let ch = mapped.first(where: { $0.id == pendingFocusID }) {
+                    focus(on: ch); userLockedRegion = true; pendingFocusID = 0
+                }
+                rebuildCachesIfNeeded()
             }
-        } catch {
-            print("[ChurchMap] Failed to load churches: \(error)")
-            self.churches = []
         }
     }
 
@@ -676,6 +739,7 @@ struct ChurchMapView: View {
             allowAutoLock = true
         }
         didFreshInit = true
+        rebuildCachesIfNeeded()
     }
 
     private func handleLocationChangeMain(_ loc: CLLocation) {
@@ -691,38 +755,65 @@ struct ChurchMapView: View {
     var body: some View {
         let base = mapWithOverlays
         let presented = attachPresentations(base)
-        return presented
+        let v1 = presented
             .onAppear { handleOnAppearMain() }
+            .onAppear { isActive = true }
             .onAppear {
                 if popToMap || closeList {
                     popToMap = false; closeList = false
                     showList = false
                 }
             }
-            .onChange(of: locationManager.lastLocation) { if let loc = $0 { handleLocationChangeMain(loc) } }
-            // Let the map go under the home indicator, but keep the top area clean
-            .ignoresSafeArea(.container, edges: [.bottom])
+            .onChange(of: locationManager.lastLocation) { oldValue, newValue in
+                if let loc = newValue {
+                    handleLocationChangeMain(loc)
+                    if (sortMode == .distance || nearMeOn) && isSignificantMove(loc) {
+                        lastDistanceOrigin = loc.coordinate
+                        rebuildCachesIfNeeded()
+                    }
+                }
+            }
+
+        let v2 = v1
             .navigationTitle(L("map_churches_and_shrines"))
             .navigationBarTitleDisplayMode(.inline)
-            // Hide the default nav bar material/underline to avoid white/gray bands under the Dynamic Island
             .toolbarBackground(.hidden, for: .navigationBar)
+
+        let v3 = v2
             .onChange(of: region.center.latitude) { _, _ in scheduleSaveRegion() }
             .onChange(of: region.center.longitude) { _, _ in scheduleSaveRegion() }
             .onChange(of: region.span.latitudeDelta) { _, _ in scheduleSaveRegion() }
             .onChange(of: region.span.longitudeDelta) { _, _ in scheduleSaveRegion() }
+
+        let v4 = v3
+            .onDisappear {
+                isActive = false
+                rebuildWorkItem?.cancel()
+                saveRegionWorkItem?.cancel()
+            }
             .onChange(of: popToMap) { _, newValue in
-                if newValue {
-                    popToMap = false
-                    showList = false
-                }
+                if newValue { popToMap = false; showList = false }
             }
             .onChange(of: closeList) { _, newValue in
-                if newValue {
-                    closeList = false
-                    showList = false
+                if newValue { closeList = false; showList = false }
+            }
+            .onChange(of: searchText) { _, newValue in
+                let value = newValue.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                    if value == searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
+                        debouncedQuery = value
+                    }
                 }
             }
-            // MARK: - List Mode FullScreenCover
+            .onChange(of: filter) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: withPhotoOn) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: nearMeOn) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: selectedCountry) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: sortMode) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: debouncedQuery) { _, _ in rebuildCachesIfNeeded() }
+            .onChange(of: churches) { _, _ in rebuildCachesIfNeeded() }
+
+        return v4
             .fullScreenCover(isPresented: $showList) {
                 ChurchListView(churches: $churches, locationManager: locationManager)
             }

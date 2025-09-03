@@ -331,6 +331,33 @@ struct ChurchListView: View {
     }
 
     @ViewBuilder
+    private func countryRowLabel(_ key: LocalizedStringKey, isSelected: Bool) -> some View {
+        let bg = isSelected ? Color.black : Color.white
+        let fg = isSelected ? Color.white : Color.primary
+
+        HStack {
+            Text(key)
+                .font(.system(size: 17, weight: .regular))
+                .foregroundColor(fg)
+            Spacer()
+            if isSelected {
+                Image(systemName: "checkmark")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.white)
+                    .transition(.opacity)
+            }
+        }
+        .padding(.horizontal, 14)
+        .frame(height: 44)
+        .background(bg)
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(Color.black.opacity(0.06), lineWidth: isSelected ? 0 : 1)
+        )
+    }
+
+    @ViewBuilder
     private func countryRowLabel(_ title: String, isSelected: Bool) -> some View {
         let bg = isSelected ? Color.black : Color.white
         let fg = isSelected ? Color.white : Color.primary
@@ -387,7 +414,7 @@ struct ChurchListView: View {
                             selectedCountry = nil
                             showCountrySheet = false
                         } label: {
-                            countryRowLabel("Все страны", isSelected: selectedCountry == nil)
+                            countryRowLabel(LocalizedStringKey("all_countries"), isSelected: selectedCountry == nil)
                         }
                     }
                     ForEach(groupedCountries.keys.sorted(), id: \.self) { letter in
@@ -437,7 +464,7 @@ struct ChurchListView: View {
                 .padding(.vertical, 10)
                 .background(.ultraThinMaterial)
             }
-            .navigationTitle("Страны")
+            .navigationTitle(Text("countries"))
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Отмена") { showCountrySheet = false }

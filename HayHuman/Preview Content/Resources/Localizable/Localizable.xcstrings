@@ -10,6 +10,28 @@
     "%lld" : {
 
     },
+    "5 минут истории: кто такой %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 minutes of history: who is %@"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "5 րոպեանոց պատմություն․ ով է %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "5 минут истории: кто такой %@"
+          }
+        }
+      }
+    },
     "active_church" : {
       "comment" : "Active church",
       "localizations" : {
@@ -256,6 +278,28 @@
         }
       }
     },
+    "countries" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "countries"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Երկրներ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Страны"
+          }
+        }
+      }
+    },
     "culture" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -406,7 +450,26 @@
       }
     },
     "Event not found" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event not found"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Իրադարձությունը չի գտնվել\n"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Событие не найдено"
+          }
+        }
+      }
     },
     "events" : {
       "localizations" : {
@@ -772,7 +835,14 @@
       }
     },
     "OK" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
     },
     "open_in_maps" : {
       "localizations" : {
@@ -829,7 +899,26 @@
       }
     },
     "Person not found" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Person not found"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Անձը չի գտնվել\n"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Личность не найдена"
+          }
+        }
+      }
     },
     "politics" : {
       "extractionState" : "manual",
@@ -1410,6 +1499,28 @@
         }
       }
     },
+    "История на вечер: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Story for tonight: %@"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Երեկոյի պատմություն․ %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "История на вечер: %@"
+          }
+        }
+      }
+    },
     "Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭто приложение создано мной по благословению Российской и Ново-Нахичеванской епархии ААЦ. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1434,7 +1545,26 @@
       }
     },
     "Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭтот проект создан мной по благословению Главы Российской и Ново-Нахичеванской епархии ААЦ, Архиепископа Езраса Нерсисяна. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My name is Areg Vardanyan, and I am the head of the international IT company Websiberia, which specializes in developing modern digital solutions, applications, and platforms for business and social projects.\n\nThis project was created with the blessing of the Head of the Russian and New Nakhichevan Diocese of the Armenian Apostolic Church, Archbishop Ezras Nersisyan. At its core lies my wish to preserve what matters most to me: faith, culture, and memory.\n\nIf you find it useful, then my efforts have not been in vain."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ես Արեգ Վարդանյան եմ։ Ես միջազգային Websiberia տեղեկատվական տեխնոլոգիական ընկերության ղեկավարն եմ, որը մասնագիտանում է ժամանակակից թվային լուծումների, հավելվածների և հարթակների ստեղծման մեջ՝ բիզնեսի և հասարակական ծրագրերի համար։\n\nԱյս ծրագիրը ես ստեղծել եմ Ռուսաստանի և Նոր Նախիջևանի Հայ Առաքելական Եկեղեցու թեմի առաջնորդի՝ Եզրաս արքեպիսկոպոս Ներսիսյանի օրհնությամբ։ Նրա հիմքում իմ ցանկությունն է պահպանել այն, ինչ ինձ համար հատկապես կարևոր է՝ հավատը, մշակույթը և հիշողությունը։\n\nԵթե այս ծրագիրը օգտակար էր ձեզ համար, ուրեմն աշխատանքը զուր չէր։"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Меня зовут Варданян Арег. Я являюсь руководителем международной IT-компании Websiberia, специализирующейся на создании современных цифровых решений, приложений и платформ для бизнеса и общественных проектов.\n\nЭтот проект создан мной по благословению Главы Российской и Ново-Нахичеванской епархии ААЦ, Архиепископа Езраса Нерсисяна. В его основе желание сохранить то, что для меня особенно важно: веру, культуру и память.\n\nЕсли оно оказалось полезным для вас, значит труд был не напрасен."
+          }
+        }
+      }
     },
     "На карте" : {
       "localizations" : {
@@ -1503,10 +1633,48 @@
       }
     },
     "Напоминание" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Հիշեցում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Напоминание"
+          }
+        }
+      }
     },
     "Не удалось сохранить" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to save"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Չհաջողվեց պահել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Не удалось сохранить"
+          }
+        }
+      }
     },
     "Открыть websiberia.com" : {
       "localizations" : {
@@ -1531,7 +1699,26 @@
       }
     },
     "Открыть на общей карте" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open on global map"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Բացել այս վայրը «Քարտեզներում»"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Открыть на общей карте"
+          }
+        }
+      }
     },
     "Открыть это место в «Картах»" : {
       "localizations" : {
@@ -1709,12 +1896,6 @@
         }
       }
     },
-    "Почитайте биографию: %@" : {
-
-    },
-    "Почитайте о событии: %@" : {
-
-    },
     "Русский" : {
       "localizations" : {
         "en" : {
@@ -1798,7 +1979,26 @@
       }
     },
     "Сохранено" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Պահպանված է"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Сохранено"
+          }
+        }
+      }
     },
     "Список" : {
       "localizations" : {
@@ -1823,6 +2023,7 @@
       }
     },
     "Страны" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1845,7 +2046,26 @@
       }
     },
     "Фото добавлено в Фотоплёнку" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo added to Camera Roll"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Լուսանկարը ավելացվել է Ֆոտոշարքում"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Фото добавлено в Фотоплёнку"
+          }
+        }
+      }
     },
     "Фото появится позже" : {
       "localizations" : {

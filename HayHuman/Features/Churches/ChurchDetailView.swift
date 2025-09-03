@@ -165,18 +165,19 @@ var body: some View {
                 }
                 .allowsHitTesting(false)
 
-                // Full-size tap target
-                Rectangle()
-                    .fill(Color.clear)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        pendingFocusID = church.id
-                        closeList = true
-                        popToMap = true
-                        dismiss()
-                    }
-                    .accessibilityAddTraits(.isButton)
-                    .accessibilityLabel("Открыть на общей карте")
+                // Full-size tap target (Button to steal all taps from Map attribution too)
+                Button {
+                    pendingFocusID = church.id
+                    closeList = true
+                    popToMap = true
+                    dismiss()
+                } label: {
+                    Color.clear
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(.isButton)
+                .accessibilityLabel("Открыть на общей карте")
             }
             .frame(height: 180)
             .clipShape(RoundedRectangle(cornerRadius: 16))

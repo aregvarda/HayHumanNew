@@ -19,14 +19,16 @@ struct HayHumanApp: App {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
             print("Notifications permission: \(granted)")
         }
+        // Warm up caches
+        LocalPeopleStore.warmup()
+        _ = StoriesStore.load() // prime stories cache
         RandomReminderManager.getPersons = {
             // Лёгкие модели персон из локального стора (стабильный Int id = индекс)
             LocalPeopleStore.allPeopleLite()
         }
         RandomReminderManager.getEvents = {
-            StoriesStore.load().enumerated().map { (idx, s) in
-                EventLite(id: idx, title: s.title)
-            }
+            let stories = StoriesStore.load()
+            return stories.map { s in EventLite(id: StoriesStore.stableID(for: s), title: s.title) }
         }
     }
 

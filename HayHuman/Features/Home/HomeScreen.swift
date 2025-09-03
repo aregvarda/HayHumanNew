@@ -205,17 +205,14 @@ struct HomeScreen: View {
     private func dailyFeatured() -> Person {
         let defaults = UserDefaults.standard
         let keyToday = todayKey()
+        let all = LocalPeopleStore.load(section: .all)
         if let savedDate = defaults.string(forKey: "featuredDate"),
            savedDate == keyToday,
-           let savedId = defaults.string(forKey: "featuredId") {
-            // Try to find saved person by id in current locale data
-            let all = LocalPeopleStore.load(section: .all)
-            if let found = all.first(where: { $0.imageName == savedId }) {
-                return found
-            }
+           let savedId = defaults.string(forKey: "featuredId"),
+           let found = all.first(where: { $0.imageName == savedId }) {
+            return found
         }
         // Pick new and persist
-        let all = LocalPeopleStore.load(section: .all)
         let picked = all.randomElement() ?? fallbackFeatured
         defaults.set(keyToday, forKey: "featuredDate")
         defaults.set(picked.imageName, forKey: "featuredId")
@@ -393,13 +390,14 @@ struct HomeScreen: View {
         .background(pageBG.ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
         .environment(\.locale, lang.current.locale)
-        .onAppear {
-            // Ежедневный выбор: хранится 24 часа
-            featured = dailyFeatured()
+        .task {
+            // Ежедневный выбор: безопасно обновляем состояние после монтирования вью
+            let f = dailyFeatured()
+            featured = f
         }
-        .onReceive(NotificationCenter.default.publisher(for: .appLanguageChanged)) { _ in
-            // Сохраняем того же человека по id, но подтягиваем локализованные поля
-            featured = dailyFeatured()
+        .task(id: lang.current.locale.identifier) {
+            let f = dailyFeatured()
+            featured = f
         }
     }
 }
@@ -709,6 +707,7 @@ struct EventsScreen: View { var body: some View { StoriesView() } }
 private struct UniversalSearchView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var query: String = ""
+    @State private var debouncedQuery: String = ""
     @State private var people: [Person] = []
     @State private var churches: [Church] = []
     @State private var stories: [Story] = []
@@ -734,7 +733,7 @@ private struct UniversalSearchView: View {
 
             // Suggestions list
             List {
-                let q = query.lowercased()
+                let q = debouncedQuery
                 if !q.isEmpty {
                     let peopleFiltered = people.filter { $0.name.lowercased().contains(q) || $0.subtitle.lowercased().contains(q) }
                     let churchesFiltered = churches.filter {
@@ -790,6 +789,12 @@ private struct UniversalSearchView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .onChange(of: query) { _, newValue in
+                let value = newValue.lowercased()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                    if value == query.lowercased() { debouncedQuery = value }
+                }
+            }
         }
         .navigationTitle(LocalizedStringKey("search"))
         .navigationBarTitleDisplayMode(.inline)
@@ -798,6 +803,7 @@ private struct UniversalSearchView: View {
             churches = ChurchesStore.load()
             stories = StoriesStore.load()
             isSearchFocused_full = true
+            debouncedQuery = ""
         }
     }
 }

@@ -91,10 +91,10 @@ private extension NotificationScheduler {
         switch payload.kind {
         case .person:
             content.title = NSLocalizedString("Напоминание", comment: "")
-            content.body  = String(format: NSLocalizedString("Почитайте биографию: %@", comment: ""), payload.title)
+            content.body  = String(format: NSLocalizedString("5 минут истории: кто такой %@", comment: ""), payload.title)
         case .event:
             content.title = NSLocalizedString("Напоминание", comment: "")
-            content.body  = String(format: NSLocalizedString("Почитайте о событии: %@", comment: ""), payload.title)
+            content.body  = String(format: NSLocalizedString("История на вечер: %@", comment: ""), payload.title)
         }
         content.sound = .default
         content.userInfo = ["deeplink": payload.deeplink]

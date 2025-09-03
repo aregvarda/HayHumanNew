@@ -18,7 +18,7 @@ struct PersonDetailView: View {
             VStack(spacing: 0) {
 
                 // ===== MAP =====
-                if let region = mapRegion {
+                if mapRegion != nil {
                     ZStack(alignment: .bottomLeading) {
                         Map(position: $camera) {
                             if let coordinate = coordinate {
