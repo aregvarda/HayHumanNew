@@ -44,9 +44,15 @@ fileprivate func hhStableEventID(title: String, year: Int) -> Int {
 }
 
 // Палитра
-private let pageBG      = Color(uiColor: .systemGroupedBackground)
+private let pageBG      = Color.white
 private let borderColor = Color.black.opacity(0.15)
 private let supportBG   = Color(uiColor: .systemGray5)
+
+// Measure view height via preference
+private struct SearchHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 64
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
+}
 
 // Универсальная плитка-кнопка
 private struct OutlineTileButton: View {
@@ -144,13 +150,160 @@ private struct UniversalSearchBar: View {
         .padding(.horizontal, 16)
         .frame(height: 64)
         .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .clipShape(RoundedRectangle(cornerRadius: 14))
         .overlay(
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: 14)
                 .stroke(Color.purple.opacity(0.65), lineWidth: 2.5)
         )
         .shadow(color: .black.opacity(0.03), radius: 6, x: 0, y: 3)
         .accessibilityLabel(LocalizedStringKey("search_everything"))
+    }
+}
+
+// Placeholder passport screen (to be implemented later)
+struct PilgrimPassportView: View {
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Image(systemName: "book.and.wrench")
+                    .font(.system(size: 48, weight: .bold))
+                    .padding(8)
+                Text("Pilgrim Passport")
+                    .font(.title2.bold())
+                Text("Your visits, stamps and achievements will appear here.")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 40)
+        }
+        .background(pageBG.ignoresSafeArea())
+        .navigationTitle(Text("pilgrim_passport"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+// Big card for Passport preview
+private struct PassportCard: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 14) {
+                // Left side: two-line title
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(NSLocalizedString("passport_word", tableName: "Localizable", bundle: .main, value: "Паспорт", comment: ""))
+                        .font(.system(size: 19, weight: .semibold, design: .rounded))
+                    Text(NSLocalizedString("pilgrim_genitive", tableName: "Localizable", bundle: .main, value: "паломника", comment: ""))
+                        .font(.system(size: 19, weight: .semibold, design: .rounded))
+                }
+                .foregroundStyle(.black)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                // Right side: large rounded image (no background square)
+                Image("pasport")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 120, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 30))
+            }
+
+            HStack(spacing: 12) {
+                Label("0 visits", systemImage: "mappin.and.ellipse")
+                Label("0 stamps", systemImage: "seal")
+            }
+            .font(.system(size: 16, weight: .semibold))
+            .foregroundStyle(.secondary)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 164, alignment: .leading)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(borderColor, lineWidth: 1))
+        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+        .contentShape(RoundedRectangle(cornerRadius: 20))
+    }
+}
+
+// Neutral monochrome tile (Yandex-like)
+private struct NeutralTileButton: View {
+    let titleKey: LocalizedStringKey
+    let systemIcon: String
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: systemIcon)
+                .font(.system(size: 18, weight: .semibold))
+                .frame(width: 24, height: 24)
+            Text(titleKey)
+                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                .foregroundStyle(.black)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 92)
+        .background(Color.white)
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(borderColor, lineWidth: 1))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+// Icon-only neutral tile (for grid with captions below)
+private struct NeutralTileIconButton: View {
+    let systemIcon: String
+    var body: some View {
+        HStack(alignment: .center, spacing: 0) {
+            Image(systemName: systemIcon)
+                .font(.system(size: 20, weight: .semibold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Image(systemName: "chevron.right")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .frame(alignment: .trailing)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 92)
+        .background(Color.white)
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(borderColor, lineWidth: 1))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+// Icon-only neutral tile using asset image (for custom logos)
+private struct NeutralTileAssetIconButton: View {
+    let assetName: String
+    var body: some View {
+        HStack(alignment: .center, spacing: 0) {
+            ZStack {
+                Color.clear
+                // Equalize perceived size across different logo assets
+                let iconSize: CGFloat = (assetName == "people logo") ? 48 : 56
+                Image(assetName)
+                    .resizable()
+                    .renderingMode(.original)
+                    .interpolation(.high)
+                    .antialiased(true)
+                    .frame(width: iconSize, height: iconSize)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            .frame(width: 64, height: 64)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Image(systemName: "chevron.right")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .frame(alignment: .trailing)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 92)
+        .background(Color.white)
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(borderColor, lineWidth: 1))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentShape(RoundedRectangle(cornerRadius: 16))
     }
 }
 
@@ -161,6 +314,8 @@ struct HomeScreen: View {
     @EnvironmentObject private var lang: LanguageManager
     @State private var showLanguageSheet = false
     @State private var showSearch = false
+
+    @State private var searchHeightMeasured: CGFloat = 64
 
     // Fallback person for "Today in history" in case data is missing
     private let fallbackFeatured = Person(
@@ -271,123 +426,163 @@ struct HomeScreen: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+        GeometryReader { viewport in
+            ScrollView {
+                VStack(spacing: 16) {
+                    // Top spacer — centers content vertically within the viewport
+                    Spacer()
+                    Spacer().frame(height: viewport.size.height * 0.08)
 
-                // Поддержать проект (сверху) — открываем ссылку сразу
-                Button {
-                    if let url = URL(string: "https://www.donationalerts.com/r/hayhuman") {
-                        UIApplication.shared.open(url)
-                    }
-                } label: {
-                    HStack(spacing: 8) {
-                        Image(systemName: "heart.fill")
-                            .foregroundColor(.white)
-                        Text(LocalizedStringKey("support_project"))
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(
-                        LinearGradient(
-                            colors: [Color.purple.opacity(0.8), Color.purple],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                // Search centered between top and bottom spacers
+                // Brand header (Inter)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("HayHuman")
+                        .font(.system(size: 36, weight: .black, design: .rounded))
+                        .fontWeight(.bold)
+                        .kerning(0.5)
+                        .foregroundStyle(.black)
+                    Text(NSLocalizedString("hayhuman_tagline", tableName: "Localizable", bundle: .main, value: "История армян в одном приложении", comment: ""))
+                        .font(.system(size: 19, weight: .regular, design: .rounded))
+                        .foregroundStyle(.secondary)
                 }
-                .buttonStyle(.plain)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
-
-                // Сегодня в истории — крупнее
-                NavigationLink { PersonDetailView(person: featured) } label: {
-                    HistoryTodayCard(person: featured)
-                }
-                .buttonStyle(.plain)
-                .padding(.horizontal)
-
-                // Поиск по церквям, событиям и личностям
-                Button { showSearch = true } label: { UniversalSearchBar() }
-                .buttonStyle(.plain)
-                .padding(.horizontal)
-                .fullScreenCover(isPresented: $showSearch) {
-                    UniversalSearchFullScreen(isPresented: $showSearch)
-                        .environmentObject(lang)
-                        .environment(\.locale, lang.current.locale)
-                        .id(showSearch) // force fresh NavigationView each time to avoid re-presentation crash
-                }
-
-
-                // Карта
-                NavigationLink { MapScreen() } label: {
-                    OutlineTileButton(titleKey: LocalizedStringKey("map"))
-                }
-                .buttonStyle(.plain)
-                .padding(.horizontal)
-
-                // Плитка разделов (включая «Все личности»)
-                LazyVGrid(columns: columns, spacing: 14) {
-                    ForEach(sections) { section in
-                        NavigationLink {
-                            CategoryListView(section: section)
-                        } label: {
-                            OutlineTileButton(titleKey: LocalizedStringKey(section.localizationKey))
-                        }
+                HStack {
+                    Spacer(minLength: 0)
+                    Button { showSearch = true } label: { UniversalSearchBar() }
                         .buttonStyle(.plain)
-                    }
+                        .fullScreenCover(isPresented: $showSearch) {
+                            UniversalSearchFullScreen(isPresented: $showSearch)
+                                .environmentObject(lang)
+                                .environment(\.locale, lang.current.locale)
+                                .id(showSearch)
+                        }
+                    Spacer(minLength: 0)
                 }
                 .padding(.horizontal)
-
-                // События
-                NavigationLink { EventsScreen() } label: {
-                    OutlineTileButton(titleKey: LocalizedStringKey("events"))
-                }
-                .buttonStyle(.plain)
-                .padding(.horizontal)
-
-                // Язык (слева квадрат) + Контакты (справа длинная)
-                HStack(spacing: 14) {
-                    Button {
-                        showLanguageSheet = true
-                    } label: {
-                        // Компактная квадратная кнопка языка
-                        Image(systemName: "globe")
-                            .font(.system(size: 22, weight: .semibold))
-                            .foregroundStyle(.black)
-                            .frame(width: 56, height: 56)
-                            .background(supportBG)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .multilineTextAlignment(.center)
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear.preference(key: SearchHeightKey.self, value: proxy.size.height)
                     }
-                    .buttonStyle(.plain)
-                    
-                    NavigationLink { ContactsScreen() } label: {
-                        Text(LocalizedStringKey("contacts"))
-                            .font(.system(size: 18, weight: .semibold, design: .rounded))
-                            .foregroundStyle(.black)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(supportBG)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
-                    .buttonStyle(.plain)
+                )
+                .onPreferenceChange(SearchHeightKey.self) { h in
+                    searchHeightMeasured = h
                 }
-                .padding(.horizontal)
-                .padding(.top, 4)
-                // Диалог выбора языка
-                .confirmationDialog("", isPresented: $showLanguageSheet, actions: {
-                    Button("Русский") { lang.current = .ru }
-                    Button("English") { lang.current = .en }
-                    Button("Հայերեն") { lang.current = .hy }
-                })
 
-                Spacer(minLength: 12)
+                    // Passport card directly under search
+                    NavigationLink { PilgrimPassportView() } label: { PassportCard() }
+                        .buttonStyle(.plain)
+                        .padding(.horizontal)
+
+                    // Bottom tiles with captions below (icon-only tiles + text under)
+                    HStack(spacing: 14) {
+                        VStack(spacing: 8) {
+                            NavigationLink { CategoryListView(section: .all) } label: {
+                                NeutralTileAssetIconButton(assetName: "people logo")
+                            }.buttonStyle(.plain)
+                            Text(LocalizedStringKey("all_people"))
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(1)
+                        }
+                        .frame(maxWidth: .infinity)
+
+                        VStack(spacing: 8) {
+                            NavigationLink { EventsScreen() } label: {
+                                NeutralTileAssetIconButton(assetName: "stories logo")
+                            }.buttonStyle(.plain)
+                            Text(LocalizedStringKey("events"))
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(1)
+                        }
+                        .frame(maxWidth: .infinity)
+
+                        VStack(spacing: 8) {
+                            NavigationLink { MapScreen() } label: {
+                                NeutralTileAssetIconButton(assetName: "map logo")
+                            }.buttonStyle(.plain)
+                            Text(LocalizedStringKey("map"))
+                                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(1)
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .padding(.horizontal)
+
+                    Spacer(minLength: 20)
+                }
+                // Fill the viewport so Spacers truly center the search block
+                .frame(minHeight: viewport.size.height)
             }
-            .padding(.vertical, 8)
         }
         .background(pageBG.ignoresSafeArea())
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { showLanguageSheet = true } label: {
+                    let code: String = {
+                        switch lang.current {
+                        case .ru: return "RU"
+                        case .en: return "EN"
+                        case .hy: return "AM"
+                        }
+                    }()
+                    Text(code)
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color(uiColor: .systemGray6))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(borderColor, lineWidth: 1)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .foregroundStyle(.black)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("change_language"))
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    if let url = URL(string: "https://www.donationalerts.com/r/hayhuman") { UIApplication.shared.open(url) }
+                } label: {
+                    Text(LocalizedStringKey("Поддержать"))
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color.purple.opacity(0.85))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                .buttonStyle(.plain)
+                NavigationLink { ContactsScreen() } label: {
+                    Image(systemName: "info")
+                        .font(.system(size: 15, weight: .semibold))
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Color(uiColor: .systemGray6))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(borderColor, lineWidth: 1)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .foregroundStyle(.black)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .confirmationDialog("", isPresented: $showLanguageSheet, actions: {
+            Button("Русский") { lang.current = .ru }
+            Button("English") { lang.current = .en }
+            Button("Հայերեն") { lang.current = .hy }
+        })
         .navigationBarTitleDisplayMode(.inline)
         .environment(\.locale, lang.current.locale)
         .task {
@@ -401,6 +596,29 @@ struct HomeScreen: View {
         }
     }
 }
+
+
+#if DEBUG
+struct HomeScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            HomeScreen()
+                .environmentObject(LanguageManager())
+        }
+        .previewDisplayName("Home")
+    }
+}
+
+struct PassportCard_Previews: PreviewProvider {
+    static var previews: some View {
+        PassportCard()
+            .padding()
+            .background(Color.white)
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Passport Card")
+    }
+}
+#endif
 
 
 
@@ -855,3 +1073,4 @@ private func debugEventOnce() {
     UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "debug.event.once", content: content, trigger: trigger))
 }
 #endif
+

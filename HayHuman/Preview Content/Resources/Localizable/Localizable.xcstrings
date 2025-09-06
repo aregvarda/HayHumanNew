@@ -10,6 +10,26 @@
     "%lld" : {
 
     },
+    "0 stamps" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 печатей"
+          }
+        }
+      }
+    },
+    "0 visits" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 посещений"
+          }
+        }
+      }
+    },
     "5 минут истории: кто такой %@" : {
       "localizations" : {
         "en" : {
@@ -139,7 +159,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Все личности"
+            "value" : "Личности"
           }
         }
       }
@@ -188,6 +208,9 @@
           }
         }
       }
+    },
+    "change_language" : {
+
     },
     "church_profile" : {
       "localizations" : {
@@ -603,6 +626,20 @@
         }
       }
     },
+    "HayHuman" : {
+
+    },
+    "hayhuman_tagline" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "История армян в одном приложении"
+          }
+        }
+      }
+    },
     "history_today" : {
       "comment" : "Today in history tag",
       "localizations" : {
@@ -717,7 +754,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Церкви и святыни"
+            "value" : "Церкви"
           }
         }
       }
@@ -739,8 +776,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Церкви и святыни"
+            "state" : "translated",
+            "value" : "Церкви"
           }
         }
       }
@@ -876,6 +913,87 @@
         }
       }
     },
+    "passport_word" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Паспорт"
+          }
+        }
+      }
+    },
+    "people_all" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "people_business" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бизнес"
+          }
+        }
+      }
+    },
+    "people_culture" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Культура"
+          }
+        }
+      }
+    },
+    "people_military" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Военное дело"
+          }
+        }
+      }
+    },
+    "people_politics" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Политика"
+          }
+        }
+      }
+    },
+    "people_religion" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Религия"
+          }
+        }
+      }
+    },
+    "people_science" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наука и образование"
+          }
+        }
+      }
+    },
     "people_section" : {
       "localizations" : {
         "en" : {
@@ -898,6 +1016,16 @@
         }
       }
     },
+    "people_sport" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спорт"
+          }
+        }
+      }
+    },
     "Person not found" : {
       "localizations" : {
         "en" : {
@@ -916,6 +1044,37 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Личность не найдена"
+          }
+        }
+      }
+    },
+    "Pilgrim Passport" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Паспорт паломника"
+          }
+        }
+      }
+    },
+    "pilgrim_genitive" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "паломника"
+          }
+        }
+      }
+    },
+    "pilgrim_passport" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Паспорт паломника"
           }
         }
       }
@@ -1433,6 +1592,9 @@
         }
       }
     },
+    "Your visits, stamps and achievements will appear here." : {
+
+    },
     "Готово" : {
       "localizations" : {
         "en" : {
@@ -1785,6 +1947,9 @@
           }
         }
       }
+    },
+    "Поддержать" : {
+
     },
     "Поддержать проект в Donationalerts" : {
       "localizations" : {
